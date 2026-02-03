@@ -1,7 +1,7 @@
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import BrandsSection from '@/components/BrandsSection';
-import { appliances, featuredCommercialAppliances } from '@/lib/data/appliances';
+import { services } from '@/lib/data/services';
 import { cities } from '@/lib/data/cities';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
 import Link from 'next/link';
@@ -11,8 +11,8 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Hero
-        title="Same-Day Appliance Repair in Texas"
-        subtitle="Professional repair services for all major appliance brands"
+        title="Professional Home Renovation in Seattle Area"
+        subtitle="Kitchen remodels, bathroom renovations, deck installations, and complete home transformations"
       />
 
       {/* Why Choose Us */}
@@ -20,7 +20,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Max Appliance Repair?
+              Why Choose TopVolk Construction?
             </h2>
           </div>
 
@@ -31,9 +31,9 @@ export default function HomePage() {
                   <CheckCircle className="w-10 h-10 text-green-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">20+ Years Experience</h3>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">100+ Projects Since 2017</h3>
               <p className="text-gray-600">
-                Over two decades repairing Texas's kitchen and laundry appliances. Factory-trained, certified technicians.
+                Professional contractor with extensive experience in residential renovation. Quality inspection before project completion.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -42,9 +42,9 @@ export default function HomePage() {
                   <Clock className="w-10 h-10 text-green-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Same-Day Service</h3>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Quick Response Time</h3>
               <p className="text-gray-600">
-                Same-day or next-day appointments available. We know you can't wait — we respond fast.
+                Fast estimates and scheduling. Flexible availability across Seattle area. Penalties if we miss agreed deadlines.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -53,9 +53,9 @@ export default function HomePage() {
                   <Users className="w-10 h-10 text-green-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Trusted by Neighbors</h3>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Direct Communication</h3>
               <p className="text-gray-600">
-                Most new customers come from referrals. We fix it right the first time, every time.
+                Work directly with Vladislav - no middlemen. Clear project communication and quick response to messages.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -64,9 +64,9 @@ export default function HomePage() {
                   <Wrench className="w-10 h-10 text-green-600" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Upfront Pricing</h3>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Transparent Pricing</h3>
               <p className="text-gray-600">
-                Transparent pricing and solid warranty on every repair. Fully insured for your peace of mind.
+                Detailed quotes before work begins. No hidden fees. Honest recommendations - won't push unnecessary demolition.
               </p>
             </div>
           </div>
@@ -78,19 +78,20 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Same-Day Appliance Repair in Texas
+              Expert Home Renovation Services in Seattle
             </h2>
             
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
-                Your fridge stopped cooling? Washer won't spin? We've got you covered. For over 20 years, Texas families 
-                have trusted <strong>Max Appliance Repair</strong> for fast, reliable repairs on all major brands - LG, Samsung, 
-                Whirlpool, GE, Maytag, and more.
+                Need a kitchen remodel or bathroom renovation? Looking to build a custom deck or transform your entire home? 
+                <strong> TopVolk Construction LLC</strong> specializes in residential renovation projects across Seattle, Bellevue, 
+                and Tacoma areas. Licensed contractor with 100+ completed projects since 2017.
               </p>
               
               <p className="text-base md:text-lg leading-relaxed">
-                Our factory-trained technicians provide <strong>same-day service</strong> across Houston, Dallas, Austin, and San Antonio areas. 
-                Upfront pricing, solid warranty, and most customers come from referrals. Fully insured and ready to fix it right.
+                Vladislav Volkov personally oversees every project with full licensing and insurance. <strong>Direct communication</strong>, 
+                detailed quotes before work begins, and quality inspection before completion. We take full responsibility - 
+                penalties apply if deadlines are missed. Honest recommendations and transparent pricing you can trust.
               </p>
             </div>
           </div>
@@ -105,32 +106,32 @@ export default function HomePage() {
               Our Services
             </h2>
             <p className="text-xl text-gray-600">
-              We repair all major appliance brands
+              Complete home renovation solutions for Seattle area homeowners
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {appliances.map((appliance) => (
+            {services.map((service) => (
               <Link
-                key={appliance.slug}
-                href={`/services/${appliance.slug}-repair`}
+                key={service.slug}
+                href={`/services/${service.slug}-repair`}
                 prefetch={false}
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
               >
-                {appliance.image && (
+                {service.image && (
                   <div className="w-full h-48 overflow-hidden">
                     <img 
-                      src={appliance.image} 
-                      alt={appliance.title}
+                      src={service.image} 
+                      alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 )}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {appliance.title}
+                    {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">{appliance.description}</p>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
                   <span className="text-green-600 font-semibold hover:underline">
                     Learn more →
                   </span>
@@ -166,15 +167,15 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {featuredCommercialAppliances.slice(0, 4).map((appliance) => (
               <Link
-                key={appliance.slug}
-                href={`/commercial/${appliance.slug.replace('commercial-', '')}-repair`}
+                key={service.slug}
+                href={`/commercial/${service.slug.replace('commercial-', '')}-repair`}
                 prefetch={false}
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/20 transition border border-white/20"
               >
                 <h3 className="text-xl font-semibold mb-2">
-                  {appliance.name}
+                  {service.name}
                 </h3>
-                <p className="opacity-90 mb-4">{appliance.description}</p>
+                <p className="opacity-90 mb-4">{service.description}</p>
                 <span className="text-white font-semibold hover:underline inline-flex items-center gap-2">
                   Learn more →
                 </span>
