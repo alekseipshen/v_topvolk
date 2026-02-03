@@ -1,19 +1,21 @@
 'use client';
 
 import Link from 'next/link';
-import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_ADDRESS } from '@/lib/utils';
-import { appliances } from '@/lib/data/appliances';
+import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_ADDRESS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/utils';
+import { services } from '@/lib/data/services';
 
 export default function Footer() {
-  // Major appliance categories grouped logically
-  const majorAppliances = appliances.slice(0, 12);
+  // Major renovation services
+  const majorServices = services.slice(0, 6);
   
-  // 4 major cities we serve in Texas
+  // Seattle area cities we serve
   const serviceAreas = [
-    { name: 'Houston Area', slug: 'houston' },
-    { name: 'Dallas-Fort Worth', slug: 'dallas' },
-    { name: 'Austin Area', slug: 'austin' },
-    { name: 'San Antonio Area', slug: 'san-antonio' }
+    { name: 'Seattle', slug: 'seattle' },
+    { name: 'Bellevue', slug: 'bellevue' },
+    { name: 'Redmond', slug: 'redmond' },
+    { name: 'Kirkland', slug: 'kirkland' },
+    { name: 'Renton', slug: 'renton' },
+    { name: 'Tacoma', slug: 'tacoma' }
   ];
 
   return (
@@ -23,7 +25,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-white text-xl font-bold mb-4">{BUSINESS_NAME}</h3>
-            <p className="text-sm mb-2">Serving Texas</p>
+            <p className="text-sm mb-2">Serving Seattle Area</p>
             <p className="mb-2">
               <a 
                 href={`tel:${PHONE_NUMBER}`} 
@@ -45,33 +47,25 @@ export default function Footer() {
                 {BUSINESS_EMAIL}
               </a>
             </p>
-            <p className="text-sm mt-4">20+ years of experience</p>
-            <p className="text-sm">Fully Insured</p>
-            <p className="text-sm">4.8★ Rating (3,400+ reviews)</p>
+            <p className="text-sm mt-4">100+ Projects Since 2017</p>
+            <p className="text-sm">Licensed & Insured</p>
+            <p className="text-sm">{GOOGLE_RATING}★ Rating ({GOOGLE_REVIEW_COUNT} reviews)</p>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="text-white font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              {majorAppliances.map((appliance) => (
-                <li key={appliance.slug}>
+              {majorServices.map((service) => (
+                <li key={service.slug}>
                   <Link
-                    href={`/services/${appliance.slug}-repair`}
+                    href={`/services/${service.slug}`}
                     className="hover:text-white transition text-sm"
                   >
-                    {appliance.title}
+                    {service.name}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/commercial"
-                  className="hover:text-white transition text-sm font-semibold"
-                >
-                  Commercial Services →
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -103,7 +97,7 @@ export default function Footer() {
           {/* Contact & Links */}
           <div>
             <h4 className="text-white font-semibold mb-4">Get Free Quote</h4>
-            <p className="text-sm mb-4">Same-day service available</p>
+            <p className="text-sm mb-4">Quick response time</p>
             <a
               href={`tel:${PHONE_NUMBER}`}
               onClick={() => {
@@ -150,13 +144,10 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="max-w-4xl mx-auto text-xs text-gray-400 text-center space-y-2">
             <p>
-              <strong className="text-gray-300">Independent Service Disclaimer:</strong> {BUSINESS_NAME} is an independent appliance repair service provider and is not affiliated with, authorized by, or endorsed by any of the appliance brands or manufacturers mentioned on this website.
+              <strong className="text-gray-300">{BUSINESS_NAME}</strong> - Professional construction contractor specializing in residential remodeling and custom builds. Licensed and insured contractor serving Seattle, Bellevue, Tacoma, and surrounding King County areas since 2017.
             </p>
             <p>
-              We provide independent, out-of-warranty repair services for all major appliance brands. All brand names, logos, and trademarks displayed on this website are the property of their respective owners and are used for informational purposes only to indicate the types of appliances we service.
-            </p>
-            <p>
-              The use of these brand names and logos does not imply any affiliation with or endorsement by the respective trademark holders.
+              All project estimates are provided free of charge. We take full responsibility for every project and maintain direct communication with our clients throughout the construction process.
             </p>
           </div>
         </div>
