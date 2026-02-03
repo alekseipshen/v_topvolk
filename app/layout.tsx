@@ -16,12 +16,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Max Appliance Service | Professional Appliance Repair in Texas',
-  description: 'Expert appliance repair services in Texas. Same-day service, certified technicians, 20+ years of experience. Call now for a free estimate!',
-  keywords: 'appliance repair, Texas, refrigerator repair, washer repair, dryer repair, same-day service',
+  title: 'TopVolk Construction LLC | Professional Home Renovation in Seattle',
+  description: 'Expert home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017. Call (206) 591-1096 for a free estimate!',
+  keywords: 'home renovation, Seattle, kitchen remodel, bathroom remodel, deck installation, construction contractor, King County',
   openGraph: {
-    title: 'Max Appliance Repair | Same-Day Service in Texas',
-    description: 'Expert appliance repair services in Texas. Same-day service available.',
+    title: 'TopVolk Construction | Professional Home Renovation in Seattle',
+    description: 'Expert home renovation services in Seattle, Bellevue, Tacoma. Licensed contractor with 100+ projects since 2017.',
     type: 'website',
   },
 };

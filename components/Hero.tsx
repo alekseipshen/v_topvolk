@@ -87,7 +87,7 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
                 {/* Mobile: с фоном, Desktop: без фона, горизонтально */}
                 <div className="bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-2 md:p-0 rounded md:rounded-none shadow-md md:shadow-none text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
                   <Zap className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-green-600" />
-                  <div className="font-semibold text-xs md:text-base text-gray-900">Same-Day Service</div>
+                  <div className="font-semibold text-xs md:text-base text-gray-900">Same-Day Response</div>
                 </div>
                 <div className="bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-2 md:p-0 rounded md:rounded-none shadow-md md:shadow-none text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
                   <Award className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-green-600" />
