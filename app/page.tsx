@@ -1,11 +1,15 @@
+'use client';
+
+import { useState } from 'react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import { services } from '@/lib/data/services';
-import { cities } from '@/lib/data/cities';
+import { seattleCounties } from '@/lib/data/seattle-counties';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {
+  const [showAllServices, setShowAllServices] = useState(false);
   return (
     <>
       {/* Hero Section */}
@@ -98,7 +102,7 @@ export default function HomePage() {
       </section>
 
       {/* Our Services */}
-      <section className="py-16 bg-white">
+      <section id="our-services" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -110,7 +114,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
+            {services.slice(0, showAllServices ? services.length : 6).map((service) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
@@ -138,55 +142,120 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+
+          {services.length > 6 && (
+            <div className="text-center mt-8">
+              <button
+                onClick={() => setShowAllServices(!showAllServices)}
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+              >
+                {showAllServices ? 'Show Less' : 'Show More Services'}
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Brands We Service */}
-
       {/* Service Areas */}
-      <section id="service-area" className="py-16 bg-white">
-                <div className="container mx-auto px-4">
+      <section id="service-areas" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Service Areas in Seattle
             </h2>
             <p className="text-xl text-gray-600">
-              We serve Seattle, Bellevue, Tacoma, and surrounding King County areas
+              Serving 3 counties with 56 cities across the greater Seattle area
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              { name: 'Seattle', slug: 'seattle', description: 'Capitol Hill, Queen Anne, Ballard, Fremont, West Seattle' },
-              { name: 'Bellevue', slug: 'bellevue', description: 'Downtown Bellevue, Factoria, Crossroads, Wilburton' },
-              { name: 'Redmond', slug: 'redmond', description: 'Downtown Redmond, Education Hill, Overlake, Bear Creek' },
-              { name: 'Kirkland', slug: 'kirkland', description: 'Downtown Kirkland, Totem Lake, Juanita, Houghton' },
-              { name: 'Renton', slug: 'renton', description: 'Downtown Renton, Highlands, Kennydale, East Renton' },
-              { name: 'Tacoma', slug: 'tacoma', description: 'Downtown Tacoma, North End, Stadium District, Proctor' }
-            ].map((area) => (
-              <Link
-                key={area.slug}
-                href={`/service-areas#${area.slug}`}
-                prefetch={false}
-                className="bg-gray-50 p-6 rounded-lg hover:bg-green-50 hover:shadow-lg transition border border-gray-200 cursor-pointer"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {seattleCounties.map((county) => (
+              <div
+                key={county.slug}
+                className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition"
               >
-                <h3 className="font-bold text-xl text-gray-900 mb-2">{area.name}</h3>
-                <p className="text-sm text-gray-600">{area.description}</p>
-              </Link>
+                <h3 className="font-bold text-2xl text-gray-900 mb-4">{county.name}</h3>
+                <p className="text-gray-600 mb-4">{county.description}</p>
+                <div className="text-sm text-gray-500 mb-4">
+                  <strong>{county.totalCities} cities</strong> including:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {county.cities.slice(0, 8).map((city, index) => (
+                    <span key={index} className="text-xs bg-white px-2 py-1 rounded border border-gray-200">
+                      {city}
+                    </span>
+                  ))}
+                  {county.cities.length > 8 && (
+                    <span className="text-xs text-gray-500 px-2 py-1">
+                      +{county.cities.length - 8} more
+                    </span>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-12">
+            <p className="text-gray-600 text-lg mb-4">
+              Can't find your city? We serve all of King, Snohomish, and Pierce Counties
+            </p>
+            <Link
+              href={`tel:${require('@/lib/utils').PHONE_NUMBER}`}
+              className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+            >
+              Call for a Free Estimate
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Recent Home Renovation Works */}
+      <section id="works" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Recent Home Renovation Works
+            </h2>
+            <p className="text-xl text-gray-600">
+              Take a look at some of our completed projects in the Seattle area
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Project placeholders - will be replaced with real images */}
+            {[
+              { title: 'Modern Kitchen Remodel', location: 'Seattle, WA', description: 'Complete kitchen transformation with custom cabinets and quartz countertops' },
+              { title: 'Luxury Bathroom Renovation', location: 'Bellevue, WA', description: 'Spa-like bathroom with heated floors and walk-in shower' },
+              { title: 'Custom Deck Installation', location: 'Redmond, WA', description: 'Multi-level composite deck with built-in seating' },
+              { title: 'Basement Finishing', location: 'Kirkland, WA', description: 'Transformed unfinished basement into family entertainment space' },
+              { title: 'Master Suite Addition', location: 'Tacoma, WA', description: 'Added master bedroom with ensuite bathroom and walk-in closet' },
+              { title: 'Whole House Remodel', location: 'Renton, WA', description: 'Complete home renovation including kitchen, bathrooms, and flooring' }
+            ].map((project, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
+                <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
+                  <span className="text-gray-400 text-sm">Project Photo Coming Soon</span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                  <p className="text-sm text-green-600 font-semibold mb-2">{project.location}</p>
+                  <p className="text-gray-600">{project.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
             <p className="text-gray-600 text-lg">
-              Serving all of King County and surrounding areas
+              Want to see your project featured here? Contact us for a free consultation!
             </p>
           </div>
         </div>
-
       </section>
 
       {/* Reviews */}
-      <Reviews />
+      <div id="reviews">
+        <Reviews />
+      </div>
     </>
   );
 }

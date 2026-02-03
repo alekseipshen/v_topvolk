@@ -38,19 +38,19 @@ export default function Header() {
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-6">
+        <Link href="/" className="text-gray-100 hover:text-green-400 transition font-medium">
+          Home
+        </Link>
         <Link href="/#our-services" className="text-gray-100 hover:text-green-400 transition font-medium">
           Services
         </Link>
-        <Link href="/blog" className="text-gray-100 hover:text-green-400 transition font-medium">
-          Blog
-        </Link>
-        <Link href="/commercial" className="text-gray-100 hover:text-green-400 transition font-medium">
-          Commercial
-        </Link>
-            <Link href="/#service-area" className="text-gray-100 hover:text-green-400 transition font-medium">
-              Service Area
+            <Link href="/#service-areas" className="text-gray-100 hover:text-green-400 transition font-medium">
+              Areas
             </Link>
-            <Link href="#reviews" className="text-gray-100 hover:text-green-400 transition font-medium">
+            <Link href="/#works" className="text-gray-100 hover:text-green-400 transition font-medium">
+              Works
+            </Link>
+            <Link href="/#reviews" className="text-gray-100 hover:text-green-400 transition font-medium">
               Reviews
             </Link>
             <button
@@ -103,39 +103,39 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-700 pt-4">
             <div className="flex flex-col space-y-3">
               <Link
+                href="/"
+                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
                 href="/#our-services"
-                className="text-gray-900 hover:text-green-600 transition py-2 font-medium"
+                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
-                href="/blog"
-                className="text-gray-900 hover:text-green-600 transition py-2 font-medium"
+                href="/#service-areas"
+                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Blog
+                Areas
               </Link>
               <Link
-                href="/commercial"
-                className="text-gray-900 hover:text-green-600 transition py-2 font-medium"
+                href="/#works"
+                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Commercial
+                Works
               </Link>
               <Link
-                href="/#service-area"
-                className="text-gray-900 hover:text-green-600 transition py-2 font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Service Area
-              </Link>
-              <Link
-                href="#reviews"
-                className="text-gray-900 hover:text-green-600 transition py-2 font-medium"
+                href="/#reviews"
+                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Reviews
