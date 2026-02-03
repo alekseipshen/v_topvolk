@@ -16,14 +16,14 @@ export function slugToTitle(slug: string): string {
     .join(' ');
 }
 
-export const PHONE_NUMBER = '+18887713235';
-export const PHONE_DISPLAY = '(888) 771-3235';
-export const BUSINESS_EMAIL = 'info@maxappliancetexas.com';
-export const BUSINESS_NAME = 'Max Appliance Repair';
+export const PHONE_NUMBER = '+12065911096';
+export const PHONE_DISPLAY = '(206) 591-1096';
+export const BUSINESS_EMAIL = 'info@topvolk.org';
+export const BUSINESS_NAME = 'TopVolk Construction LLC';
 export const BUSINESS_ADDRESS = '';
-export const GOOGLE_RATING = 4.8;
-export const GOOGLE_REVIEW_COUNT = '3,400';
-export const GOOGLE_BUSINESS_PROFILE_URL = 'https://share.google/JAvlzws5KKCcgx3Az';
+export const GOOGLE_RATING = 4.9;
+export const GOOGLE_REVIEW_COUNT = '50+';
+export const GOOGLE_BUSINESS_PROFILE_URL = 'https://share.google/GCqeuaL4bJXcZpNR5';
 
 // Professional icons (Lucide React style)
 export const icons = {
