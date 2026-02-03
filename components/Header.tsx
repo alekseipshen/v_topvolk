@@ -12,7 +12,7 @@ export default function Header() {
   const { openModal } = useModal();
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-gray-800 shadow-sm sticky top-0 z-50">
       {/* Top Bar with Address - Hidden on all devices */}
       {/* <div className="hidden md:block w-full py-2 text-sm text-white" style={{ backgroundColor: '#334e64' }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8 flex justify-end items-center gap-2">
@@ -38,19 +38,19 @@ export default function Header() {
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-6">
-        <Link href="/#our-services" className="text-gray-900 hover:text-green-600 transition font-medium">
+        <Link href="/#our-services" className="text-gray-100 hover:text-green-400 transition font-medium">
           Services
         </Link>
-        <Link href="/blog" className="text-gray-900 hover:text-green-600 transition font-medium">
+        <Link href="/blog" className="text-gray-100 hover:text-green-400 transition font-medium">
           Blog
         </Link>
-        <Link href="/commercial" className="text-gray-900 hover:text-green-600 transition font-medium">
+        <Link href="/commercial" className="text-gray-100 hover:text-green-400 transition font-medium">
           Commercial
         </Link>
-            <Link href="/#service-area" className="text-gray-900 hover:text-green-600 transition font-medium">
+            <Link href="/#service-area" className="text-gray-100 hover:text-green-400 transition font-medium">
               Service Area
             </Link>
-            <Link href="#reviews" className="text-gray-900 hover:text-green-600 transition font-medium">
+            <Link href="#reviews" className="text-gray-100 hover:text-green-400 transition font-medium">
               Reviews
             </Link>
             <button
@@ -94,7 +94,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition text-gray-900"
+            className="md:hidden p-2 hover:bg-gray-700 rounded-lg transition text-gray-100"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -156,7 +156,7 @@ export default function Header() {
               <Phone size={18} />
               {PHONE_DISPLAY}
             </a>
-              <div className="flex items-center gap-2 text-gray-600 justify-center py-2 text-sm border-t mt-2 pt-2">
+              <div className="flex items-center gap-2 text-gray-300 justify-center py-2 text-sm border-t border-gray-700 mt-2 pt-2">
                 <MapPin size={16} />
                 <span className="text-center">{BUSINESS_ADDRESS}</span>
               </div>
