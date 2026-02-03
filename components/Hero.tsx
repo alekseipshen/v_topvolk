@@ -22,7 +22,7 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       <div className="absolute inset-0 z-0 md:hidden">
         <Image
           src={backgroundImage}
-          alt="Professional Appliance Repair Service"
+          alt="Professional Home Renovation Service"
           fill
           className="object-cover object-center"
           priority
@@ -37,7 +37,7 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       <div className="hidden md:block absolute inset-0 z-0">
         <Image
           src={backgroundImage}
-          alt="Professional Appliance Repair Service"
+          alt="Professional Home Renovation Service"
           fill
           className="object-cover object-center opacity-20"
           priority
