@@ -103,14 +103,14 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         apartment_or_unit: cleanText(data.apartment || ''),
         city: cleanText(data.city),
         zip_code: data.zipCode,
-        state: 'TX',
+        state: 'WA',
         country: 'US',
         issue: cleanText(data.message || ''),
         preferred_day: isoDate, // ISO format: YYYY-MM-DD
         start_time: startTime, // ISO time format: HH:MM:SS
         end_time: endTime, // ISO time format: HH:MM:SS
         time_slot: timeSlotLabel,
-        source: 'Website - Max Appliance',
+        source: 'Website - TopVolk Construction',
         submitted_at: submittedAtISO, // Full ISO timestamp
       };
 
@@ -124,7 +124,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           name: `${data.firstName} ${data.lastName}`,
           phone: cleanedPhone,
           email: data.email,
-          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, TX ${data.zipCode}\n\nPreferred: ${isoDate} (${timeSlotLabel})`,
+          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, WA ${data.zipCode}\n\nPreferred: ${isoDate} (${timeSlotLabel})`,
           recaptchaToken: 'bypass', // reCAPTCHA disabled for now
         }),
       });
@@ -137,7 +137,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
             lead_data: {
               email: data.email,
               phone: cleanedPhone,
-              source: 'Website - Max Appliance'
+              source: 'Website - TopVolk Construction'
             }
           });
         }
@@ -187,7 +187,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-2xl z-10">
           <h2 className="text-xl font-bold text-gray-900">
-            {submitStatus === 'success' ? 'Thank You!' : 'Max Appliance - Appliance Service'}
+            {submitStatus === 'success' ? 'Thank You!' : 'TopVolk Construction - Request Service'}
           </h2>
           <button
             onClick={handleClose}
@@ -236,7 +236,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           {currentStep === 1 && submitStatus !== 'success' && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Welcome to Max Appliance</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Welcome to TopVolk Construction</h3>
                 <p className="text-gray-600">What can we do for you?</p>
               </div>
 
@@ -249,7 +249,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   id="message"
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-gray-900 bg-white"
-                  placeholder="My Samsung Washer is not draining"
+                  placeholder="I need a kitchen remodel with new cabinets and countertops"
                 />
                 {errors.message && (
                   <p className="text-red-600 text-sm mt-1">{errors.message.message}</p>
@@ -575,7 +575,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   </p>
                   <p>
                     <span className="font-semibold">Location:</span> {watchedData.street}
-                    {watchedData.apartment && `, ${watchedData.apartment}`}, {watchedData.city}, TX{' '}
+                    {watchedData.apartment && `, ${watchedData.apartment}`}, {watchedData.city}, WA{' '}
                     {watchedData.zipCode}
                   </p>
                   <p>

@@ -72,14 +72,14 @@ export default function LeadForm() {
         apartment_or_unit: cleanText(data.apartment || ''),
         city: cleanText(data.city),
         zip_code: data.zipCode,
-        state: 'TX',
+        state: 'WA',
         country: 'US',
         issue: cleanText(data.message || ''),
         preferred_day: '',
         start_time: '',
         end_time: '',
         time_slot: '',
-        source: 'Website - Max Appliance',
+        source: 'Website - TopVolk Construction',
         submitted_at_date: now.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }),
         submitted_at_time: now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }),
       };
@@ -94,7 +94,7 @@ export default function LeadForm() {
           name: `${data.firstName} ${data.lastName}`,
           phone: cleanedPhone,
           email: data.email,
-          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, TX ${data.zipCode}`,
+          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, WA ${data.zipCode}`,
           recaptchaToken: 'bypass', // reCAPTCHA disabled for now
         }),
       });
@@ -107,7 +107,7 @@ export default function LeadForm() {
             lead_data: {
               email: data.email,
               phone: cleanedPhone,
-              source: 'Website - Max Appliance'
+              source: 'Website - TopVolk Construction'
             }
           });
         }
@@ -289,14 +289,14 @@ export default function LeadForm() {
             {/* Message */}
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                What appliance needs repair? *
+                What renovation project do you need? *
               </label>
               <textarea
                 {...register('message')}
                 id="message"
                 rows={4}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="My Samsung Washer is not draining"
+                placeholder="I need a kitchen remodel with new cabinets and countertops"
               />
               {errors.message && (
                 <p className="text-red-600 text-sm mt-1">{errors.message.message}</p>
