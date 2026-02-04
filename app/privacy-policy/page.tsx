@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { BUSINESS_NAME, PHONE_DISPLAY, BUSINESS_EMAIL } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Privacy Policy | Max Appliance Service',
-  description: 'Privacy policy for Max Appliance Service. Learn how we collect, use, and protect your personal information.',
+  title: 'Privacy Policy | TopVolk Construction',
+  description: 'Privacy policy for TopVolk Construction. Learn how we collect, use, and protect your personal information.',
   robots: 'noindex, nofollow',
 };
 
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Introduction</h2>
               <p>
-                {BUSINESS_NAME}, operated by Max Appliance LLC ("we," "us," or "our"), respects your 
+                {BUSINESS_NAME}, operated by TopVolk Construction LLC ("we," "us," or "our"), respects your 
                 privacy and is committed to protecting your personal information. This Privacy Policy 
                 explains how we collect, use, disclose, and safeguard your information when you visit 
                 our website or use our services.
@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>Name and contact information (email address, phone number, mailing address)</li>
                 <li>Service address (if different from contact address)</li>
-                <li>Appliance information and service history</li>
+                <li>Project information and service history</li>
                 <li>Payment information (processed securely through our payment processor)</li>
                 <li>Communications with us (emails, phone calls, text messages)</li>
               </ul>
@@ -60,8 +60,8 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. How We Use Your Information</h2>
               <p>We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Provide, maintain, and improve our appliance repair services</li>
-                <li>Schedule appointments and dispatch technicians</li>
+                <li>Provide, maintain, and improve our home renovation services</li>
+                <li>Schedule appointments and coordinate projects</li>
                 <li>Process payments and send receipts</li>
                 <li>Communicate with you about services, appointments, and updates</li>
                 <li>Send service reminders and maintenance tips</li>
@@ -124,12 +124,12 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. California Residents (CCPA)</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Washington Residents (CCPA)</h2>
               <p>
-                If you are a California resident, you have additional rights under the California 
+                If you are a Washington resident, you have additional rights under the Washington 
                 Consumer Privacy Act (CCPA). Please see our{' '}
                 <Link href="/ca-notice-at-collection" className="text-green-600 hover:underline">
-                  California Notice at Collection
+                  Washington Notice at Collection
                 </Link>
                 {' '}and{' '}
                 <Link href="/do-not-sell" className="text-green-600 hover:underline">
@@ -172,8 +172,8 @@ export default function PrivacyPolicyPage() {
               </p>
               <p>
                 <strong>{BUSINESS_NAME}</strong><br />
-                Max Appliance LLC<br />
-                Texas<br />
+                TopVolk Construction LLC<br />
+                Washington<br />
                 Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
                 Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
               </p>

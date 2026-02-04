@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { BUSINESS_NAME, PHONE_DISPLAY, BUSINESS_EMAIL } from '@/lib/utils';
 
 export const metadata = {
-  title: 'California Notice at Collection | Max Appliance Service',
-  description: 'California Consumer Privacy Act (CCPA) notice for California residents.',
+  title: 'Washington Notice at Collection | TopVolk Construction',
+  description: 'Washington Consumer Privacy Act (CCPA) notice for Washington residents.',
   robots: 'noindex, nofollow',
 };
 
@@ -13,7 +13,7 @@ export default function CANoticeAtCollectionPage() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 md:p-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-            California Notice at Collection
+            Washington Notice at Collection
           </h1>
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
@@ -23,19 +23,19 @@ export default function CANoticeAtCollectionPage() {
             </p>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Notice for California Residents</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Notice for Washington Residents</h2>
               <p>
-                This California Notice at Collection applies to California residents and supplements 
+                This Washington Notice at Collection applies to Washington residents and supplements 
                 our <Link href="/privacy-policy" className="text-green-600 hover:underline">Privacy Policy</Link>. 
-                It describes how {BUSINESS_NAME}, operated by Max Appliance LLC, collects, uses, and 
-                discloses personal information as required by the California Consumer Privacy Act (CCPA).
+                It describes how {BUSINESS_NAME}, operated by TopVolk Construction LLC, collects, uses, and 
+                discloses personal information as required by the Washington Consumer Privacy Act (CCPA).
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Categories of Personal Information We Collect</h2>
               <p>
-                We collect the following categories of personal information from California residents:
+                We collect the following categories of personal information from Washington residents:
               </p>
               
               <div className="space-y-4 mt-4">
@@ -53,7 +53,7 @@ export default function CANoticeAtCollectionPage() {
                 <div className="border-l-4 border-green-600 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">B. Customer Records Information</h3>
                   <p className="text-sm">
-                    Personal information categories listed in California Customer Records statute 
+                    Personal information categories listed in Washington Customer Records statute 
                     (Cal. Civ. Code § 1798.80(e)).
                   </p>
                   <p className="text-sm text-gray-600 mt-2">
@@ -119,7 +119,7 @@ export default function CANoticeAtCollectionPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Business or Commercial Purposes for Collection</h2>
               <p>We use personal information for the following business purposes:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Providing appliance repair services</li>
+                <li>Providing home renovation services</li>
                 <li>Processing payments and transactions</li>
                 <li>Communicating with customers about services and appointments</li>
                 <li>Customer service and support</li>
@@ -140,8 +140,8 @@ export default function CANoticeAtCollectionPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Your California Privacy Rights</h2>
-              <p>California residents have the right to:</p>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Your Washington Privacy Rights</h2>
+              <p>Washington residents have the right to:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Right to Know:</strong> Request disclosure of categories and specific pieces of personal information collected</li>
                 <li><strong>Right to Delete:</strong> Request deletion of personal information</li>
@@ -155,7 +155,7 @@ export default function CANoticeAtCollectionPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Exercise Your Rights</h2>
               <p>
-                To exercise your California privacy rights, please contact us:
+                To exercise your Washington privacy rights, please contact us:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a></li>
@@ -193,12 +193,12 @@ export default function CANoticeAtCollectionPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Contact Information</h2>
               <p>
-                If you have questions about this California Notice at Collection, please contact us:
+                If you have questions about this Washington Notice at Collection, please contact us:
               </p>
               <p>
                 <strong>{BUSINESS_NAME}</strong><br />
-                Max Appliance LLC<br />
-                Texas<br />
+                TopVolk Construction LLC<br />
+                Washington<br />
                 Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
                 Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
               </p>

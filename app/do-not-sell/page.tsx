@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { BUSINESS_NAME, PHONE_DISPLAY, BUSINESS_EMAIL } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Do Not Sell or Share My Personal Information | Max Appliance Service',
-  description: 'California residents can opt out of the sale or sharing of personal information.',
+  title: 'Do Not Sell or Share My Personal Information | TopVolk Construction',
+  description: 'Washington residents can opt out of the sale or sharing of personal information.',
   robots: 'noindex, nofollow',
 };
 
@@ -24,8 +24,8 @@ export default function DoNotSellPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Your Right to Opt-Out</h2>
               <p>
-                Under the California Consumer Privacy Act (CCPA) and other applicable privacy laws, 
-                California residents have the right to opt out of the "sale" or "sharing" of their 
+                Under the Washington Consumer Privacy Act (CCPA) and other applicable privacy laws, 
+                Washington residents have the right to opt out of the "sale" or "sharing" of their 
                 personal information.
               </p>
             </section>
@@ -99,7 +99,7 @@ export default function DoNotSellPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">How to Submit an Opt-Out Request</h2>
               <p>
-                Even though we do not sell personal information, California residents can submit an 
+                Even though we do not sell personal information, Washington residents can submit an 
                 opt-out request to ensure their information is not shared in ways they don't expect.
               </p>
               <p>To submit a request:</p>
@@ -137,7 +137,7 @@ export default function DoNotSellPage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Other Privacy Rights</h2>
               <p>
-                California residents have additional privacy rights under the CCPA. For more information, 
+                Washington residents have additional privacy rights under the CCPA. For more information, 
                 please see our:
               </p>
               <ul className="list-none space-y-2 mt-4">
@@ -150,7 +150,7 @@ export default function DoNotSellPage() {
                 <li>
                   →{' '}
                   <Link href="/ca-notice-at-collection" className="text-green-600 hover:underline font-semibold">
-                    California Notice at Collection
+                    Washington Notice at Collection
                   </Link>
                 </li>
               </ul>
@@ -172,8 +172,8 @@ export default function DoNotSellPage() {
               </p>
               <p>
                 <strong>{BUSINESS_NAME}</strong><br />
-                Max Appliance LLC<br />
-                Texas<br />
+                TopVolk Construction LLC<br />
+                Washington<br />
                 Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
                 Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
               </p>

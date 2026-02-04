@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { BUSINESS_NAME, PHONE_DISPLAY, BUSINESS_EMAIL } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Terms of Use | Max Appliance Service',
-  description: 'Terms and conditions for using Max Appliance Service website and services.',
+  title: 'Terms of Use | TopVolk Construction',
+  description: 'Terms and conditions for using TopVolk Construction website and services.',
   robots: 'noindex, nofollow',
 };
 
@@ -33,7 +33,7 @@ export default function TermsOfUsePage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Services Description</h2>
               <p>
-                {BUSINESS_NAME}, operated by Max Appliance LLC, provides appliance repair services 
+                {BUSINESS_NAME}, operated by TopVolk Construction LLC, provides home renovation services 
                 for residential and commercial customers. All services are subject to availability 
                 and scheduling.
               </p>
@@ -85,7 +85,7 @@ export default function TermsOfUsePage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Independent Service Provider</h2>
               <p>
-                {BUSINESS_NAME} is an independent appliance repair service provider and is not 
+                {BUSINESS_NAME} is an independent home renovation service provider and is not 
                 affiliated with, authorized by, or endorsed by any appliance brand or manufacturer 
                 mentioned on this website. All brand names and trademarks are the property of their 
                 respective owners and are used for informational purposes only.
@@ -122,7 +122,7 @@ export default function TermsOfUsePage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">10. Governing Law</h2>
               <p>
                 These terms shall be governed by and construed in accordance with the laws of the 
-                State of Texas, without regard to its conflict of law provisions.
+                State of Washington, without regard to its conflict of law provisions.
               </p>
             </section>
 
@@ -133,8 +133,8 @@ export default function TermsOfUsePage() {
               </p>
               <p>
                 <strong>{BUSINESS_NAME}</strong><br />
-                Max Appliance LLC<br />
-                Texas<br />
+                TopVolk Construction LLC<br />
+                Washington<br />
                 Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
                 Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
               </p>
