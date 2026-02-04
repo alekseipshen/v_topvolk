@@ -14,7 +14,7 @@ interface HeroProps {
 }
 
 export default function Hero({ title, subtitle = 'Licensed contractor specializing in kitchen, bathroom, deck, and home renovations', brand, brandLogo, applianceImage }: HeroProps) {
-  const backgroundImage = applianceImage || "/hero-appliance.jpg";
+  const backgroundImage = applianceImage || "/hero-bg.jpg";
   
   return (
     <section className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden" style={{ backgroundColor: '#c5ecf3' }}>
