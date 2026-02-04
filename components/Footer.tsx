@@ -3,20 +3,18 @@
 import Link from 'next/link';
 import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_ADDRESS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/utils';
 import { services } from '@/lib/data/services';
+import { seattleCounties } from '@/lib/data/seattle-counties';
 
 export default function Footer() {
   // Major renovation services
   const majorServices = services.slice(0, 6);
   
-  // Seattle area cities we serve
-  const serviceAreas = [
-    { name: 'Seattle', slug: 'seattle' },
-    { name: 'Bellevue', slug: 'bellevue' },
-    { name: 'Redmond', slug: 'redmond' },
-    { name: 'Kirkland', slug: 'kirkland' },
-    { name: 'Renton', slug: 'renton' },
-    { name: 'Tacoma', slug: 'tacoma' }
-  ];
+  // Seattle area counties we serve
+  const serviceAreas = seattleCounties.map(county => ({
+    name: county.name,
+    slug: county.slug,
+    cityCount: county.totalCities
+  }));
 
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -69,26 +67,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Service Areas (Major Cities) */}
+          {/* Service Areas */}
           <div>
             <h4 className="text-white font-semibold mb-4">Service Areas</h4>
             <ul className="space-y-2">
               {serviceAreas.map((area) => (
                 <li key={area.slug}>
                   <Link
-                    href={`/service-areas#${area.slug}`}
+                    href={`/#service-areas`}
                     className="hover:text-white transition text-sm"
                   >
                     {area.name}
+                    <span className="text-gray-500 ml-1">({area.cityCount})</span>
                   </Link>
                 </li>
               ))}
               <li className="pt-2">
                 <Link
-                  href="/service-areas"
+                  href="/#service-areas"
                   className="hover:text-white transition text-sm font-semibold"
                 >
-                  View All 227 Cities →
+                  View All 56 Cities →
                 </Link>
               </li>
             </ul>
