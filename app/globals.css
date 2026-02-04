@@ -63,22 +63,6 @@ textarea::placeholder {
   opacity: 1 !important;
 }
 
-/* Tawk.to widget positioning - lift it above sticky mobile bar on mobile */
-@media (max-width: 768px) {
-  /* Tawk.to widget container */
-  #tawk-bubble-container,
-  .tawk-button,
-  iframe[title*="chat"] {
-    bottom: 80px !important; /* Lift above sticky bar (60px bar + 20px margin) */
-  }
-  
-  /* When chat window is open */
-  #tawk-container iframe {
-    bottom: 80px !important;
-    max-height: calc(100vh - 160px) !important; /* Account for header and sticky bar */
-  }
-}
-
 /* Smooth scroll offset for sticky header */
 html {
   scroll-behavior: smooth;
