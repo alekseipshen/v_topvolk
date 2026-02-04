@@ -172,24 +172,22 @@ export default function HomePage() {
             {seattleCounties.map((county) => (
               <div
                 key={county.slug}
-                className="bg-gray-50 p-8 rounded-lg border border-gray-200 hover:shadow-lg transition"
+                className="bg-gray-50 p-6 rounded-lg border border-gray-200"
               >
-                <h3 className="font-bold text-2xl text-gray-900 mb-4">{county.name}</h3>
-                <p className="text-gray-600 mb-4">{county.description}</p>
-                <div className="text-sm text-gray-500 mb-4">
-                  <strong>{county.totalCities} cities</strong> including:
-                </div>
+                <h3 className="font-bold text-2xl text-gray-900 mb-4 pb-3 border-b border-gray-300">
+                  {county.name}
+                  <span className="text-sm font-normal text-gray-500 ml-2">({county.totalCities} cities)</span>
+                </h3>
                 <div className="flex flex-wrap gap-2">
-                  {county.cities.slice(0, 8).map((city, index) => (
-                    <span key={index} className="text-xs bg-white px-2 py-1 rounded border border-gray-200">
+                  {county.cities.map((city, index) => (
+                    <Link
+                      key={index}
+                      href={`/cities/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="text-sm bg-white px-3 py-1.5 rounded border border-gray-300 hover:border-green-500 hover:bg-green-50 transition"
+                    >
                       {city}
-                    </span>
+                    </Link>
                   ))}
-                  {county.cities.length > 8 && (
-                    <span className="text-xs text-gray-500 px-2 py-1">
-                      +{county.cities.length - 8} more
-                    </span>
-                  )}
                 </div>
               </div>
             ))}
