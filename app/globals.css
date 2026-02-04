@@ -66,10 +66,10 @@ textarea::placeholder {
 /* Smooth scroll offset for sticky header */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px; /* Header height (~80-90px) + small buffer */
+  scroll-padding-top: 30px;
 }
 
 /* Apply scroll margin to all sections with IDs */
 section[id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 30px;
 }
