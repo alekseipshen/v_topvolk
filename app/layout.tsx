@@ -47,8 +47,8 @@ export default function RootLayout({
         `}
       </Script>
 
-      {/* Tawk.to Live Chat Widget */}
-      <Script id="tawk-to-chat" strategy="afterInteractive">
+      {/* Tawk.to Live Chat Widget - DISABLED */}
+      {/* <Script id="tawk-to-chat" strategy="afterInteractive">
         {`
           var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
           (function(){
@@ -92,7 +92,7 @@ export default function RootLayout({
             }
           });
         `}
-      </Script>
+      </Script> */}
       <body className={inter.className}>
         <noscript>
           <iframe
