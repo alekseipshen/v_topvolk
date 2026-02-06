@@ -29,7 +29,7 @@ export default function GoogleRating() {
           ))}
         </div>
         <div className="text-xs text-gray-600">
-          Based on {GOOGLE_REVIEW_COUNT}+ reviews
+          Based on {GOOGLE_REVIEW_COUNT} reviews
         </div>
       </div>
     </a>
