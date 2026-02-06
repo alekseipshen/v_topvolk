@@ -23,6 +23,7 @@ const works = [
 
 export default function WorksGallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [imageLoaded, setImageLoaded] = useState<boolean[]>(new Array(works.length).fill(false));
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -46,6 +47,14 @@ export default function WorksGallery() {
     }
   };
 
+  const handleImageLoad = (index: number) => {
+    setImageLoaded(prev => {
+      const newState = [...prev];
+      newState[index] = true;
+      return newState;
+    });
+  };
+
   // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -67,14 +76,25 @@ export default function WorksGallery() {
         {works.map((work, index) => (
           <div
             key={index}
-            className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group bg-gray-200"
+            className="relative overflow-hidden rounded-lg cursor-pointer group"
+            style={{ paddingBottom: '100%' }}
             onClick={() => openLightbox(index)}
           >
+            {!imageLoaded[index] && (
+              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold-500"></div>
+              </div>
+            )}
             <img
               src={work.image}
               alt={work.alt}
-              loading="lazy"
+              onLoad={() => handleImageLoad(index)}
+              onError={(e) => {
+                console.error(`Failed to load image: ${work.image}`);
+                e.currentTarget.src = '/placeholder.svg';
+              }}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              style={{ display: imageLoaded[index] ? 'block' : 'none' }}
             />
             {/* Hover Overlay with Zoom Icon */}
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-10">
@@ -87,7 +107,7 @@ export default function WorksGallery() {
       {/* Lightbox Modal */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black bg-opacity-95 flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-black bg-opacity-95 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
           {/* Close Button */}
@@ -125,19 +145,18 @@ export default function WorksGallery() {
 
           {/* Image */}
           <div
-            className="relative w-[90vw] h-[90vh] flex items-center justify-center"
+            className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={works[selectedImage].image}
               alt={works[selectedImage].alt}
-              className="max-w-full max-h-full object-contain"
-              style={{ width: 'auto', height: 'auto' }}
+              className="max-w-full max-h-[90vh] object-contain"
             />
           </div>
 
           {/* Image Counter */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-4 py-2 rounded">
             {selectedImage + 1} / {works.length}
           </div>
         </div>
