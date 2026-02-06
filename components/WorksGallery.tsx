@@ -4,21 +4,21 @@ import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 const works = [
-  { image: '/assets/works/_01.jpg', alt: 'Home Renovation Project 1' },
-  { image: '/assets/works/_02.jpg', alt: 'Home Renovation Project 2' },
-  { image: '/assets/works/_03.jpg', alt: 'Home Renovation Project 3' },
-  { image: '/assets/works/_04.jpg', alt: 'Home Renovation Project 4' },
-  { image: '/assets/works/_05.jpg', alt: 'Home Renovation Project 5' },
-  { image: '/assets/works/_06.jpg', alt: 'Home Renovation Project 6' },
-  { image: '/assets/works/_07.jpg', alt: 'Home Renovation Project 7' },
-  { image: '/assets/works/_08.jpg', alt: 'Home Renovation Project 8' },
-  { image: '/assets/works/_09.jpg', alt: 'Home Renovation Project 9' },
-  { image: '/assets/works/_10.jpg', alt: 'Home Renovation Project 10' },
-  { image: '/assets/works/_11.jpg', alt: 'Home Renovation Project 11' },
-  { image: '/assets/works/_12.jpg', alt: 'Home Renovation Project 12' },
-  { image: '/assets/works/_13.jpg', alt: 'Home Renovation Project 13' },
-  { image: '/assets/works/_14.jpg', alt: 'Home Renovation Project 14' },
-  { image: '/assets/works/_15.jpg', alt: 'Home Renovation Project 15' },
+  { image: '/assets/works/_01.jpg', thumb: '/assets/works/thumbs/_01.jpg', alt: 'Home Renovation Project 1' },
+  { image: '/assets/works/_02.jpg', thumb: '/assets/works/thumbs/_02.jpg', alt: 'Home Renovation Project 2' },
+  { image: '/assets/works/_03.jpg', thumb: '/assets/works/thumbs/_03.jpg', alt: 'Home Renovation Project 3' },
+  { image: '/assets/works/_04.jpg', thumb: '/assets/works/thumbs/_04.jpg', alt: 'Home Renovation Project 4' },
+  { image: '/assets/works/_05.jpg', thumb: '/assets/works/thumbs/_05.jpg', alt: 'Home Renovation Project 5' },
+  { image: '/assets/works/_06.jpg', thumb: '/assets/works/thumbs/_06.jpg', alt: 'Home Renovation Project 6' },
+  { image: '/assets/works/_07.jpg', thumb: '/assets/works/thumbs/_07.jpg', alt: 'Home Renovation Project 7' },
+  { image: '/assets/works/_08.jpg', thumb: '/assets/works/thumbs/_08.jpg', alt: 'Home Renovation Project 8' },
+  { image: '/assets/works/_09.jpg', thumb: '/assets/works/thumbs/_09.jpg', alt: 'Home Renovation Project 9' },
+  { image: '/assets/works/_10.jpg', thumb: '/assets/works/thumbs/_10.jpg', alt: 'Home Renovation Project 10' },
+  { image: '/assets/works/_11.jpg', thumb: '/assets/works/thumbs/_11.jpg', alt: 'Home Renovation Project 11' },
+  { image: '/assets/works/_12.jpg', thumb: '/assets/works/thumbs/_12.jpg', alt: 'Home Renovation Project 12' },
+  { image: '/assets/works/_13.jpg', thumb: '/assets/works/thumbs/_13.jpg', alt: 'Home Renovation Project 13' },
+  { image: '/assets/works/_14.jpg', thumb: '/assets/works/thumbs/_14.jpg', alt: 'Home Renovation Project 14' },
+  { image: '/assets/works/_15.jpg', thumb: '/assets/works/thumbs/_15.jpg', alt: 'Home Renovation Project 15' },
 ];
 
 export default function WorksGallery() {
@@ -86,11 +86,11 @@ export default function WorksGallery() {
               </div>
             )}
             <img
-              src={work.image}
+              src={work.thumb}
               alt={work.alt}
               onLoad={() => handleImageLoad(index)}
               onError={(e) => {
-                console.error(`Failed to load image: ${work.image}`);
+                console.error(`Failed to load thumbnail: ${work.thumb}`);
                 e.currentTarget.src = '/placeholder.svg';
               }}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
