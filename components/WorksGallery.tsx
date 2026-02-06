@@ -3,22 +3,33 @@
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
-const works = [
-  { image: '/assets/works/_01.jpg', thumb: '/assets/works/thumbs/_01.jpg', alt: 'Home Renovation Project 1' },
-  { image: '/assets/works/_02.jpg', thumb: '/assets/works/thumbs/_02.jpg', alt: 'Home Renovation Project 2' },
-  { image: '/assets/works/_03.jpg', thumb: '/assets/works/thumbs/_03.jpg', alt: 'Home Renovation Project 3' },
-  { image: '/assets/works/_04.jpg', thumb: '/assets/works/thumbs/_04.jpg', alt: 'Home Renovation Project 4' },
-  { image: '/assets/works/_05.jpg', thumb: '/assets/works/thumbs/_05.jpg', alt: 'Home Renovation Project 5' },
-  { image: '/assets/works/_06.jpg', thumb: '/assets/works/thumbs/_06.jpg', alt: 'Home Renovation Project 6' },
-  { image: '/assets/works/_07.jpg', thumb: '/assets/works/thumbs/_07.jpg', alt: 'Home Renovation Project 7' },
-  { image: '/assets/works/_08.jpg', thumb: '/assets/works/thumbs/_08.jpg', alt: 'Home Renovation Project 8' },
-  { image: '/assets/works/_09.jpg', thumb: '/assets/works/thumbs/_09.jpg', alt: 'Home Renovation Project 9' },
-  { image: '/assets/works/_10.jpg', thumb: '/assets/works/thumbs/_10.jpg', alt: 'Home Renovation Project 10' },
-  { image: '/assets/works/_11.jpg', thumb: '/assets/works/thumbs/_11.jpg', alt: 'Home Renovation Project 11' },
-  { image: '/assets/works/_12.jpg', thumb: '/assets/works/thumbs/_12.jpg', alt: 'Home Renovation Project 12' },
-  { image: '/assets/works/_13.jpg', thumb: '/assets/works/thumbs/_13.jpg', alt: 'Home Renovation Project 13' },
-  { image: '/assets/works/_14.jpg', thumb: '/assets/works/thumbs/_14.jpg', alt: 'Home Renovation Project 14' },
-  { image: '/assets/works/_15.jpg', thumb: '/assets/works/thumbs/_15.jpg', alt: 'Home Renovation Project 15' },
+// All 15 photos - available in lightbox
+const allWorks = [
+  { image: '/assets/works/_01.jpg', alt: 'Home Renovation Project 1' },
+  { image: '/assets/works/_02.jpg', alt: 'Home Renovation Project 2' },
+  { image: '/assets/works/_03.jpg', alt: 'Home Renovation Project 3' },
+  { image: '/assets/works/_04.jpg', alt: 'Home Renovation Project 4' },
+  { image: '/assets/works/_05.jpg', alt: 'Home Renovation Project 5' },
+  { image: '/assets/works/_06.jpg', alt: 'Home Renovation Project 6' },
+  { image: '/assets/works/_07.jpg', alt: 'Home Renovation Project 7' },
+  { image: '/assets/works/_08.jpg', alt: 'Home Renovation Project 8' },
+  { image: '/assets/works/_09.jpg', alt: 'Home Renovation Project 9' },
+  { image: '/assets/works/_10.jpg', alt: 'Home Renovation Project 10' },
+  { image: '/assets/works/_11.jpg', alt: 'Home Renovation Project 11' },
+  { image: '/assets/works/_12.jpg', alt: 'Home Renovation Project 12' },
+  { image: '/assets/works/_13.jpg', alt: 'Home Renovation Project 13' },
+  { image: '/assets/works/_14.jpg', alt: 'Home Renovation Project 14' },
+  { image: '/assets/works/_15.jpg', alt: 'Home Renovation Project 15' },
+];
+
+// First 6 photos with preview thumbnails - shown in gallery
+const previewWorks = [
+  { preview: '/assets/works/_01m.jpg', index: 0 },
+  { preview: '/assets/works/_02m.jpg', index: 1 },
+  { preview: '/assets/works/_03m.jpg', index: 2 },
+  { preview: '/assets/works/_04m.jpg', index: 3 },
+  { preview: '/assets/works/_05m.jpg', index: 4 },
+  { preview: '/assets/works/_06m.jpg', index: 5 },
 ];
 
 export default function WorksGallery() {
@@ -36,13 +47,13 @@ export default function WorksGallery() {
 
   const goToPrevious = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? works.length - 1 : selectedImage - 1);
+      setSelectedImage(selectedImage === 0 ? allWorks.length - 1 : selectedImage - 1);
     }
   };
 
   const goToNext = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === works.length - 1 ? 0 : selectedImage + 1);
+      setSelectedImage(selectedImage === allWorks.length - 1 ? 0 : selectedImage + 1);
     }
   };
 
@@ -62,18 +73,18 @@ export default function WorksGallery() {
 
   return (
     <>
-      {/* Gallery Grid */}
+      {/* Gallery Grid - Show only 6 preview images */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-        {works.map((work, index) => (
+        {previewWorks.map((work) => (
           <div
-            key={index}
+            key={work.index}
             className="relative overflow-hidden rounded-lg cursor-pointer group bg-gray-200"
-            onClick={() => openLightbox(index)}
+            onClick={() => openLightbox(work.index)}
           >
             <div className="w-full aspect-square overflow-hidden">
               <img
-                src={work.thumb}
-                alt={work.alt}
+                src={work.preview}
+                alt={allWorks[work.index].alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>
@@ -130,15 +141,15 @@ export default function WorksGallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={works[selectedImage].image}
-              alt={works[selectedImage].alt}
+              src={allWorks[selectedImage].image}
+              alt={allWorks[selectedImage].alt}
               className="max-w-full max-h-[90vh] object-contain"
             />
           </div>
 
           {/* Image Counter */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-4 py-2 rounded">
-            {selectedImage + 1} / {works.length}
+            {selectedImage + 1} / {allWorks.length}
           </div>
         </div>
       )}
