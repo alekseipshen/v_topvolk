@@ -206,7 +206,8 @@ export default function HomePage() {
             </p>
             <Link
               href={`tel:${require('@/lib/utils').PHONE_NUMBER}`}
-              className="inline-block bg-gold-500 hover:bg-gold-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+              className="inline-block px-8 py-3 rounded-lg font-semibold transition shadow-md hover:shadow-lg"
+              style={{ backgroundColor: '#F4B942', color: '#ffffff' }}
             >
               Call for a Free Estimate
             </Link>
