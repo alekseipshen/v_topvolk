@@ -17,6 +17,8 @@ const works = [
   { image: '/assets/works/_11.JPG', alt: 'Home Renovation Project 11' },
   { image: '/assets/works/_12.JPG', alt: 'Home Renovation Project 12' },
   { image: '/assets/works/_13.JPG', alt: 'Home Renovation Project 13' },
+  { image: '/assets/works/_14.jpg', alt: 'Home Renovation Project 14' },
+  { image: '/assets/works/_15.JPG', alt: 'Home Renovation Project 15' },
 ];
 
 export default function WorksGallery() {
