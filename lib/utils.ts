@@ -22,7 +22,7 @@ export const BUSINESS_EMAIL = 'info@topvolk.org';
 export const BUSINESS_NAME = 'TopVolk Construction LLC';
 export const BUSINESS_ADDRESS = '';
 export const GOOGLE_RATING = 4.9;
-export const GOOGLE_REVIEW_COUNT = '50+';
+export const GOOGLE_REVIEW_COUNT = '30+';
 export const GOOGLE_BUSINESS_PROFILE_URL = 'https://share.google/GCqeuaL4bJXcZpNR5';
 
 // Professional icons (Lucide React style)
