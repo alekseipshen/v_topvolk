@@ -30,8 +30,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-10 h-10 text-gold-500" />
+                <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center">
+                  <CheckCircle className="w-10 h-10 text-gold-600" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">100+ Projects Since 2017</h3>
@@ -41,8 +41,8 @@ export default function HomePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-10 h-10 text-gold-500" />
+                <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center">
+                  <Clock className="w-10 h-10 text-gold-600" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quick Response Time</h3>
@@ -52,8 +52,8 @@ export default function HomePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Users className="w-10 h-10 text-gold-500" />
+                <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center">
+                  <Users className="w-10 h-10 text-gold-600" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Direct Communication</h3>
@@ -63,8 +63,8 @@ export default function HomePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Wrench className="w-10 h-10 text-gold-500" />
+                <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center">
+                  <Wrench className="w-10 h-10 text-gold-600" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Transparent Pricing</h3>
