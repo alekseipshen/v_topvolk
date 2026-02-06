@@ -154,7 +154,7 @@ export default function HomePage() {
           <div className="text-center mt-8">
             <Link
               href="/services"
-              className="inline-block bg-gold-500 hover:bg-gold-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-md hover:shadow-lg"
+              className="inline-block bg-gold-500 hover:bg-gold-600 text-white px-8 py-3 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
             >
               View All Services
             </Link>
