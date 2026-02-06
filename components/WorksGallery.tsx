@@ -23,7 +23,6 @@ const works = [
 
 export default function WorksGallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [imageLoaded, setImageLoaded] = useState<boolean[]>(new Array(works.length).fill(false));
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -47,14 +46,6 @@ export default function WorksGallery() {
     }
   };
 
-  const handleImageLoad = (index: number) => {
-    setImageLoaded(prev => {
-      const newState = [...prev];
-      newState[index] = true;
-      return newState;
-    });
-  };
-
   // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -76,28 +67,18 @@ export default function WorksGallery() {
         {works.map((work, index) => (
           <div
             key={index}
-            className="relative overflow-hidden rounded-lg cursor-pointer group"
+            className="relative bg-gray-200 overflow-hidden rounded-lg cursor-pointer group"
             style={{ paddingBottom: '100%' }}
             onClick={() => openLightbox(index)}
           >
-            {!imageLoaded[index] && (
-              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold-500"></div>
-              </div>
-            )}
             <img
               src={work.thumb}
               alt={work.alt}
-              onLoad={() => handleImageLoad(index)}
-              onError={(e) => {
-                console.error(`Failed to load thumbnail: ${work.thumb}`);
-                e.currentTarget.src = '/placeholder.svg';
-              }}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              style={{ display: imageLoaded[index] ? 'block' : 'none' }}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 z-0"
             />
             {/* Hover Overlay with Zoom Icon */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-10">
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-20 pointer-events-none">
               <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
