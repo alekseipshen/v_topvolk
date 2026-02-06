@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 const works = [
@@ -46,21 +47,19 @@ export default function WorksGallery() {
     }
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (selectedImage === null) return;
-    
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') goToPrevious();
-    if (e.key === 'ArrowRight') goToNext();
-  };
-
   // Add keyboard navigation
-  useState(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('keydown', handleKeyDown as any);
-      return () => window.removeEventListener('keydown', handleKeyDown as any);
-    }
-  });
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImage === null) return;
+      
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') goToPrevious();
+      if (e.key === 'ArrowRight') goToNext();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
 
   return (
     <>
@@ -69,16 +68,18 @@ export default function WorksGallery() {
         {works.map((work, index) => (
           <div
             key={index}
-            className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group"
+            className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group bg-gray-200"
             onClick={() => openLightbox(index)}
           >
-            <img
+            <Image
               src={work.image}
               alt={work.alt}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              fill
+              sizes="(max-width: 768px) 50vw, 33vw"
+              className="object-cover transition-transform duration-300 group-hover:scale-110"
             />
             {/* Hover Overlay with Zoom Icon */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-10">
               <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
@@ -126,13 +127,14 @@ export default function WorksGallery() {
 
           {/* Image */}
           <div
-            className="max-w-7xl max-h-[90vh] p-4"
+            className="relative w-[90vw] h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={works[selectedImage].image}
               alt={works[selectedImage].alt}
               className="max-w-full max-h-full object-contain"
+              style={{ width: 'auto', height: 'auto' }}
             />
           </div>
 
