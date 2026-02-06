@@ -1,15 +1,11 @@
-'use client';
-
-import { useState } from 'react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
-import { services } from '@/lib/data/services';
+import { featuredServices } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {
-  const [showAllServices, setShowAllServices] = useState(false);
   return (
     <>
       {/* Hero Section */}
@@ -126,7 +122,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.slice(0, showAllServices ? services.length : 6).map((service) => (
+            {featuredServices.map((service) => (
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
@@ -155,16 +151,14 @@ export default function HomePage() {
             ))}
           </div>
 
-          {services.length > 6 && (
-            <div className="text-center mt-8">
-              <button
-                onClick={() => setShowAllServices(!showAllServices)}
-                className="bg-gold-500 hover:bg-gold-700 text-white px-8 py-3 rounded-lg font-semibold transition"
-              >
-                {showAllServices ? 'Show Less' : 'Show More Services'}
-              </button>
-            </div>
-          )}
+          <div className="text-center mt-8">
+            <Link
+              href="/services"
+              className="inline-block bg-gold-500 hover:bg-gold-600 text-white px-8 py-3 rounded-lg font-semibold transition shadow-md hover:shadow-lg"
+            >
+              View All Services
+            </Link>
+          </div>
         </div>
       </section>
 
