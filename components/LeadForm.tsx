@@ -307,7 +307,7 @@ export default function LeadForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gold-500 text-white py-4 rounded-lg hover:bg-gold-700 transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full  " style={{ backgroundColor: "#F4B942", color: "#ffffff" }}
             >
               {isSubmitting ? 'Submitting...' : 'Request Service Call'}
             </button>

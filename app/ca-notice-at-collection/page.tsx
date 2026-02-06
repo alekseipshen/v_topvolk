@@ -214,7 +214,7 @@ export default function CANoticeAtCollectionPage() {
             </Link>
             <Link 
               href="/" 
-              className="inline-block px-6 py-3 bg-gold-500 text-white rounded-lg hover:bg-gold-700 transition font-semibold"
+              className="inline-block px-6 py-3  " style={{ backgroundColor: "#F4B942", color: "#ffffff" }}
             >
               Back to Home
             </Link>
