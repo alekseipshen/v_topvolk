@@ -156,8 +156,6 @@ export default function HomePage() {
               href="/services"
               className="inline-block px-8 py-3 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
               style={{ backgroundColor: '#F4B942', color: '#ffffff' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#ca8a04'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F4B942'}
             >
               View All Services
             </Link>
