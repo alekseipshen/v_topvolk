@@ -79,8 +79,11 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-10 h-10 text-gold-500" />
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
+                >
+                  <CheckCircle className="w-10 h-10" style={{ color: '#F4B942' }} />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Licensed & Insured</h3>
@@ -90,8 +93,11 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-10 h-10 text-gold-500" />
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
+                >
+                  <Clock className="w-10 h-10" style={{ color: '#F4B942' }} />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quick Response</h3>
@@ -101,8 +107,11 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Users className="w-10 h-10 text-gold-500" />
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
+                >
+                  <Users className="w-10 h-10" style={{ color: '#F4B942' }} />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Direct Communication</h3>
@@ -112,8 +121,11 @@ export default async function ServicePage({ params }: PageProps) {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Wrench className="w-10 h-10 text-gold-500" />
+                <div 
+                  className="w-16 h-16 rounded-full flex items-center justify-center"
+                  style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
+                >
+                  <Wrench className="w-10 h-10" style={{ color: '#F4B942' }} />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
