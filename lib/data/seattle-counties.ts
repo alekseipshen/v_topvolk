@@ -96,12 +96,20 @@ export const seattleCounties: County[] = [
 ];
 
 // Helper function to get all unique cities
-export function getAllCities(): string[] {
+export interface City {
+  name: string;
+  slug: string;
+}
+
+export function getAllCities(): City[] {
   const allCities = new Set<string>();
   seattleCounties.forEach(county => {
     county.cities.forEach(city => allCities.add(city));
   });
-  return Array.from(allCities).sort();
+  return Array.from(allCities).sort().map(city => ({
+    name: city,
+    slug: city.toLowerCase().replace(/\s+/g, '-')
+  }));
 }
 
 // Helper function to get counties for a specific city

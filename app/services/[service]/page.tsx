@@ -93,15 +93,18 @@ export default async function ServicePage({ params }: PageProps) {
                   </span>
                 </h3>
                 <div className="grid grid-cols-2 gap-2">
-                  {county.cities.map((city, idx) => (
-                    <Link
-                      key={idx}
-                      href={`/services/${service.slug}/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-gray-700 hover:text-gold-500 transition py-1 text-sm"
-                    >
-                      {city}
-                    </Link>
-                  ))}
+                  {county.cities.map((cityName, idx) => {
+                    const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
+                    return (
+                      <Link
+                        key={idx}
+                        href={`/services/${service.slug}/${citySlug}`}
+                        className="text-gray-700 hover:text-gold-500 transition py-1 text-sm"
+                      >
+                        {cityName}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             ))}
