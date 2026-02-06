@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
+import WorksGallery from '@/components/WorksGallery';
 import { featuredServices } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
@@ -223,38 +224,11 @@ export default function HomePage() {
               Our Recent Home Renovation Works
             </h2>
             <p className="text-xl text-gray-600">
-              Take a look at some of our completed projects in the Seattle area
+              Click any photo to view full size
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Project placeholders - will be replaced with real images */}
-            {[
-              { title: 'Modern Kitchen Remodel', location: 'Seattle, WA', description: 'Complete kitchen transformation with custom cabinets and quartz countertops' },
-              { title: 'Luxury Bathroom Renovation', location: 'Bellevue, WA', description: 'Spa-like bathroom with heated floors and walk-in shower' },
-              { title: 'Custom Deck Installation', location: 'Redmond, WA', description: 'Multi-level composite deck with built-in seating' },
-              { title: 'Basement Finishing', location: 'Kirkland, WA', description: 'Transformed unfinished basement into family entertainment space' },
-              { title: 'Master Suite Addition', location: 'Tacoma, WA', description: 'Added master bedroom with ensuite bathroom and walk-in closet' },
-              { title: 'Whole House Remodel', location: 'Renton, WA', description: 'Complete home renovation including kitchen, bathrooms, and flooring' }
-            ].map((project, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                <div className="w-full h-64 bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">Project Photo Coming Soon</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-sm text-gold-500 font-semibold mb-2">{project.location}</p>
-                  <p className="text-gray-600">{project.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 text-lg">
-              Want to see your project featured here? Contact us for a free consultation!
-            </p>
-          </div>
+          <WorksGallery />
         </div>
       </section>
 
