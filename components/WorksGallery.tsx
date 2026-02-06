@@ -67,18 +67,18 @@ export default function WorksGallery() {
         {works.map((work, index) => (
           <div
             key={index}
-            className="relative bg-gray-200 overflow-hidden rounded-lg cursor-pointer group"
-            style={{ paddingBottom: '100%' }}
+            className="relative overflow-hidden rounded-lg cursor-pointer group bg-gray-200"
             onClick={() => openLightbox(index)}
           >
-            <img
-              src={work.thumb}
-              alt={work.alt}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 z-0"
-            />
+            <div className="w-full aspect-square overflow-hidden">
+              <img
+                src={work.thumb}
+                alt={work.alt}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
             {/* Hover Overlay with Zoom Icon */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-20 pointer-events-none">
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
               <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
