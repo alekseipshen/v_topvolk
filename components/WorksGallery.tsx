@@ -74,23 +74,23 @@ export default function WorksGallery() {
   return (
     <>
       {/* Gallery Grid - Show only 6 preview images */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {previewWorks.map((work) => (
           <div
             key={work.index}
-            className="relative overflow-hidden rounded-lg cursor-pointer group bg-gray-200"
+            className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group"
             onClick={() => openLightbox(work.index)}
           >
-            <div className="w-full aspect-square overflow-hidden">
+            <div className="relative w-full h-64 overflow-hidden">
               <img
                 src={work.preview}
                 alt={allWorks[work.index].alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
-            </div>
-            {/* Hover Overlay with Zoom Icon */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-              <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Hover Overlay with Zoom Icon */}
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
             </div>
           </div>
         ))}
