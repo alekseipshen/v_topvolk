@@ -4,12 +4,19 @@ import { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 const works = [
-  { image: '/assets/works/01.jpg', alt: 'Deck Installation Project' },
-  { image: '/assets/works/02.jpg', alt: 'Painting Project' },
-  { image: '/assets/works/03.jpg', alt: 'Bathroom Remodel Project' },
-  { image: '/assets/works/04.jpg', alt: 'Flooring Installation Project' },
-  { image: '/assets/works/05.jpg', alt: 'Kitchen Remodel Project' },
-  { image: '/assets/works/06.jpg', alt: 'House Remodel Project' },
+  { image: '/assets/works/_01.jpg', alt: 'Home Renovation Project 1' },
+  { image: '/assets/works/_02.jpg', alt: 'Home Renovation Project 2' },
+  { image: '/assets/works/_03.jpg', alt: 'Home Renovation Project 3' },
+  { image: '/assets/works/_04.JPG', alt: 'Home Renovation Project 4' },
+  { image: '/assets/works/_05.JPG', alt: 'Home Renovation Project 5' },
+  { image: '/assets/works/_06.jpg', alt: 'Home Renovation Project 6' },
+  { image: '/assets/works/_07.jpg', alt: 'Home Renovation Project 7' },
+  { image: '/assets/works/_08.jpg', alt: 'Home Renovation Project 8' },
+  { image: '/assets/works/_09.jpg', alt: 'Home Renovation Project 9' },
+  { image: '/assets/works/_10.jpg', alt: 'Home Renovation Project 10' },
+  { image: '/assets/works/_11.JPG', alt: 'Home Renovation Project 11' },
+  { image: '/assets/works/_12.JPG', alt: 'Home Renovation Project 12' },
+  { image: '/assets/works/_13.JPG', alt: 'Home Renovation Project 13' },
 ];
 
 export default function WorksGallery() {
