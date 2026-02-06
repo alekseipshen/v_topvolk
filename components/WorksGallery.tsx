@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 const works = [
@@ -71,12 +70,11 @@ export default function WorksGallery() {
             className="relative aspect-square overflow-hidden rounded-lg cursor-pointer group bg-gray-200"
             onClick={() => openLightbox(index)}
           >
-            <Image
+            <img
               src={work.image}
               alt={work.alt}
-              fill
-              sizes="(max-width: 768px) 50vw, 33vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-110"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
             {/* Hover Overlay with Zoom Icon */}
             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center z-10">
