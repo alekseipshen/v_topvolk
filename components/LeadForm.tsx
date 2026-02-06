@@ -307,14 +307,14 @@ export default function LeadForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-green-600 text-white py-4 rounded-lg hover:bg-green-700 transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gold-500 text-white py-4 rounded-lg hover:bg-gold-700 transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Submitting...' : 'Request Service Call'}
             </button>
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
-              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+              <div className="bg-green-100 border border-green-400 text-gold-700 px-4 py-3 rounded">
                 Thank you! We'll contact you shortly.
               </div>
             )}

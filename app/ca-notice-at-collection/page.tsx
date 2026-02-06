@@ -26,7 +26,7 @@ export default function CANoticeAtCollectionPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Notice for Washington Residents</h2>
               <p>
                 This Washington Notice at Collection applies to Washington residents and supplements 
-                our <Link href="/privacy-policy" className="text-green-600 hover:underline">Privacy Policy</Link>. 
+                our <Link href="/privacy-policy" className="text-gold-500 hover:underline">Privacy Policy</Link>. 
                 It describes how {BUSINESS_NAME}, operated by TopVolk Construction LLC, collects, uses, and 
                 discloses personal information as required by the Washington Consumer Privacy Act (CCPA).
               </p>
@@ -39,7 +39,7 @@ export default function CANoticeAtCollectionPage() {
               </p>
               
               <div className="space-y-4 mt-4">
-                <div className="border-l-4 border-green-600 pl-4">
+                <div className="border-l-4 border-gold-500 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">A. Identifiers</h3>
                   <p className="text-sm">
                     Real name, alias, postal address, unique personal identifier, online identifier, 
@@ -50,7 +50,7 @@ export default function CANoticeAtCollectionPage() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-green-600 pl-4">
+                <div className="border-l-4 border-gold-500 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">B. Customer Records Information</h3>
                   <p className="text-sm">
                     Personal information categories listed in Washington Customer Records statute 
@@ -62,7 +62,7 @@ export default function CANoticeAtCollectionPage() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-green-600 pl-4">
+                <div className="border-l-4 border-gold-500 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">C. Commercial Information</h3>
                   <p className="text-sm">
                     Records of services purchased or considered, purchasing or consuming histories or tendencies.
@@ -72,7 +72,7 @@ export default function CANoticeAtCollectionPage() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-green-600 pl-4">
+                <div className="border-l-4 border-gold-500 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">D. Internet or Network Activity</h3>
                   <p className="text-sm">
                     Browsing history, search history, information on interaction with website or advertisement.
@@ -82,7 +82,7 @@ export default function CANoticeAtCollectionPage() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-green-600 pl-4">
+                <div className="border-l-4 border-gold-500 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">E. Geolocation Data</h3>
                   <p className="text-sm">
                     Physical location or movements.
@@ -92,7 +92,7 @@ export default function CANoticeAtCollectionPage() {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-green-600 pl-4">
+                <div className="border-l-4 border-gold-500 pl-4">
                   <h3 className="text-lg font-semibold text-gray-900">F. Inferences</h3>
                   <p className="text-sm">
                     Profile reflecting preferences, characteristics, behavior, or attitudes.
@@ -158,10 +158,10 @@ export default function CANoticeAtCollectionPage() {
                 To exercise your Washington privacy rights, please contact us:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a></li>
+                <li>Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-gold-500 hover:underline">{PHONE_DISPLAY}</a></li>
                 <li>
                   Submit a request via our{' '}
-                  <Link href="/do-not-sell" className="text-green-600 hover:underline">
+                  <Link href="/do-not-sell" className="text-gold-500 hover:underline">
                     Do Not Sell My Personal Information
                   </Link>
                   {' '}page
@@ -199,8 +199,8 @@ export default function CANoticeAtCollectionPage() {
                 <strong>{BUSINESS_NAME}</strong><br />
                 TopVolk Construction LLC<br />
                 Washington<br />
-                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
-                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
+                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-gold-500 hover:underline">{PHONE_DISPLAY}</a><br />
+                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-gold-500 hover:underline">{BUSINESS_EMAIL}</a>
               </p>
             </section>
           </div>
@@ -214,7 +214,7 @@ export default function CANoticeAtCollectionPage() {
             </Link>
             <Link 
               href="/" 
-              className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
+              className="inline-block px-6 py-3 bg-gold-500 text-white rounded-lg hover:bg-gold-700 transition font-semibold"
             >
               Back to Home
             </Link>

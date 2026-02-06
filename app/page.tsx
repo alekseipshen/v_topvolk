@@ -31,7 +31,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-10 h-10 text-green-600" />
+                  <CheckCircle className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">100+ Projects Since 2017</h3>
@@ -42,7 +42,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-10 h-10 text-green-600" />
+                  <Clock className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quick Response Time</h3>
@@ -53,7 +53,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Users className="w-10 h-10 text-green-600" />
+                  <Users className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Direct Communication</h3>
@@ -64,7 +64,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Wrench className="w-10 h-10 text-green-600" />
+                  <Wrench className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Transparent Pricing</h3>
@@ -135,7 +135,7 @@ export default function HomePage() {
                     {service.title}
                   </h3>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <span className="text-green-600 font-semibold hover:underline">
+                  <span className="text-gold-500 font-semibold hover:underline">
                     Learn more →
                   </span>
                 </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
             <div className="text-center mt-8">
               <button
                 onClick={() => setShowAllServices(!showAllServices)}
-                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+                className="bg-gold-500 hover:bg-gold-700 text-white px-8 py-3 rounded-lg font-semibold transition"
               >
                 {showAllServices ? 'Show Less' : 'Show More Services'}
               </button>
@@ -183,7 +183,7 @@ export default function HomePage() {
                     <Link
                       key={index}
                       href={`/cities/${city.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="text-sm bg-white px-3 py-1.5 rounded border border-gray-300 hover:border-green-500 hover:bg-green-50 transition"
+                      className="text-sm bg-white px-3 py-1.5 rounded border border-gray-300 hover:border-gold-500 hover:bg-gold-50 transition"
                     >
                       {city}
                     </Link>
@@ -199,7 +199,7 @@ export default function HomePage() {
             </p>
             <Link
               href={`tel:${require('@/lib/utils').PHONE_NUMBER}`}
-              className="inline-block bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition"
+              className="inline-block bg-gold-500 hover:bg-gold-700 text-white px-8 py-3 rounded-lg font-semibold transition"
             >
               Call for a Free Estimate
             </Link>
@@ -235,7 +235,7 @@ export default function HomePage() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-sm text-green-600 font-semibold mb-2">{project.location}</p>
+                  <p className="text-sm text-gold-500 font-semibold mb-2">{project.location}</p>
                   <p className="text-gray-600">{project.description}</p>
                 </div>
               </div>

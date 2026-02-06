@@ -135,8 +135,8 @@ export default function TermsOfUsePage() {
                 <strong>{BUSINESS_NAME}</strong><br />
                 TopVolk Construction LLC<br />
                 Washington<br />
-                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
-                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
+                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-gold-500 hover:underline">{PHONE_DISPLAY}</a><br />
+                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-gold-500 hover:underline">{BUSINESS_EMAIL}</a>
               </p>
             </section>
           </div>
@@ -144,7 +144,7 @@ export default function TermsOfUsePage() {
           <div className="mt-12 pt-8 border-t border-gray-200 text-center">
             <Link 
               href="/" 
-              className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
+              className="inline-block px-6 py-3 bg-gold-500 text-white rounded-lg hover:bg-gold-700 transition font-semibold"
             >
               Back to Home
             </Link>

@@ -48,7 +48,7 @@ export default function StickyMobileBar() {
               href={`tel:${PHONE_NUMBER}`}
               onClick={handlePhoneClick}
               className="flex-1 text-white py-4 text-center font-semibold text-base transition flex items-center justify-center gap-2"
-              style={{ backgroundColor: '#33ac38' }}
+              style={{ backgroundColor: '#F4B942' }}
             >
               <Phone size={20} />
               {PHONE_DISPLAY}

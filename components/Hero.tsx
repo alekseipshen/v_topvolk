@@ -86,19 +86,19 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
               <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-x-8 md:gap-y-3 mb-4 md:mb-0 order-1 md:order-2 md:mt-8">
                 {/* Mobile: с фоном, Desktop: без фона, горизонтально */}
                 <div className="bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-2 md:p-0 rounded md:rounded-none shadow-md md:shadow-none text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
-                  <Zap className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-green-600" />
+                  <Zap className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-gold-500" />
                   <div className="font-semibold text-xs md:text-base text-gray-900">Same-Day Response</div>
                 </div>
                 <div className="bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-2 md:p-0 rounded md:rounded-none shadow-md md:shadow-none text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
-                  <Award className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-green-600" />
+                  <Award className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-gold-500" />
                   <div className="font-semibold text-xs md:text-base text-gray-900">Since 2017 • 100+ Projects</div>
                 </div>
                 <div className="bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-2 md:p-0 rounded md:rounded-none shadow-md md:shadow-none text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
-                  <Shield className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-green-600" />
+                  <Shield className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-gold-500" />
                   <div className="font-semibold text-xs md:text-base text-gray-900">Fully Insured</div>
                 </div>
                 <div className="bg-white/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-2 md:p-0 rounded md:rounded-none shadow-md md:shadow-none text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
-                  <DollarSign className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-green-600" />
+                  <DollarSign className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-gold-500" />
                   <div className="font-semibold text-xs md:text-base text-gray-900">Upfront Pricing</div>
                 </div>
               </div>

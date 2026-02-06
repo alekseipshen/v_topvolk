@@ -28,7 +28,7 @@ export default async function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-16">
+      <section className="bg-gradient-to-br from-gold-500 to-gold-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
@@ -39,7 +39,7 @@ export default async function BlogPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Appliance Repair Tips & Blog
             </h1>
-            <p className="text-xl md:text-2xl text-green-100">
+            <p className="text-xl md:text-2xl text-gold-100">
               Expert advice, maintenance tips, and industry insights from our professional technicians
             </p>
           </div>
@@ -85,7 +85,7 @@ export default async function BlogPage() {
                       </div>
                     )}
                     <div className="p-6 flex-1 flex flex-col">
-                      <h2 className="text-xl font-bold text-gray-900 mb-3 hover:text-green-600 transition">
+                      <h2 className="text-xl font-bold text-gray-900 mb-3 hover:text-gold-500 transition">
                         {articleTitle}
                       </h2>
                       {description && (

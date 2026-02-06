@@ -38,19 +38,19 @@ export default function Header() {
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-6">
-        <Link href="/" className="text-gray-100 hover:text-green-400 transition font-medium">
+        <Link href="/" className="text-gray-100 hover:text-gold-400 transition font-medium">
           Home
         </Link>
-        <Link href="/#our-services" className="text-gray-100 hover:text-green-400 transition font-medium">
+        <Link href="/#our-services" className="text-gray-100 hover:text-gold-400 transition font-medium">
           Services
         </Link>
-            <Link href="/#service-areas" className="text-gray-100 hover:text-green-400 transition font-medium">
+            <Link href="/#service-areas" className="text-gray-100 hover:text-gold-400 transition font-medium">
               Areas
             </Link>
-            <Link href="/#works" className="text-gray-100 hover:text-green-400 transition font-medium">
+            <Link href="/#works" className="text-gray-100 hover:text-gold-400 transition font-medium">
               Works
             </Link>
-            <Link href="/#reviews" className="text-gray-100 hover:text-green-400 transition font-medium">
+            <Link href="/#reviews" className="text-gray-100 hover:text-gold-400 transition font-medium">
               Reviews
             </Link>
             <button
@@ -82,9 +82,9 @@ export default function Header() {
                }
             }}
             className="flex items-center gap-2 text-white px-6 py-2 rounded-lg transition font-semibold"
-            style={{ backgroundColor: '#33ac38' }}
+            style={{ backgroundColor: '#F4B942' }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#2d9530'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#33ac38'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F4B942'}
           >
             <Phone size={18} />
             {PHONE_DISPLAY}
@@ -107,35 +107,35 @@ export default function Header() {
             <div className="flex flex-col space-y-3">
               <Link
                 href="/"
-                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/#our-services"
-                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/#service-areas"
-                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Areas
               </Link>
               <Link
                 href="/#works"
-                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Works
               </Link>
               <Link
                 href="/#reviews"
-                className="text-gray-100 hover:text-green-400 transition py-2 font-medium"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Reviews
@@ -151,7 +151,7 @@ export default function Header() {
                 }
               }}
               className="flex items-center gap-2 text-white px-6 py-3 rounded-lg transition font-semibold justify-center"
-              style={{ backgroundColor: '#33ac38' }}
+              style={{ backgroundColor: '#F4B942' }}
             >
               <Phone size={18} />
               {PHONE_DISPLAY}

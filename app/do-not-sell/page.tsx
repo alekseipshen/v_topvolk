@@ -32,7 +32,7 @@ export default function DoNotSellPage() {
 
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Our Data Practices</h2>
-              <div className="bg-green-50 border-l-4 border-green-600 p-6 my-6">
+              <div className="bg-green-50 border-l-4 border-gold-500 p-6 my-6">
                 <p className="text-lg font-semibold text-green-900 mb-2">
                   ✓ We Do NOT Sell Your Personal Information
                 </p>
@@ -106,7 +106,7 @@ export default function DoNotSellPage() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>
                   <strong>Call Us:</strong>{' '}
-                  <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline font-semibold">
+                  <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-gold-500 hover:underline font-semibold">
                     {PHONE_DISPLAY}
                   </a>
                 </li>
@@ -143,13 +143,13 @@ export default function DoNotSellPage() {
               <ul className="list-none space-y-2 mt-4">
                 <li>
                   →{' '}
-                  <Link href="/privacy-policy" className="text-green-600 hover:underline font-semibold">
+                  <Link href="/privacy-policy" className="text-gold-500 hover:underline font-semibold">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
                   →{' '}
-                  <Link href="/ca-notice-at-collection" className="text-green-600 hover:underline font-semibold">
+                  <Link href="/ca-notice-at-collection" className="text-gold-500 hover:underline font-semibold">
                     Washington Notice at Collection
                   </Link>
                 </li>
@@ -174,8 +174,8 @@ export default function DoNotSellPage() {
                 <strong>{BUSINESS_NAME}</strong><br />
                 TopVolk Construction LLC<br />
                 Washington<br />
-                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
-                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
+                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-gold-500 hover:underline">{PHONE_DISPLAY}</a><br />
+                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-gold-500 hover:underline">{BUSINESS_EMAIL}</a>
               </p>
             </section>
           </div>
@@ -189,7 +189,7 @@ export default function DoNotSellPage() {
             </Link>
             <Link 
               href="/" 
-              className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
+              className="inline-block px-6 py-3 bg-gold-500 text-white rounded-lg hover:bg-gold-700 transition font-semibold"
             >
               Back to Home
             </Link>

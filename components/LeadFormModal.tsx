@@ -212,7 +212,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                         ? 'text-white'
                         : 'bg-gray-200 text-gray-500'
                     }`}
-                    style={step === currentStep ? { backgroundColor: '#33ac38' } : step < currentStep ? { backgroundColor: '#334e64' } : {}}
+                    style={step === currentStep ? { backgroundColor: '#F4B942' } : step < currentStep ? { backgroundColor: '#334e64' } : {}}
                   >
                     {step}
                   </div>
@@ -260,7 +260,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 type="button"
                 onClick={nextStep}
                 className="w-full text-white py-4 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: '#33ac38' }}
+                style={{ backgroundColor: '#F4B942' }}
               >
                 Next
               </button>
@@ -437,7 +437,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 type="button"
                 onClick={nextStep}
                 className="w-full text-white py-2.5 rounded-lg transition font-semibold text-sm shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: '#33ac38' }}
+                style={{ backgroundColor: '#F4B942' }}
               >
                 Next
               </button>
@@ -498,7 +498,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                       key={slot.value}
                       className={`relative flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${
                         watchedData.timeSlot === slot.value
-                          ? 'border-green-600 bg-green-50'
+                          ? 'border-gold-500 bg-gold-50'
                           : 'border-gray-300 hover:border-green-400'
                       }`}
                     >
@@ -525,7 +525,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full text-white py-4 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{ backgroundColor: '#33ac38' }}
+                style={{ backgroundColor: '#F4B942' }}
               >
                 {isSubmitting ? 'Submitting...' : 'Book my appointment'}
               </button>
@@ -537,7 +537,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
             <div className="space-y-6 text-center py-8">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                 <svg
-                  className="w-8 h-8 text-green-600"
+                  className="w-8 h-8 text-gold-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

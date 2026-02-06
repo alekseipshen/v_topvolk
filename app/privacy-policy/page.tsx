@@ -128,11 +128,11 @@ export default function PrivacyPolicyPage() {
               <p>
                 If you are a Washington resident, you have additional rights under the Washington 
                 Consumer Privacy Act (CCPA). Please see our{' '}
-                <Link href="/ca-notice-at-collection" className="text-green-600 hover:underline">
+                <Link href="/ca-notice-at-collection" className="text-gold-500 hover:underline">
                   Washington Notice at Collection
                 </Link>
                 {' '}and{' '}
-                <Link href="/do-not-sell" className="text-green-600 hover:underline">
+                <Link href="/do-not-sell" className="text-gold-500 hover:underline">
                   Do Not Sell My Personal Information
                 </Link>
                 {' '}pages for more information.
@@ -174,8 +174,8 @@ export default function PrivacyPolicyPage() {
                 <strong>{BUSINESS_NAME}</strong><br />
                 TopVolk Construction LLC<br />
                 Washington<br />
-                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-green-600 hover:underline">{PHONE_DISPLAY}</a><br />
-                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-green-600 hover:underline">{BUSINESS_EMAIL}</a>
+                Phone: <a href={`tel:${PHONE_DISPLAY.replace(/\D/g, '')}`} className="text-gold-500 hover:underline">{PHONE_DISPLAY}</a><br />
+                Email: <a href={`mailto:${BUSINESS_EMAIL}`} className="text-gold-500 hover:underline">{BUSINESS_EMAIL}</a>
               </p>
             </section>
           </div>
@@ -183,7 +183,7 @@ export default function PrivacyPolicyPage() {
           <div className="mt-12 pt-8 border-t border-gray-200 text-center">
             <Link 
               href="/" 
-              className="inline-block px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-semibold"
+              className="inline-block px-6 py-3 bg-gold-500 text-white rounded-lg hover:bg-gold-700 transition font-semibold"
             >
               Back to Home
             </Link>

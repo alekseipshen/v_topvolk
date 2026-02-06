@@ -46,12 +46,12 @@ export default function BrandsSection() {
                   </div>
                 ) : (
                   <div className="h-24 w-full flex items-center justify-center">
-                    <span className="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                    <span className="text-xl font-bold text-gray-900 group-hover:text-gold-500 transition-colors">
                       {brand.name}
                     </span>
                   </div>
                 )}
-                <span className="text-sm font-medium text-green-600 group-hover:underline">
+                <span className="text-sm font-medium text-gold-500 group-hover:underline">
                   Learn more →
                 </span>
               </div>

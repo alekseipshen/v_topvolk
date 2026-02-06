@@ -108,7 +108,7 @@ export default function Footer() {
                 }
               }}
               className="text-white px-6 py-3 rounded-lg transition font-semibold inline-block mb-6 text-center"
-              style={{ backgroundColor: '#33ac38' }}
+              style={{ backgroundColor: '#F4B942' }}
             >
               {PHONE_DISPLAY}
             </a>

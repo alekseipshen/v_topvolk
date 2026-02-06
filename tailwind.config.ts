@@ -9,18 +9,30 @@ export default {
   theme: {
     extend: {},
     colors: {
-      // Brand colors - override default Tailwind colors completely
+      // Brand colors - TopVolk Construction Gold from logo
+      gold: {
+        50: '#fefce8',
+        100: '#fef9c3',
+        200: '#fef08a',
+        300: '#fde047',
+        400: '#facc15',
+        500: '#F4B942', // Main brand gold from logo
+        600: '#ca8a04',
+        700: '#a16207',
+        800: '#8B6F3C', // Dark gold outline from logo
+        900: '#713f12',
+      },
       green: {
-        50: '#f0fdf4',
-        100: '#dcfce7',
-        200: '#bbf7d0',
-        300: '#86efac',
-        400: '#4ade80',
-        500: '#22c55e',
-        600: '#33ac38', // Brand green
-        700: '#3d6235',
-        800: '#2d4926',
-        900: '#1d3118',
+        50: '#fefce8',
+        100: '#fef9c3',
+        200: '#fef08a',
+        300: '#fde047',
+        400: '#facc15',
+        500: '#F4B942', // Alias to gold for backward compatibility
+        600: '#ca8a04',
+        700: '#a16207',
+        800: '#8B6F3C',
+        900: '#713f12',
       },
       blue: {
         50: '#eff6ff',

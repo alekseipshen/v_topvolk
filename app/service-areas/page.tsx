@@ -22,7 +22,7 @@ export default function ServiceAreasPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-600 to-green-800 text-white py-16">
+      <section className="bg-gradient-to-br from-gold-500 to-gold-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center mb-6">
@@ -33,7 +33,7 @@ export default function ServiceAreasPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               We Serve 227 Cities Across Texas
             </h1>
-            <p className="text-xl md:text-2xl text-green-100 mb-8">
+            <p className="text-xl md:text-2xl text-gold-100 mb-8">
               Same-day appliance repair service available in Houston, Dallas, Austin, and San Antonio metro areas
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -91,7 +91,7 @@ export default function ServiceAreasPage() {
                 <a
                   key={county.slug}
                   href={`#${county.slug}`}
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-transparent hover:border-green-600"
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-transparent hover:border-gold-500"
                 >
                   <h3 className="font-bold text-xl text-gray-900 mb-2">{county.name}</h3>
                   <p className="text-sm text-gray-600">{countyCount} cities</p>
@@ -123,7 +123,7 @@ export default function ServiceAreasPage() {
                   id={county.slug}
                   className="bg-gray-50 rounded-lg shadow-lg p-6 md:p-8 scroll-mt-32"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 pb-4 border-b-2 border-green-600">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 pb-4 border-b-2 border-gold-500">
                     {county.name} <span className="text-gray-500 text-xl">({countyCities.length} cities)</span>
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -132,7 +132,7 @@ export default function ServiceAreasPage() {
                         key={city.slug}
                         href={`/cities/${city.slug}`}
                         prefetch={false}
-                        className="bg-white p-3 rounded-lg hover:bg-green-50 hover:shadow-md transition text-center border border-gray-200 cursor-pointer"
+                        className="bg-white p-3 rounded-lg hover:bg-gold-50 hover:shadow-md transition text-center border border-gray-200 cursor-pointer"
                       >
                         <span className="text-sm md:text-base font-medium text-gray-900">{city.name}</span>
                       </Link>
@@ -158,7 +158,7 @@ export default function ServiceAreasPage() {
             <a
               href="tel:+18887713235"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg shadow-xl transition cursor-pointer"
-              style={{ backgroundColor: '#33ac38' }}
+              style={{ backgroundColor: '#F4B942' }}
             >
               <Phone className="w-6 h-6" />
               Call (888) 771-3235

@@ -59,7 +59,7 @@ export default async function ServicePage({ params }: PageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {service.services.map((item, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-200 flex items-start gap-3">
-                <div className="text-green-600 text-xl font-bold flex-shrink-0 mt-0.5">✓</div>
+                <div className="text-gold-500 text-xl font-bold flex-shrink-0 mt-0.5">✓</div>
                 <h3 className="font-semibold text-gray-900 text-lg">{item}</h3>
               </div>
             ))}
@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: PageProps) {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-10 h-10 text-green-600" />
+                  <CheckCircle className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Licensed & Insured</h3>
@@ -91,7 +91,7 @@ export default async function ServicePage({ params }: PageProps) {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Clock className="w-10 h-10 text-green-600" />
+                  <Clock className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quick Response</h3>
@@ -102,7 +102,7 @@ export default async function ServicePage({ params }: PageProps) {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Users className="w-10 h-10 text-green-600" />
+                  <Users className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Direct Communication</h3>
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: PageProps) {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <Wrench className="w-10 h-10 text-green-600" />
+                  <Wrench className="w-10 h-10 text-gold-500" />
                 </div>
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
@@ -148,7 +148,7 @@ export default async function ServicePage({ params }: PageProps) {
               <p className="text-base md:text-lg leading-relaxed">
                 Whether you're updating a single room or planning a complete transformation, we offer free estimates, 
                 detailed construction plans, and quality inspection before project completion. Contact us today at{' '}
-                <a href={`tel:${PHONE_NUMBER}`} className="text-green-600 font-semibold hover:underline">
+                <a href={`tel:${PHONE_NUMBER}`} className="text-gold-500 font-semibold hover:underline">
                   {PHONE_DISPLAY}
                 </a>{' '}
                 to discuss your {service.name.toLowerCase()} project.
@@ -191,7 +191,7 @@ export default async function ServicePage({ params }: PageProps) {
                       {otherService.title}
                     </h3>
                     <p className="text-gray-600 mb-4">{otherService.description}</p>
-                    <span className="text-green-600 font-semibold hover:underline">
+                    <span className="text-gold-500 font-semibold hover:underline">
                       Learn more →
                     </span>
                   </div>
