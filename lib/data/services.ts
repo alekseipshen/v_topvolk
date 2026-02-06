@@ -5,7 +5,7 @@ export const services = [
     name: 'General Contracting',
     title: 'General Contracting',
     description: 'Comprehensive construction project management from planning to completion. Licensed contractor for residential and commercial projects.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/general-contracting.jpg',
     services: ['Project management', 'Budget planning', 'Permit acquisition', 'Quality control']
   },
   {
@@ -13,7 +13,7 @@ export const services = [
     name: 'Bathroom Remodel',
     title: 'Bathroom Remodeling',
     description: 'Transform your bathroom into a modern, functional space. From small updates to complete renovations with premium fixtures and finishes.',
-    image: '/assets/services/bathroom.jpg',
+    image: '/assets/services/bathroom-remodel.jpg',
     services: ['Shower and bathtub installation', 'Tile work', 'Vanity installation', 'Plumbing updates']
   },
   {
@@ -21,7 +21,7 @@ export const services = [
     name: 'Kitchen Remodel',
     title: 'Kitchen Remodeling',
     description: 'Complete kitchen renovation services including cabinets, countertops, appliances, and layout optimization for maximum functionality.',
-    image: '/assets/services/kitchen.jpg',
+    image: '/assets/services/kitchen-remodel.jpg',
     services: ['Cabinet installation', 'Countertop replacement', 'Appliance installation', 'Backsplash installation']
   },
   {
@@ -29,7 +29,7 @@ export const services = [
     name: 'Deck Installation',
     title: 'Deck & Patio Construction',
     description: 'Professional deck construction using premium materials. We design and build custom decks that enhance your outdoor living space.',
-    image: '/assets/services/deck.jpg',
+    image: '/assets/services/deck-installation.jpg',
     services: ['Custom deck design', 'Composite and wood decking', 'Railing installation', 'Pergola construction']
   },
   {
@@ -37,7 +37,7 @@ export const services = [
     name: 'Basement Finishing',
     title: 'Basement Finishing',
     description: 'Transform your basement into a functional living space. Complete basement remodeling with waterproofing and insulation.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/basement-finishing.jpg',
     services: ['Basement framing', 'Insulation', 'Drywall installation', 'Flooring']
   },
   {
@@ -45,7 +45,7 @@ export const services = [
     name: 'Home Additions',
     title: 'Home Additions',
     description: 'Expand your living space with custom home additions. Room additions, second stories, and structural expansions.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/home-additions.jpg',
     services: ['Room additions', 'Second story additions', 'Sunroom construction', 'Garage additions']
   },
   
@@ -55,7 +55,7 @@ export const services = [
     name: 'ADU Construction',
     title: 'ADU Construction',
     description: 'Build an Accessory Dwelling Unit (ADU) for rental income or family housing. Complete ADU design and construction services.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/adu-construction.jpg',
     services: ['ADU design', 'Permit processing', 'Foundation work', 'Complete construction']
   },
   {
@@ -63,7 +63,7 @@ export const services = [
     name: 'Flooring Installation',
     title: 'Flooring Installation',
     description: 'Expert installation of hardwood, laminate, tile, and vinyl flooring. Professional preparation and precise installation.',
-    image: '/assets/services/flooring.jpg',
+    image: '/assets/services/flooring-installation.jpg',
     services: ['Hardwood flooring', 'Laminate flooring', 'Tile flooring', 'Vinyl flooring']
   },
   {
@@ -71,7 +71,7 @@ export const services = [
     name: 'Roofing',
     title: 'Roofing',
     description: 'Professional roofing installation, repair, and replacement. Shingle, metal, and flat roofing services.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/roofing.jpg',
     services: ['Roof installation', 'Roof repair', 'Gutter installation', 'Roof inspection']
   },
   {
@@ -79,7 +79,7 @@ export const services = [
     name: 'Plumbing',
     title: 'Plumbing',
     description: 'Complete plumbing services for residential projects. Installation, repair, and maintenance.',
-    image: '/assets/services/bathroom.jpg',
+    image: '/assets/services/plumbing.jpg',
     services: ['Pipe installation', 'Fixture replacement', 'Water heater installation', 'Leak repair']
   },
   {
@@ -87,7 +87,7 @@ export const services = [
     name: 'Electrical',
     title: 'Electrical',
     description: 'Licensed electrical services for home renovations. Wiring, panel upgrades, and lighting installation.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/electrical.jpg',
     services: ['Wiring installation', 'Panel upgrades', 'Lighting installation', 'Outlet installation']
   },
   {
@@ -95,7 +95,7 @@ export const services = [
     name: 'HVAC',
     title: 'HVAC',
     description: 'Heating, ventilation, and air conditioning installation and repair services.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/hvac.jpg',
     services: ['HVAC installation', 'Furnace installation', 'AC installation', 'Ductwork']
   },
   {
@@ -111,7 +111,7 @@ export const services = [
     name: 'Tile Installation',
     title: 'Tile Installation',
     description: 'Professional tile installation for floors, walls, backsplashes, and showers. Custom tile work with precision.',
-    image: '/assets/services/bathroom.jpg',
+    image: '/assets/services/tile-installation.jpg',
     services: ['Floor tile installation', 'Wall tile installation', 'Backsplash tile', 'Shower tile']
   },
   {
@@ -119,7 +119,7 @@ export const services = [
     name: 'Concrete Work',
     title: 'Concrete Work',
     description: 'Concrete foundations, driveways, patios, and walkways. Professional concrete pouring and finishing.',
-    image: '/assets/services/deck.jpg',
+    image: '/assets/services/concrete-work.jpg',
     services: ['Foundation concrete', 'Driveway installation', 'Patio concrete', 'Walkway construction']
   },
   {
@@ -127,7 +127,7 @@ export const services = [
     name: 'Carpentry',
     title: 'Carpentry',
     description: 'Custom carpentry services including trim work, cabinetry, and built-in furniture.',
-    image: '/assets/services/kitchen.jpg',
+    image: '/assets/services/carpentry.jpg',
     services: ['Custom cabinetry', 'Trim installation', 'Built-in furniture', 'Wood repairs']
   },
   {
@@ -135,7 +135,7 @@ export const services = [
     name: 'Window Installation',
     title: 'Window Installation',
     description: 'Energy-efficient window installation and replacement. Vinyl, wood, and composite windows.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/window-installation.jpg',
     services: ['Window replacement', 'New window installation', 'Window frame repair', 'Weatherproofing']
   },
   {
@@ -143,7 +143,7 @@ export const services = [
     name: 'Door Installation',
     title: 'Door Installation',
     description: 'Interior and exterior door installation. Entry doors, patio doors, and garage doors.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/door-installation.jpg',
     services: ['Entry door installation', 'Interior door replacement', 'Patio door installation', 'Garage door installation']
   },
   {
@@ -151,7 +151,7 @@ export const services = [
     name: 'Siding',
     title: 'Siding',
     description: 'Exterior siding installation and replacement. Vinyl, fiber cement, and wood siding options.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/siding.jpg',
     services: ['Vinyl siding', 'Fiber cement siding', 'Wood siding', 'Siding repair']
   },
   {
@@ -159,7 +159,7 @@ export const services = [
     name: 'Landscaping',
     title: 'Landscaping',
     description: 'Professional landscaping services to enhance your outdoor space. Design, installation, and maintenance.',
-    image: '/assets/services/deck.jpg',
+    image: '/assets/services/landscaping.jpg',
     services: ['Landscape design', 'Plant installation', 'Irrigation systems', 'Lawn installation']
   },
   {
@@ -167,7 +167,7 @@ export const services = [
     name: 'Fence Installation',
     title: 'Fence Installation',
     description: 'Custom fence installation for privacy, security, and aesthetics. Wood, vinyl, and metal fencing.',
-    image: '/assets/services/deck.jpg',
+    image: '/assets/services/fence-installation.jpg',
     services: ['Wood fence installation', 'Vinyl fence installation', 'Chain link fence', 'Fence repair']
   },
   {
@@ -175,7 +175,7 @@ export const services = [
     name: 'Drywall Installation',
     title: 'Drywall Installation',
     description: 'Professional drywall installation, repair, and finishing. Smooth walls and ceilings for any project.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/drywall-installation.jpg',
     services: ['Drywall hanging', 'Drywall finishing', 'Texture application', 'Drywall repair']
   },
   {
@@ -183,7 +183,7 @@ export const services = [
     name: 'Waterproofing',
     title: 'Waterproofing',
     description: 'Basement and foundation waterproofing to prevent water damage and moisture issues.',
-    image: '/assets/services/bathroom.jpg',
+    image: '/assets/services/waterproofing.jpg',
     services: ['Basement waterproofing', 'Foundation waterproofing', 'Sump pump installation', 'Drainage systems']
   },
   {
@@ -191,7 +191,7 @@ export const services = [
     name: 'Foundation Repair',
     title: 'Foundation Repair',
     description: 'Foundation crack repair, leveling, and stabilization. Expert foundation repair services.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/foundation-repair.jpg',
     services: ['Foundation crack repair', 'Foundation leveling', 'Pier installation', 'Foundation waterproofing']
   },
   {
@@ -199,7 +199,7 @@ export const services = [
     name: 'Garage Construction',
     title: 'Garage Construction',
     description: 'New garage construction and detached garage building. Complete garage construction services.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/garage-construction.jpg',
     services: ['Attached garage construction', 'Detached garage building', 'Garage conversion', 'Garage finishing']
   },
   {
@@ -207,7 +207,7 @@ export const services = [
     name: 'Demolition',
     title: 'Demolition',
     description: 'Safe and efficient demolition services for renovations and new construction projects.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/demolition.jpg',
     services: ['Interior demolition', 'Exterior demolition', 'Selective demolition', 'Debris removal']
   },
   {
@@ -215,7 +215,7 @@ export const services = [
     name: 'Handyman Services',
     title: 'Handyman Services',
     description: 'General handyman services for small repairs, maintenance, and home improvement projects.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/handyman-services.jpg',
     services: ['Small repairs', 'Furniture assembly', 'Fixture installation', 'Maintenance work']
   },
   {
@@ -223,7 +223,7 @@ export const services = [
     name: 'Power Washing',
     title: 'Power Washing',
     description: 'Exterior cleaning services including power washing for decks, siding, driveways, and patios.',
-    image: '/assets/services/deck.jpg',
+    image: '/assets/services/power-washing.jpg',
     services: ['Deck power washing', 'Siding cleaning', 'Driveway cleaning', 'Patio cleaning']
   },
   {
@@ -231,7 +231,7 @@ export const services = [
     name: 'Insulation',
     title: 'Insulation',
     description: 'Energy-efficient insulation installation for walls, attics, and crawl spaces.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/insulation.jpg',
     services: ['Attic insulation', 'Wall insulation', 'Crawl space insulation', 'Spray foam insulation']
   },
   {
@@ -239,7 +239,7 @@ export const services = [
     name: 'Framing',
     title: 'Framing',
     description: 'Structural framing for new construction and home additions. Expert wood and metal framing.',
-    image: '/assets/services/house.jpg',
+    image: '/assets/services/framing.jpg',
     services: ['Wall framing', 'Roof framing', 'Floor framing', 'Steel framing']
   }
 ];
