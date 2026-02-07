@@ -7,17 +7,19 @@ export default function HeroHome() {
     <section 
       className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
     >
-      {/* Background with inline style */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/hero-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundColor: '#c5ecf3'
-        }}
-      />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 bg-[#c5ecf3]">
+        <img
+          src="/hero-bg.jpg"
+          alt="Home Renovation Background"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            console.error('Failed to load hero-bg.jpg');
+            e.currentTarget.style.display = 'none';
+          }}
+          onLoad={() => console.log('Hero background loaded successfully')}
+        />
+      </div>
       
       {/* Gradient Overlay - Mobile (stronger for text readability) */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/60 md:hidden z-[1]"></div>
