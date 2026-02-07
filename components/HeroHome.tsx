@@ -22,10 +22,10 @@ export default function HeroHome() {
       </div>
       
       {/* Gradient Overlay - Mobile (stronger for text readability) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/60 md:hidden z-[1]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden z-[1]"></div>
       
-      {/* Gradient Overlay - Desktop (much lighter to show background) */}
-      <div className="hidden md:block absolute inset-0 bg-white/20 z-[1]"></div>
+      {/* Gradient Overlay - Desktop (lighter to show more background) */}
+      <div className="hidden md:block absolute inset-0 bg-white/60 z-[1]"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 h-full md:h-auto">
