@@ -81,16 +81,17 @@ export default function WorksGallery() {
             className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group"
             onClick={() => openLightbox(work.index)}
           >
-            <div className="relative w-full h-64 overflow-hidden">
+            <div className="w-full h-64 overflow-hidden">
               <img
                 src={work.preview}
                 alt={allWorks[work.index].alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                onError={(e) => {
+                  console.error('Failed to load:', work.preview);
+                  e.currentTarget.style.border = '2px solid red';
+                }}
+                onLoad={() => console.log('Loaded:', work.preview)}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
-              {/* Hover Overlay with Zoom Icon */}
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
             </div>
           </div>
         ))}
