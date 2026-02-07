@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section - hero-bg.jpg (do not use hero-home.jpg, file removed) */}
+      {/* Hero Section */}
       <Hero
         title="Professional Home Renovation in Seattle"
         subtitle="Quality kitchen remodels, bathroom renovations, and custom deck installations"

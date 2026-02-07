@@ -2,6 +2,7 @@ import { Zap, Award, Shield, DollarSign } from 'lucide-react';
 import Image from 'next/image';
 import GoogleRating from './GoogleRating';
 import HeroCTAButtons from './HeroCTAButtons';
+import HeroBackground from './HeroBackground';
 
 interface HeroProps {
   title: string;
@@ -21,14 +22,9 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
       style={{ backgroundColor: '#c5ecf3' }}
     >
-      {/* Background: plain img so /hero-bg.jpg is loaded directly (no Next Image pipeline) */}
+      {/* Background: client component with full URL so browser always sends request */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={backgroundImage}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          fetchPriority="high"
-        />
+        <HeroBackground path={backgroundImage} />
       </div>
       {/* Gradient Overlay - Mobile */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden"></div>
