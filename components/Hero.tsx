@@ -15,23 +15,27 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle = 'Licensed contractor specializing in kitchen, bathroom, deck, and home renovations', brand, brandLogo, applianceImage }: HeroProps) {
   const backgroundImage = applianceImage || "/hero-bg.jpg";
-  
+
   return (
-    <section 
-      className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden" 
-      style={{ 
-        backgroundColor: '#c5ecf3',
-        backgroundImage: `url("${backgroundImage}")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+    <section
+      className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
+      style={{ backgroundColor: '#c5ecf3' }}
     >
+      {/* Background image via Next/Image so it deploys correctly (CSS background often fails on Vercel) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
       {/* Gradient Overlay - Mobile */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden"></div>
-      
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden"></div>
       {/* Gradient Overlay - Desktop (lighter) */}
-      <div className="hidden md:block absolute inset-0 bg-white/80"></div>
+      <div className="hidden md:block absolute inset-0 z-[1] bg-white/80"></div>
 
       {/* Desktop Layout: Grid 2 columns (Left: content, Right: image) */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 h-full md:h-auto">
