@@ -10,14 +10,9 @@ export default function HeroHome() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[#c5ecf3]">
         <img
-          src="/hero-bg.jpg"
+          src="/hero-appliance.jpg"
           alt="Home Renovation Background"
           className="w-full h-full object-cover"
-          onError={(e) => {
-            console.error('Failed to load hero-bg.jpg');
-            e.currentTarget.style.display = 'none';
-          }}
-          onLoad={() => console.log('Hero background loaded successfully')}
         />
       </div>
       
