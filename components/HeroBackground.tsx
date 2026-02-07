@@ -16,6 +16,7 @@ export default function HeroBackground({ path }: { path: string }) {
       alt=""
       className="absolute inset-0 w-full h-full object-cover object-center"
       fetchPriority="high"
+      decoding="async"
     />
   );
 }
