@@ -20,14 +20,10 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
     <section className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden" style={{ backgroundColor: '#c5ecf3' }}>
       {/* Background Image - Mobile only */}
       <div className="absolute inset-0 z-0 md:hidden">
-        <Image
+        <img
           src={backgroundImage}
           alt="Professional Home Renovation Service"
-          fill
-          className="object-cover object-center"
-          priority
-          sizes="100vw"
-          quality={85}
+          className="w-full h-full object-cover object-center"
         />
         {/* Gradient Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/70"></div>
@@ -35,14 +31,10 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
 
       {/* Background Image - Desktop only (full width background) */}
       <div className="hidden md:block absolute inset-0 z-0">
-        <Image
+        <img
           src={backgroundImage}
           alt="Professional Home Renovation Service"
-          fill
-          className="object-cover object-center opacity-20"
-          priority
-          sizes="100vw"
-          quality={90}
+          className="w-full h-full object-cover object-center opacity-20"
         />
       </div>
 
