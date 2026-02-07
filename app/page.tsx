@@ -13,6 +13,7 @@ export default function HomePage() {
       <Hero
         title="Professional Home Renovation in Seattle"
         subtitle="Quality kitchen remodels, bathroom renovations, and custom deck installations"
+        applianceImage="/hero-bg.jpg"
       />
 
       {/* Why Choose Us */}
