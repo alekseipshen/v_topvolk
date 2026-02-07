@@ -4,26 +4,24 @@ import HeroCTAButtons from './HeroCTAButtons';
 
 export default function HeroHome() {
   return (
-    <section 
-      className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
-    >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-[#c5ecf3]">
-        <img
-          src="/hero-appliance.jpg"
-          alt="Home Renovation Background"
+    <section className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden">
+      {/* Background Image Layer (like Test 3) */}
+      <div className="absolute inset-0 bg-gray-300">
+        <img 
+          src="/hero-bg.jpg" 
+          alt="Home Renovation Background" 
           className="w-full h-full object-cover"
         />
       </div>
       
-      {/* Gradient Overlay - Mobile (stronger for text readability) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden z-[1]"></div>
+      {/* Overlay Layer - Mobile */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden z-10"></div>
       
-      {/* Gradient Overlay - Desktop (lighter to show more background) */}
-      <div className="hidden md:block absolute inset-0 bg-white/60 z-[1]"></div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 h-full md:h-auto">
+      {/* Overlay Layer - Desktop */}
+      <div className="hidden md:block absolute inset-0 bg-white/60 z-10"></div>
+      
+      {/* Content Layer (like Test 3) */}
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-20 h-full md:h-auto">
         <div className="h-full md:h-auto md:grid md:grid-cols-2 md:gap-8 md:items-center flex flex-col py-4 pb-6 md:py-0">
           <div className="flex flex-col h-full md:h-auto md:pl-4 lg:pl-8">
             <div className="text-center md:text-left mb-[50px] md:mt-0 md:mb-8">
