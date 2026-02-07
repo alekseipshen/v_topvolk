@@ -22,13 +22,10 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
       style={{ backgroundColor: '#c5ecf3' }}
     >
-      {/* Background: client component with full URL so browser always sends request */}
+      {/* Background image - no overlay so image is fully visible */}
       <div className="absolute inset-0 z-0">
         <HeroBackground path={backgroundImage} />
       </div>
-      {/* Gradient Overlay - light so background image is visible */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/50 via-white/30 to-white/20 md:hidden" aria-hidden></div>
-      <div className="hidden md:block absolute inset-0 z-[1] bg-white/40" aria-hidden></div>
 
       {/* Desktop Layout: Grid 2 columns (Left: content, Right: image) */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 h-full md:h-auto">
@@ -53,13 +50,13 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
                 )}
               </div>
 
-              {/* Main Heading */}
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-6">
+              {/* Main Heading - text shadow for readability on photo */}
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-6 drop-shadow-[0_1px_2px_rgba(255,255,255,0.9)]">
                 {title}
               </h1>
 
               {/* Subtitle */}
-              <p className="text-lg md:text-xl text-gray-700 mb-0 md:mb-0">
+              <p className="text-lg md:text-xl text-gray-700 mb-0 md:mb-0 drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">
                 {subtitle}
               </p>
             </div>
