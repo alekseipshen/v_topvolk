@@ -21,15 +21,13 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
       style={{ backgroundColor: '#c5ecf3' }}
     >
-      {/* Background image via Next/Image so it deploys correctly (CSS background often fails on Vercel) */}
+      {/* Background: plain img so /hero-bg.jpg is loaded directly (no Next Image pipeline) */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src={backgroundImage}
           alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          fetchPriority="high"
         />
       </div>
       {/* Gradient Overlay - Mobile */}
