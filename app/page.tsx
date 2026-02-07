@@ -1,4 +1,4 @@
-import HeroHome from '@/components/HeroHome';
+import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
 import { featuredServices } from '@/lib/data/services';
@@ -10,7 +10,11 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <HeroHome />
+      <Hero
+        title="Professional Home Renovation in Seattle"
+        subtitle="Quality kitchen remodels, bathroom renovations, and custom deck installations"
+        applianceImage="/hero-bg.jpg"
+      />
 
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-50">
