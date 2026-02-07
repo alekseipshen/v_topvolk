@@ -26,10 +26,9 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       <div className="absolute inset-0 z-0">
         <HeroBackground path={backgroundImage} />
       </div>
-      {/* Gradient Overlay - Mobile */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/95 via-white/85 to-white/70 md:hidden"></div>
-      {/* Gradient Overlay - Desktop (lighter) */}
-      <div className="hidden md:block absolute inset-0 z-[1] bg-white/80"></div>
+      {/* Gradient Overlay - light so background image is visible */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-white/50 via-white/30 to-white/20 md:hidden" aria-hidden></div>
+      <div className="hidden md:block absolute inset-0 z-[1] bg-white/40" aria-hidden></div>
 
       {/* Desktop Layout: Grid 2 columns (Left: content, Right: image) */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 h-full md:h-auto">
