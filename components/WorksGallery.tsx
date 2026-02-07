@@ -75,23 +75,21 @@ export default function WorksGallery() {
     <>
       {/* Gallery Grid - Show only 6 preview images */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {previewWorks.map((work) => (
+        {[1, 2, 3, 4, 5, 6].map((num) => (
           <div
-            key={work.index}
-            className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group cursor-pointer"
-            onClick={() => openLightbox(work.index)}
+            key={num}
+            className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group"
+            onClick={() => openLightbox(num - 1)}
           >
-            <div className="relative w-full h-64 overflow-hidden bg-gray-100">
+            <div className="w-full h-64 overflow-hidden bg-gray-200">
               <img
-                src={work.preview}
-                alt={allWorks[work.index].alt}
-                loading="eager"
+                src={`/assets/works/_0${num}m.jpg`}
+                alt={`Home Renovation Project ${num}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                style={{ display: 'block' }}
               />
-              {/* Hover Overlay with Zoom Icon */}
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition flex items-center justify-center pointer-events-none">
+                <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition" />
               </div>
             </div>
           </div>
