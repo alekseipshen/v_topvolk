@@ -21,9 +21,10 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
       className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden" 
       style={{ 
         backgroundColor: '#c5ecf3',
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url("${backgroundImage}")`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       {/* Gradient Overlay - Mobile */}
