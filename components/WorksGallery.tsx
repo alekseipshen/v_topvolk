@@ -88,7 +88,7 @@ export default function WorksGallery() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-center justify-center pointer-events-none">
                 <ZoomIn className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition" />
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function WorksGallery() {
       {/* Lightbox Modal */}
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black bg-opacity-95 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
           {/* Close Button */}
@@ -148,7 +148,7 @@ export default function WorksGallery() {
           </div>
 
           {/* Image Counter */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-4 py-2 rounded">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 rounded">
             {selectedImage + 1} / {allWorks.length}
           </div>
         </div>
