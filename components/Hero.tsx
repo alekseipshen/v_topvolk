@@ -2,7 +2,6 @@ import { Zap, Award, Shield, DollarSign } from 'lucide-react';
 import Image from 'next/image';
 import GoogleRating from './GoogleRating';
 import HeroCTAButtons from './HeroCTAButtons';
-import HeroBackground from './HeroBackground';
 
 interface HeroProps {
   title: string;
@@ -20,12 +19,13 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
   return (
     <section
       className="relative h-[calc(100vh-5rem)] md:h-auto md:py-20 overflow-hidden"
-      style={{ backgroundColor: '#c5ecf3' }}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: '#c5ecf3',
+      }}
     >
-      {/* Background image - no overlay so image is fully visible */}
-      <div className="absolute inset-0 z-0">
-        <HeroBackground path={backgroundImage} />
-      </div>
 
       {/* Desktop Layout: Grid 2 columns (Left: content, Right: image) */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 h-full md:h-auto">
