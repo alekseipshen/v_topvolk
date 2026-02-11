@@ -5,7 +5,7 @@ export default function KeystaticPage() {
 }
 
 export const metadata = {
-  title: 'Admin - Max Appliance',
+  title: 'Admin - TopVolk Construction',
 };
 
 

@@ -31,7 +31,7 @@ async function sendEmails(data: {
   const resendApiKey = process.env.RESEND_API_KEY;
   const emailRecipient1 = process.env.EMAIL_RECIPIENT_1;
   const emailRecipient2 = process.env.EMAIL_RECIPIENT_2;
-  const emailFromAddress = process.env.EMAIL_FROM || 'noreply@maxappliancetexas.com';
+  const emailFromAddress = process.env.EMAIL_FROM || 'noreply@topvolk.org';
   
   if (!resendApiKey || (!emailRecipient1 && !emailRecipient2)) {
     console.log('[EMAIL] Skipping - no API key or recipients configured');
@@ -48,9 +48,9 @@ async function sendEmails(data: {
     if (emailRecipient1) {
       ownerEmails.push(
         resend.emails.send({
-          from: `MaxAppliance <${emailFromAddress}>`,
+          from: `TopVolk Construction <${emailFromAddress}>`,
           to: emailRecipient1,
-          subject: `🔔 New Lead: ${data.name} - Max Appliance Repair`,
+          subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
           html: getLeadNotificationHTML(data),
           text: getLeadNotificationText(data),
         }).then(() => {
@@ -65,9 +65,9 @@ async function sendEmails(data: {
       ownerEmails.push(
         delay(1000).then(() => 
           resend.emails.send({
-            from: `MaxAppliance <${emailFromAddress}>`,
+            from: `TopVolk Construction <${emailFromAddress}>`,
             to: emailRecipient2,
-            subject: `🔔 New Lead: ${data.name} - Max Appliance Repair`,
+            subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
             html: getLeadNotificationHTML(data),
             text: getLeadNotificationText(data),
           }).then(() => {
@@ -85,9 +85,9 @@ async function sendEmails(data: {
     
     // Send confirmation email to customer
     await resend.emails.send({
-      from: `MaxAppliance <${emailFromAddress}>`,
+      from: `TopVolk Construction <${emailFromAddress}>`,
       to: data.email,
-      subject: '✅ Your Service Request - Max Appliance Repair',
+      subject: '✅ Your Service Request - TopVolk Construction',
       html: getCustomerConfirmationHTML(data.name),
       text: getCustomerConfirmationText(data.name),
     });
@@ -175,7 +175,7 @@ export async function POST(request: NextRequest) {
       phone: data.phone,
       email: data.email,
       message: data.message,
-      source: 'Website - Max Appliance',
+      source: 'Website - TopVolk Construction',
       url: leadPayload.url,
       timestamp: leadPayload.timestamp,
     };

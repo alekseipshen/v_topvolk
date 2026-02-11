@@ -36,14 +36,14 @@ function renderContent({ city, appliance, brand, county }: any) {
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
             When your {brand} {appliance.toLowerCase()}{isBuiltInOven ? ` (including ${builtInOvenAliases})` : ''} breaks down in {city} or surrounding areas, you need a repair service you can trust. 
-            <strong> Max Appliance Repair</strong> has been providing expert {brand} appliance repairs throughout {city} and the surrounding Texas area 
+            <strong> TopVolk Construction</strong> has been providing expert {brand} appliance repairs throughout {city} and the greater Seattle area 
             for over 20 years. Our factory-trained technicians specialize in {brand} appliances and can diagnose and fix issues quickly.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
             Our {city}-area technicians have seen it all when it comes to {brand} {appliance.toLowerCase()} repairs. 
             Whether it's a minor issue or a major breakdown, we have the expertise to get your appliance working again. 
-            Call us today at <strong>(888) 771-3235</strong> for fast, professional {brand} appliance repair in {city} and nearby cities.
+            Call us today at <strong>(206) 591-1096</strong> for fast, professional {brand} appliance repair in {city} and nearby cities.
           </p>
         </div>
       </div>
@@ -57,8 +57,8 @@ function renderContent({ city, appliance, brand, county }: any) {
         
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
-            Is your {appliance.toLowerCase()}{isBuiltInOven ? ` (${builtInOvenAliases})` : ''} acting up in {city} or nearby areas? <strong>Max Appliance Repair</strong> provides expert {appliance.toLowerCase()} 
-            repair for all major brands throughout {city} and the surrounding Texas area. With over 20 years of experience, 
+            Is your {appliance.toLowerCase()}{isBuiltInOven ? ` (${builtInOvenAliases})` : ''} acting up in {city} or nearby areas? <strong>TopVolk Construction</strong> provides expert {appliance.toLowerCase()} 
+            repair for all major brands throughout {city} and the greater Seattle area. With over 20 years of experience, 
             our certified technicians can diagnose and repair your {appliance.toLowerCase()} quickly and efficiently.
           </p>
           
@@ -70,7 +70,7 @@ function renderContent({ city, appliance, brand, county }: any) {
           
           <p className="text-base md:text-lg leading-relaxed">
             Our {city}-area team works on all major appliance brands - LG, Samsung, Whirlpool, GE, Maytag, Bosch, KitchenAid, and more. 
-            Call <strong>(888) 771-3235</strong> for immediate assistance!
+            Call <strong>(206) 591-1096</strong> for immediate assistance!
           </p>
         </div>
       </div>
@@ -84,7 +84,7 @@ function renderContent({ city, appliance, brand, county }: any) {
         
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
-            Looking for reliable {brand} appliance repair in {city} or nearby areas? <strong>Max Appliance Repair</strong> specializes in {brand} appliances 
+            Looking for reliable {brand} appliance repair in {city} or nearby areas? <strong>TopVolk Construction</strong> specializes in {brand} appliances 
             and has been serving {city} and surrounding city residents for over 20 years. Our factory-trained technicians are experts in diagnosing 
             and repairing all {brand} appliance models.
           </p>
@@ -96,7 +96,7 @@ function renderContent({ city, appliance, brand, county }: any) {
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            Contact us today for expert {brand} appliance repair in {city} and surrounding cities. Call <strong>(888) 771-3235</strong> for same-day service!
+            Contact us today for expert {brand} appliance repair in {city} and surrounding cities. Call <strong>(206) 591-1096</strong> for same-day service!
           </p>
         </div>
       </div>
@@ -105,24 +105,24 @@ function renderContent({ city, appliance, brand, county }: any) {
     return (
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          {brand} {appliance} Repair Across Texas
+          {brand} {appliance} Repair Across Seattle, WA
         </h2>
         
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
-            When your {brand} {appliance.toLowerCase()}{isBuiltInOven ? ` (${builtInOvenAliases})` : ''} needs repair, trust the experts at <strong>Max Appliance Service</strong>. 
-            We've been providing professional {brand} {appliance.toLowerCase()} repair throughout Texas for over 20 years. 
+            When your {brand} {appliance.toLowerCase()}{isBuiltInOven ? ` (${builtInOvenAliases})` : ''} needs repair, trust the experts at <strong>TopVolk Construction</strong>. 
+            We've been providing professional {brand} {appliance.toLowerCase()} repair throughout the Seattle area for over 20 years. 
             Our factory-trained technicians specialize in {brand} appliances and can quickly diagnose and fix any issue.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            Our experienced technicians have repaired thousands of {brand} {appliance.toLowerCase()}s across Texas. 
+            Our experienced technicians have repaired thousands of {brand} {appliance.toLowerCase()}s across the Seattle area. 
             No matter what's wrong with your {appliance.toLowerCase()}, we have the expertise to fix it right the first time. 
             We use only authentic {brand} replacement parts and back all repairs with our service guarantee.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            Call <strong>(888) 771-3235</strong> today to schedule your {brand} {appliance.toLowerCase()} repair!
+            Call <strong>(206) 591-1096</strong> today to schedule your {brand} {appliance.toLowerCase()} repair!
           </p>
         </div>
       </div>
@@ -131,12 +131,12 @@ function renderContent({ city, appliance, brand, county }: any) {
     return (
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Trusted Appliance Repair in {city} & Surrounding Cities
+          Trusted Home Renovation in {city} & Surrounding Cities
         </h2>
         
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
-            <strong>Max Appliance Repair</strong> is the {city} area's premier appliance repair company, serving residents and businesses throughout 
+            <strong>TopVolk Construction</strong> is the {city} area's premier home renovation company, serving residents and businesses throughout 
             the region for over 20 years. We repair all major appliance brands and types - from refrigerators and washers to 
             ovens and dishwashers.
           </p>
@@ -148,7 +148,7 @@ function renderContent({ city, appliance, brand, county }: any) {
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            Don't let a broken appliance disrupt your life. Call <strong>(888) 771-3235</strong> now for expert appliance 
+            Don't let a broken appliance disrupt your life. Call <strong>(206) 591-1096</strong> now for expert appliance 
             repair in {city} and surrounding areas!
           </p>
         </div>
@@ -158,24 +158,24 @@ function renderContent({ city, appliance, brand, county }: any) {
     return (
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Professional {brand} Appliance Repair in Texas
+          Professional {brand} Appliance Repair in Seattle, WA
         </h2>
         
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
-            <strong>Max Appliance Repair</strong> is Texas's trusted source for {brand} appliance repair. With over 20 years of experience 
+            <strong>TopVolk Construction</strong> is Seattle's trusted source for {brand} appliance repair. With over 20 years of experience 
             and factory-trained technicians, we specialize in servicing all {brand} appliance models. From routine maintenance to 
-            complex repairs, we're the {brand} experts you can count on throughout Houston, Dallas, Austin, and San Antonio areas.
+            complex repairs, we're the {brand} experts you can count on throughout King County, Snohomish County, Pierce County, and Kitsap County.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
             Our technicians undergo continuous training on {brand} products and use only genuine {brand} replacement parts. 
             This ensures your appliance is repaired to manufacturer specifications and continues to perform reliably. We provide 
-            {brand} appliance repair throughout Texas with same-day service available for most areas.
+            {brand} appliance repair throughout the Seattle area with same-day service available for most areas.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            Trust the {brand} repair specialists. Call <strong>(888) 771-3235</strong> today for expert service!
+            Trust the {brand} repair specialists. Call <strong>(206) 591-1096</strong> today for expert service!
           </p>
         </div>
       </div>
@@ -184,23 +184,23 @@ function renderContent({ city, appliance, brand, county }: any) {
     return (
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-          Expert {appliance} Repair Throughout Texas
+          Expert {appliance} Repair Throughout Seattle, WA
         </h2>
         
         <div className="text-gray-700 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
-            When your {appliance.toLowerCase()}{isBuiltInOven ? ` (including ${builtInOvenAliases})` : ''} breaks down, you need fast, reliable repair service. <strong>Max Appliance Repair</strong> has been 
-            Texas's trusted {appliance.toLowerCase()} repair company for over 20 years. Our certified technicians service all 
+            When your {appliance.toLowerCase()}{isBuiltInOven ? ` (including ${builtInOvenAliases})` : ''} breaks down, you need fast, reliable repair service. <strong>TopVolk Construction</strong> has been 
+            Seattle's trusted {appliance.toLowerCase()} repair company for over 20 years. Our certified technicians service all 
             major brands and can diagnose and fix {appliance.toLowerCase()} issues quickly and efficiently.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            We provide professional {appliance.toLowerCase()} repair throughout Texas, covering Houston, Dallas, Austin, and San Antonio metro areas. 
-            Whether you're in any of our 227 service cities, we're ready to help with same-day service available in most areas.
+            We provide professional {appliance.toLowerCase()} repair throughout Seattle, WA, covering King County, Snohomish County, Pierce County, and Kitsap County. 
+            Whether you're in any of our service areas, we're ready to help with same-day service available in most areas.
           </p>
           
           <p className="text-base md:text-lg leading-relaxed">
-            Need {appliance.toLowerCase()} repair? Call <strong>(888) 771-3235</strong> for same-day service!
+            Need {appliance.toLowerCase()} repair? Call <strong>(206) 591-1096</strong> for same-day service!
           </p>
         </div>
       </div>

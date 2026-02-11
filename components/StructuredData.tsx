@@ -18,41 +18,41 @@ interface LocalBusinessProps {
 export function LocalBusinessSchema({ name, city, county, service }: LocalBusinessProps = {}) {
   const businessName = name || BUSINESS_NAME;
   const areaServed = city 
-    ? `${city}, Texas` 
+    ? `${city}, WA` 
     : county 
-    ? `${county} County, Texas`
-    : 'Texas';
+    ? `${county} County, WA`
+    : 'Seattle, WA';
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://maxapplianceservice.com/#organization',
+    '@id': 'https://topvolk.org/#organization',
     name: businessName,
-    legalName: 'Max Appliance LLC',
+    legalName: 'TopVolk Construction LLC',
     description: service 
       ? `Professional ${service} service in ${areaServed}. Same-day appointments, 20+ years experience, all major brands.`
       : `Professional appliance repair service in ${areaServed}. Same-day appointments, 20+ years experience, all major brands.`,
-    url: 'https://maxapplianceservice.com',
-    logo: 'https://maxapplianceservice.com/logo.png',
-    image: 'https://maxapplianceservice.com/og-image.jpg',
+    url: 'https://topvolk.org',
+    logo: 'https://topvolk.org/logo.png',
+    image: 'https://topvolk.org/og-image.jpg',
     telephone: PHONE_NUMBER,
     email: BUSINESS_EMAIL,
     priceRange: '$$',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: city || 'Texas',
-      addressRegion: 'NJ',
+      addressLocality: city || 'Seattle',
+      addressRegion: 'WA',
       addressCountry: 'US',
     },
-    geo: county === 'Bergen' ? {
+    geo: county === 'King' ? {
       '@type': 'GeoCoordinates',
-      latitude: '40.8801',
-      longitude: '-74.0394',
+      latitude: '47.6062',
+      longitude: '-122.3321',
     } : undefined,
     areaServed: [
       {
         '@type': 'State',
-        name: 'Texas',
+        name: 'Washington',
       },
       ...(county ? [{
         '@type': 'AdministrativeArea',
@@ -79,8 +79,8 @@ export function LocalBusinessSchema({ name, city, county, service }: LocalBusine
     ],
     sameAs: [
       // Add social media profiles when available
-      // 'https://www.facebook.com/maxapplianceservice',
-      // 'https://www.instagram.com/maxapplianceservice',
+      // 'https://www.facebook.com/topvolkconstruction',
+      // 'https://www.instagram.com/topvolkconstruction',
     ],
     ...(service && {
       hasOfferCatalog: {
@@ -161,7 +161,7 @@ interface ServiceProps {
 }
 
 export function ServiceSchema({ name, description, url, city, brand }: ServiceProps) {
-  const areaServed = city ? `${city}, Texas` : 'Texas';
+  const areaServed = city ? `${city}, WA` : 'Seattle, WA';
   
   const schema = {
     '@context': 'https://schema.org',
@@ -175,7 +175,7 @@ export function ServiceSchema({ name, description, url, city, brand }: ServicePr
       name: BUSINESS_NAME,
       telephone: PHONE_NUMBER,
       email: BUSINESS_EMAIL,
-      url: 'https://maxapplianceservice.com',
+      url: 'https://topvolk.org',
     },
     areaServed: {
       '@type': city ? 'City' : 'State',
@@ -217,8 +217,8 @@ export function WebPageSchema({ title, description, url, datePublished, dateModi
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      '@id': 'https://maxapplianceservice.com/#website',
-      url: 'https://maxapplianceservice.com',
+      '@id': 'https://topvolk.org/#website',
+      url: 'https://topvolk.org',
       name: BUSINESS_NAME,
     },
     ...(datePublished && { datePublished }),

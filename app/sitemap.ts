@@ -11,7 +11,7 @@ import { MetadataRoute } from 'next';
  * Total: ~5,900 pages (down from 43,700)
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://maxapplianceservice.com';
+  const baseUrl = 'https://topvolk.org';
 
   // SITEMAP INDEX - Points to phased sitemaps
   // Uncomment phase sitemaps as you're ready to index them

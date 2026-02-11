@@ -29,7 +29,7 @@ export default config({
         }),
         author: fields.text({ 
           label: 'Author', 
-          defaultValue: 'Max Appliance Service',
+          defaultValue: 'TopVolk Construction',
         }),
         image: fields.image({
           label: 'Featured Image',

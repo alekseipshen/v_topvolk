@@ -11,7 +11,7 @@ import { cities } from '@/lib/data/cities';
  * Full site launch
  */
 export async function GET() {
-  const baseUrl = 'https://maxapplianceservice.com';
+  const baseUrl = 'https://topvolk.org';
   const now = new Date().toISOString();
 
   // Remaining cities for City+Appliance (cities 51-362)

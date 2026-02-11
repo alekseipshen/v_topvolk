@@ -6,9 +6,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Commercial Appliance Repair NJ | Max Appliance Service',
-  description: 'Professional commercial appliance repair services in Texas. Fast, reliable repairs for restaurants, hotels, and businesses. Same-day service available.',
-  keywords: 'commercial appliance repair, commercial refrigeration, restaurant equipment repair, Texas',
+  title: 'Commercial Construction Services | TopVolk Construction',
+  description: 'Professional commercial construction and renovation services in Seattle, WA. Fast, reliable service for businesses across King County, Snohomish County, Pierce County, and Kitsap County.',
+  keywords: 'commercial construction, commercial renovation, business remodeling, Seattle, WA',
 };
 
 export default function CommercialPage() {
@@ -16,8 +16,8 @@ export default function CommercialPage() {
     <>
       {/* Hero Section */}
       <Hero
-        title="Commercial Appliance Repair in Texas"
-        subtitle="Professional repair services for restaurants, hotels, and businesses"
+        title="Commercial Construction Services in Seattle, WA"
+        subtitle="Professional construction and renovation services for businesses"
       />
 
       {/* SEO Content Section */}
@@ -31,13 +31,13 @@ export default function CommercialPage() {
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
                 Your commercial refrigerator down? Commercial mixer not working? We specialize in fast, reliable 
-                repairs for restaurants, hotels, and businesses across Texas. Our factory-trained technicians 
+                repairs for restaurants, hotels, and businesses across Seattle, WA. Our factory-trained technicians 
                 understand that downtime costs you money.
               </p>
               
               <p className="text-base md:text-lg leading-relaxed">
-                <strong>Max Appliance Service</strong> provides <strong>same-day commercial repair</strong> for 
-                all major brands. Upfront pricing, solid warranty, and 20+ years of experience keeping Texas 
+                <strong>TopVolk Construction</strong> provides <strong>same-day commercial repair</strong> for 
+                all major brands. Upfront pricing, solid warranty, and 20+ years of experience keeping Seattle 
                 businesses running smoothly.
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function CommercialPage() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">20+ Years Experience</h3>
               <p className="text-gray-600">
-                Decades of experience repairing commercial equipment for NJ businesses.
+                Decades of experience repairing commercial equipment for Seattle-area businesses.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">

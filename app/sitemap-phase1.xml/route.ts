@@ -11,7 +11,7 @@ import { cities } from '@/lib/data/cities';
  * Wait for 90%+ indexation before moving to Phase 2
  */
 export async function GET() {
-  const baseUrl = 'https://maxapplianceservice.com';
+  const baseUrl = 'https://topvolk.org';
   const now = new Date().toISOString();
 
   // Top 50 cities by population/importance (Bergen County + major cities)
