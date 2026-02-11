@@ -27,7 +27,7 @@ export default function Header() {
           <Link href="/" className="flex items-center -my-2">
             <Image
               src="/logo.png"
-              alt="Max Appliance Repair"
+              alt="TopVolk Construction"
               width={280}
               height={80}
               className="h-14 md:h-20 w-auto"
