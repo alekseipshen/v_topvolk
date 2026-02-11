@@ -1,7 +1,7 @@
-// Texas Service Areas (Major Metropolitan Regions)
+// Seattle Metro Service Areas (Major Regions)
 export const counties = [
-  { slug: 'houston', name: 'Houston Area' },
-  { slug: 'dallas', name: 'Dallas-Fort Worth Area' },
-  { slug: 'austin', name: 'Austin Area' },
-  { slug: 'san-antonio', name: 'San Antonio Area' },
+  { slug: 'king-county', name: 'King County' },
+  { slug: 'snohomish-county', name: 'Snohomish County' },
+  { slug: 'pierce-county', name: 'Pierce County' },
+  { slug: 'kitsap-county', name: 'Kitsap County' },
 ];

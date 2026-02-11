@@ -3,7 +3,8 @@
  * Prevents duplicate content issues by specifying the preferred URL
  */
 
-const BASE_URL = 'https://maxapplianceservice.com';
+const BASE_URL = 'https://topvolk.org';
+const SITE_NAME = 'TopVolk Construction LLC';
 
 /**
  * Generate canonical URL for a path
@@ -55,7 +56,7 @@ export function generateOpenGraphMetadata({
       title,
       description,
       url,
-      siteName: 'Max Appliance Service',
+      siteName: SITE_NAME,
       images: [
         {
           url: `${BASE_URL}${ogImage}`,

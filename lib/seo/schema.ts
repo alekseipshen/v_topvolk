@@ -1,28 +1,28 @@
+import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME, GOOGLE_RATING } from '@/lib/utils';
+
 interface SchemaParams {
   city?: string;
-  appliance?: string;
+  service?: string;
+  // Legacy params from programmatic pages (brands/appliances routes)
   brand?: string;
+  appliance?: string;
   county?: string;
 }
 
-const SITE_URL = 'https://maxapplianceservice.com';
-const BUSINESS_NAME = 'Max Appliance Service';
-const PHONE = '+15512829561';
-const PHONE_DISPLAY = '(888) 771-3235';
-const GOOGLE_RATING = 4.9;
-const REVIEW_COUNT = 100;
+const SITE_URL = 'https://topvolk.org';
+const REVIEW_COUNT = 30;
 
 export function generateLocalBusinessSchema(params: SchemaParams) {
-  const { city, appliance, brand, county } = params;
+  const { city, service } = params;
   
   const schema: any = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'HomeAndConstructionBusiness',
     '@id': `${SITE_URL}#business`,
     name: BUSINESS_NAME,
     description: generateBusinessDescription(params),
     url: SITE_URL,
-    telephone: PHONE,
+    telephone: PHONE_NUMBER,
     priceRange: '$$',
     image: `${SITE_URL}/logo.png`,
     aggregateRating: {
@@ -34,16 +34,17 @@ export function generateLocalBusinessSchema(params: SchemaParams) {
     },
     address: {
       '@type': 'PostalAddress',
-      addressRegion: 'NJ',
+      addressLocality: 'Seattle',
+      addressRegion: 'WA',
       addressCountry: 'US',
     },
     areaServed: generateAreaServed(params),
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         opens: '07:00',
-        closes: '21:00',
+        closes: '19:00',
       },
     ],
   };
@@ -52,7 +53,7 @@ export function generateLocalBusinessSchema(params: SchemaParams) {
 }
 
 export function generateServiceSchema(params: SchemaParams) {
-  const { city, appliance, brand } = params;
+  const { city } = params;
   
   const serviceName = generateServiceName(params);
   const serviceDescription = generateServiceDescription(params);
@@ -64,24 +65,20 @@ export function generateServiceSchema(params: SchemaParams) {
     name: serviceName,
     description: serviceDescription,
     provider: {
-      '@type': 'LocalBusiness',
+      '@type': 'HomeAndConstructionBusiness',
       name: BUSINESS_NAME,
-      telephone: PHONE,
+      telephone: PHONE_NUMBER,
       url: SITE_URL,
     },
     areaServed: generateAreaServed(params),
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: `${serviceName} Services`,
-      itemListElement: generateServiceList(params),
-    },
   };
   
   return schema;
 }
 
 export function generateBreadcrumbSchema(params: SchemaParams) {
-  const { city, appliance, brand } = params;
+  const { city, brand } = params;
+  const service = getEffectiveService(params);
   
   const items: any[] = [
     {
@@ -94,41 +91,32 @@ export function generateBreadcrumbSchema(params: SchemaParams) {
   
   let position = 2;
   
+  if (brand) {
+    items.push({
+      '@type': 'ListItem',
+      position: position++,
+      name: formatName(brand),
+      item: `${SITE_URL}/brands/${brand}`,
+    });
+  }
+  
+  if (service) {
+    items.push({
+      '@type': 'ListItem',
+      position: position++,
+      name: formatName(service),
+      item: brand 
+        ? `${SITE_URL}/brands/${brand}/services/${service}`
+        : `${SITE_URL}/services/${service}`,
+    });
+  }
+  
   if (city) {
     items.push({
       '@type': 'ListItem',
       position: position++,
-      name: formatCityName(city),
-      item: `${SITE_URL}/${city}`,
-    });
-  }
-  
-  if (brand && !appliance) {
-    items.push({
-      '@type': 'ListItem',
-      position: position++,
-      name: `${formatBrandName(brand)} Repair`,
-      item: city ? `${SITE_URL}/${city}/${brand}-repair` : `${SITE_URL}/${brand}-repair`,
-    });
-  }
-  
-  if (appliance && !brand) {
-    items.push({
-      '@type': 'ListItem',
-      position: position++,
-      name: `${formatApplianceName(appliance)} Repair`,
-      item: city ? `${SITE_URL}/${city}/${appliance}-repair` : `${SITE_URL}/${appliance}-repair`,
-    });
-  }
-  
-  if (brand && appliance) {
-    items.push({
-      '@type': 'ListItem',
-      position: position++,
-      name: `${formatBrandName(brand)} ${formatApplianceName(appliance)} Repair`,
-      item: city 
-        ? `${SITE_URL}/${city}/${brand}/${appliance}-repair`
-        : `${SITE_URL}/${brand}/${appliance}-repair`,
+      name: formatName(city),
+      item: `${SITE_URL}/cities/${city}`,
     });
   }
   
@@ -141,151 +129,100 @@ export function generateBreadcrumbSchema(params: SchemaParams) {
 
 // Helper functions
 
+function getEffectiveService(params: SchemaParams): string | undefined {
+  return params.service || params.appliance;
+}
+
 function generateBusinessDescription(params: SchemaParams): string {
-  const { city, appliance, brand } = params;
+  const { city, brand } = params;
+  const service = getEffectiveService(params);
   
-  if (city && brand && appliance) {
-    return `Professional ${formatBrandName(brand)} ${formatApplianceName(appliance)} repair in ${formatCityName(city)}, Texas. Same-day service, certified technicians.`;
-  } else if (city && appliance) {
-    return `Expert ${formatApplianceName(appliance)} repair in ${formatCityName(city)}, NJ. 20+ years experience, same-day service available.`;
+  if (city && brand && service) {
+    return `Professional ${formatName(brand)} ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor since 2017. Call ${PHONE_DISPLAY}.`;
+  } else if (city && service) {
+    return `Professional ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor since 2017. Call ${PHONE_DISPLAY} for a free estimate.`;
+  } else if (brand && service) {
+    return `Professional ${formatName(brand)} ${formatName(service)} services in Seattle and surrounding areas. Licensed contractor since 2017.`;
   } else if (city) {
-    return `Professional appliance repair services in ${formatCityName(city)}, Texas. All major brands and appliances. Same-day service.`;
+    return `Professional home renovation services in ${formatName(city)}, WA. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017.`;
+  } else if (brand) {
+    return `Professional ${formatName(brand)} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since 2017.`;
+  } else if (service) {
+    return `Expert ${formatName(service)} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since 2017.`;
   } else {
-    return `Expert appliance repair across Texas. 20+ years experience, certified technicians, same-day service for all major brands.`;
+    return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017.`;
   }
 }
 
 function generateServiceName(params: SchemaParams): string {
-  const { city, appliance, brand } = params;
+  const { brand } = params;
+  const service = getEffectiveService(params);
   
-  if (brand && appliance) {
-    return `${formatBrandName(brand)} ${formatApplianceName(appliance)} Repair`;
-  } else if (appliance) {
-    return `${formatApplianceName(appliance)} Repair`;
+  if (brand && service) {
+    return `${formatName(brand)} ${formatName(service)}`;
+  } else if (service) {
+    return formatName(service);
   } else if (brand) {
-    return `${formatBrandName(brand)} Appliance Repair`;
-  } else {
-    return 'Appliance Repair';
+    return `${formatName(brand)} Services`;
   }
+  return 'Home Renovation';
 }
 
 function generateServiceDescription(params: SchemaParams): string {
-  const { city, appliance, brand } = params;
+  const { city, brand } = params;
+  const service = getEffectiveService(params);
   
-  if (city && brand && appliance) {
-    return `Professional ${formatBrandName(brand)} ${formatApplianceName(appliance)} repair services in ${formatCityName(city)}, Texas. Factory-trained technicians, same-day service, upfront pricing.`;
-  } else if (city && appliance) {
-    return `Expert ${formatApplianceName(appliance)} repair in ${formatCityName(city)}, NJ. Certified technicians, same-day service, all major brands.`;
-  } else if (brand && appliance) {
-    return `Professional ${formatBrandName(brand)} ${formatApplianceName(appliance)} repair across Texas. Factory-trained technicians, 20+ years experience.`;
+  if (city && brand && service) {
+    return `Professional ${formatName(brand)} ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor. Call ${PHONE_DISPLAY}.`;
+  } else if (city && service) {
+    return `Professional ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor, quality craftsmanship, free estimates. Call ${PHONE_DISPLAY}.`;
+  } else if (brand && service) {
+    return `Professional ${formatName(brand)} ${formatName(service)} services in Seattle area. Licensed contractor with 100+ completed projects.`;
+  } else if (service) {
+    return `Professional ${formatName(service)} services in Seattle and King County area. Licensed contractor with 100+ completed projects.`;
   } else {
-    return `Professional appliance repair services across Texas. All major brands and appliances. Same-day service available.`;
+    return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations, and more.`;
   }
 }
 
 function generateAreaServed(params: SchemaParams): any {
-  const { city, county } = params;
+  const { city } = params;
   
   if (city) {
     return {
       '@type': 'City',
-      name: formatCityName(city),
+      name: formatName(city),
       containedInPlace: {
         '@type': 'State',
-        name: 'Texas',
-        '@id': 'https://en.wikipedia.org/wiki/New_Jersey',
+        name: 'Washington',
+        '@id': 'https://en.wikipedia.org/wiki/Washington_(state)',
       },
     };
   } else {
-    return {
-      '@type': 'State',
-      name: 'Texas',
-      '@id': 'https://en.wikipedia.org/wiki/New_Jersey',
-    };
-  }
-}
-
-function generateServiceList(params: SchemaParams): any[] {
-  const { appliance } = params;
-  
-  if (appliance === 'refrigerator') {
     return [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Refrigerator Not Cooling' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ice Maker Repair' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Water Dispenser Repair' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Compressor Replacement' } },
-    ];
-  } else if (appliance === 'washer') {
-    return [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Washer Won\'t Spin' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Washer Leaking' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Washer Not Draining' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Control Panel Repair' } },
-    ];
-  } else if (appliance === 'dryer') {
-    return [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Dryer Not Heating' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Dryer Won\'t Start' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Dryer Takes Too Long' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Belt Replacement' } },
-    ];
-  } else {
-    return [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Appliance Diagnostic' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Appliance Repair' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Maintenance Service' } },
+      {
+        '@type': 'City',
+        name: 'Seattle',
+      },
+      {
+        '@type': 'City',
+        name: 'Bellevue',
+      },
+      {
+        '@type': 'City',
+        name: 'Tacoma',
+      },
+      {
+        '@type': 'City',
+        name: 'Kirkland',
+      },
     ];
   }
 }
 
-function formatCityName(slug: string): string {
+function formatName(slug: string): string {
   return slug
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 }
-
-function formatBrandName(slug: string): string {
-  const brandMap: { [key: string]: string } = {
-    'lg': 'LG',
-    'ge': 'GE',
-    'ge-appliances': 'GE Appliances',
-    'ge-profile': 'GE Profile',
-    'kitchenaid': 'KitchenAid',
-    'sub-zero': 'Sub-Zero',
-    'jennair': 'JennAir',
-    'u-line': 'U-Line',
-    'fisher-paykel': 'Fisher & Paykel',
-  };
-  
-  if (brandMap[slug]) return brandMap[slug];
-  
-  return slug
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-function formatApplianceName(slug: string): string {
-  const applianceMap: { [key: string]: string } = {
-    'refrigerator': 'Refrigerator',
-    'washer': 'Washer',
-    'dryer': 'Dryer',
-    'dishwasher': 'Dishwasher',
-    'oven': 'Oven/Stove',
-    'range': 'Range',
-    'cooktop': 'Cooktop',
-    'freezer': 'Freezer',
-    'range-hood': 'Range Hood',
-    'ice-maker': 'Ice Maker',
-    'coffee-machine': 'Coffee Machine',
-  };
-  
-  return applianceMap[slug] || slug
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-
-

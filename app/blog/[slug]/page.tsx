@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${post.title} | Max Appliance Service Blog`,
-    description: post.description || `Read about ${post.title} on Max Appliance Service blog`,
+    title: `${post.title} | TopVolk Construction Blog`,
+    description: post.description || `Read about ${post.title} on TopVolk Construction blog`,
   };
 }
 
@@ -127,17 +127,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Need Professional Appliance Repair?
+              Ready to Start Your Renovation?
             </h2>
             <p className="text-xl text-gold-100 mb-8">
-              Our expert technicians are ready to help. Same-day service available across Texas.
+              Our experienced team is ready to bring your vision to life. Free estimates for Seattle area projects.
             </p>
             <a
-              href="tel:+15512829561"
+              href="tel:+12065911096"
               className="inline-block px-8 py-4 rounded-lg font-semibold text-lg shadow-xl transition cursor-pointer"
               style={{ backgroundColor: '#334e64' }}
             >
-              Call (888) 771-3235
+              Call (206) 591-1096
             </a>
           </div>
         </div>

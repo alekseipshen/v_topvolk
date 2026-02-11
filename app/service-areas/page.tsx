@@ -2,10 +2,11 @@ import { cities } from '@/lib/data/cities';
 import { counties } from '@/lib/data/counties';
 import { MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Service Areas | Appliance Repair in Texas - Houston, Dallas, Austin, San Antonio',
-  description: 'Max Appliance Repair covers 227 cities across Texas. Same-day appliance repair in Houston, Dallas, Austin, and San Antonio metro areas.',
+  title: 'Service Areas | Home Renovation in Seattle, Bellevue, Tacoma & King County',
+  description: 'TopVolk Construction serves 65+ cities across the Seattle metro area. Professional home renovation in King, Snohomish, Pierce & Kitsap counties. Call (206) 591-1096.',
 };
 
 export default function ServiceAreasPage() {
@@ -31,19 +32,19 @@ export default function ServiceAreasPage() {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              We Serve 227 Cities Across Texas
+              We Serve the Entire Seattle Metro Area
             </h1>
             <p className="text-xl md:text-2xl text-gold-100 mb-8">
-              Same-day appliance repair service available in Houston, Dallas, Austin, and San Antonio metro areas
+              Professional home renovation services across King, Snohomish, Pierce & Kitsap counties
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="tel:+18887713235"
+                href={`tel:${PHONE_NUMBER}`}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg shadow-xl transition cursor-pointer"
                 style={{ backgroundColor: '#334e64' }}
               >
                 <Phone className="w-6 h-6" />
-                (888) 771-3235
+                {PHONE_DISPLAY}
               </a>
             </div>
           </div>
@@ -55,17 +56,17 @@ export default function ServiceAreasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Professional Appliance Repair Throughout Texas
+              Professional Home Renovation Throughout Greater Seattle
             </h2>
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
-                For over 20 years, <strong>Max Appliance Repair</strong> has been the trusted choice for appliance 
-                repair across Texas. Our factory-trained technicians provide same-day service to homes and businesses 
-                in Houston, Dallas-Fort Worth, Austin, and San Antonio metro areas.
+                Since 2017, <strong>{BUSINESS_NAME}</strong> has been the trusted choice for home 
+                renovation across the Seattle metropolitan area. Our experienced team delivers quality 
+                craftsmanship for kitchen remodels, bathroom renovations, deck installations, and more.
               </p>
               <p className="text-base md:text-lg leading-relaxed">
-                We repair all major brands — LG, Samsung, Whirlpool, GE, Maytag, Bosch, KitchenAid, and more. 
-                Upfront pricing, solid warranty, fully insured. Most customers come from referrals.
+                We work with homeowners throughout King County, Snohomish County, Pierce County, and Kitsap County. 
+                Licensed, insured, and committed to exceeding expectations on every project.
               </p>
             </div>
           </div>
@@ -80,7 +81,7 @@ export default function ServiceAreasPage() {
               Our Service Regions
             </h2>
             <p className="text-xl text-gray-600">
-              Serving 4 major metropolitan areas across Texas
+              Serving 4 counties across the Seattle metro area
             </p>
           </div>
 
@@ -110,7 +111,7 @@ export default function ServiceAreasPage() {
               Cities We Serve by Region
             </h2>
             <p className="text-xl text-gray-600">
-              Click on any city to see available appliance repair services
+              Click on any city to see available renovation services
             </p>
           </div>
 
@@ -150,18 +151,18 @@ export default function ServiceAreasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Can't Find Your City?
+              Don&apos;t See Your City?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              We serve all areas within Houston, Dallas, Austin, and San Antonio regions. Call us to confirm service availability in your area.
+              We serve all areas within the greater Seattle region. Call us to discuss your renovation project.
             </p>
             <a
-              href="tel:+18887713235"
+              href={`tel:${PHONE_NUMBER}`}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-lg shadow-xl transition cursor-pointer"
               style={{ backgroundColor: '#F4B942' }}
             >
               <Phone className="w-6 h-6" />
-              Call (888) 771-3235
+              Call {PHONE_DISPLAY}
             </a>
           </div>
         </div>

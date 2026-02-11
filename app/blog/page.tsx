@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Appliance Repair Tips & Blog | Max Appliance Service',
-  description: 'Expert tips, guides, and advice for appliance repair and maintenance. Learn how to keep your appliances running smoothly.',
+  title: 'Home Renovation Tips & Blog | TopVolk Construction',
+  description: 'Expert tips, guides, and advice for home renovation and remodeling. Kitchen, bathroom, deck projects and more from Seattle area professionals.',
 };
 
 // Force dynamic rendering (disable caching)
@@ -37,10 +37,10 @@ export default async function BlogPage() {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Appliance Repair Tips & Blog
+              Home Renovation Tips & Blog
             </h1>
             <p className="text-xl md:text-2xl text-gold-100">
-              Expert advice, maintenance tips, and industry insights from our professional technicians
+              Expert advice, project inspiration, and renovation insights from our experienced team
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default async function BlogPage() {
           {posts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-xl text-gray-600">
-                No blog posts yet. Check back soon for expert appliance repair tips!
+                No blog posts yet. Check back soon for home renovation tips and project inspiration!
               </p>
             </div>
           ) : (
