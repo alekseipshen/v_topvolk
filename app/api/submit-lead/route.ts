@@ -18,6 +18,71 @@ interface LeadData {
 // Helper function to add delay between emails
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Send Telegram notification to group chat
+async function sendTelegram(data: {
+  name: string;
+  phone: string;
+  email: string;
+  message?: string;
+  url?: string;
+  timestamp?: string;
+}) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.log('[TELEGRAM] Skipping - no bot token or chat ID configured');
+    return;
+  }
+
+  const pstTime = data.timestamp
+    ? new Date(data.timestamp).toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
+    : new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+
+  const text = [
+    `🔔 *New Lead — TopVolk Construction*`,
+    ``,
+    `👤 *Name:* ${escapeMarkdown(data.name)}`,
+    `📞 *Phone:* ${escapeMarkdown(data.phone)}`,
+    `📧 *Email:* ${escapeMarkdown(data.email)}`,
+    data.message ? `💬 *Message:* ${escapeMarkdown(data.message)}` : null,
+    ``,
+    `🌐 Page: ${data.url || 'unknown'}`,
+    `🕐 ${pstTime} PST`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  try {
+    const res = await fetch(
+      `https://api.telegram.org/bot${botToken}/sendMessage`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: 'Markdown',
+        }),
+      }
+    );
+
+    if (!res.ok) {
+      const err = await res.text();
+      console.error('[TELEGRAM] Error:', err);
+    } else {
+      console.log('[TELEGRAM] Notification sent');
+    }
+  } catch (error) {
+    console.error('[TELEGRAM] Error:', error);
+  }
+}
+
+// Escape special characters for Telegram Markdown
+function escapeMarkdown(text: string): string {
+  return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&');
+}
+
 // Helper function to send emails (optimized with parallel sending)
 async function sendEmails(data: {
   name: string;
@@ -166,11 +231,10 @@ export async function POST(request: NextRequest) {
     }
 
     // ============================================
-    // Send email notifications (optimized with parallel sending)
+    // Send notifications: Email + Telegram (in parallel)
     // ============================================
-    
-    // Prepare email data
-    const emailData = {
+
+    const notificationData = {
       name: data.name,
       phone: data.phone,
       email: data.email,
@@ -179,10 +243,12 @@ export async function POST(request: NextRequest) {
       url: leadPayload.url,
       timestamp: leadPayload.timestamp,
     };
-    
-    // Send emails (owners in parallel, then customer)
-    // Total time: ~2-3 seconds instead of ~6 seconds
-    await sendEmails(emailData);
+
+    // Send email and Telegram in parallel
+    await Promise.all([
+      sendEmails(notificationData),
+      sendTelegram(notificationData),
+    ]);
 
     // Return success to client
     return NextResponse.json({
