@@ -27,8 +27,8 @@ async function sendTelegram(data: {
   url?: string;
   timestamp?: string;
 }) {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const botToken = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
 
   if (!botToken || !chatId) {
     console.log('[TELEGRAM] Skipping - no bot token or chat ID configured');
@@ -40,14 +40,14 @@ async function sendTelegram(data: {
     : new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
 
   const text = [
-    `🔔 *New Lead — TopVolk Construction*`,
+    `🔔 <b>New Lead — TopVolk Construction</b>`,
     ``,
-    `👤 *Name:* ${escapeMarkdown(data.name)}`,
-    `📞 *Phone:* ${escapeMarkdown(data.phone)}`,
-    `📧 *Email:* ${escapeMarkdown(data.email)}`,
-    data.message ? `💬 *Message:* ${escapeMarkdown(data.message)}` : null,
+    `👤 <b>Name:</b> ${escapeHtml(data.name)}`,
+    `📞 <b>Phone:</b> ${escapeHtml(data.phone)}`,
+    `📧 <b>Email:</b> ${escapeHtml(data.email)}`,
+    data.message ? `💬 <b>Message:</b> ${escapeHtml(data.message)}` : null,
     ``,
-    `🌐 Page: ${data.url || 'unknown'}`,
+    `🌐 Page: ${escapeHtml(data.url || 'unknown')}`,
     `🕐 ${pstTime} PST`,
   ]
     .filter(Boolean)
@@ -62,7 +62,7 @@ async function sendTelegram(data: {
         body: JSON.stringify({
           chat_id: chatId,
           text,
-          parse_mode: 'Markdown',
+          parse_mode: 'HTML',
         }),
       }
     );
@@ -78,9 +78,9 @@ async function sendTelegram(data: {
   }
 }
 
-// Escape special characters for Telegram Markdown
-function escapeMarkdown(text: string): string {
-  return text.replace(/[_*[\]()~`>#+\-=|{}.!]/g, '\\$&');
+// Escape special characters for Telegram HTML parse mode
+function escapeHtml(text: string): string {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 // Helper function to send emails (optimized with parallel sending)
@@ -93,10 +93,10 @@ async function sendEmails(data: {
   url?: string;
   timestamp?: string;
 }) {
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const emailRecipient1 = process.env.EMAIL_RECIPIENT_1;
-  const emailRecipient2 = process.env.EMAIL_RECIPIENT_2;
-  const emailFromAddress = process.env.EMAIL_FROM || 'noreply@topvolk.org';
+  const resendApiKey = process.env.RESEND_API_KEY?.trim();
+  const emailRecipient1 = process.env.EMAIL_RECIPIENT_1?.trim();
+  const emailRecipient2 = process.env.EMAIL_RECIPIENT_2?.trim();
+  const emailFromAddress = process.env.EMAIL_FROM?.trim() || 'noreply@topvolk.org';
   
   if (!resendApiKey || (!emailRecipient1 && !emailRecipient2)) {
     console.log('[EMAIL] Skipping - no API key or recipients configured');
