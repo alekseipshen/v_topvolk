@@ -3,13 +3,11 @@
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
-// All 15 photos - available in lightbox
+// All photos - available in lightbox (removed AI-generated _02 and _05)
 const allWorks = [
   { image: '/assets/works/_01.jpg', alt: 'Home Renovation Project 1' },
-  { image: '/assets/works/_02.jpg', alt: 'Home Renovation Project 2' },
   { image: '/assets/works/_03.jpg', alt: 'Home Renovation Project 3' },
   { image: '/assets/works/_04.jpg', alt: 'Home Renovation Project 4' },
-  { image: '/assets/works/_05.jpg', alt: 'Home Renovation Project 5' },
   { image: '/assets/works/_06.jpg', alt: 'Home Renovation Project 6' },
   { image: '/assets/works/_07.jpg', alt: 'Home Renovation Project 7' },
   { image: '/assets/works/_08.jpg', alt: 'Home Renovation Project 8' },
@@ -22,14 +20,12 @@ const allWorks = [
   { image: '/assets/works/_15.jpg', alt: 'Home Renovation Project 15' },
 ];
 
-// First 6 photos with preview thumbnails - shown in gallery
+// Preview thumbnails shown in gallery grid
 const previewWorks = [
   { preview: '/assets/works/_01m.jpg', index: 0 },
-  { preview: '/assets/works/_02m.jpg', index: 1 },
-  { preview: '/assets/works/_03m.jpg', index: 2 },
-  { preview: '/assets/works/_04m.jpg', index: 3 },
-  { preview: '/assets/works/_05m.jpg', index: 4 },
-  { preview: '/assets/works/_06m.jpg', index: 5 },
+  { preview: '/assets/works/_03m.jpg', index: 1 },
+  { preview: '/assets/works/_04m.jpg', index: 2 },
+  { preview: '/assets/works/_06m.jpg', index: 3 },
 ];
 
 export default function WorksGallery() {
@@ -74,17 +70,17 @@ export default function WorksGallery() {
   return (
     <>
       {/* Gallery Grid - Show only 6 preview images */}
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {[1, 2, 3, 4, 5, 6].map((num) => (
+      <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {previewWorks.map((work) => (
           <div
-            key={num}
+            key={work.index}
             className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group"
-            onClick={() => openLightbox(num - 1)}
+            onClick={() => openLightbox(work.index)}
           >
             <div className="w-full h-64 overflow-hidden bg-gray-200">
               <img
-                src={`/assets/works/_0${num}m.jpg`}
-                alt={`Home Renovation Project ${num}`}
+                src={work.preview}
+                alt={allWorks[work.index].alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               {/* Hover Overlay */}
