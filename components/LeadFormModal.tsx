@@ -13,9 +13,7 @@ const formSchema = z.object({
   phone: z.string()
     .min(10, 'Please enter a valid phone number')
     .refine((val) => {
-      // Remove all non-digit characters
       const digitsOnly = val.replace(/\D/g, '');
-      // Check that we have exactly 10 digits
       return digitsOnly.length === 10;
     }, 'Please enter a complete 10-digit phone number'),
   email: z.string().email('Please enter a valid email'),
@@ -24,8 +22,6 @@ const formSchema = z.object({
   city: z.string().min(2, 'City is required'),
   zipCode: z.string().min(5, 'Please enter a valid 5-digit ZIP code'),
   message: z.string().min(5, 'Please describe the issue (minimum 5 characters)'),
-  preferredDate: z.string().min(1, 'Please select a date'),
-  timeSlot: z.enum(['8-10', '10-12', '12-14', '14-16', '16-18', '18-20']),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -60,61 +56,19 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
     setSubmitStatus('idle');
 
     try {
-      // Convert to ISO format for HouseCallPro CRM
-      const selectedDate = new Date(data.preferredDate);
-      const isoDate = selectedDate.toISOString().split('T')[0]; // YYYY-MM-DD
-      
-      // Time slot mapping (2-hour intervals)
-      const timeSlotMap: Record<string, { start: string; end: string; label: string }> = {
-        '8-10': { start: '08:00:00', end: '10:00:00', label: '8:00 AM - 10:00 AM' },
-        '10-12': { start: '10:00:00', end: '12:00:00', label: '10:00 AM - 12:00 PM' },
-        '12-14': { start: '12:00:00', end: '14:00:00', label: '12:00 PM - 2:00 PM' },
-        '14-16': { start: '14:00:00', end: '16:00:00', label: '2:00 PM - 4:00 PM' },
-        '16-18': { start: '16:00:00', end: '18:00:00', label: '4:00 PM - 6:00 PM' },
-        '18-20': { start: '18:00:00', end: '20:00:00', label: '6:00 PM - 8:00 PM' },
-      };
-      
-      const selectedSlot = timeSlotMap[data.timeSlot];
-      const startTime = selectedSlot.start;
-      const endTime = selectedSlot.end;
-      const timeSlotLabel = selectedSlot.label;
-      
       const now = new Date();
-      const submittedAtISO = now.toISOString(); // Full ISO timestamp
+      const submittedAtISO = now.toISOString();
 
-      // Clean phone number - remove all formatting (parentheses, spaces, dashes)
       const cleanedPhone = data.phone.replace(/\D/g, '');
 
-      // Clean text fields - remove quotes and newlines to prevent JSON parsing errors in CRM
       const cleanText = (text: string) => {
         return text
-          .replace(/["']/g, '') // Remove all quotes (double and single)
-          .replace(/\n/g, ' ') // Replace newlines with spaces
-          .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+          .replace(/["']/g, '')
+          .replace(/\n/g, ' ')
+          .replace(/\s+/g, ' ')
           .trim();
       };
 
-      const webhookData = {
-        first_name: data.firstName,
-        last_name: data.lastName,
-        phone: cleanedPhone,
-        email: data.email,
-        street: cleanText(data.street),
-        apartment_or_unit: cleanText(data.apartment || ''),
-        city: cleanText(data.city),
-        zip_code: data.zipCode,
-        state: 'WA',
-        country: 'US',
-        issue: cleanText(data.message || ''),
-        preferred_day: isoDate, // ISO format: YYYY-MM-DD
-        start_time: startTime, // ISO time format: HH:MM:SS
-        end_time: endTime, // ISO time format: HH:MM:SS
-        time_slot: timeSlotLabel,
-        source: 'Website - TopVolk Construction',
-        submitted_at: submittedAtISO, // Full ISO timestamp
-      };
-
-      // Submit to API endpoint
       const response = await fetch('/api/submit-lead', {
         method: 'POST',
         headers: {
@@ -124,13 +78,12 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           name: `${data.firstName} ${data.lastName}`,
           phone: cleanedPhone,
           email: data.email,
-          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, WA ${data.zipCode}\n\nPreferred: ${isoDate} (${timeSlotLabel})`,
-          recaptchaToken: 'bypass', // reCAPTCHA disabled for now
+          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, WA ${data.zipCode}`,
+          recaptchaToken: 'bypass',
         }),
       });
 
       if (response.ok) {
-        // GTM Event
         if (typeof window !== 'undefined' && (window as any).dataLayer) {
           (window as any).dataLayer.push({
             event: 'lead_submitted',
@@ -142,7 +95,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           });
         }
         setSubmitStatus('success');
-        setCurrentStep(4);
+        setCurrentStep(3);
       } else {
         setSubmitStatus('error');
       }
@@ -162,17 +115,11 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
   };
 
   const nextStep = async () => {
-    // Validate step 1 fields before proceeding
     if (currentStep === 1) {
       const isValid = await trigger(['message']);
-      if (!isValid) return; // Don't proceed if validation fails
+      if (!isValid) return;
     }
-    // Validate step 2 fields before proceeding
-    if (currentStep === 2) {
-      const isValid = await trigger(['firstName', 'lastName', 'phone', 'email', 'street', 'city', 'zipCode']);
-      if (!isValid) return; // Don't proceed if validation fails
-    }
-    if (currentStep < 4) setCurrentStep(currentStep + 1);
+    if (currentStep < 2) setCurrentStep(currentStep + 1);
   };
 
   const prevStep = () => {
@@ -202,7 +149,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         {submitStatus !== 'success' && (
           <div className="px-6 py-4">
             <div className="flex items-center justify-center mb-2">
-              {[1, 2, 3].map((step) => (
+              {[1, 2].map((step) => (
                 <div key={step} className="flex items-center flex-1">
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold transition ${
@@ -216,7 +163,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   >
                     {step}
                   </div>
-                  {step < 3 && (
+                  {step < 2 && (
                     <div
                       className={`flex-1 h-1 mx-2 transition ${
                         step < currentStep ? '' : 'bg-gray-200'
@@ -400,7 +347,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                     type="text"
                     id="city"
                     className="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
-                    placeholder="Newark"
+                    placeholder="Seattle"
                   />
                   {errors.city && (
                     <p className="text-red-600 text-xs mt-1">{errors.city.message}</p>
@@ -422,7 +369,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                         {...field}
                         format="#####"
                         mask="_"
-                        placeholder="77001"
+                        placeholder="98101"
                         className="w-full px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
                       />
                     )}
@@ -434,105 +381,17 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
               </div>
 
               <button
-                type="button"
-                onClick={nextStep}
-                className="w-full text-white py-2.5 rounded-lg transition font-semibold text-sm shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: '#F4B942' }}
-              >
-                Next
-              </button>
-            </div>
-          )}
-
-          {/* Step 3: Date & Time */}
-          {currentStep === 3 && submitStatus !== 'success' && (
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={prevStep}
-                  className="p-1 hover:bg-gray-100 rounded-full transition"
-                  style={{ color: '#334e64' }}
-                  aria-label="Back"
-                >
-                  <ChevronLeft size={24} />
-                </button>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900">Select preferred day</h3>
-                  <p className="text-sm text-gray-600">Choose a date and time slot</p>
-                </div>
-              </div>
-
-              {/* Date Picker */}
-              <div>
-                <label htmlFor="preferredDate" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Select preferred day *
-                </label>
-                <input
-                  {...register('preferredDate')}
-                  type="date"
-                  id="preferredDate"
-                  min={new Date().toISOString().split('T')[0]}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
-                />
-                {errors.preferredDate && (
-                  <p className="text-red-600 text-sm mt-1">{errors.preferredDate.message}</p>
-                )}
-              </div>
-
-              {/* Time Slots */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-3">
-                  Select 2-hour arrival window:
-                </label>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {[
-                    { value: '8-10', label: '8:00 AM - 10:00 AM' },
-                    { value: '10-12', label: '10:00 AM - 12:00 PM' },
-                    { value: '12-14', label: '12:00 PM - 2:00 PM' },
-                    { value: '14-16', label: '2:00 PM - 4:00 PM' },
-                    { value: '16-18', label: '4:00 PM - 6:00 PM' },
-                    { value: '18-20', label: '6:00 PM - 8:00 PM' },
-                  ].map((slot) => (
-                    <label
-                      key={slot.value}
-                      className={`relative flex items-center justify-center p-4 border-2 rounded-lg cursor-pointer transition ${
-                        watchedData.timeSlot === slot.value
-                          ? 'border-gold-500 bg-gold-50'
-                          : 'border-gray-300 hover:border-green-400'
-                      }`}
-                    >
-                      <input
-                        {...register('timeSlot')}
-                        type="radio"
-                        value={slot.value}
-                        className="sr-only"
-                      />
-                      <span className="text-sm font-semibold text-gray-900 text-center">{slot.label}</span>
-                    </label>
-                  ))}
-                </div>
-                {errors.timeSlot && (
-                  <p className="text-red-600 text-sm mt-1">{errors.timeSlot.message}</p>
-                )}
-              </div>
-
-              <p className="text-sm text-gray-600">
-                We will confirm the approximate arrival time a little later.
-              </p>
-
-              <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full text-white py-4 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full text-white py-3 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: '#F4B942' }}
               >
-                {isSubmitting ? 'Submitting...' : 'Book my appointment'}
+                {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
               </button>
             </div>
           )}
 
-          {/* Step 4: Confirmation */}
+          {/* Step 3: Confirmation */}
           {submitStatus === 'success' && (
             <div className="space-y-6 text-center py-8">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
@@ -550,42 +409,25 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Appointment Confirmed!</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Thank You!</h3>
               <div className="bg-gray-50 rounded-lg p-6 text-left space-y-3">
-                <h4 className="font-semibold text-gray-900 mb-3">Review & confirm</h4>
                 <div className="space-y-2 text-sm">
                   <p>
-                    <span className="font-semibold">Arrival window:</span>{' '}
-                    {watchedData.preferredDate && new Date(watchedData.preferredDate).toLocaleDateString('en-US', {
-                      weekday: 'long',
-                      month: 'short',
-                      day: 'numeric',
-                    })}{' '}
-                    — {(() => {
-                      const timeSlotLabels: Record<string, string> = {
-                        '8-10': '8:00 AM - 10:00 AM',
-                        '10-12': '10:00 AM - 12:00 PM',
-                        '12-14': '12:00 PM - 2:00 PM',
-                        '14-16': '2:00 PM - 4:00 PM',
-                        '16-18': '4:00 PM - 6:00 PM',
-                        '18-20': '6:00 PM - 8:00 PM',
-                      };
-                      return timeSlotLabels[watchedData.timeSlot] || watchedData.timeSlot;
-                    })()}
+                    <span className="font-semibold">Name:</span> {watchedData.firstName}{' '}
+                    {watchedData.lastName}
                   </p>
                   <p>
-                    <span className="font-semibold">Location:</span> {watchedData.street}
+                    <span className="font-semibold">Phone:</span> {watchedData.phone}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Address:</span> {watchedData.street}
                     {watchedData.apartment && `, ${watchedData.apartment}`}, {watchedData.city}, WA{' '}
                     {watchedData.zipCode}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Contact:</span> {watchedData.firstName}{' '}
-                    {watchedData.lastName}, {watchedData.phone}
                   </p>
                 </div>
               </div>
               <p className="text-gray-600">
-                We will confirm the approximate arrival time a little later.
+                We'll contact you shortly to discuss your project and schedule a visit.
               </p>
               <button
                 type="button"
@@ -601,7 +443,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
           {/* Error State */}
           {submitStatus === 'error' && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4">
-              Something went wrong. Please try again or call us directly at (888) 771-3235.
+              Something went wrong. Please try again or call us directly at (206) 591-1096.
             </div>
           )}
         </form>
@@ -609,4 +451,3 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
     </div>
   );
 }
-
