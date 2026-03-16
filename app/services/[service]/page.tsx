@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Clock, Wrench, Users, CheckCircle } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
+import WorksGallery from '@/components/WorksGallery';
 import { services } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
@@ -68,50 +69,6 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {service.name} Service Areas
-            </h2>
-            <p className="text-xl text-gray-600">
-              We provide {service.name.toLowerCase()} services throughout the greater Seattle area
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {seattleCounties.map((county) => (
-              <div
-                key={county.slug}
-                className="bg-white p-6 rounded-lg shadow-md"
-              >
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 pb-3 border-b-2" style={{ borderColor: '#F4B942' }}>
-                  {county.name}
-                  <span className="text-base font-normal text-gray-600 ml-2">
-                    ({county.totalCities} cities)
-                  </span>
-                </h3>
-                <div className="grid grid-cols-2 gap-2">
-                  {county.cities.map((cityName, idx) => {
-                    const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
-                    return (
-                      <Link
-                        key={idx}
-                        href={`/services/${service.slug}/${citySlug}`}
-                        className="text-gray-700 hover:text-gold-500 transition py-1 text-sm"
-                      >
-                        {cityName}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
       {/* Why Choose Us */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -182,6 +139,20 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Our Works */}
+      <section id="works" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Recent {service.name} Works
+            </h2>
+          </div>
+          <WorksGallery />
+        </div>
+      </section>
+
+      <Reviews />
+
       {/* SEO Content */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -215,6 +186,50 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
       </section>
       
+      {/* Service Areas */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {service.name} Service Areas
+            </h2>
+            <p className="text-xl text-gray-600">
+              We provide {service.name.toLowerCase()} services throughout the greater Seattle area
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {seattleCounties.map((county) => (
+              <div
+                key={county.slug}
+                className="bg-white p-6 rounded-lg shadow-md"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 pb-3 border-b-2" style={{ borderColor: '#F4B942' }}>
+                  {county.name}
+                  <span className="text-base font-normal text-gray-600 ml-2">
+                    ({county.totalCities} cities)
+                  </span>
+                </h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {county.cities.map((cityName, idx) => {
+                    const citySlug = cityName.toLowerCase().replace(/\s+/g, '-');
+                    return (
+                      <Link
+                        key={idx}
+                        href={`/services/${service.slug}/${citySlug}`}
+                        className="text-gray-700 hover:text-gold-500 transition py-1 text-sm"
+                      >
+                        {cityName}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Other Services */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -257,8 +272,6 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </div>
       </section>
-      
-      <Reviews />
     </>
   );
 }
