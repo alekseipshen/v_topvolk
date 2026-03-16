@@ -187,7 +187,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-2xl z-10">
           <h2 className="text-xl font-bold text-gray-900">
-            {submitStatus === 'success' ? 'Thank You!' : 'TopVolk Construction - Request Service'}
+            {submitStatus === 'success' ? 'Thank You!' : 'TopVolk Construction - Free Estimate'}
           </h2>
           <button
             onClick={handleClose}

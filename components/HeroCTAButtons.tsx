@@ -31,7 +31,7 @@ export default function HeroCTAButtons() {
         style={{ backgroundColor: '#334e64' }}
       >
         <Calendar size={20} className="md:w-7 md:h-7" />
-        <span className="whitespace-nowrap">Request Service</span>
+        <span className="whitespace-nowrap">Get Free Estimate</span>
       </button>
     </div>
   );

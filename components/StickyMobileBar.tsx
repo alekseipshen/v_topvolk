@@ -69,7 +69,7 @@ export default function StickyMobileBar() {
               style={{ backgroundColor: '#334e64' }}
             >
             <Calendar size={20} />
-            Request Service
+            Get Free Estimate
           </button>
         </div>
       </div>

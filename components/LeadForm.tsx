@@ -131,7 +131,7 @@ export default function LeadForm() {
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Request Service Today
+              Get Your Free Estimate
             </h2>
             <p className="text-lg text-gray-600">
               Fill out the form and we'll call you back within 15 minutes
@@ -309,7 +309,7 @@ export default function LeadForm() {
               disabled={isSubmitting}
               className="w-full  " style={{ backgroundColor: "#F4B942", color: "#ffffff" }}
             >
-              {isSubmitting ? 'Submitting...' : 'Request Service Call'}
+              {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
             </button>
 
             {/* Status Messages */}

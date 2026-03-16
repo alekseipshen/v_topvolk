@@ -69,7 +69,7 @@ export default function Header() {
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#334e64'}
           >
             <Calendar size={18} />
-            Request Service
+            Get Free Estimate
           </button>
           <a
             href={`tel:${PHONE_NUMBER}`}
