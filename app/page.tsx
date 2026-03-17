@@ -1,6 +1,8 @@
 import Hero from '@/components/Hero';
+import PromoSection from '@/components/PromoSection';
 import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
+import { HomepageSchemas } from '@/components/StructuredData';
 import { featuredServices } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
@@ -9,6 +11,9 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <>
+      {/* Structured Data */}
+      <HomepageSchemas />
+
       {/* Hero Section */}
       <Hero
         title="Professional Home Renovation in Seattle"
@@ -28,7 +33,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div 
+                <div
                   className="w-16 h-16 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
                 >
@@ -42,7 +47,7 @@ export default function HomePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div 
+                <div
                   className="w-16 h-16 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
                 >
@@ -56,7 +61,7 @@ export default function HomePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div 
+                <div
                   className="w-16 h-16 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
                 >
@@ -70,7 +75,7 @@ export default function HomePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <div className="flex justify-center mb-4">
-                <div 
+                <div
                   className="w-16 h-16 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
                 >
@@ -86,6 +91,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Weekly Promo Section */}
+      <PromoSection />
+
       {/* SEO Content Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -93,17 +101,17 @@ export default function HomePage() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
               Expert Home Renovation Services in Seattle
             </h2>
-            
+
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
-                Transform your home with <strong>TopVolk Construction LLC</strong> - a professional construction contractor 
-                specializing in residential remodeling. Since 2017, Vladislav Volkov has completed over 100 projects across 
+                Transform your home with <strong>TopVolk Construction LLC</strong> - a professional construction contractor
+                specializing in residential remodeling. Since 2017, Vladislav Volkov has completed over 100 projects across
                 Seattle, Bellevue, Tacoma, and surrounding King County areas.
               </p>
-              
+
               <p className="text-base md:text-lg leading-relaxed">
-                From <strong>kitchen remodels</strong> and <strong>bathroom renovations</strong> to custom <strong>deck installations</strong> 
-                and complete home transformations, we deliver quality craftsmanship with direct communication and transparent pricing. 
+                From <strong>kitchen remodels</strong> and <strong>bathroom renovations</strong> to custom <strong>deck installations</strong>
+                and complete home transformations, we deliver quality craftsmanship with direct communication and transparent pricing.
                 Licensed, insured, and committed to your satisfaction - with penalties paid if deadlines are missed.
               </p>
             </div>
@@ -133,8 +141,8 @@ export default function HomePage() {
               >
                 {service.image && (
                   <div className="w-full h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
+                    <img
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />

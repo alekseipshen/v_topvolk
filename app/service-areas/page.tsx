@@ -7,6 +7,9 @@ import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME } from '@/lib/utils';
 export const metadata = {
   title: 'Service Areas | Home Renovation in Seattle, Bellevue, Tacoma & King County',
   description: 'TopVolk Construction serves 65+ cities across the Seattle metro area. Professional home renovation in King, Snohomish, Pierce & Kitsap counties. Call (206) 591-1096.',
+  alternates: {
+    canonical: 'https://www.topvolk.org/service-areas',
+  },
 };
 
 export default function ServiceAreasPage() {

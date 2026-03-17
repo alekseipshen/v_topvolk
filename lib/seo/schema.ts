@@ -1,30 +1,65 @@
-import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME, GOOGLE_RATING } from '@/lib/utils';
+import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME, BUSINESS_EMAIL, GOOGLE_RATING } from '@/lib/utils';
+
+const SITE_URL = 'https://www.topvolk.org';
+const REVIEW_COUNT = 32;
+const FOUNDED_YEAR = 2017;
 
 interface SchemaParams {
   city?: string;
   service?: string;
+  county?: string;
   // Legacy params from programmatic pages (brands/appliances routes)
   brand?: string;
   appliance?: string;
-  county?: string;
 }
 
-const SITE_URL = 'https://topvolk.org';
-const REVIEW_COUNT = 30;
-
-export function generateLocalBusinessSchema(params: SchemaParams) {
-  const { city, service } = params;
-  
-  const schema: any = {
+/**
+ * Organization schema -- used on homepage
+ */
+export function generateOrganizationSchema() {
+  return {
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
-    '@id': `${SITE_URL}#business`,
+    '@id': `${SITE_URL}#organization`,
     name: BUSINESS_NAME,
-    description: generateBusinessDescription(params),
+    legalName: 'TopVolk Construction LLC',
     url: SITE_URL,
-    telephone: PHONE_NUMBER,
-    priceRange: '$$',
+    logo: `${SITE_URL}/logo.png`,
     image: `${SITE_URL}/logo.png`,
+    telephone: PHONE_NUMBER,
+    email: BUSINESS_EMAIL,
+    foundingDate: `${FOUNDED_YEAR}`,
+    priceRange: '$$',
+    description: 'Professional home renovation and construction services in the greater Seattle area. Kitchen remodels, bathroom renovations, deck installations, and general contracting since 2017.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Seattle',
+      addressRegion: 'WA',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '47.6062',
+      longitude: '-122.3321',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Seattle' },
+      { '@type': 'City', name: 'Bellevue' },
+      { '@type': 'City', name: 'Tacoma' },
+      { '@type': 'City', name: 'Kirkland' },
+      { '@type': 'City', name: 'Redmond' },
+      { '@type': 'AdministrativeArea', name: 'King County' },
+      { '@type': 'AdministrativeArea', name: 'Snohomish County' },
+      { '@type': 'AdministrativeArea', name: 'Pierce County' },
+    ],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '07:00',
+        closes: '19:00',
+      },
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: GOOGLE_RATING.toString(),
@@ -32,11 +67,54 @@ export function generateLocalBusinessSchema(params: SchemaParams) {
       bestRating: '5',
       worstRating: '1',
     },
+  };
+}
+
+/**
+ * WebSite schema -- used on homepage
+ */
+export function generateWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}#website`,
+    url: SITE_URL,
+    name: BUSINESS_NAME,
+    description: 'Professional home renovation and construction services in Seattle, WA area.',
+    publisher: {
+      '@id': `${SITE_URL}#organization`,
+    },
+    inLanguage: 'en-US',
+  };
+}
+
+/**
+ * LocalBusiness schema -- used on city pages and as secondary on service pages
+ */
+export function generateLocalBusinessSchema(params: SchemaParams) {
+  const { city, service, county } = params;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${SITE_URL}#business`,
+    name: BUSINESS_NAME,
+    description: generateBusinessDescription(params),
+    url: SITE_URL,
+    telephone: PHONE_NUMBER,
+    email: BUSINESS_EMAIL,
+    priceRange: '$$',
+    image: `${SITE_URL}/logo.png`,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Seattle',
+      addressLocality: city || 'Seattle',
       addressRegion: 'WA',
       addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '47.6062',
+      longitude: '-122.3321',
     },
     areaServed: generateAreaServed(params),
     openingHoursSpecification: [
@@ -47,18 +125,33 @@ export function generateLocalBusinessSchema(params: SchemaParams) {
         closes: '19:00',
       },
     ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: GOOGLE_RATING.toString(),
+      reviewCount: REVIEW_COUNT.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
   };
-  
-  return schema;
 }
 
+/**
+ * Service schema -- used on service pages
+ */
 export function generateServiceSchema(params: SchemaParams) {
-  const { city } = params;
-  
-  const serviceName = generateServiceName(params);
+  const { city, brand } = params;
+  const service = getEffectiveService(params);
+
+  const serviceName = brand && service
+    ? `${formatName(brand)} ${formatName(service)}`
+    : service
+    ? formatName(service)
+    : brand
+    ? `${formatName(brand)} Services`
+    : 'Home Renovation';
   const serviceDescription = generateServiceDescription(params);
-  
-  const schema: any = {
+
+  return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: serviceName,
@@ -71,26 +164,47 @@ export function generateServiceSchema(params: SchemaParams) {
       url: SITE_URL,
     },
     areaServed: generateAreaServed(params),
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'USD',
+      },
+    },
   };
-  
-  return schema;
 }
 
-export function generateBreadcrumbSchema(params: SchemaParams) {
-  const { city, brand } = params;
-  const service = getEffectiveService(params);
-  
+/**
+ * BreadcrumbList schema
+ * Supports two call patterns:
+ * 1. { items: [...] } -- explicit breadcrumb items
+ * 2. SchemaParams { brand, service, city, appliance } -- auto-generated
+ */
+export function generateBreadcrumbSchema(params: { items: Array<{ name: string; url: string }> } | SchemaParams) {
+  if ('items' in params && Array.isArray(params.items)) {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: params.items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    };
+  }
+
+  // Auto-generate from SchemaParams
+  const { city, brand } = params as SchemaParams;
+  const service = getEffectiveService(params as SchemaParams);
+
   const items: any[] = [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: SITE_URL,
-    },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
   ];
-  
+
   let position = 2;
-  
+
   if (brand) {
     items.push({
       '@type': 'ListItem',
@@ -99,18 +213,18 @@ export function generateBreadcrumbSchema(params: SchemaParams) {
       item: `${SITE_URL}/brands/${brand}`,
     });
   }
-  
+
   if (service) {
     items.push({
       '@type': 'ListItem',
       position: position++,
       name: formatName(service),
-      item: brand 
+      item: brand
         ? `${SITE_URL}/brands/${brand}/services/${service}`
         : `${SITE_URL}/services/${service}`,
     });
   }
-  
+
   if (city) {
     items.push({
       '@type': 'ListItem',
@@ -119,7 +233,7 @@ export function generateBreadcrumbSchema(params: SchemaParams) {
       item: `${SITE_URL}/cities/${city}`,
     });
   }
-  
+
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -127,7 +241,7 @@ export function generateBreadcrumbSchema(params: SchemaParams) {
   };
 }
 
-// Helper functions
+// ---- Helpers ----
 
 function getEffectiveService(params: SchemaParams): string | undefined {
   return params.service || params.appliance;
@@ -136,58 +250,44 @@ function getEffectiveService(params: SchemaParams): string | undefined {
 function generateBusinessDescription(params: SchemaParams): string {
   const { city, brand } = params;
   const service = getEffectiveService(params);
-  
-  if (city && brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor since 2017. Call ${PHONE_DISPLAY}.`;
-  } else if (city && service) {
-    return `Professional ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor since 2017. Call ${PHONE_DISPLAY} for a free estimate.`;
-  } else if (brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service)} services in Seattle and surrounding areas. Licensed contractor since 2017.`;
-  } else if (city) {
-    return `Professional home renovation services in ${formatName(city)}, WA. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017.`;
-  } else if (brand) {
-    return `Professional ${formatName(brand)} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since 2017.`;
-  } else if (service) {
-    return `Expert ${formatName(service)} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since 2017.`;
-  } else {
-    return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017.`;
-  }
-}
 
-function generateServiceName(params: SchemaParams): string {
-  const { brand } = params;
-  const service = getEffectiveService(params);
-  
-  if (brand && service) {
-    return `${formatName(brand)} ${formatName(service)}`;
-  } else if (service) {
-    return formatName(service);
+  if (city && brand && service) {
+    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor since ${FOUNDED_YEAR}. Call ${PHONE_DISPLAY}.`;
+  } else if (city && service) {
+    return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor since ${FOUNDED_YEAR}. Call ${PHONE_DISPLAY} for a free estimate.`;
+  } else if (brand && service) {
+    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in Seattle and surrounding areas. Licensed contractor since ${FOUNDED_YEAR}.`;
+  } else if (city) {
+    return `Professional home renovation services in ${formatName(city)}, WA. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since ${FOUNDED_YEAR}.`;
   } else if (brand) {
-    return `${formatName(brand)} Services`;
+    return `Professional ${formatName(brand)} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since ${FOUNDED_YEAR}.`;
+  } else if (service) {
+    return `Expert ${formatName(service).toLowerCase()} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since ${FOUNDED_YEAR}.`;
   }
-  return 'Home Renovation';
+  return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since ${FOUNDED_YEAR}.`;
 }
 
 function generateServiceDescription(params: SchemaParams): string {
   const { city, brand } = params;
   const service = getEffectiveService(params);
-  
+
   if (city && brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor. Call ${PHONE_DISPLAY}.`;
+    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor. Call ${PHONE_DISPLAY}.`;
   } else if (city && service) {
-    return `Professional ${formatName(service)} services in ${formatName(city)}, WA. Licensed contractor, quality craftsmanship, free estimates. Call ${PHONE_DISPLAY}.`;
+    return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor, quality craftsmanship, free estimates. Call ${PHONE_DISPLAY}.`;
   } else if (brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service)} services in Seattle area. Licensed contractor with 100+ completed projects.`;
+    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in Seattle area. Licensed contractor with 100+ completed projects.`;
   } else if (service) {
-    return `Professional ${formatName(service)} services in Seattle and King County area. Licensed contractor with 100+ completed projects.`;
-  } else {
-    return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations, and more.`;
+    return `Professional ${formatName(service).toLowerCase()} services in Seattle and King County area. Licensed contractor with 100+ completed projects.`;
+  } else if (brand) {
+    return `Professional ${formatName(brand)} services in Seattle area. Licensed contractor with 100+ completed projects.`;
   }
+  return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations, and more.`;
 }
 
 function generateAreaServed(params: SchemaParams): any {
   const { city } = params;
-  
+
   if (city) {
     return {
       '@type': 'City',
@@ -195,29 +295,15 @@ function generateAreaServed(params: SchemaParams): any {
       containedInPlace: {
         '@type': 'State',
         name: 'Washington',
-        '@id': 'https://en.wikipedia.org/wiki/Washington_(state)',
       },
     };
-  } else {
-    return [
-      {
-        '@type': 'City',
-        name: 'Seattle',
-      },
-      {
-        '@type': 'City',
-        name: 'Bellevue',
-      },
-      {
-        '@type': 'City',
-        name: 'Tacoma',
-      },
-      {
-        '@type': 'City',
-        name: 'Kirkland',
-      },
-    ];
   }
+  return [
+    { '@type': 'City', name: 'Seattle' },
+    { '@type': 'City', name: 'Bellevue' },
+    { '@type': 'City', name: 'Tacoma' },
+    { '@type': 'City', name: 'Kirkland' },
+  ];
 }
 
 function formatName(slug: string): string {

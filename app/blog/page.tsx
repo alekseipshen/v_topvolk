@@ -6,6 +6,9 @@ import Image from 'next/image';
 export const metadata = {
   title: 'Home Renovation Tips & Blog | TopVolk Construction',
   description: 'Expert tips, guides, and advice for home renovation and remodeling. Kitchen, bathroom, deck projects and more from Seattle area professionals.',
+  alternates: {
+    canonical: 'https://www.topvolk.org/blog',
+  },
 };
 
 // Force dynamic rendering (disable caching)

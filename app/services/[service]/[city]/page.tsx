@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { Clock, Wrench, Users, CheckCircle, MapPin } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
+import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema } from '@/components/StructuredData';
 import { services } from '@/lib/data/services';
 import { getAllCities } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+
+const SITE_URL = 'https://www.topvolk.org';
 
 interface PageProps {
   params: Promise<{
@@ -46,6 +49,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${service.name} in ${city.name} | ${BUSINESS_NAME}`,
     description: `Professional ${service.name.toLowerCase()} services in ${city.name}. ${service.description} Call ${PHONE_DISPLAY} for a free estimate.`,
     keywords: `${service.name.toLowerCase()}, ${city.name}, Seattle area, home renovation, construction contractor`,
+    alternates: {
+      canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,
+    },
+    openGraph: {
+      title: `${service.name} in ${city.name} | ${BUSINESS_NAME}`,
+      description: `Professional ${service.name.toLowerCase()} services in ${city.name}, WA.`,
+      url: `${SITE_URL}/services/${service.slug}/${city.slug}`,
+    },
   };
 }
 
@@ -67,7 +78,24 @@ export default async function ServiceCityPage({ params }: PageProps) {
   
   return (
     <>
-      <Hero 
+      {/* Structured Data */}
+      <ServiceSchema
+        name={service.name}
+        description={service.description}
+        url={`${SITE_URL}/services/${service.slug}/${city.slug}`}
+        city={city.name}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: SITE_URL },
+          { name: 'Services', url: `${SITE_URL}/services` },
+          { name: service.name, url: `${SITE_URL}/services/${service.slug}` },
+          { name: city.name, url: `${SITE_URL}/services/${service.slug}/${city.slug}` },
+        ]}
+      />
+      <LocalBusinessSchema city={city.name} service={service.name} />
+
+      <Hero
         title={`${service.name} in ${city.name}`}
         subtitle={`Professional ${service.name.toLowerCase()} services in ${city.name} and surrounding areas • Licensed & Insured • Free estimates`}
         applianceImage={service.image}

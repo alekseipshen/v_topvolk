@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://topvolk.org';
+  const baseUrl = 'https://www.topvolk.org';
 
   return {
     rules: [
@@ -13,11 +13,13 @@ export default function robots(): MetadataRoute.Robots {
           '/keystatic/',
           '/_next/',
           '/admin/',
+          '/test/',
           '/test-geo/',
+          '/test-hero/',
+          '/test-gallery/',
         ],
-        crawlDelay: 1, // 1 second between requests (prevents server overload)
+        crawlDelay: 1,
       },
-      // Specific rules for major search engines
       {
         userAgent: 'Googlebot',
         allow: '/',
@@ -26,8 +28,12 @@ export default function robots(): MetadataRoute.Robots {
           '/keystatic/',
           '/_next/',
           '/admin/',
+          '/test/',
+          '/test-geo/',
+          '/test-hero/',
+          '/test-gallery/',
         ],
-        crawlDelay: 0.5, // Google can crawl faster
+        crawlDelay: 0.5,
       },
       {
         userAgent: 'Bingbot',
@@ -37,7 +43,10 @@ export default function robots(): MetadataRoute.Robots {
           '/keystatic/',
           '/_next/',
           '/admin/',
+          '/test/',
           '/test-geo/',
+          '/test-hero/',
+          '/test-gallery/',
         ],
         crawlDelay: 1,
       },
@@ -46,7 +55,6 @@ export default function robots(): MetadataRoute.Robots {
       `${baseUrl}/sitemap.xml`,
       `${baseUrl}/sitemap-phase1.xml`,
       `${baseUrl}/sitemap-phase2.xml`,
-      `${baseUrl}/sitemap-phase3.xml`,
     ],
   };
 }

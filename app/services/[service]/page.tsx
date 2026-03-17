@@ -5,9 +5,12 @@ import { Clock, Wrench, Users, CheckCircle } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
+import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
 import { services } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+
+const SITE_URL = 'https://www.topvolk.org';
 
 interface PageProps {
   params: Promise<{
@@ -33,6 +36,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${service.name} Seattle | ${BUSINESS_NAME}`,
     description: `${service.description} Licensed contractor serving Seattle, Bellevue, Tacoma. Call ${PHONE_DISPLAY} for a free estimate.`,
     keywords: `${service.name.toLowerCase()}, Seattle, ${service.slug}, home renovation, construction contractor`,
+    alternates: {
+      canonical: `${SITE_URL}/services/${service.slug}`,
+    },
+    openGraph: {
+      title: `${service.name} in Seattle | ${BUSINESS_NAME}`,
+      description: `${service.description} Licensed contractor serving Seattle, Bellevue, Tacoma.`,
+      url: `${SITE_URL}/services/${service.slug}`,
+    },
   };
 }
 
@@ -44,9 +55,41 @@ export default async function ServicePage({ params }: PageProps) {
     notFound();
   }
   
+  // Generate FAQ items for this service
+  const faqItems = [
+    {
+      question: `How much does ${service.name.toLowerCase()} cost in Seattle?`,
+      answer: `${service.name} costs vary depending on the scope and materials. ${BUSINESS_NAME} provides free, detailed estimates with transparent pricing and no hidden fees. Call ${PHONE_DISPLAY} for a personalized quote.`,
+    },
+    {
+      question: `How long does a ${service.name.toLowerCase()} project take?`,
+      answer: `Project timelines depend on scope and complexity. We provide a detailed timeline during your free consultation and take full responsibility for meeting deadlines, with penalties paid if deadlines are missed.`,
+    },
+    {
+      question: `Is ${BUSINESS_NAME} licensed and insured?`,
+      answer: `Yes, ${BUSINESS_NAME} is a fully licensed and insured construction contractor serving the greater Seattle area since 2017. We have completed over 100 projects across King, Snohomish, and Pierce Counties.`,
+    },
+  ];
+
   return (
     <>
-      <Hero 
+      {/* Structured Data */}
+      <ServiceSchema
+        name={service.name}
+        description={service.description}
+        url={`${SITE_URL}/services/${service.slug}`}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: SITE_URL },
+          { name: 'Services', url: `${SITE_URL}/services` },
+          { name: service.name, url: `${SITE_URL}/services/${service.slug}` },
+        ]}
+      />
+      <LocalBusinessSchema service={service.name} />
+      <FAQSchema items={faqItems} />
+
+      <Hero
         title={`${service.name} in Seattle Area`}
         subtitle={`Professional ${service.name.toLowerCase()} services • Licensed & Insured • Free estimates`}
         applianceImage={service.image}
@@ -186,6 +229,25 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
       </section>
       
+      {/* FAQ Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-6">
+              {faqItems.map((faq, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Service Areas */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">

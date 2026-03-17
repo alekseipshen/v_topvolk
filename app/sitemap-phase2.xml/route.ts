@@ -1,60 +1,51 @@
-import { MetadataRoute } from 'next';
-import { appliances } from '@/lib/data/appliances';
-import { brands } from '@/lib/data/brands';
+import { services } from '@/lib/data/services';
 import { cities } from '@/lib/data/cities';
 
 /**
- * PHASE 2 SITEMAP (Month 3-4)
- * ~1,500 pages: All cities, City+Appliance for top 50 cities, All brands
- * 
- * Strategy: Submit after Phase 1 is 90%+ indexed
- * Focus on local expansion
+ * PHASE 2 SITEMAP
+ * Remaining city pages + Service+City combos for top cities
+ * ~350 pages
  */
 export async function GET() {
-  const baseUrl = 'https://topvolk.org';
+  const baseUrl = 'https://www.topvolk.org';
   const now = new Date().toISOString();
 
-  // Top 50 cities for City+Appliance combinations
-  const topCities = cities.slice(0, 50);
+  // Featured services for city combos (top 6 most important)
+  const featuredServices = services.slice(0, 6);
+  // Top 20 cities for combos
+  const topCities = cities.slice(0, 20);
+  // Remaining cities
+  const remainingCities = cities.slice(20);
 
-  const routes: MetadataRoute.Sitemap = [
-    // All remaining city pages (312 pages: cities 51-362)
-    ...cities.slice(50).map((city) => ({
-      url: `${baseUrl}/cities/${city.slug}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
+  const urls: Array<{ loc: string; lastmod: string; changefreq: string; priority: number }> = [
+    // Remaining city pages (cities 21+)
+    ...remainingCities.map((city) => ({
+      loc: `${baseUrl}/cities/${city.slug}`,
+      lastmod: now,
+      changefreq: 'weekly',
       priority: 0.75,
     })),
 
-    // All remaining brand pages (50 pages: brands 21-70)
-    ...brands.slice(20).map((brand) => ({
-      url: `${baseUrl}/brands/${brand.slug}-repair`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    })),
-
-    // City + Appliance for TOP 50 cities (550 pages)
+    // Service+City combos for top 20 cities x featured 6 services (120 pages)
     ...topCities.flatMap((city) =>
-      appliances.map((appliance) => ({
-        url: `${baseUrl}/cities/${city.slug}/services/${appliance.slug}-repair`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.85,
+      featuredServices.map((service) => ({
+        loc: `${baseUrl}/services/${service.slug}/${city.slug}`,
+        lastmod: now,
+        changefreq: 'monthly',
+        priority: 0.8,
       }))
     ),
   ];
 
-  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
+${urls
   .map(
-    (route) => `  <url>
-    <loc>${route.url}</loc>
-    <lastmod>${route.lastModified}</lastmod>
-    <changefreq>${route.changeFrequency}</changefreq>
-    <priority>${route.priority}</priority>
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${u.lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
   </url>`
   )
   .join('\n')}

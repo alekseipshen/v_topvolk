@@ -1,65 +1,55 @@
-import { MetadataRoute } from 'next';
-import { appliances, commercialAppliances } from '@/lib/data/appliances';
-import { brands } from '@/lib/data/brands';
+import { services } from '@/lib/data/services';
 import { cities } from '@/lib/data/cities';
 
 /**
- * PHASE 3 SITEMAP (Month 5-6)
- * ~4,200 pages: All City+Appliance, All Brand+Appliance, Commercial
- * 
- * Strategy: Submit after Phase 2 is 80%+ indexed
- * Full site launch
+ * PHASE 3 SITEMAP
+ * All remaining service+city combos
+ * Submit after Phase 2 is 80%+ indexed
  */
 export async function GET() {
-  const baseUrl = 'https://topvolk.org';
+  const baseUrl = 'https://www.topvolk.org';
   const now = new Date().toISOString();
 
-  // Remaining cities for City+Appliance (cities 51-362)
-  const remainingCities = cities.slice(50);
+  // All services
+  const allServices = services;
+  // Top 20 cities already covered in phase 2 with featured services;
+  // here we add remaining service combos for top cities + all combos for remaining cities
+  const topCities = cities.slice(0, 20);
+  const remainingCities = cities.slice(20);
+  const featuredServiceSlugs = new Set(services.slice(0, 6).map(s => s.slug));
+  const remainingServices = services.filter(s => !featuredServiceSlugs.has(s.slug));
 
-  const routes: MetadataRoute.Sitemap = [
-    // City + Appliance for remaining 312 cities (3,432 pages)
-    ...remainingCities.flatMap((city) =>
-      appliances.map((appliance) => ({
-        url: `${baseUrl}/cities/${city.slug}/services/${appliance.slug}-repair`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.75,
-      }))
-    ),
-
-    // Brand + Appliance for ALL brands (770 pages)
-    ...brands.flatMap((brand) =>
-      appliances.map((appliance) => ({
-        url: `${baseUrl}/brands/${brand.slug}-repair/services/${appliance.slug}-repair`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
+  const urls: Array<{ loc: string; lastmod: string; changefreq: string; priority: number }> = [
+    // Remaining services x top 20 cities (not covered in phase 2)
+    ...topCities.flatMap((city) =>
+      remainingServices.map((service) => ({
+        loc: `${baseUrl}/services/${service.slug}/${city.slug}`,
+        lastmod: now,
+        changefreq: 'monthly',
         priority: 0.7,
       }))
     ),
 
-    // Commercial appliance pages (20 pages)
-    ...commercialAppliances.map((appliance) => {
-      const slug = appliance.slug.replace('commercial-', '');
-      return {
-        url: `${baseUrl}/commercial/${slug}-repair`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
+    // All services x remaining cities
+    ...remainingCities.flatMap((city) =>
+      allServices.map((service) => ({
+        loc: `${baseUrl}/services/${service.slug}/${city.slug}`,
+        lastmod: now,
+        changefreq: 'monthly',
         priority: 0.65,
-      };
-    }),
+      }))
+    ),
   ];
 
-  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
+${urls
   .map(
-    (route) => `  <url>
-    <loc>${route.url}</loc>
-    <lastmod>${route.lastModified}</lastmod>
-    <changefreq>${route.changeFrequency}</changefreq>
-    <priority>${route.priority}</priority>
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${u.lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
   </url>`
   )
   .join('\n')}

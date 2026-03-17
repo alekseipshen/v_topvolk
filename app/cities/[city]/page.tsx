@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { MapPin, Phone, Calendar } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
+import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import { getAllCities, seattleCounties, getCountiesForCity } from '@/lib/data/seattle-counties';
 import { services } from '@/lib/data/services';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+
+const SITE_URL = 'https://www.topvolk.org';
 
 interface PageProps {
   params: Promise<{
@@ -34,6 +37,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `Home Renovation & Construction Services in ${city.name} | ${BUSINESS_NAME}`,
     description: `Professional home renovation, remodeling, and construction services in ${city.name}, WA. Kitchen remodels, bathroom renovations, deck installations. Call ${PHONE_DISPLAY} for a free estimate.`,
     keywords: `home renovation ${city.name}, construction contractor ${city.name}, remodeling ${city.name}, Seattle area contractor`,
+    alternates: {
+      canonical: `${SITE_URL}/cities/${city.slug}`,
+    },
+    openGraph: {
+      title: `Home Renovation in ${city.name} | ${BUSINESS_NAME}`,
+      description: `Professional home renovation services in ${city.name}, WA. Licensed contractor since 2017.`,
+      url: `${SITE_URL}/cities/${city.slug}`,
+    },
   };
 }
 
@@ -66,7 +77,17 @@ export default async function CityPage({ params }: PageProps) {
   
   return (
     <>
-      <Hero 
+      {/* Structured Data */}
+      <LocalBusinessSchema city={city.name} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: SITE_URL },
+          { name: 'Service Areas', url: `${SITE_URL}/service-areas` },
+          { name: city.name, url: `${SITE_URL}/cities/${city.slug}` },
+        ]}
+      />
+
+      <Hero
         title={`Home Renovation Services in ${city.name}`}
         subtitle={`Professional construction and remodeling services in ${city.name} and surrounding areas • Licensed & Insured • Free estimates`}
       />

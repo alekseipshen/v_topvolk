@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: `All Services | ${BUSINESS_NAME}`,
   description: 'Complete list of construction and remodeling services offered by TopVolk Construction. From general contracting to specialized trades.',
   keywords: 'construction services, remodeling, renovation, Seattle contractor, home improvement',
+  alternates: {
+    canonical: 'https://www.topvolk.org/services',
+  },
 };
 
 export default function AllServicesPage() {

@@ -1,101 +1,56 @@
-import { MetadataRoute } from 'next';
-import { appliances } from '@/lib/data/appliances';
-import { brands } from '@/lib/data/brands';
+import { services } from '@/lib/data/services';
 import { cities } from '@/lib/data/cities';
 
 /**
- * PHASE 1 SITEMAP (Month 1-2)
- * ~200 pages: Core pages, top services, top cities, top brands
- * 
- * Strategy: Submit to Google Search Console first
- * Wait for 90%+ indexation before moving to Phase 2
+ * PHASE 1 SITEMAP
+ * Core pages + all service pages + top cities
+ * ~90 pages
  */
 export async function GET() {
-  const baseUrl = 'https://topvolk.org';
+  const baseUrl = 'https://www.topvolk.org';
   const now = new Date().toISOString();
 
-  // Top 50 cities by population/importance (Bergen County + major cities)
-  const topCities = cities.slice(0, 50);
-  
-  // Top 20 most popular brands
-  const topBrands = brands.slice(0, 20);
+  // Top 20 cities by importance
+  const topCities = cities.slice(0, 20);
 
-  const routes: MetadataRoute.Sitemap = [
-    // Core pages (highest priority)
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: 'daily',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/service-areas`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: now,
-      changeFrequency: 'daily',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/commercial`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
+  const urls: Array<{ loc: string; lastmod: string; changefreq: string; priority: number }> = [
+    // Core pages
+    { loc: baseUrl, lastmod: now, changefreq: 'daily', priority: 1.0 },
+    { loc: `${baseUrl}/services`, lastmod: now, changefreq: 'weekly', priority: 0.95 },
+    { loc: `${baseUrl}/service-areas`, lastmod: now, changefreq: 'weekly', priority: 0.9 },
+    { loc: `${baseUrl}/blog`, lastmod: now, changefreq: 'daily', priority: 0.9 },
+    { loc: `${baseUrl}/commercial`, lastmod: now, changefreq: 'weekly', priority: 0.85 },
 
-    // All service pages (11 pages) - HIGH PRIORITY
-    ...appliances.map((appliance) => ({
-      url: `${baseUrl}/services/${appliance.slug}-repair`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
+    // All service pages (29 services)
+    ...services.map((service) => ({
+      loc: `${baseUrl}/services/${service.slug}`,
+      lastmod: now,
+      changefreq: 'weekly',
       priority: 0.9,
     })),
 
-    // Top 50 city pages (major cities)
+    // Top 20 city pages
     ...topCities.map((city) => ({
-      url: `${baseUrl}/cities/${city.slug}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
+      loc: `${baseUrl}/cities/${city.slug}`,
+      lastmod: now,
+      changefreq: 'weekly',
       priority: 0.85,
     })),
 
-    // Top 20 brand pages
-    ...topBrands.map((brand) => ({
-      url: `${baseUrl}/brands/${brand.slug}-repair`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    })),
-
-    // Legal pages (low priority, but included)
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms-of-use`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
+    // Legal pages
+    { loc: `${baseUrl}/privacy-policy`, lastmod: now, changefreq: 'yearly', priority: 0.3 },
+    { loc: `${baseUrl}/terms-of-use`, lastmod: now, changefreq: 'yearly', priority: 0.3 },
   ];
 
-  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
+${urls
   .map(
-    (route) => `  <url>
-    <loc>${route.url}</loc>
-    <lastmod>${route.lastModified}</lastmod>
-    <changefreq>${route.changeFrequency}</changefreq>
-    <priority>${route.priority}</priority>
+    (u) => `  <url>
+    <loc>${u.loc}</loc>
+    <lastmod>${u.lastmod}</lastmod>
+    <changefreq>${u.changefreq}</changefreq>
+    <priority>${u.priority}</priority>
   </url>`
   )
   .join('\n')}
