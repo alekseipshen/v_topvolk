@@ -44,8 +44,8 @@ export default function PromoTopBar() {
           <span className="bg-gray-900 text-white px-1.5 py-0.5 rounded text-xs md:text-sm">
             {pad(minutes)}m
           </span>
-          <span className="hidden md:inline">:</span>
-          <span className="hidden md:inline bg-gray-900 text-white px-1.5 py-0.5 rounded text-xs md:text-sm">
+          <span>:</span>
+          <span className="bg-gray-900 text-white px-1.5 py-0.5 rounded text-xs md:text-sm">
             {pad(seconds)}s
           </span>
         </div>
