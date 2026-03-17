@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import PromoSection from '@/components/PromoSection';
 import { services } from '@/lib/data/services';
 import { BUSINESS_NAME } from '@/lib/utils';
 
@@ -68,6 +69,9 @@ export default function AllServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Weekly Promo */}
+      <PromoSection />
 
       {/* CTA Section */}
       <section className="py-16 bg-gray-50">

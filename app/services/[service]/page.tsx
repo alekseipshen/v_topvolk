@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Clock, Wrench, Users, CheckCircle } from 'lucide-react';
 import Hero from '@/components/Hero';
+import PromoSection from '@/components/PromoSection';
 import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
@@ -181,6 +182,9 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {/* Weekly Promo */}
+      <PromoSection />
 
       {/* Our Works */}
       <section id="works" className="py-16 bg-gray-50">
