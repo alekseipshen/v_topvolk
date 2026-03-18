@@ -14,24 +14,30 @@ export const seattleCounties: County[] = [
     name: 'King County',
     slug: 'king-county',
     description: 'Serving all cities in King County including Seattle, Bellevue, Redmond, and surrounding areas',
-    totalCities: 31,
+    totalCities: 39,
     cities: [
       'Auburn',
+      'Beaux Arts Village',
       'Bellevue',
       'Black Diamond',
       'Bothell',
       'Burien',
       'Carnation',
+      'Clyde Hill',
       'Covington',
       'Des Moines',
       'Duvall',
       'Enumclaw',
+      'Fall City',
       'Federal Way',
+      'Hunts Point',
       'Issaquah',
+      'Kenmore',
       'Kent',
       'Kirkland',
       'Lake Forest Park',
       'Maple Valley',
+      'Medina',
       'Mercer Island',
       'Milton',
       'Newcastle',
@@ -46,38 +52,45 @@ export const seattleCounties: County[] = [
       'Skykomish',
       'Snoqualmie',
       'Tukwila',
-      'Woodinville'
+      'White Center',
+      'Woodinville',
+      'Yarrow Point'
     ]
   },
   {
     name: 'Snohomish County',
     slug: 'snohomish-county',
     description: 'Professional renovation services throughout Snohomish County including Everett, Lynnwood, and Edmonds',
-    totalCities: 11,
+    totalCities: 15,
     cities: [
+      'Arlington',
       'Bothell',
       'Brier',
       'Edmonds',
       'Everett',
       'Lake Stevens',
       'Lynnwood',
+      'Marysville',
       'Mill Creek',
+      'Monroe',
       'Mountlake Terrace',
       'Mukilteo',
       'Snohomish',
-      'Stanwood'
+      'Stanwood',
+      'Sultan'
     ]
   },
   {
     name: 'Pierce County',
     slug: 'pierce-county',
     description: 'Quality construction services across Pierce County including Tacoma, Puyallup, and Lakewood',
-    totalCities: 17,
+    totalCities: 18,
     cities: [
       'Auburn',
       'Bonney Lake',
       'Buckley',
       'Dupont',
+      'Edgewood',
       'Fife',
       'Fircrest',
       'Gig Harbor',
@@ -91,6 +104,19 @@ export const seattleCounties: County[] = [
       'Tacoma',
       'University Place',
       'Wilkeson'
+    ]
+  },
+  {
+    name: 'Kitsap County',
+    slug: 'kitsap-county',
+    description: 'Serving Kitsap County including Bremerton, Poulsbo, and Bainbridge Island',
+    totalCities: 5,
+    cities: [
+      'Bainbridge Island',
+      'Bremerton',
+      'Poulsbo',
+      'Port Orchard',
+      'Silverdale'
     ]
   }
 ];
