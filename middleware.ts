@@ -101,9 +101,9 @@ const CITY_NAME_TO_SLUG: Record<string, string> = {
   'Silverdale': 'silverdale',
 
   // TEST CITIES (for debugging from outside USA)
-  'Tel Aviv': 'seattle',
-  'Tel Aviv-Yafo': 'seattle',
-  'Limassol': 'seattle',
+  'Tel Aviv': 'tel-aviv',
+  'Tel Aviv-Yafo': 'tel-aviv',
+  'Limassol': 'tel-aviv',
 };
 
 export function middleware(request: NextRequest) {
