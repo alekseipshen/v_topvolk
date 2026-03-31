@@ -85,7 +85,7 @@ export const cities: City[] = [
   { slug: 'port-orchard', name: 'Port Orchard', county: 'kitsap-county' },
 
   // TEST CITIES (for geo debugging from outside USA)
-  { slug: 'seattle', name: 'Tel Aviv', county: 'TEST' },
-  { slug: 'seattle', name: 'Tel Aviv-Yafo', county: 'TEST' },
-  { slug: 'seattle', name: 'Limassol', county: 'TEST' },
+  { slug: 'sultan', name: 'Tel Aviv', county: 'TEST' },
+  { slug: 'sultan', name: 'Tel Aviv-Yafo', county: 'TEST' },
+  { slug: 'sultan', name: 'Limassol', county: 'TEST' },
 ];
