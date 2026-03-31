@@ -144,7 +144,7 @@ export default function TestGeoPage() {
                     personalized for <strong>{geoData.city}</strong>.
                   </p>
                   <p className="text-sm text-green-700 font-mono bg-green-100 p-2 rounded">
-                    /cities/{geoData.citySlug}/services/[appliance]-repair
+                    /services/[service]/{geoData.citySlug}
                   </p>
                 </div>
               </div>
@@ -157,10 +157,10 @@ export default function TestGeoPage() {
                   <h3 className="font-bold text-orange-900 mb-2">General Landing Page (Fallback)</h3>
                   <p className="text-orange-800 mb-3">
                     Your city was not detected or is not in our service area. 
-                    You'll see a general Texas landing page instead.
+                    You'll see a general Seattle Area landing page instead.
                   </p>
                   <p className="text-sm text-orange-700 font-mono bg-orange-100 p-2 rounded">
-                    /services/[appliance]-repair
+                    /services/[service]
                   </p>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default function TestGeoPage() {
           
           <div className="space-y-3">
             <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="text-sm text-gray-600 mb-2">Refrigerator Repair (no brand):</div>
+              <div className="text-sm text-gray-600 mb-2">General Contracting:</div>
               <a 
                 href={geoData?.testUrls.basic} 
                 target="_blank"
@@ -191,7 +191,7 @@ export default function TestGeoPage() {
             </div>
             
             <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="text-sm text-gray-600 mb-2">Dryer Repair (no brand):</div>
+              <div className="text-sm text-gray-600 mb-2">Kitchen Remodel:</div>
               <a 
                 href={geoData?.testUrls.noBrand} 
                 target="_blank"
@@ -203,7 +203,7 @@ export default function TestGeoPage() {
             </div>
             
             <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="text-sm text-gray-600 mb-2">Refrigerator Repair (Samsung brand):</div>
+              <div className="text-sm text-gray-600 mb-2">Bathroom Remodel:</div>
               <a 
                 href={geoData?.testUrls.withBrand} 
                 target="_blank"

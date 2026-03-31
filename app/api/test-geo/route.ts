@@ -67,9 +67,9 @@ export async function GET(request: NextRequest) {
   // Build test URLs
   const baseUrl = request.nextUrl.origin;
   const testUrls = {
-    basic: `${baseUrl}/services/refrigerator-repair?utm_source=google&utm_medium=cpc&utm_campaign=test`,
-    withBrand: `${baseUrl}/brands/samsung/services/refrigerator-repair?utm_source=google&utm_medium=cpc&utm_campaign=test`,
-    noBrand: `${baseUrl}/services/dryer-repair?utm_source=google&utm_medium=cpc&utm_campaign=test`,
+    basic: `${baseUrl}/services/general-contracting?utm_source=google&utm_medium=cpc&utm_campaign=test`,
+    withBrand: `${baseUrl}/services/bathroom-remodel?utm_source=google&utm_medium=cpc&utm_campaign=test`,
+    noBrand: `${baseUrl}/services/kitchen-remodel?utm_source=google&utm_medium=cpc&utm_campaign=test`,
   };
   
   // Return debug data
