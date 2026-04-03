@@ -5,33 +5,29 @@ import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { PatternFormat } from 'react-number-format';
-// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'; // Temporarily disabled
+import { services } from '@/lib/data/services';
 
 const formSchema = z.object({
-  firstName: z.string().min(2, 'First name must be at least 2 characters'),
-  lastName: z.string().min(2, 'Last name must be at least 2 characters'),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
   phone: z.string()
     .min(10, 'Please enter a valid phone number')
     .refine((val) => {
-      // Remove all non-digit characters
       const digitsOnly = val.replace(/\D/g, '');
-      // Check that we have exactly 10 digits
       return digitsOnly.length === 10;
     }, 'Please enter a complete 10-digit phone number'),
-  email: z.string().email('Please enter a valid email'),
-  street: z.string().min(3, 'Street address is required'),
-  apartment: z.string().optional(),
-  city: z.string().min(2, 'City is required'),
-  zipCode: z.string().min(5, 'Please enter a valid 5-digit ZIP code'),
-  message: z.string().min(5, 'Please describe the issue (minimum 5 characters)'),
+  email: z.string().email('Please enter a valid email').or(z.literal('')).optional(),
+  service: z.string().min(1, 'Please select a service'),
 });
 
 type FormData = z.infer<typeof formSchema>;
 
-export default function LeadForm() {
+interface LeadFormProps {
+  defaultService?: string;
+}
+
+export default function LeadForm({ defaultService = '' }: LeadFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  // const { executeRecaptcha } = useGoogleReCaptcha(); // Temporarily disabled
 
   const {
     register,
@@ -41,6 +37,12 @@ export default function LeadForm() {
     control,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      service: defaultService,
+    },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -48,67 +50,32 @@ export default function LeadForm() {
     setSubmitStatus('idle');
 
     try {
-      // Prepare data for Make.com webhook
-      const now = new Date();
-      
-      // Clean phone number - remove all formatting (parentheses, spaces, dashes)
       const cleanedPhone = data.phone.replace(/\D/g, '');
-      
-      // Clean text fields - remove quotes and newlines to prevent JSON parsing errors in CRM
-      const cleanText = (text: string) => {
-        return text
-          .replace(/["']/g, '') // Remove all quotes (double and single)
-          .replace(/\n/g, ' ') // Replace newlines with spaces
-          .replace(/\s+/g, ' ') // Replace multiple spaces with single space
-          .trim();
-      };
-      
-      const webhookData = {
-        first_name: data.firstName,
-        last_name: data.lastName,
-        phone: cleanedPhone,
-        email: data.email,
-        street: cleanText(data.street),
-        apartment_or_unit: cleanText(data.apartment || ''),
-        city: cleanText(data.city),
-        zip_code: data.zipCode,
-        state: 'WA',
-        country: 'US',
-        issue: cleanText(data.message || ''),
-        preferred_day: '',
-        start_time: '',
-        end_time: '',
-        time_slot: '',
-        source: 'Website - TopVolk Construction',
-        submitted_at_date: now.toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }),
-        submitted_at_time: now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }),
-      };
+      const serviceName = services.find(s => s.slug === data.service)?.title || data.service;
 
-      // Submit to API endpoint
       const response = await fetch('/api/submit-lead', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: `${data.firstName} ${data.lastName}`,
+          name: data.name,
           phone: cleanedPhone,
-          email: data.email,
-          message: `${cleanText(data.message || '')}\n\nAddress: ${cleanText(data.street)}${data.apartment ? ', ' + cleanText(data.apartment) : ''}, ${cleanText(data.city)}, WA ${data.zipCode}`,
-          recaptchaToken: 'bypass', // reCAPTCHA disabled for now
+          email: data.email || '',
+          message: `Service: ${serviceName}`,
+          service: data.service,
+          recaptchaToken: 'bypass',
         }),
       });
 
       if (response.ok) {
-        // GTM Event
         if (typeof window !== 'undefined' && (window as any).dataLayer) {
           (window as any).dataLayer.push({
             event: 'lead_submitted',
             lead_data: {
-              email: data.email,
+              email: data.email || '',
               phone: cleanedPhone,
-              source: 'Website - TopVolk Construction'
-            }
+              service: data.service,
+              source: 'Website - TopVolk Construction',
+            },
           });
         }
         setSubmitStatus('success');
@@ -128,194 +95,109 @@ export default function LeadForm() {
   return (
     <section id="lead-form" className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8">
+        <div className="max-w-lg mx-auto bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Get Your Free Estimate
             </h2>
             <p className="text-lg text-gray-600">
-              Fill out the form and we'll call you back within 15 minutes
+              Fill out the form and we&apos;ll call you back within 15 minutes
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* First Name & Last Name */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
-                  First name *
-                </label>
-                <input
-                  {...register('firstName')}
-                  type="text"
-                  id="firstName"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="John"
-                />
-                {errors.firstName && (
-                  <p className="text-red-600 text-sm mt-1">{errors.firstName.message}</p>
-                )}
-              </div>
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Last name *
-                </label>
-                <input
-                  {...register('lastName')}
-                  type="text"
-                  id="lastName"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Smith"
-                />
-                {errors.lastName && (
-                  <p className="text-red-600 text-sm mt-1">{errors.lastName.message}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Phone & Email */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Phone *
-                </label>
-                <Controller
-                  name="phone"
-                  control={control}
-                  render={({ field }) => (
-                    <PatternFormat
-                      {...field}
-                      format="(###) ###-####"
-                      mask="_"
-                      placeholder="(555) 123-4567"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                  )}
-                />
-                {errors.phone && (
-                  <p className="text-red-600 text-sm mt-1">{errors.phone.message}</p>
-                )}
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  E-mail address *
-                </label>
-                <input
-                  {...register('email')}
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="john@example.com"
-                />
-                {errors.email && (
-                  <p className="text-red-600 text-sm mt-1">{errors.email.message}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Street Address */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            {/* Service */}
             <div>
-              <label htmlFor="street" className="block text-sm font-semibold text-gray-700 mb-2">
-                Street address *
+              <label htmlFor="inline-service" className="block text-sm font-semibold text-gray-700 mb-1">
+                Service *
+              </label>
+              <select
+                {...register('service')}
+                id="inline-service"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
+              >
+                <option value="">Select a service...</option>
+                {services.map((s) => (
+                  <option key={s.slug} value={s.slug}>
+                    {s.title}
+                  </option>
+                ))}
+              </select>
+              {errors.service && (
+                <p className="text-red-600 text-xs mt-1">{errors.service.message}</p>
+              )}
+            </div>
+
+            {/* Name */}
+            <div>
+              <label htmlFor="inline-name" className="block text-sm font-semibold text-gray-700 mb-1">
+                Your name *
               </label>
               <input
-                {...register('street')}
+                {...register('name')}
                 type="text"
-                id="street"
+                id="inline-name"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="123 Main Street"
+                placeholder="John Smith"
               />
-              {errors.street && (
-                <p className="text-red-600 text-sm mt-1">{errors.street.message}</p>
+              {errors.name && (
+                <p className="text-red-600 text-xs mt-1">{errors.name.message}</p>
               )}
             </div>
 
-            {/* Apartment & City */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="apartment" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Unit / apartment / suite
-                </label>
-                <input
-                  {...register('apartment')}
-                  type="text"
-                  id="apartment"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Apt 4B"
-                />
-              </div>
-              <div>
-                <label htmlFor="city" className="block text-sm font-semibold text-gray-700 mb-2">
-                  City *
-                </label>
-                <input
-                  {...register('city')}
-                  type="text"
-                  id="city"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Newark"
-                />
-                {errors.city && (
-                  <p className="text-red-600 text-sm mt-1">{errors.city.message}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Zip Code */}
+            {/* Phone */}
             <div>
-              <div>
-                <label htmlFor="zipCode" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Zip code *
-                </label>
-                <Controller
-                  name="zipCode"
-                  control={control}
-                  render={({ field }) => (
-                    <PatternFormat
-                      {...field}
-                      format="#####"
-                      mask="_"
-                      placeholder="77001"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    />
-                  )}
-                />
-                {errors.zipCode && (
-                  <p className="text-red-600 text-sm mt-1">{errors.zipCode.message}</p>
-                )}
-              </div>
-            </div>
-
-            {/* Message */}
-            <div>
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                What renovation project do you need? *
+              <label htmlFor="inline-phone" className="block text-sm font-semibold text-gray-700 mb-1">
+                Phone *
               </label>
-              <textarea
-                {...register('message')}
-                id="message"
-                rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="I need a kitchen remodel with new cabinets and countertops"
+              <Controller
+                name="phone"
+                control={control}
+                render={({ field }) => (
+                  <PatternFormat
+                    {...field}
+                    format="(###) ###-####"
+                    mask="_"
+                    placeholder="(555) 123-4567"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                )}
               />
-              {errors.message && (
-                <p className="text-red-600 text-sm mt-1">{errors.message.message}</p>
+              {errors.phone && (
+                <p className="text-red-600 text-xs mt-1">{errors.phone.message}</p>
               )}
             </div>
 
-            {/* Submit Button */}
+            {/* Email (optional) */}
+            <div>
+              <label htmlFor="inline-email" className="block text-sm font-semibold text-gray-700 mb-1">
+                Email <span className="text-gray-400 font-normal">(optional)</span>
+              </label>
+              <input
+                {...register('email')}
+                type="email"
+                id="inline-email"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="john@example.com"
+              />
+              {errors.email && (
+                <p className="text-red-600 text-xs mt-1">{errors.email.message}</p>
+              )}
+            </div>
+
+            {/* Submit */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full  " style={{ backgroundColor: "#F4B942", color: "#ffffff" }}
+              className="w-full py-4 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50"
+              style={{ backgroundColor: '#F4B942', color: '#ffffff' }}
             >
               {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
             </button>
 
-            {/* Status Messages */}
             {submitStatus === 'success' && (
-              <div className="bg-green-100 border border-green-400 text-gold-700 px-4 py-3 rounded">
-                Thank you! We'll contact you shortly.
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                Thank you! We&apos;ll contact you shortly.
               </div>
             )}
             {submitStatus === 'error' && (
@@ -324,7 +206,6 @@ export default function LeadForm() {
               </div>
             )}
 
-            {/* reCAPTCHA Notice */}
             <p className="text-xs text-gray-500 text-center">
               This site is protected by reCAPTCHA and the Google Privacy Policy applies.
             </p>
@@ -334,4 +215,3 @@ export default function LeadForm() {
     </section>
   );
 }
-

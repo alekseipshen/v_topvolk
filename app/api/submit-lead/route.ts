@@ -12,6 +12,7 @@ interface LeadData {
   phone: string;
   email: string;
   message?: string;
+  service?: string;
   recaptchaToken: string;
 }
 
@@ -24,6 +25,7 @@ async function sendTelegram(data: {
   phone: string;
   email: string;
   message?: string;
+  service?: string;
   url?: string;
   timestamp?: string;
 }) {
@@ -44,7 +46,8 @@ async function sendTelegram(data: {
     ``,
     `👤 <b>Name:</b> ${escapeHtml(data.name)}`,
     `📞 <b>Phone:</b> ${escapeHtml(data.phone)}`,
-    `📧 <b>Email:</b> ${escapeHtml(data.email)}`,
+    data.email ? `📧 <b>Email:</b> ${escapeHtml(data.email)}` : null,
+    data.service ? `🔧 <b>Service:</b> ${escapeHtml(data.service)}` : null,
     data.message ? `💬 <b>Message:</b> ${escapeHtml(data.message)}` : null,
     ``,
     `🌐 Page: ${escapeHtml(data.url || 'unknown')}`,
@@ -145,19 +148,18 @@ async function sendEmails(data: {
     // Wait for both owner emails to complete
     await Promise.all(ownerEmails);
     
-    // Small delay before customer email
-    await delay(1000);
-    
-    // Send confirmation email to customer
-    await resend.emails.send({
-      from: `TopVolk Construction <${emailFromAddress}>`,
-      to: data.email,
-      subject: '✅ Your Service Request - TopVolk Construction',
-      html: getCustomerConfirmationHTML(data.name),
-      text: getCustomerConfirmationText(data.name),
-    });
-    
-    console.log(`[EMAIL] Confirmation sent to customer: ${data.email}`);
+    // Send confirmation email to customer (only if email provided)
+    if (data.email) {
+      await delay(1000);
+      await resend.emails.send({
+        from: `TopVolk Construction <${emailFromAddress}>`,
+        to: data.email,
+        subject: '✅ Your Service Request - TopVolk Construction',
+        html: getCustomerConfirmationHTML(data.name),
+        text: getCustomerConfirmationText(data.name),
+      });
+      console.log(`[EMAIL] Confirmation sent to customer: ${data.email}`);
+    }
     
   } catch (emailError) {
     console.error('[EMAIL] Error:', emailError);
@@ -169,8 +171,8 @@ export async function POST(request: NextRequest) {
   try {
     const data: LeadData = await request.json();
 
-    // Validate required fields
-    if (!data.name || !data.phone || !data.email) {
+    // Validate required fields (email is optional)
+    if (!data.name || !data.phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -210,8 +212,9 @@ export async function POST(request: NextRequest) {
     const leadPayload = {
       name: data.name,
       phone: data.phone,
-      email: data.email,
+      email: data.email || '',
       message: data.message || '',
+      service: data.service || '',
       source: 'website',
       timestamp: new Date().toISOString(),
       recaptchaScore: recaptchaScore,
@@ -237,8 +240,9 @@ export async function POST(request: NextRequest) {
     const notificationData = {
       name: data.name,
       phone: data.phone,
-      email: data.email,
+      email: data.email || '',
       message: data.message,
+      service: data.service,
       source: 'Website - TopVolk Construction',
       url: leadPayload.url,
       timestamp: leadPayload.timestamp,
