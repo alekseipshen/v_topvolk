@@ -51,28 +51,12 @@ export const services = [
   
   // Additional services
   {
-    slug: 'adu-construction',
-    name: 'ADU Construction',
-    title: 'ADU Construction',
-    description: 'Build an Accessory Dwelling Unit (ADU) for rental income or family housing. Complete ADU design and construction services.',
-    image: '/assets/services/adu-construction.jpg',
-    services: ['ADU design', 'Permit processing', 'Foundation work', 'Complete construction']
-  },
-  {
     slug: 'flooring-installation',
     name: 'Flooring Installation',
     title: 'Flooring Installation',
     description: 'Expert installation of hardwood, laminate, tile, and vinyl flooring. Professional preparation and precise installation.',
     image: '/assets/services/flooring-installation.jpg',
     services: ['Hardwood flooring', 'Laminate flooring', 'Tile flooring', 'Vinyl flooring']
-  },
-  {
-    slug: 'roofing',
-    name: 'Roofing',
-    title: 'Roofing',
-    description: 'Professional roofing installation, repair, and replacement. Shingle, metal, and flat roofing services.',
-    image: '/assets/services/roofing.jpg',
-    services: ['Roof installation', 'Roof repair', 'Gutter installation', 'Roof inspection']
   },
   {
     slug: 'plumbing',
@@ -91,14 +75,6 @@ export const services = [
     services: ['Wiring installation', 'Panel upgrades', 'Lighting installation', 'Outlet installation']
   },
   {
-    slug: 'hvac',
-    name: 'HVAC',
-    title: 'HVAC',
-    description: 'Heating, ventilation, and air conditioning installation and repair services.',
-    image: '/assets/services/hvac.jpg',
-    services: ['HVAC installation', 'Furnace installation', 'AC installation', 'Ductwork']
-  },
-  {
     slug: 'painting',
     name: 'Painting',
     title: 'Interior & Exterior Painting',
@@ -113,14 +89,6 @@ export const services = [
     description: 'Professional tile installation for floors, walls, backsplashes, and showers. Custom tile work with precision.',
     image: '/assets/services/tile-installation.jpg',
     services: ['Floor tile installation', 'Wall tile installation', 'Backsplash tile', 'Shower tile']
-  },
-  {
-    slug: 'concrete-work',
-    name: 'Concrete Work',
-    title: 'Concrete Work',
-    description: 'Concrete foundations, driveways, patios, and walkways. Professional concrete pouring and finishing.',
-    image: '/assets/services/concrete-work.jpg',
-    services: ['Foundation concrete', 'Driveway installation', 'Patio concrete', 'Walkway construction']
   },
   {
     slug: 'carpentry',
@@ -147,22 +115,6 @@ export const services = [
     services: ['Entry door installation', 'Interior door replacement', 'Patio door installation', 'Garage door installation']
   },
   {
-    slug: 'siding',
-    name: 'Siding',
-    title: 'Siding',
-    description: 'Exterior siding installation and replacement. Vinyl, fiber cement, and wood siding options.',
-    image: '/assets/services/siding.jpg',
-    services: ['Vinyl siding', 'Fiber cement siding', 'Wood siding', 'Siding repair']
-  },
-  {
-    slug: 'landscaping',
-    name: 'Landscaping',
-    title: 'Landscaping',
-    description: 'Professional landscaping services to enhance your outdoor space. Design, installation, and maintenance.',
-    image: '/assets/services/landscaping.jpg',
-    services: ['Landscape design', 'Plant installation', 'Irrigation systems', 'Lawn installation']
-  },
-  {
     slug: 'fence-installation',
     name: 'Fence Installation',
     title: 'Fence Installation',
@@ -179,14 +131,6 @@ export const services = [
     services: ['Drywall hanging', 'Drywall finishing', 'Texture application', 'Drywall repair']
   },
   {
-    slug: 'waterproofing',
-    name: 'Waterproofing',
-    title: 'Waterproofing',
-    description: 'Basement and foundation waterproofing to prevent water damage and moisture issues.',
-    image: '/assets/services/waterproofing.jpg',
-    services: ['Basement waterproofing', 'Foundation waterproofing', 'Sump pump installation', 'Drainage systems']
-  },
-  {
     slug: 'foundation-repair',
     name: 'Foundation Repair',
     title: 'Foundation Repair',
@@ -201,14 +145,6 @@ export const services = [
     description: 'New garage construction and detached garage building. Complete garage construction services.',
     image: '/assets/services/garage-construction.jpg',
     services: ['Attached garage construction', 'Detached garage building', 'Garage conversion', 'Garage finishing']
-  },
-  {
-    slug: 'demolition',
-    name: 'Demolition',
-    title: 'Demolition',
-    description: 'Safe and efficient demolition services for renovations and new construction projects.',
-    image: '/assets/services/demolition.jpg',
-    services: ['Interior demolition', 'Exterior demolition', 'Selective demolition', 'Debris removal']
   },
   {
     slug: 'handyman-services',
@@ -234,14 +170,6 @@ export const services = [
     image: '/assets/services/insulation.jpg',
     services: ['Attic insulation', 'Wall insulation', 'Crawl space insulation', 'Spray foam insulation']
   },
-  {
-    slug: 'framing',
-    name: 'Framing',
-    title: 'Framing',
-    description: 'Structural framing for new construction and home additions. Expert wood and metal framing.',
-    image: '/assets/services/framing.jpg',
-    services: ['Wall framing', 'Roof framing', 'Floor framing', 'Steel framing']
-  }
 ];
 
 export const featuredServices = services.slice(0, 6);
