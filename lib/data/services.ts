@@ -1,3 +1,7 @@
+// `hidden: true` keeps the standalone /services/{slug} page (and its city
+// combos) live for organic SEO, but excludes the entry from every visible
+// list — homepage grid, /services index, footer, "other services" suggestions,
+// city pages. Toggle hidden when insurance coverage changes.
 export const services = [
   // Featured services (показываются на главной)
   {
@@ -48,8 +52,17 @@ export const services = [
     image: '/assets/services/home-additions.jpg',
     services: ['Room additions', 'Second story additions', 'Sunroom construction', 'Garage additions']
   },
-  
+
   // Additional services
+  {
+    slug: 'adu-construction',
+    name: 'ADU Construction',
+    title: 'ADU Construction',
+    description: 'Build an Accessory Dwelling Unit (ADU) for rental income or family housing. Complete ADU design and construction services.',
+    image: '/assets/services/adu-construction.jpg',
+    services: ['ADU design', 'Permit processing', 'Foundation work', 'Complete construction'],
+    hidden: true
+  },
   {
     slug: 'flooring-installation',
     name: 'Flooring Installation',
@@ -57,6 +70,15 @@ export const services = [
     description: 'Expert installation of hardwood, laminate, tile, and vinyl flooring. Professional preparation and precise installation.',
     image: '/assets/services/flooring-installation.jpg',
     services: ['Hardwood flooring', 'Laminate flooring', 'Tile flooring', 'Vinyl flooring']
+  },
+  {
+    slug: 'roofing',
+    name: 'Roofing',
+    title: 'Roofing',
+    description: 'Professional roofing installation, repair, and replacement. Shingle, metal, and flat roofing services.',
+    image: '/assets/services/roofing.jpg',
+    services: ['Roof installation', 'Roof repair', 'Gutter installation', 'Roof inspection'],
+    hidden: true
   },
   {
     slug: 'plumbing',
@@ -75,6 +97,15 @@ export const services = [
     services: ['Wiring installation', 'Panel upgrades', 'Lighting installation', 'Outlet installation']
   },
   {
+    slug: 'hvac',
+    name: 'HVAC',
+    title: 'HVAC',
+    description: 'Heating, ventilation, and air conditioning installation and repair services.',
+    image: '/assets/services/hvac.jpg',
+    services: ['HVAC installation', 'Furnace installation', 'AC installation', 'Ductwork'],
+    hidden: true
+  },
+  {
     slug: 'painting',
     name: 'Painting',
     title: 'Interior & Exterior Painting',
@@ -89,6 +120,15 @@ export const services = [
     description: 'Professional tile installation for floors, walls, backsplashes, and showers. Custom tile work with precision.',
     image: '/assets/services/tile-installation.jpg',
     services: ['Floor tile installation', 'Wall tile installation', 'Backsplash tile', 'Shower tile']
+  },
+  {
+    slug: 'concrete-work',
+    name: 'Concrete Work',
+    title: 'Concrete Work',
+    description: 'Concrete foundations, driveways, patios, and walkways. Professional concrete pouring and finishing.',
+    image: '/assets/services/concrete-work.jpg',
+    services: ['Foundation concrete', 'Driveway installation', 'Patio concrete', 'Walkway construction'],
+    hidden: true
   },
   {
     slug: 'carpentry',
@@ -115,6 +155,24 @@ export const services = [
     services: ['Entry door installation', 'Interior door replacement', 'Patio door installation', 'Garage door installation']
   },
   {
+    slug: 'siding',
+    name: 'Siding',
+    title: 'Siding',
+    description: 'Exterior siding installation and replacement. Vinyl, fiber cement, and wood siding options.',
+    image: '/assets/services/siding.jpg',
+    services: ['Vinyl siding', 'Fiber cement siding', 'Wood siding', 'Siding repair'],
+    hidden: true
+  },
+  {
+    slug: 'landscaping',
+    name: 'Landscaping',
+    title: 'Landscaping',
+    description: 'Professional landscaping services to enhance your outdoor space. Design, installation, and maintenance.',
+    image: '/assets/services/landscaping.jpg',
+    services: ['Landscape design', 'Plant installation', 'Irrigation systems', 'Lawn installation'],
+    hidden: true
+  },
+  {
     slug: 'fence-installation',
     name: 'Fence Installation',
     title: 'Fence Installation',
@@ -131,6 +189,15 @@ export const services = [
     services: ['Drywall hanging', 'Drywall finishing', 'Texture application', 'Drywall repair']
   },
   {
+    slug: 'waterproofing',
+    name: 'Waterproofing',
+    title: 'Waterproofing',
+    description: 'Basement and foundation waterproofing to prevent water damage and moisture issues.',
+    image: '/assets/services/waterproofing.jpg',
+    services: ['Basement waterproofing', 'Foundation waterproofing', 'Sump pump installation', 'Drainage systems'],
+    hidden: true
+  },
+  {
     slug: 'foundation-repair',
     name: 'Foundation Repair',
     title: 'Foundation Repair',
@@ -145,6 +212,15 @@ export const services = [
     description: 'New garage construction and detached garage building. Complete garage construction services.',
     image: '/assets/services/garage-construction.jpg',
     services: ['Attached garage construction', 'Detached garage building', 'Garage conversion', 'Garage finishing']
+  },
+  {
+    slug: 'demolition',
+    name: 'Demolition',
+    title: 'Demolition',
+    description: 'Safe and efficient demolition services for renovations and new construction projects.',
+    image: '/assets/services/demolition.jpg',
+    services: ['Interior demolition', 'Exterior demolition', 'Selective demolition', 'Debris removal'],
+    hidden: true
   },
   {
     slug: 'handyman-services',
@@ -170,6 +246,16 @@ export const services = [
     image: '/assets/services/insulation.jpg',
     services: ['Attic insulation', 'Wall insulation', 'Crawl space insulation', 'Spray foam insulation']
   },
+  {
+    slug: 'framing',
+    name: 'Framing',
+    title: 'Framing',
+    description: 'Structural framing for new construction and home additions. Expert wood and metal framing.',
+    image: '/assets/services/framing.jpg',
+    services: ['Wall framing', 'Roof framing', 'Floor framing', 'Steel framing'],
+    hidden: true
+  }
 ];
 
-export const featuredServices = services.slice(0, 6);
+export const visibleServices = services.filter((s) => !('hidden' in s) || !s.hidden);
+export const featuredServices = visibleServices.slice(0, 6);

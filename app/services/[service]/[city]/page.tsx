@@ -6,7 +6,7 @@ import Hero from '@/components/Hero';
 import PromoSection from '@/components/PromoSection';
 import Reviews from '@/components/Reviews';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema } from '@/components/StructuredData';
-import { services } from '@/lib/data/services';
+import { services, visibleServices } from '@/lib/data/services';
 import { getAllCities } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
@@ -74,8 +74,9 @@ export default async function ServiceCityPage({ params }: PageProps) {
   // Get other cities for this service (limit to 8)
   const otherCities = allCities.filter(c => c.slug !== city.slug).slice(0, 8);
   
-  // Get other services (limit to 5)
-  const otherServices = services.filter(s => s.slug !== service.slug).slice(0, 5);
+  // Get other services (limit to 5) — exclude hidden so insurance-removed
+  // services don't get suggested from any visible page.
+  const otherServices = visibleServices.filter(s => s.slug !== service.slug).slice(0, 5);
   
   return (
     <>

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import PromoSection from '@/components/PromoSection';
-import { services } from '@/lib/data/services';
+import { visibleServices } from '@/lib/data/services';
 import { BUSINESS_NAME } from '@/lib/utils';
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function AllServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service) => (
+              {visibleServices.map((service) => (
                 <Link
                   key={service.slug}
                   href={`/services/${service.slug}`}

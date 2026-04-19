@@ -7,7 +7,7 @@ import PromoSection from '@/components/PromoSection';
 import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
-import { services } from '@/lib/data/services';
+import { services, visibleServices } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
@@ -306,7 +306,7 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {services
+            {visibleServices
               .filter(s => s.slug !== serviceSlug)
               .map((otherService) => (
                 <Link
