@@ -19,7 +19,12 @@ export async function GET() {
     { loc: `${baseUrl}/services`, lastmod: now, changefreq: 'weekly', priority: 0.95 },
     { loc: `${baseUrl}/service-areas`, lastmod: now, changefreq: 'weekly', priority: 0.9 },
     { loc: `${baseUrl}/blog`, lastmod: now, changefreq: 'daily', priority: 0.9 },
-    { loc: `${baseUrl}/commercial`, lastmod: now, changefreq: 'weekly', priority: 0.85 },
+
+    // Cost guide pillar posts
+    { loc: `${baseUrl}/blog/bathroom-remodel-cost-seattle`, lastmod: now, changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/kitchen-remodel-cost-seattle`, lastmod: now, changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/deck-cost-seattle`, lastmod: now, changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/basement-finishing-cost-seattle`, lastmod: now, changefreq: 'monthly', priority: 0.85 },
 
     // All service pages (29 services)
     ...services.map((service) => ({
