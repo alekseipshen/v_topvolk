@@ -33,7 +33,10 @@ export function LocalBusinessSchema({ city, county, service }: LocalBusinessProp
 }
 
 /**
- * Organization + WebSite schemas for the homepage
+ * Organization + WebSite + LocalBusiness schemas for the homepage
+ * Organization (parent entity) + LocalBusiness (operating entity) are
+ * cross-linked via @id, so search engines treat them as the same business
+ * rather than duplicates.
  */
 export function HomepageSchemas() {
   const org = generateOrganizationSchema();

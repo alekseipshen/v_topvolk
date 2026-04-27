@@ -34,15 +34,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!service) return {};
   
   return {
-    title: `${service.name} Seattle | ${BUSINESS_NAME}`,
-    description: `${service.description} Licensed contractor serving Seattle, Bellevue, Tacoma. Call ${PHONE_DISPLAY} for a free estimate.`,
+    title: `${service.name} in Seattle Area`,
+    description: `Professional ${service.name.toLowerCase()} in Seattle, Bellevue, Tacoma. Licensed contractor since 2017. Call ${PHONE_DISPLAY} for a free estimate.`,
     keywords: `${service.name.toLowerCase()}, Seattle, ${service.slug}, home renovation, construction contractor`,
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}`,
     },
     openGraph: {
-      title: `${service.name} in Seattle | ${BUSINESS_NAME}`,
-      description: `${service.description} Licensed contractor serving Seattle, Bellevue, Tacoma.`,
+      title: `${service.name} in Seattle Area | ${BUSINESS_NAME}`,
+      description: `Professional ${service.name.toLowerCase()} in Seattle, Bellevue, Tacoma. Licensed contractor since 2017.`,
       url: `${SITE_URL}/services/${service.slug}`,
     },
   };

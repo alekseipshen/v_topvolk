@@ -34,15 +34,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!city) return {};
   
   return {
-    title: `Home Renovation & Construction Services in ${city.name} | ${BUSINESS_NAME}`,
-    description: `Professional home renovation, remodeling, and construction services in ${city.name}, WA. Kitchen remodels, bathroom renovations, deck installations. Call ${PHONE_DISPLAY} for a free estimate.`,
+    title: `Home Renovation in ${city.name}, WA`,
+    description: `Home renovation in ${city.name}, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2017. Call ${PHONE_DISPLAY}.`,
     keywords: `home renovation ${city.name}, construction contractor ${city.name}, remodeling ${city.name}, Seattle area contractor`,
     alternates: {
       canonical: `${SITE_URL}/cities/${city.slug}`,
     },
     openGraph: {
-      title: `Home Renovation in ${city.name} | ${BUSINESS_NAME}`,
-      description: `Professional home renovation services in ${city.name}, WA. Licensed contractor since 2017.`,
+      title: `Home Renovation in ${city.name}, WA | ${BUSINESS_NAME}`,
+      description: `Home renovation in ${city.name}, WA. Licensed contractor since 2017.`,
       url: `${SITE_URL}/cities/${city.slug}`,
     },
   };

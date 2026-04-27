@@ -24,10 +24,10 @@ const SITE_URL = 'https://www.topvolk.org';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'TopVolk Construction LLC | Professional Home Renovation in Seattle',
+    default: 'TopVolk Construction | Home Renovation in Seattle, WA',
     template: '%s | TopVolk Construction',
   },
-  description: 'Expert home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017. Call (206) 591-1096 for a free estimate!',
+  description: 'Home renovation in Seattle, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2017. Call (206) 591-1096 for a free estimate.',
   keywords: 'home renovation, Seattle, kitchen remodel, bathroom remodel, deck installation, construction contractor, King County',
   alternates: {
     canonical: SITE_URL,

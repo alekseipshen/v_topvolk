@@ -47,15 +47,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!service || !city) return {};
   
   return {
-    title: `${service.name} in ${city.name} | ${BUSINESS_NAME}`,
-    description: `Professional ${service.name.toLowerCase()} services in ${city.name}. ${service.description} Call ${PHONE_DISPLAY} for a free estimate.`,
+    title: `${service.name} in ${city.name}, WA`,
+    description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2017. Call ${PHONE_DISPLAY}.`,
     keywords: `${service.name.toLowerCase()}, ${city.name}, Seattle area, home renovation, construction contractor`,
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
     openGraph: {
-      title: `${service.name} in ${city.name} | ${BUSINESS_NAME}`,
-      description: `Professional ${service.name.toLowerCase()} services in ${city.name}, WA.`,
+      title: `${service.name} in ${city.name}, WA | ${BUSINESS_NAME}`,
+      description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Licensed contractor since 2017.`,
       url: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
   };

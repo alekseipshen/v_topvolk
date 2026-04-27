@@ -19,7 +19,7 @@ interface SchemaParams {
 export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'HomeAndConstructionBusiness',
+    '@type': 'Organization',
     '@id': `${SITE_URL}#organization`,
     name: BUSINESS_NAME,
     legalName: 'TopVolk Construction LLC',
