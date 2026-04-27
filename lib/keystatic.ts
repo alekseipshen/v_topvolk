@@ -41,8 +41,11 @@ function parseMdoc(raw: string): { frontmatter: PostFrontmatter; body: string } 
 
 function buildContentFn(body: string): () => Promise<{ node: any }> {
   return async () => {
-    const ast = Markdoc.parse(body);
-    const node = Markdoc.transform(ast);
+    // MarkdocRenderer expects the raw AST (type/attributes/children with types
+    // like 'heading', 'paragraph', 'list', 'item', 'text'). Markdoc.parse
+    // returns exactly that. Markdoc.transform would convert it into Tag/string
+    // nodes which the renderer does not understand.
+    const node = Markdoc.parse(body);
     return { node };
   };
 }
