@@ -65,9 +65,9 @@ export default async function BlogPage() {
                 const { displayTitle, title, description, publishedDate, author, image } = post.entry;
                 
                 // Use displayTitle if available, or convert slug to readable title
-                const articleTitle = displayTitle || title
+                const articleTitle = displayTitle || (title || slug)
                   .split('-')
-                  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                  .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
                   .join(' ');
                 
                 return (

@@ -34,9 +34,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const { displayTitle, title, description, publishedDate, author, image, content } = post;
-  
+  const fallbackTitle = title || slug;
+
   // Use displayTitle if available, or convert slug to readable title
-  const articleTitle = displayTitle || title
+  const articleTitle = displayTitle || fallbackTitle
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');

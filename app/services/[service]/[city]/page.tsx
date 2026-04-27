@@ -46,13 +46,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = services.find(s => s.slug === serviceSlug);
   const allCities = getAllCities();
   const city = allCities.find(c => c.slug === citySlug);
-  
+
   if (!service || !city) return {};
-  
+
+  // Pages without unique pipeline-generated content are thin/templated.
+  // Mark them noindex,follow until the SEO content pipeline produces YAML
+  // for this city+service pair (graceful upgrade — once the YAML lands,
+  // the page becomes indexable on the next crawl).
+  const uniqueContent = await loadCityServiceContent(city.slug, service.slug);
+  const robotsDirective = uniqueContent ? undefined : { index: false, follow: true };
+
   return {
     title: `${service.name} in ${city.name}, WA`,
     description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2017. Call ${PHONE_DISPLAY}.`,
     keywords: `${service.name.toLowerCase()}, ${city.name}, Seattle area, home renovation, construction contractor`,
+    ...(robotsDirective && { robots: robotsDirective }),
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },

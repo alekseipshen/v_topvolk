@@ -8,9 +8,6 @@ interface SchemaParams {
   city?: string;
   service?: string;
   county?: string;
-  // Legacy params from programmatic pages (brands/appliances routes)
-  brand?: string;
-  appliance?: string;
 }
 
 /**
@@ -139,16 +136,9 @@ export function generateLocalBusinessSchema(params: SchemaParams) {
  * Service schema -- used on service pages
  */
 export function generateServiceSchema(params: SchemaParams) {
-  const { city, brand } = params;
   const service = getEffectiveService(params);
 
-  const serviceName = brand && service
-    ? `${formatName(brand)} ${formatName(service)}`
-    : service
-    ? formatName(service)
-    : brand
-    ? `${formatName(brand)} Services`
-    : 'Home Renovation';
+  const serviceName = service ? formatName(service) : 'Home Renovation';
   const serviceDescription = generateServiceDescription(params);
 
   return {
@@ -179,7 +169,7 @@ export function generateServiceSchema(params: SchemaParams) {
  * BreadcrumbList schema
  * Supports two call patterns:
  * 1. { items: [...] } -- explicit breadcrumb items
- * 2. SchemaParams { brand, service, city, appliance } -- auto-generated
+ * 2. SchemaParams { service, city } -- auto-generated
  */
 export function generateBreadcrumbSchema(params: { items: Array<{ name: string; url: string }> } | SchemaParams) {
   if ('items' in params && Array.isArray(params.items)) {
@@ -196,7 +186,7 @@ export function generateBreadcrumbSchema(params: { items: Array<{ name: string; 
   }
 
   // Auto-generate from SchemaParams
-  const { city, brand } = params as SchemaParams;
+  const { city } = params as SchemaParams;
   const service = getEffectiveService(params as SchemaParams);
 
   const items: any[] = [
@@ -205,23 +195,12 @@ export function generateBreadcrumbSchema(params: { items: Array<{ name: string; 
 
   let position = 2;
 
-  if (brand) {
-    items.push({
-      '@type': 'ListItem',
-      position: position++,
-      name: formatName(brand),
-      item: `${SITE_URL}/brands/${brand}`,
-    });
-  }
-
   if (service) {
     items.push({
       '@type': 'ListItem',
       position: position++,
       name: formatName(service),
-      item: brand
-        ? `${SITE_URL}/brands/${brand}/services/${service}`
-        : `${SITE_URL}/services/${service}`,
+      item: `${SITE_URL}/services/${service}`,
     });
   }
 
@@ -244,23 +223,17 @@ export function generateBreadcrumbSchema(params: { items: Array<{ name: string; 
 // ---- Helpers ----
 
 function getEffectiveService(params: SchemaParams): string | undefined {
-  return params.service || params.appliance;
+  return params.service;
 }
 
 function generateBusinessDescription(params: SchemaParams): string {
-  const { city, brand } = params;
+  const { city } = params;
   const service = getEffectiveService(params);
 
-  if (city && brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor since ${FOUNDED_YEAR}. Call ${PHONE_DISPLAY}.`;
-  } else if (city && service) {
+  if (city && service) {
     return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor since ${FOUNDED_YEAR}. Call ${PHONE_DISPLAY} for a free estimate.`;
-  } else if (brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in Seattle and surrounding areas. Licensed contractor since ${FOUNDED_YEAR}.`;
   } else if (city) {
     return `Professional home renovation services in ${formatName(city)}, WA. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since ${FOUNDED_YEAR}.`;
-  } else if (brand) {
-    return `Professional ${formatName(brand)} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since ${FOUNDED_YEAR}.`;
   } else if (service) {
     return `Expert ${formatName(service).toLowerCase()} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since ${FOUNDED_YEAR}.`;
   }
@@ -268,19 +241,13 @@ function generateBusinessDescription(params: SchemaParams): string {
 }
 
 function generateServiceDescription(params: SchemaParams): string {
-  const { city, brand } = params;
+  const { city } = params;
   const service = getEffectiveService(params);
 
-  if (city && brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor. Call ${PHONE_DISPLAY}.`;
-  } else if (city && service) {
+  if (city && service) {
     return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor, quality craftsmanship, free estimates. Call ${PHONE_DISPLAY}.`;
-  } else if (brand && service) {
-    return `Professional ${formatName(brand)} ${formatName(service).toLowerCase()} services in Seattle area. Licensed contractor with 100+ completed projects.`;
   } else if (service) {
     return `Professional ${formatName(service).toLowerCase()} services in Seattle and King County area. Licensed contractor with 100+ completed projects.`;
-  } else if (brand) {
-    return `Professional ${formatName(brand)} services in Seattle area. Licensed contractor with 100+ completed projects.`;
   }
   return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations, and more.`;
 }

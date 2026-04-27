@@ -1,5 +1,4 @@
 import { Zap, Award, Shield, DollarSign } from 'lucide-react';
-import Image from 'next/image';
 import GoogleRating from './GoogleRating';
 import HeroCTAButtons from './HeroCTAButtons';
 
@@ -7,13 +6,10 @@ interface HeroProps {
   title: string;
   subtitle?: string;
   city?: string;
-  appliance?: string;
-  brand?: string;
-  brandLogo?: string;
   applianceImage?: string;
 }
 
-export default function Hero({ title, subtitle = 'Licensed contractor specializing in kitchen, bathroom, deck, and home renovations', brand, brandLogo, applianceImage }: HeroProps) {
+export default function Hero({ title, subtitle = 'Licensed contractor specializing in kitchen, bathroom, deck, and home renovations', applianceImage }: HeroProps) {
   const backgroundImage = applianceImage || "/hero-bg.jpg";
 
   return (
@@ -34,20 +30,8 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
           <div className="flex flex-col h-full md:h-auto md:pl-4 lg:pl-8">
             {/* Top Section - Text */}
             <div className="text-center md:text-left mb-[50px] md:mt-0 md:mb-8">
-              {/* Google Rating and Brand Logo */}
-              <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-4 md:mb-6">
+              <div className="flex justify-center md:justify-start mb-4 md:mb-6">
                 <GoogleRating />
-                {brandLogo && (
-                  <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm">
-                    <Image
-                      src={brandLogo}
-                      alt={brand ? `${brand} Logo` : 'Brand Logo'}
-                      width={120}
-                      height={48}
-                      className="h-10 md:h-12 w-auto object-contain"
-                    />
-                  </div>
-                )}
               </div>
 
               {/* Main Heading & Subtitle - on semi-transparent backdrop for readability */}

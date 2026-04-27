@@ -1,72 +1,92 @@
-import { createReader } from '@keystatic/core/reader';
-import readerConfig from '../keystatic.reader.config';
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
+import Markdoc from '@markdoc/markdoc';
 
-// Create Keystatic reader - uses LOCAL mode to read from Git files
-// (Admin uses Cloud mode from keystatic.config.tsx)
-export const reader = createReader(process.cwd(), readerConfig);
+// Posts live as content/posts/<slug>/index.mdoc with YAML frontmatter
+// fenced by --- and a Markdoc body. We read these directly with fs because
+// Keystatic's createReader does not see content files reliably on Vercel
+// serverless (even with outputFileTracingIncludes set).
 
-// Get all blog posts
-export async function getAllPosts() {
-  const fs = require('fs');
-  const path = require('path');
-  
-  try {
-    const cwd = process.cwd();
-    console.log('[getAllPosts] Starting...');
-    console.log('[getAllPosts] CWD:', cwd);
-    
-    // Check filesystem
-    const contentPath = path.join(cwd, 'content', 'posts');
-    console.log('[getAllPosts] Content path:', contentPath);
-    console.log('[getAllPosts] Content dir exists:', fs.existsSync(contentPath));
-    
-    if (fs.existsSync(contentPath)) {
-      const files = fs.readdirSync(contentPath);
-      console.log('[getAllPosts] Files in content/posts:', files);
-      console.log('[getAllPosts] Files count:', files.length);
-    } else {
-      console.log('[getAllPosts] ERROR: content/posts directory does NOT exist!');
-      
-      // Check if content dir exists at all
-      const contentDir = path.join(cwd, 'content');
-      console.log('[getAllPosts] Content dir exists:', fs.existsSync(contentDir));
-      if (fs.existsSync(contentDir)) {
-        const contentDirFiles = fs.readdirSync(contentDir);
-        console.log('[getAllPosts] Files in content/:', contentDirFiles);
-      }
-    }
-    
-    const posts = await reader.collections.posts.all();
-    console.log('[getAllPosts] Reader returned posts:', posts.length);
-    
-    if (posts.length > 0) {
-      posts.forEach(p => {
-        console.log('[getAllPosts] Post:', p.slug, '|', p.entry.title);
-      });
-    }
-    
-    // Sort by date (newest first)
-    const sorted = posts.sort((a, b) => {
-      const dateA = new Date(a.entry.publishedDate || 0);
-      const dateB = new Date(b.entry.publishedDate || 0);
-      return dateB.getTime() - dateA.getTime();
-    });
-    
-    console.log('[getAllPosts] Returning', sorted.length, 'posts');
-    return sorted;
-  } catch (error) {
-    console.error('[getAllPosts] Error reading posts:', error);
-    return [];
-  }
+const POSTS_DIR = 'content/posts';
+
+interface PostFrontmatter {
+  title?: string;
+  displayTitle?: string;
+  description?: string;
+  publishedDate?: string;
+  author?: string;
+  image?: string;
 }
 
-// Get single post by slug
-export async function getPostBySlug(slug: string) {
-  try {
-    const post = await reader.collections.posts.read(slug);
-    return post;
-  } catch (error) {
-    console.error(`[getPostBySlug] Error reading post "${slug}":`, error);
+interface PostEntry extends PostFrontmatter {
+  content: () => Promise<{ node: any }>;
+}
+
+interface PostListItem {
+  slug: string;
+  entry: PostEntry;
+}
+
+const FRONTMATTER_RE = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+
+function parseMdoc(raw: string): { frontmatter: PostFrontmatter; body: string } {
+  const match = raw.match(FRONTMATTER_RE);
+  if (!match) {
+    return { frontmatter: {}, body: raw };
+  }
+  const frontmatter = (yaml.load(match[1]) as PostFrontmatter) || {};
+  return { frontmatter, body: match[2] };
+}
+
+function buildContentFn(body: string): () => Promise<{ node: any }> {
+  return async () => {
+    const ast = Markdoc.parse(body);
+    const node = Markdoc.transform(ast);
+    return { node };
+  };
+}
+
+function readPost(slug: string): PostEntry | null {
+  const filePath = path.join(process.cwd(), POSTS_DIR, slug, 'index.mdoc');
+  if (!fs.existsSync(filePath)) {
     return null;
   }
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  const { frontmatter, body } = parseMdoc(raw);
+  return {
+    ...frontmatter,
+    content: buildContentFn(body),
+  };
+}
+
+export async function getAllPosts(): Promise<PostListItem[]> {
+  const dir = path.join(process.cwd(), POSTS_DIR);
+  if (!fs.existsSync(dir)) {
+    return [];
+  }
+  const slugs = fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name);
+
+  const posts: PostListItem[] = [];
+  for (const slug of slugs) {
+    const entry = readPost(slug);
+    if (entry) {
+      posts.push({ slug, entry });
+    }
+  }
+
+  posts.sort((a, b) => {
+    const dateA = new Date(a.entry.publishedDate || 0).getTime();
+    const dateB = new Date(b.entry.publishedDate || 0).getTime();
+    return dateB - dateA;
+  });
+
+  return posts;
+}
+
+export async function getPostBySlug(slug: string): Promise<PostEntry | null> {
+  return readPost(slug);
 }

@@ -42,6 +42,14 @@ const nextConfig: NextConfig = {
   // SEO Redirects
   async redirects() {
     return [
+      // Apex (topvolk.org) → www.topvolk.org as permanent 301 (Vercel default
+      // is 307 which leaks PageRank). Explicit override.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'topvolk.org' }],
+        destination: 'https://www.topvolk.org/:path*',
+        permanent: true,
+      },
       // Contact page → Homepage with contact section
       {
         source: '/contact',

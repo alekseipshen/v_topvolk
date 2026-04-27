@@ -53,6 +53,9 @@ export default function Header() {
             <Link href="/#reviews" className="text-gray-100 hover:text-gold-400 transition font-medium">
               Reviews
             </Link>
+            <Link href="/blog" className="text-gray-100 hover:text-gold-400 transition font-medium">
+              Blog
+            </Link>
             <button
             onClick={() => {
                if (typeof window !== 'undefined' && (window as any).dataLayer) {
@@ -139,6 +142,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Reviews
+              </Link>
+              <Link
+                href="/blog"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
               </Link>
               <a
               href={`tel:${PHONE_NUMBER}`}

@@ -18,14 +18,14 @@ export default function TermsOfUsePage() {
           
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p className="text-sm text-gray-500">
-              <strong>Last Updated:</strong> January 9, 2026
+              <strong>Last Updated:</strong> April 27, 2026
             </p>
 
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Acceptance of Terms</h2>
               <p>
-                By accessing and using the website of {BUSINESS_NAME} ("we," "us," or "our"), 
-                you accept and agree to be bound by the terms and provision of this agreement. 
+                By accessing and using the website of {BUSINESS_NAME} ("we," "us," or "our"),
+                you accept and agree to be bound by the terms and provision of this agreement.
                 If you do not agree to these terms, please do not use this website.
               </p>
             </section>
@@ -33,14 +33,14 @@ export default function TermsOfUsePage() {
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Services Description</h2>
               <p>
-                {BUSINESS_NAME}, operated by TopVolk Construction LLC, provides home renovation services 
-                for residential and commercial customers. All services are subject to availability 
-                and scheduling.
+                {BUSINESS_NAME}, operated by TopVolk Construction LLC, is a licensed home renovation
+                contractor serving the greater Seattle, WA area. We provide kitchen remodels, bathroom
+                renovations, deck installations, basement finishing, ADU construction, home additions,
+                and general contracting services for residential customers.
               </p>
               <p>
-                We repair all major brands of appliances including refrigerators, washers, dryers, 
-                dishwashers, ovens, and more. Service appointments, pricing, and availability are 
-                subject to change.
+                All projects are subject to availability, scheduling, jurisdictional permit requirements,
+                and signed scope-of-work agreements before construction begins.
               </p>
             </section>
 
@@ -56,39 +56,50 @@ export default function TermsOfUsePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Service Appointments and Pricing</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Estimates, Bids, and Project Pricing</h2>
               <p>
-                All service appointments are subject to technician availability. Pricing quoted is 
-                an estimate and may vary based on actual diagnosis and parts required. Final pricing 
-                will be provided before any repair work begins.
+                All estimates and bids provided through this website or in response to inquiries are
+                preliminary. Final project pricing is established only after an in-person consultation,
+                site assessment, and signed scope-of-work agreement that defines materials, timeline,
+                allowances, change-order procedures, and payment milestones.
               </p>
               <p>
-                We reserve the right to refuse service to any customer for any lawful reason, 
-                including but not limited to unsafe working conditions or abusive behavior.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Warranty and Liability</h2>
-              <p>
-                All repairs performed by {BUSINESS_NAME} come with a warranty on parts and labor 
-                as specified in your service agreement. We are not liable for pre-existing damage, 
-                normal wear and tear, or damage caused by misuse after repair.
+                Permit fees, plan-review costs, and inspection charges from local jurisdictions
+                (City of Seattle, King County, Bellevue, Tacoma, etc.) are passed through to the
+                customer at cost. Material price changes between estimate and project start may be
+                reflected in revised pricing per the signed agreement.
               </p>
               <p>
-                Our liability is limited to the cost of the repair service provided. We are not 
-                liable for consequential or incidental damages including loss of business, food 
-                spoilage, or other indirect losses.
+                We reserve the right to decline any project for any lawful reason, including unsafe
+                site conditions, unrealistic budget-to-scope mismatches, or unwillingness to obtain
+                required permits.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Independent Service Provider</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Workmanship Warranty and Liability</h2>
               <p>
-                {BUSINESS_NAME} is an independent home renovation service provider and is not 
-                affiliated with, authorized by, or endorsed by any appliance brand or manufacturer 
-                mentioned on this website. All brand names and trademarks are the property of their 
-                respective owners and are used for informational purposes only.
+                Construction work performed by {BUSINESS_NAME} is covered by our written workmanship
+                warranty as specified in each project agreement. Manufacturer warranties on materials
+                and fixtures are pass-through from the manufacturer. We are not liable for damage caused
+                by normal wear, misuse, or failure to follow recommended maintenance after project
+                completion.
+              </p>
+              <p>
+                Our liability is limited to the cost of the construction work performed. We are not
+                liable for consequential or incidental damages including loss of use, alternative
+                housing, or other indirect costs unless explicitly agreed in writing.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Licensing and Independent Contractor Status</h2>
+              <p>
+                {BUSINESS_NAME} is a Washington state licensed contractor operating as an independent
+                business. We are not affiliated with, authorized by, or endorsed by any material
+                supplier, manufacturer, or third-party service mentioned on this website. All brand
+                names and trademarks referenced are the property of their respective owners and used
+                solely for informational purposes.
               </p>
             </section>
 

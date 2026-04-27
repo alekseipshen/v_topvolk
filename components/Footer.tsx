@@ -74,7 +74,7 @@ export default function Footer() {
               {serviceAreas.map((area) => (
                 <li key={area.slug}>
                   <Link
-                    href={`/#service-areas`}
+                    href={`/service-areas`}
                     className="hover:text-white transition text-sm"
                   >
                     {area.name}
@@ -84,10 +84,10 @@ export default function Footer() {
               ))}
               <li className="pt-2">
                 <Link
-                  href="/#service-areas"
+                  href="/service-areas"
                   className="hover:text-white transition text-sm font-semibold"
                 >
-                  View All 56 Cities →
+                  View All Cities →
                 </Link>
               </li>
             </ul>
