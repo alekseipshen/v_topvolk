@@ -14,8 +14,9 @@ export const seattleCounties: County[] = [
     name: 'King County',
     slug: 'king-county',
     description: 'Serving all cities in King County including Seattle, Bellevue, Redmond, and surrounding areas',
-    totalCities: 39,
+    totalCities: 41,
     cities: [
+      'Algona',
       'Auburn',
       'Beaux Arts Village',
       'Bellevue',
@@ -43,6 +44,7 @@ export const seattleCounties: County[] = [
       'Newcastle',
       'Normandy Park',
       'North Bend',
+      'Pacific',
       'Redmond',
       'Renton',
       'Sammamish',
