@@ -57,6 +57,9 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/services/[service]/[city]': ['./content/cities/**/*.yaml'],
     '/services/[service]/[city]/page': ['./content/cities/**/*.yaml'],
+    '/blog': ['./content/posts/**/*'],
+    '/blog/[slug]': ['./content/posts/**/*'],
+    '/blog/[slug]/page': ['./content/posts/**/*'],
   },
 
   // Experimental features
