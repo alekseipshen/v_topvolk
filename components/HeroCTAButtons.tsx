@@ -26,7 +26,7 @@ export default function HeroCTAButtons() {
         <span className="whitespace-nowrap">{PHONE_DISPLAY}</span>
       </a>
       <button
-        onClick={openModal}
+        onClick={() => openModal()}
         className="flex items-center gap-2 md:gap-3 text-white px-6 md:px-10 py-3 md:py-5 rounded-lg transition font-semibold text-base md:text-xl shadow-lg hover:shadow-xl w-full md:w-auto justify-center cursor-pointer"
         style={{ backgroundColor: '#334e64' }}
       >

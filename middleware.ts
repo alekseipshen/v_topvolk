@@ -99,11 +99,6 @@ const CITY_NAME_TO_SLUG: Record<string, string> = {
   'Poulsbo': 'poulsbo',
   'Port Orchard': 'port-orchard',
   'Silverdale': 'silverdale',
-
-  // TEST CITIES (for debugging from outside USA)
-  'Tel Aviv': 'sultan',
-  'Tel Aviv-Yafo': 'sultan',
-  'Limassol': 'sultan',
 };
 
 export function middleware(request: NextRequest) {
