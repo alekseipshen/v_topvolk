@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_ADDRESS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/utils';
-import { services } from '@/lib/data/services';
+import { featuredServices } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 
 export default function Footer() {
-  // Major renovation services
-  const majorServices = services.slice(0, 6);
+  // Major renovation services (top 6 visible — hidden services excluded)
+  const majorServices = featuredServices;
   
   // Seattle area counties we serve
   const serviceAreas = seattleCounties.map(county => ({

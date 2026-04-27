@@ -7,7 +7,7 @@ import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import { LocalBusinessSchema, BreadcrumbSchema } from '@/components/StructuredData';
 import { getAllCities, seattleCounties, getCountiesForCity } from '@/lib/data/seattle-counties';
-import { services } from '@/lib/data/services';
+import { featuredServices } from '@/lib/data/services';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
 const SITE_URL = 'https://www.topvolk.org';
@@ -72,9 +72,6 @@ export default async function CityPage({ params }: PageProps) {
           slug: cityName.toLowerCase().replace(/\s+/g, '-')
         }))
     : [];
-  
-  // Featured services (first 6)
-  const featuredServices = services.slice(0, 6);
   
   return (
     <>

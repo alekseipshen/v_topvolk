@@ -50,7 +50,8 @@ export const services = [
     title: 'Home Additions',
     description: 'Expand your living space with custom home additions. Room additions, second stories, and structural expansions.',
     image: '/assets/services/home-additions.jpg',
-    services: ['Room additions', 'Second story additions', 'Sunroom construction', 'Garage additions']
+    services: ['Room additions', 'Second story additions', 'Sunroom construction', 'Garage additions'],
+    hidden: true
   },
 
   // Additional services
@@ -86,7 +87,8 @@ export const services = [
     title: 'Plumbing',
     description: 'Complete plumbing services for residential projects. Installation, repair, and maintenance.',
     image: '/assets/services/plumbing.jpg',
-    services: ['Pipe installation', 'Fixture replacement', 'Water heater installation', 'Leak repair']
+    services: ['Pipe installation', 'Fixture replacement', 'Water heater installation', 'Leak repair'],
+    hidden: true
   },
   {
     slug: 'electrical',
@@ -94,7 +96,8 @@ export const services = [
     title: 'Electrical',
     description: 'Licensed electrical services for home renovations. Wiring, panel upgrades, and lighting installation.',
     image: '/assets/services/electrical.jpg',
-    services: ['Wiring installation', 'Panel upgrades', 'Lighting installation', 'Outlet installation']
+    services: ['Wiring installation', 'Panel upgrades', 'Lighting installation', 'Outlet installation'],
+    hidden: true
   },
   {
     slug: 'hvac',
@@ -203,7 +206,8 @@ export const services = [
     title: 'Foundation Repair',
     description: 'Foundation crack repair, leveling, and stabilization. Expert foundation repair services.',
     image: '/assets/services/foundation-repair.jpg',
-    services: ['Foundation crack repair', 'Foundation leveling', 'Pier installation', 'Foundation waterproofing']
+    services: ['Foundation crack repair', 'Foundation leveling', 'Pier installation', 'Foundation waterproofing'],
+    hidden: true
   },
   {
     slug: 'garage-construction',
