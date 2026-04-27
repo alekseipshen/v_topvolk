@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Clock, Wrench, Users, CheckCircle, MapPin } from 'lucide-react';
 import Hero from '@/components/Hero';
 import PromoSection from '@/components/PromoSection';

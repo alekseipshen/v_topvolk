@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Clock, Wrench, Users, CheckCircle } from 'lucide-react';
 import Hero from '@/components/Hero';
 import PromoSection from '@/components/PromoSection';
@@ -316,11 +317,13 @@ export default async function ServicePage({ params }: PageProps) {
                   className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
                 >
                   {otherService.image && (
-                    <div className="w-full h-48 overflow-hidden">
-                      <img 
-                        src={otherService.image} 
+                    <div className="relative w-full h-48 overflow-hidden">
+                      <Image
+                        src={otherService.image}
                         alt={otherService.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   )}

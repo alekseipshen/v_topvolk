@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Calendar } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
@@ -145,11 +146,13 @@ export default async function CityPage({ params }: PageProps) {
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
               >
                 {service.image && (
-                  <div className="w-full h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
+                  <div className="relative w-full h-48 overflow-hidden">
+                    <Image
+                      src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 )}

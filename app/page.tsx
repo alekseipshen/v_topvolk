@@ -7,6 +7,7 @@ import { featuredServices } from '@/lib/data/services';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HomePage() {
   return (
@@ -140,11 +141,13 @@ export default function HomePage() {
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
               >
                 {service.image && (
-                  <div className="w-full h-48 overflow-hidden">
-                    <img
+                  <div className="relative w-full h-48 overflow-hidden">
+                    <Image
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 )}

@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import PromoSection from '@/components/PromoSection';
 import { visibleServices } from '@/lib/data/services';
 import { BUSINESS_NAME } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: `All Services | ${BUSINESS_NAME}`,
-  description: 'Complete list of construction and remodeling services offered by TopVolk Construction. From general contracting to specialized trades.',
+  title: `All Services in Seattle Area`,
+  description: 'Complete list of home renovation services in Seattle area: kitchen, bathroom, decks, basements, ADU, general contracting.',
   keywords: 'construction services, remodeling, renovation, Seattle contractor, home improvement',
   alternates: {
     canonical: 'https://www.topvolk.org/services',
@@ -43,11 +44,13 @@ export default function AllServicesPage() {
                   className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group border border-gray-200"
                 >
                   {service.image && (
-                    <div className="w-full h-48 overflow-hidden">
-                      <img 
-                        src={service.image} 
+                    <div className="relative w-full h-48 overflow-hidden">
+                      <Image
+                        src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                   )}

@@ -139,6 +139,22 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Service Area Map */}
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <h4 className="text-white font-semibold mb-3 text-center">Service Area</h4>
+          <div className="rounded-lg overflow-hidden max-w-4xl mx-auto">
+            <iframe
+              src="https://maps.google.com/maps?q=Seattle,WA&t=&z=9&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="240"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="TopVolk Construction service area: Seattle Metro, King, Snohomish, Pierce, Kitsap counties"
+            />
+          </div>
+        </div>
+
         {/* Disclaimer */}
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="max-w-4xl mx-auto text-xs text-gray-400 text-center space-y-2">
