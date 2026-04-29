@@ -1,0 +1,25 @@
+title: "Burien Kitchen Remodel — Postwar Kitchens Built for a Different Era"
+
+intro: |
+  Seahurst and the residential blocks stretching inland through 98146 carry a lot of postwar housing — 1950s and early 1960s ramblers where the kitchen was treated as a utility room, not a social space. That layout made sense in 1958. It doesn't anymore. Dropping in a new KitchenAid range and painting the walls isn't a remodel — the floor plan itself needs rethinking, and that starts with figuring out which walls can come down.
+
+localContext: |
+  Burien's housing stock in zip codes 98146 and 98148 skews heavily postwar, with mid-century ranchers dominating blocks near Three Tree Point and the Highline neighborhoods. These homes came with 100-amp panels, single-wall galley kitchens, and galvanized supply lines. Many still have original 30-amp circuits serving the range location — real constraints that affect what appliances can go where before a single cabinet gets ordered.
+
+commonProblems:
+  - title: "Load-Bearing Walls Blocking the Open Layout You're After"
+    description: "In Burien's postwar ramblers, the wall separating the kitchen from the living area is almost always structural. Opening it up means engineering a proper LVL beam — typically 3.5x11.25 or larger — and PSL posts to carry the load down to the foundation. This requires a building permit and a plan review through the City of Burien's building department before demolition starts. Skipping the structural analysis creates problems that surface years later in cracked drywall and uneven floors."
+  - title: "100-Amp Panels That Can't Feed a Modern Kitchen"
+    description: "Induction cooktops and Bosch double wall ovens pull far more amperage than most 1960s panels were sized to supply. Upgrading from 100A to 200A electrical service is permit-required work — it gets pulled on the same building permit as the kitchen remodel in most cases. The rough-in inspection has to pass before any finish work begins, so sequencing this correctly matters. Homeowners who skip the upgrade and install induction anyway end up tripping breakers mid-cook."
+  - title: "Cabinet Layout Planned Without the Appliances in the Room"
+    description: "Semi-custom cabinets hit a reasonable price point for a Burien kitchen remodel — more flexibility than flat-pack IKEA boxes, less cost than full custom. The problem is that Bosch dishwasher openings, refrigerator depth (counter-depth vs. standard), and range hood CFM requirements all need to be confirmed in the drawings before the order goes in. Changing a cabinet run after it's been built and delivered isn't a quick fix. It costs money and adds two to three weeks to the schedule."
+
+faq:
+  - q: "How fast can you get to Burien for a Kitchen Remodel consultation?"
+    a: "Burien is an easy drive from most of our active King County job sites — 20 to 30 minutes depending on traffic on 509. We schedule on-site consultations with Vladislav directly, not a sales rep. Call (206) 591-1096 to set a time. On-site only — no ballpark estimates over the phone for projects in this range."
+  - q: "What appliance brands do you plan around in Burien kitchen remodels?"
+    a: "Most Burien kitchens we remodel get spec'd with KitchenAid, Bosch, GE, or Samsung — mid-range brands that fit the $60K-$90K remodel budget without overshooting the neighborhood. We confirm appliance dimensions in the design drawings before cabinets are ordered, so fitment issues get caught early, not on delivery day."
+  - q: "What permits does a Burien kitchen remodel require, and how long does the process take?"
+    a: "Wall removal, electrical upgrades, and gas line changes all require a building permit from the City of Burien's building department — not King County DPER. Plan review typically runs 4 to 8 weeks for a full kitchen scope. After permit approval, expect 8 to 12 weeks to complete the remodel. Vladislav walks you through the permit process at the initial consultation. WA Licensed Contractor. Deadline penalties are written into the contract. Call (206) 591-1096 to talk through your project scope and get a line-item quote."
+
+---
