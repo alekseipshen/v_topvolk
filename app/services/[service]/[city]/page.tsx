@@ -49,18 +49,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!service || !city) return {};
 
-  // Pages without unique pipeline-generated content are thin/templated.
-  // Mark them noindex,follow until the SEO content pipeline produces YAML
-  // for this city+service pair (graceful upgrade — once the YAML lands,
-  // the page becomes indexable on the next crawl).
-  const uniqueContent = await loadCityServiceContent(city.slug, service.slug);
-  const robotsDirective = uniqueContent ? undefined : { index: false, follow: true };
+  // All cities in seattle-counties.ts are real service areas. Index them.
+  // Pipeline-generated YAML, when present, upgrades the page; when absent,
+  // the static template still ranks. Earlier noindex behavior caused a 7.7
+  // → 79 regression on `bathroom remodel fife` (and ~38 similar cities)
+  // because the pipeline cannot cover all 80 cities × 4 services overnight.
 
   return {
     title: `${service.name} in ${city.name}, WA`,
     description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2017. Call ${PHONE_DISPLAY}.`,
     keywords: `${service.name.toLowerCase()}, ${city.name}, Seattle area, home renovation, construction contractor`,
-    ...(robotsDirective && { robots: robotsDirective }),
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
