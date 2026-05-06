@@ -5,9 +5,17 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { MarkdocRenderer } from '@/components/MarkdocRenderer';
 
-// Force dynamic rendering (disable caching)
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// SSG with hourly revalidation. Pre-renders all known posts at build (so Google
+// can find static HTML via sitemap), and falls back to on-demand SSR for any
+// new slug. Force-dynamic was forcing every crawl to re-render and was
+// preventing Googlebot from discovering posts via standard sitemap fetches.
+export const revalidate = 3600;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
