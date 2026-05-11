@@ -1,0 +1,28 @@
+title: "Seattle Electrical — 200A Panel, EV Circuits & K&T Rewires"
+
+intro: |
+  Capitol Hill and Queen Anne are full of Craftsman bungalows still running on 100-amp panels. Some have knob-and-tube wiring behind the plaster walls. Adding a Bosch induction range or a Tesla Wall Connector to a panel sized for a 1940s household is a code violation waiting for an inspector to find. TopVolk handles electrical as part of full remodels and additions across Seattle. Everything is coordinated with Seattle City Light and pulled through SDCI from day one.
+
+localContext: |
+  Pre-1950 housing in zip codes 98102 (Capitol Hill) and 98107 (Ballard) regularly turns up knob-and-tube circuits once walls open for a kitchen or bathroom remodel. Homes built 1965–1973 — common in Shoreline and parts of Renton — often carry aluminum branch circuit wiring. That wiring requires AlumiConn pigtailing before a panel upgrade can pass rough-in inspection. Seattle's rain season runs October through May. That much moisture accelerates corrosion on exterior panels and detached garage subpanel connections. Worth a full inspection before a remodel starts, not after demo day.
+
+commonProblems:
+  - title: "100A Panels Hitting Their Capacity Limit"
+    description: |
+      A 100-amp main breaker and bus bar can't support a heat pump, an EV charger, and a new induction range running at the same time. The result is tripped breakers or an overload hazard. Upgrading to 200A service means a new meter base, a Seattle City Light coordination request, and an SDCI permit. Plan review runs 4–8 weeks for major electrical work. Vladislav scopes the full panel swap into the remodel budget at the start — not as a change order halfway through demo. That matters when you're also budgeting for new cabinets or a bathroom tile job.
+  - title: "Knob-and-Tube Wiring Inside the Walls"
+    description: |
+      Open a wall in a 1910 Craftsman in Wallingford (98103) and you'll often find cloth-wrapped knob-and-tube circuits still live. Insurance carriers increasingly won't renew policies on homes with active K&T. NEC also requires AFCI breaker protection on any new circuits sharing those spaces. A kitchen or bathroom remodel is the right window to remove it. Walls are already open. The rough-in inspection covers both the new work and the K&T pull in one scheduled visit. Doing it piecemeal costs more and takes longer — combined scope saves a second permit and a second SDCI review queue.
+  - title: "EV Charger Circuits in Older Seattle Garages"
+    description: |
+      A dedicated 50A or 60A circuit for a Tesla Wall Connector, ChargePoint Home Flex, or JuiceBox Pro 40 is more than just running wire. The panel needs available capacity. GFCI protection is required at the outlet per current NEC code. Older 100A services often can't carry the load without a full service upgrade. In a 1970s split-level in Beacon Hill or Rainier Valley, that math frequently doesn't work without addressing the main panel first. The garage subpanel connection also needs inspection — Seattle's wet winters are hard on older conduit and weatherhead fittings. Better to find the corrosion before the charger goes in.
+
+faq:
+  - q: "How fast can you get to Seattle for electrical work?"
+    a: "TopVolk is Seattle-based — WA Licensed Contractor, 100+ projects completed since 2017, no travel markup. Panel upgrades typically start within 2–4 weeks of permit issuance. Call (206) 591-1096 to walk through the timeline before committing to a start date."
+  - q: "Can you handle electrical rough-in for a kitchen with Thermador or Sub-Zero appliances?"
+    a: "Yes — and the load sheet matters. A Thermador dual-fuel range, Sub-Zero refrigerator column, and Bosch dishwasher each draw differently than builder-grade units. Vladislav specs the rough-in to the actual appliances going in, not a generic amperage guess. Get the appliance specs before the rough-in permit is submitted — changing circuit sizing after inspection is a change order."
+  - q: "What does a permit-required panel upgrade actually involve in Seattle?"
+    a: "An SDCI permit, a Seattle City Light meter coordination request, rough-in inspection, and final inspection. Submission to final sign-off typically runs 8–14 weeks depending on the SDCI review queue. Plan early — permitted electrical has a real lead time. Call (206) 591-1096 to get the sequence started before your remodel schedule locks in."
+  - q: "Do you work in neighborhoods outside Seattle proper?"
+    a: "Yes. Electrical work for remodels in Shoreline, Beacon Hill, Rainier Valley, and unincorporated King County goes through different permit jurisdictions — King County DPER for unincorporated areas rather than SDCI. Vladislav knows which AHJ applies to your address and files accordingly. No guessing on jurisdiction mid-project."

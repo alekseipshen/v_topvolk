@@ -1,0 +1,79 @@
+title: "Tacoma Electrical — Panel Upgrades, EV Circuits & Rewiring"
+
+intro: |
+  Tacoma's Stadium District and North End are packed with pre-war Craftsman homes still running
+  on 60- or 100-amp panels sized before anyone imagined a Bosch induction range or heat pump on
+  the load list. A 50-amp EV charger circuit for a Tesla Wall Connector on that original service
+  means tripped breakers at best — a wiring failure at worst if knob-and-tube is still live behind
+  plaster walls. Electrical projects here go through Pierce County PALS permits and require
+  separate coordination with Tacoma Public Utilities, steps most contractors don't mention until
+  the job's already started. That gap in coordination is where timelines blow up.
+
+localContext: |
+  Zip codes 98406 and 98407 cover the North End and Proctor District, where most homes went up
+  between 1910 and 1940. Knob-and-tube branch circuits are still live in a lot of those walls —
+  often alongside a '70s panel swap that added breakers but left original cloth-insulated wire in
+  place. The ranchers in 98444, covering Parkland and the South End, hit a different problem:
+  aluminum branch-circuit wiring from the 1965–1973 window, where AlumiConn connectors or full
+  copper pigtailing at every device is required to pass a PALS inspection and meet NEC 110.14.
+
+commonProblems:
+  - title: "Undersized 100A panels overloaded by heat pumps and EV chargers"
+    description: |
+      Stadium District Craftsmen built before 1940 — the blocks around 6th Avenue near Wright Park
+      — often have a 100-amp service entrance now being asked to carry a heat pump, EV charger,
+      and induction range simultaneously. The main breaker trips under combined load. Upgrading to
+      200A is not a one-trade job here.
+
+      The sequence runs like this: pull PALS electrical permit → submit TPU service upgrade
+      request → TPU crew disconnects at the weatherhead → new service entrance conductor, meter
+      base, and main panel go in during one day → TPU re-energizes the service → PALS final
+      inspection closes the permit. Miss the TPU step or get the sequencing wrong and the utility
+      won't reconnect. On older Stadium-area properties where the meter is recessed under a covered
+      front porch — common on the Craftsmen along N 4th Street and N 5th Street — the meter base
+      relocation alone can add a half-day of work. Plan for 3–5 weeks from permit submission to
+      power restored. Not because the physical work is slow, but because utility coordination runs
+      on TPU's schedule, not yours.
+
+  - title: "Aluminum branch-circuit wiring in 1960s–70s South End ranchers"
+    description: |
+      Homes built between 1965 and 1973 in zip 98444 commonly have aluminum branch-circuit wiring —
+      a documented hazard at device terminations where the metal expands and contracts against copper
+      receptacle contacts. The code-approved fix is AlumiConn connectors or copper pigtailing at
+      every outlet, switch, and fixture box. Leaving aluminum as-is fails NEC 110.14 and won't
+      clear a Pierce County PALS rough-in inspection.
+
+  - title: "EV charger circuits triggering full service upgrades"
+    description: |
+      A ChargePoint or JuiceBox Level 2 charger needs a dedicated 50A or 60A circuit pulled from
+      the panel. On an older Tacoma home already running near capacity, that's rarely a simple
+      breaker add — it often means a full 200A service upgrade first. Pierce County PALS requires
+      an electrical permit for any new EV circuit, TPU must sign off on service changes, and the
+      full coordination sequence typically runs 3–5 weeks start to finish.
+
+faq:
+  - q: "How fast can you get to Tacoma for electrical work?"
+    a: |
+      Tacoma is a regular part of the Pierce County schedule — Stadium District, Hilltop, North
+      End, South End. From King County it's 35–45 minutes. Call (206) 591-1096 and Vladislav
+      comes out — not a salesperson — with a line-item quote the same day.
+
+  - q: "Do you handle panel upgrades on Tacoma Public Utilities-served properties?"
+    a: |
+      Yes. TPU-served properties need a utility coordination request on top of the Pierce County
+      PALS permit — two separate approvals, two separate inspection schedules. We pull the PALS
+      electrical permit, schedule rough-in and final inspections, and file the TPU service upgrade
+      order. That step adds roughly a week versus PSE-served suburban Pierce County properties.
+
+  - q: "What does a 200A panel upgrade cost in Tacoma and how long does it take?"
+    a: |
+      A 100A-to-200A service upgrade here typically runs $4,000–$7,000 depending on meter
+      location, panel position, and whether the service entrance cable needs replacement. Where
+      the meter is mounted matters more than most homeowners expect: exterior wall mount at grade
+      is straightforward, but a meter recessed under a covered porch or tucked inside a detached
+      garage means extra conduit run and sometimes a weatherhead relocation to meet clearance
+      requirements. Homes in 98406 with original North End Craftsman layouts encounter this
+      regularly. PALS plan review takes 1–3 weeks; the physical work is usually one day once
+      permits clear and TPU has confirmed the service change on their end. Vladislav is a WA
+      Licensed Contractor — 100+ projects completed since 2017 — and deadline penalties are
+      written into the contract. Call (206) 591-1096 for a line-item estimate.

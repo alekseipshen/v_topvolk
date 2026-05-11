@@ -1,0 +1,23 @@
+title: "Seattle Garage Construction — Permits, ADU Builds & EV Ready"
+
+intro: |
+  Craftsman bungalows throughout Ballard and post-war split-levels in zip code 98118 were built long before two-car households were the standard — usable garages were an afterthought, if they existed at all. Vladislav Volkov, WA Licensed Contractor, has completed 100+ projects since 2017 across King County, including detached garage builds with insulated Clopay doors and Tesla Wall Connector pre-wires for EV owners in Madison Park. New construction here means Seattle SDCI permits, setback reviews, and exterior materials matched carefully to the existing roofline.
+
+localContext: |
+  Lots in 98103 (Fremont, Wallingford) and 98107 (Ballard) typically run 4,000–6,000 sq ft — FAR limits and side-yard setbacks get tight fast when you add a two-car footprint or plan a DADU above. Properties in unincorporated King County fall under King County DPER, which runs its own plan review timeline separate from Seattle SDCI. Matching Hardie cement-board siding and roofline pitch to a 1940s Craftsman bungalow or a 1960s rancher is not optional — it either looks like it belongs, or it doesn't. North-facing garage walls in neighborhoods like Greenlake and Mount Baker collect moss and mildew through the wet season; proper vapor barrier installation and pressure-treated (PT) bottom plates keep that from becoming a framing problem three winters out.
+
+commonProblems:
+  - title: "Detached Garage + DADU Above Under WA HB 1337"
+    description: "WA HB 1337 (2024) opened the door to a DADU above a detached garage on single-family lots, but Seattle SDCI still enforces a 24 ft height limit and runs FAR and setback checks before plan review opens. Lots in Capitol Hill (98112) and Wallingford often hit those limits tighter than expected. The structural package includes an LVL beam spanning the garage bay and a PSL post system at the corners — the engineer's stamp needs to be in the submittal packet to avoid a plan review restart."
+  - title: "Concrete Slab Specifications for Workshop and Heavy Storage"
+    description: "Four inches is the IRC minimum for a residential garage slab, but serious workshop use or a vehicle lift calls for 5–6 inches with fiber reinforcement. On Seattle lots where subgrade drainage is unpredictable, a 6-mil vapor barrier is non-negotiable. The region averages 37+ inches of rain annually — moisture migrates through undersized concrete and shows up as rust on tool storage, mildew on lower framing, and eventually subfloor remediation that costs more than the extra concrete at pour."
+  - title: "EV Charger Circuit Pre-Wire During Garage Rough-In"
+    description: "Running conduit and a 50A or 60A circuit for a Tesla Wall Connector or ChargePoint during rough-in is a minor line item. Retrofitting after the slab cures can run $1,500–$3,000 or more depending on trench distance and panel work. In Queen Anne and Magnolia, 100A service panels from the 1960s are common — the electrician needs to flag panel capacity before rough-in inspection, not after the hold is already on the permit record."
+
+faq:
+  - q: "How fast can you get to Seattle for Garage Construction?"
+    a: "Vladislav covers Seattle and all of King County directly — no dispatch lag, no commissioned closer routing the call. Most Seattle neighborhoods are within a 30-minute drive. An on-site consultation can typically be scheduled within a week of first contact. That visit is with the contractor who will manage the project — Vladislav walks the lot, checks setbacks, reviews the existing structure, and comes back with a real line-item quote. Not a ballpark. Call (206) 591-1096 directly."
+  - q: "Do you pre-wire for specific EV charger brands during garage builds?"
+    a: "Yes. Tesla Wall Connector runs on a 60A dedicated circuit; ChargePoint and Bosch Level 2 chargers typically use 50A. Both are roughed in before the slab pours — conduit, junction box, and the panel feed. Doing it during construction costs a fraction of what a retrofit trench-and-pull runs after concrete is cured."
+  - q: "What does a garage build in Seattle cost and how long does the permit process take?"
+    a: "A detached two-car garage in Seattle typically runs $65K–$130K depending on footprint and finish. Add a DADU above and budget $180K–$250K+ including structural, MEP, and SDCI permit fees. Seattle SDCI plan review for new construction takes 4–12 weeks. Total timeline is 5–7 months from submission to final inspection. Deadline penalties are written into the contract as a specific dollar amount. Call (206) 591-1096 for a site visit and a real line-item quote."
