@@ -1,0 +1,76 @@
+title: "Kent Electrical — Panel Upgrades, EV Circuits & Code Updates"
+
+intro: |
+  East Hill has thousands of homes built between 1978 and 1995 — original 100-amp panels,
+  builder-grade wiring, kitchens that predate induction ranges by two decades. Adding a Tesla
+  Wall Connector or a Mitsubishi heat pump to one of those panels isn't a plug-and-play job.
+  TopVolk handles electrical scope on Kent remodels — 200A service upgrades, dedicated EV
+  circuits, AFCI/GFCI updates — all permitted through the City of Kent or King County DPER.
+  Vladislav Volkov has been coordinating this kind of work across King County since 2017.
+  You talk directly to him at the consultation — not a salesperson reading from a script.
+
+localContext: |
+  The 98042 zip (East Hill plateau) is dense with 1980s-90s tract homes running on 100- to
+  125-amp panels. Closer to downtown Kent (98032), you find 1960s and early 1970s stock —
+  some of it built squarely in the aluminum branch wiring window. The Green River corridor
+  adds persistent moisture to the mix, which accelerates corrosion at older panel connections.
+  AlumiConn connectors and proper torque specs matter here.
+
+  Kent's climate compounds the problem. The valley floor near SR-167 stays damp well into
+  May. Crawlspaces under 1970s and 1980s ranchers on the East Hill slope trap humidity
+  year-round without a proper vapor barrier — and that moisture wicks into subpanel enclosures
+  and conduit runs. Corroded lugs and loose neutrals are a predictable finding in homes that
+  haven't had a service inspection since original construction. The fix isn't cosmetic — it's
+  torque spec, anti-oxidant compound, and in some cases a full service entrance replacement
+  from the weather head down.
+
+commonProblems:
+  - title: "100A Panel Overloaded by Heat Pump and EV Charger Combo"
+    description: "A stock 100-amp panel running a heat pump, electric water heater, and a 50A
+      circuit for a ChargePoint or JuiceBox unit hits capacity immediately. The fix is a 200A
+      service upgrade — new service entrance cable, meter base, and breaker panel. PSE
+      schedules the utility disconnect in Kent; plan 3–5 weeks for permit approval and
+      scheduling. On East Hill specifically, older service drops sometimes need rerouting
+      around additions or decks that were built after original construction — that affects
+      the scope and the PSE coordination timeline. Vladislav scopes this at the on-site
+      walkthrough, not over the phone."
+  - title: "Aluminum Branch Wiring in Mid-60s to Early-70s East Hill Builds"
+    description: "Homes built in Kent during 1965–1973 often have aluminum branch circuits
+      throughout — outlets, switches, fixtures. Aluminum expands and contracts with temperature,
+      loosening terminations over time. CPSC-approved AlumiConn connectors at each device are
+      the code-compliant fix. Not tape. Not wire nuts. Every device in the home needs to be
+      opened, cleaned, and re-terminated with the correct connector and anti-oxidant compound.
+      It's tedious work. Skipping devices to save time creates the exact failure point that
+      shows up as a scorched outlet two winters later."
+  - title: "AFCI and GFCI Gaps Triggered by Remodel Permits"
+    description: "Current NEC requires arc-fault circuit interrupter (AFCI) protection on
+      bedroom circuits and GFCI at kitchens, bathrooms, and garages. Older Kent homes hit
+      these requirements the moment a remodel permit is pulled. Panel-level AFCI breakers go
+      in during rough-in so the inspection doesn't hold up finish work downstream. The City
+      of Kent plan review typically runs 2–4 weeks for electrical scope tied to a larger
+      remodel. Getting rough-in inspection scheduled promptly after approval keeps the cabinet
+      install and drywall hang on schedule — something TopVolk coordinates from the permit
+      application forward, not after the fact."
+
+faq:
+  - q: "How fast can you get to Kent for Electrical?"
+    a: "Kent is a regular run — we travel the SR-167 and Benson Road corridors routinely.
+      Call (206) 591-1096 to set up a free on-site walkthrough with Vladislav. No scheduler
+      in between, no commissioned closer — you talk directly to the contractor handling
+      the work. For electrical work tied to a remodel, bring the City of Kent permit history
+      if you have it — it helps scope what's already been inspected and what hasn't."
+  - q: "Do you install EV chargers for Tesla, ChargePoint, or JuiceBox in Kent?"
+    a: "Yes. We size and run dedicated 50A or 60A circuits for Tesla Wall Connectors,
+      ChargePoint Home Flex, and JuiceBox 48 units — conduit, permit coordination with
+      King County or City of Kent, and final inspection sign-off included. For East Hill
+      homes with an attached garage, the conduit run from panel to garage is typically
+      straightforward. Detached garages across a driveway require a buried conduit run,
+      which adds scope and a separate inspection point. Both are manageable — the site
+      walkthrough determines which situation you're in."
+  - q: "What does a 200A panel upgrade cost and how long does it take in Kent?"
+    a: "Panel swaps typically take 1–2 days of work on-site. Permit approval through the
+      City of Kent adds 2–4 weeks to the timeline. Vladislav — WA Licensed Contractor,
+      100+ projects completed since 2017 — gives a line-item quote at the consultation.
+      Deadline penalties are written into the contract. The quote covers permit fees,
+      PSE coordination, service entrance materials, and the panel itself — not a range
+      that expands after you've agreed to it."
