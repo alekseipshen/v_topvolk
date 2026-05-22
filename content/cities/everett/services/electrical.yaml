@@ -1,0 +1,29 @@
+title: "Everett Electrical — Panel Upgrades & EV Circuits"
+
+intro: |
+  The older Craftsman blocks west of I-5 in zip 98201 — Port Gardner, Clark Park, the streetcar neighborhoods near downtown — have housing from the 1910s through 1940s still running original 60-amp panels. Fine for decades. Not fine once a Mitsubishi heat pump goes on the load schedule or someone wants a Tesla Wall Connector in the garage. TopVolk handles panel upgrades, knob-and-tube removal, and EV charger circuits across Everett — permits through City of Everett building department, PSE coordination included. Vladislav Volkov manages every job directly. No sales staff, no handoffs to a project coordinator who's never pulled wire.
+
+localContext: |
+  Downtown and west Everett (98201, 98203) has dense blocks of pre-war Craftsman homes and 1940s bungalows where knob-and-tube wiring still lives in attic cavities and behind original plaster walls. Puget Sound moisture cycles — roughly 37 inches of rain a year — don't do century-old wire insulation any favors. Move east toward 98208 and the housing shifts to 1970s ranch builds — the aluminum-branch-circuit era, where AlumiConn connectors or copper pigtailing at every device box is the code-compliant fix per the IRC. South Everett's 1960s ranchers sit on 100-amp panels that can't support a modern heat pump or EV circuit without a full service upgrade. City of Everett runs its own building department for work within city limits; Snohomish County PDS covers unincorporated parcels just outside. Plan review at either AHJ typically runs 2-4 weeks for panel and electrical scopes — factor that into your project timeline before scheduling PSE disconnect.
+
+commonProblems:
+  - title: "100-Amp Panels Undersized for Heat Pumps and EV Loads"
+    description: |
+      Homes in the 98201 and 98203 zips were wired before anyone needed a 50A dedicated circuit for a Tesla Wall Connector or a branch circuit sized for a Mitsubishi heat pump. A 100A panel doesn't have the headroom. A 200A service upgrade — meter base swap, PSE coordination, permits through City of Everett — runs 2-3 days of trade work after plan review clears. Load calculations per NEC Article 220 determine whether 200A service is sufficient or whether a sub-panel is also needed to distribute new circuits without overloading the main bus. Vladislav runs the calculation on-site before quoting anything. Numbers on paper before anyone touches the panel.
+  - title: "Knob-and-Tube Wiring in Pre-War Everett Homes"
+    description: |
+      Port Gardner and the older blocks near downtown Everett (98201) still have knob-and-tube circuits in attics and wall cavities — wiring that's been through a century of Puget Sound rain cycles and crawlspace moisture. Insurers increasingly require removal before binding coverage. Removing it means opening walls, pulling a permit through City of Everett, and scheduling rough-in and final inspections before new NM-B cable gets covered by drywall. Cathedral ceilings and original plaster over wood lath make the access work slower than a standard sheetrock house. Vladislav scopes that honestly on the walk-through — not after demo starts and the real picture emerges. Call (206) 591-1096 to schedule the initial look.
+  - title: "Aluminum Branch Wiring in the 1965-1973 Builds"
+    description: |
+      East and south Everett has a concentration of homes from 1965-1973 when aluminum branch circuit wiring was standard at outlets and switches. Oxidation at device connections builds heat over time — a documented fire risk. AlumiConn connectors or copper pigtailing at each device box resolves it without full rewiring, but the fix needs permit documentation and insurer sign-off. Samsung and GE appliances added during kitchen updates in those same homes often have mismatched receptacle ratings that compound the problem. Getting the AHJ final inspection signed off requires CO/ALR-rated devices at every point of connection — cutting corners here fails inspection.
+
+faq:
+  - q: "How quickly can you start electrical work in Everett?"
+    a: |
+      On-site consultation with Vladislav typically happens within a week. City of Everett permit review runs 2-4 weeks for panel upgrades and full electrical scopes; Snohomish County PDS runs a similar timeline for parcels outside city limits. Smaller scopes like a single EV charger circuit can move faster if existing panel capacity is confirmed on the walk-through. Call (206) 591-1096 — direct line to the owner, no sales staff filtering the call. WA Licensed Contractor. 100+ projects completed since 2017 across Snohomish County.
+  - q: "Do you install Tesla and ChargePoint EV charger circuits?"
+    a: |
+      Yes — Tesla Wall Connector (hardwired 60A or NEMA 14-50), ChargePoint Home Flex, and JuiceBox 40/48A are the most common installs. Each needs a dedicated circuit sized to the unit, proper conduit run from the panel to the garage, and GFCI protection where required by code. Permit required through City of Everett for all hardwired EV charger work. The 98208 neighborhoods east of I-5 have a high concentration of recent EV adopters in 1980s-2000s homes — panels there need load evaluation before adding a 60A circuit. Vladislav checks capacity at the walk-through so there are no surprises mid-job.
+  - q: "What does a panel upgrade cost in Everett, and how fast can you get started?"
+    a: |
+      Panel upgrade scope typically runs $4,000-$8,000 depending on meter base work and whether PSE needs to disconnect service. Work is 2-3 days after permits clear — City of Everett plan review runs 2-4 weeks. Vladislav quotes with line-item pricing, no vague ranges. Deadline commitment written into the contract — penalties paid if the schedule slips, not just apologies. 100+ projects completed since 2017 across Snohomish County. Call (206) 591-1096 to schedule the on-site walk-through.

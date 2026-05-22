@@ -1,0 +1,27 @@
+title: "Bellevue Electrical — 200A Upgrades, EV Chargers & Rewire"
+
+intro: |
+  Bridle Trails and Somerset have some of Bellevue's older split-levels — built between 1962 and 1974, many wired with aluminum branch circuits and 100-amp service panels sized before anyone owned a Thermador induction range or a Mitsubishi heat pump. Those panels are maxed out.
+
+  Adding a 50-amp EV charger circuit to a house in 98006 is not just a breaker swap. It usually requires a full service upgrade coordinated with PSE (Puget Sound Energy) and an electrical permit from Bellevue Building & Planning. The load calculation alone — accounting for existing HVAC, kitchen appliances, and the new charging circuit — determines whether the meter base and service entrance conductors need to be replaced or just the panel. That's real electrical work, not a quick fix.
+
+localContext: |
+  The zip codes 98005 and 98006 cover a lot of Bellevue's mid-century housing stock — Somerset, Newport Hills, Factoria, Lakemont. Homes here were built during the aluminum wiring era (roughly 1965–1973) under different NEC code requirements than what's in force today.
+
+  Aluminum branch wiring requires AlumiConn connectors or copper pigtailing at every device and splice — Bellevue Building & Planning won't sign off on a remodel permit without that remediation documented. Every outlet, switch, and junction box in scope gets touched. The newer construction in Eastgate and Bellecrest is post-1995, but those homes are adding heat pumps and Level 2 EV charging that push their original 150-amp panels close to capacity. Bellevue's electrical inspection process is thorough. Rough-in inspection happens before drywall closes, and the inspector checks every wire gauge, junction, and breaker label. No shortcuts get past Bellevue Building & Planning.
+
+commonProblems:
+  - title: "Aluminum Branch Wiring in Mid-Century 98005/98006 Homes"
+    description: "Split-levels built between 1965 and 1973 used aluminum for branch circuits — cost-effective then, problematic now. Aluminum expands and contracts differently than copper, loosening connections at outlets, switches, and breaker terminals over time. Remediation means AlumiConn connectors or copper pigtailing at every device, plus AFCI breakers in bedrooms per current NEC. A permit is required in Bellevue for this scope. Every splice in the electrical panel gets documented on the permit drawings."
+  - title: "100-Amp Panel Maxed Out Before EV Charger or Heat Pump Lands"
+    description: "A Tesla Wall Connector or ChargePoint Home Flex needs a dedicated 60-amp or 50-amp circuit. Stack a Mitsubishi heat pump and a kitchen upgrade on the same 100-amp service and there is nothing left on the load calculation. The fix is a 200-amp service upgrade: new meter base, new main panel, PSE utility coordination, and plan review through Bellevue Building & Planning — which typically runs 3–6 weeks. Electrical service upgrades in Bellevue also require a weatherhead inspection and final sign-off before PSE reconnects power."
+  - title: "AFCI and GFCI Gaps on Pre-2000 Kitchen and Bath Circuits"
+    description: "Older Bellevue homes rarely have arc-fault circuit interrupter (AFCI) breakers in bedrooms or ground-fault circuit interrupter (GFCI) protection at kitchen and bathroom receptacles — both required under current NEC for any permit-pulled renovation. Remodeling a kitchen to add a Wolf range or Bosch dishwasher means those circuits get flagged at rough-in inspection. That scope has to be priced in from day one, not discovered mid-project. A dedicated 240-volt circuit for a Wolf dual-fuel range is different from a standard 20-amp kitchen circuit — wire gauge, breaker size, and junction box depth all change."
+
+faq:
+  - q: "How fast can you get to Bellevue for an electrical consultation?"
+    a: "Bellevue is a regular part of the service area — I-405 from Renton or SR-520 from Seattle puts most of King County within 30–45 minutes. TopVolk is a WA Licensed Contractor with 100+ projects completed since 2017. Call (206) 591-1096 to schedule a free on-site consultation with Vladislav directly — typically available within a week."
+  - q: "Do you handle EV charger installation for Tesla, ChargePoint, and JuiceBox?"
+    a: "Yes — all three. A Tesla Wall Connector requires a 60-amp dedicated circuit; ChargePoint Home Flex and JuiceBox 40 typically run on 50-amp. If the panel cannot support it, the electrical work gets scoped as part of the service upgrade. One permit, one coordinated project — no separate electrician to manage."
+  - q: "What does a 200-amp service upgrade cost in Bellevue and how long does it take?"
+    a: "In Bellevue, a 200-amp electrical upgrade with PSE coordination typically runs $4,000–$8,000 depending on panel location, existing conditions, and whether aluminum branch wiring needs remediation. Plan review at Bellevue Building & Planning adds 3–6 weeks. Total timeline from contract to final electrical inspection: 6–10 weeks. Deadline penalty is written into the contract."
