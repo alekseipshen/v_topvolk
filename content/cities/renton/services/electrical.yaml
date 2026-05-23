@@ -1,0 +1,92 @@
+title: "Renton Electrical — Panel Upgrades, EV Chargers & Rewiring"
+
+intro: |
+  Kennydale split-levels and The Highlands ranch homes from the late 1960s are hitting their
+  electrical limits. Original 100-amp panels — installed before anyone owned a Bosch induction
+  range or thought about Level 2 EV charging — can't carry today's load without tripping the
+  main breaker. PSE coordinates the service upgrade while City of Renton handles permitting;
+  plan for 3-6 weeks on the permit side before any wire gets pulled.
+
+  Renton's housing stock is unusually varied for one city. You've got post-war bungalows near
+  downtown, 1960s split-levels in Kennydale, and 2000s subdivisions out in East Renton
+  Highlands — each era with its own electrical baggage. Diagnosing the actual problem before
+  pulling a permit saves time and money on both sides.
+
+localContext: |
+  The older residential blocks around zip 98055 — Renton Hill and the streets north of
+  downtown near the Cedar River — have houses from the 1940s and 1950s with knob-and-tube
+  wiring still in walls and attics. Those homes often have 60-amp service entrances, undersized
+  by any modern standard, and the wiring lacks grounding entirely. Upgrading means a new meter
+  base, new service entrance cable, and a complete panel swap — not just a breaker swap.
+
+  Zip 98059, out toward East Renton Highlands, is mostly 1990s-2000s construction with 200-amp
+  service already in place, but bedrooms in those homes often skip AFCI breakers — required
+  under current NEC code for sleeping areas. Two different eras, two different problems to solve.
+
+  Renton's wet winters — heavy rain from October through April — accelerate oxidation on outdoor
+  subpanels and meter bases, especially on north-facing walls where moss builds up. Annual
+  inspection of weatherhead connections and service entrance conduit is worth the call before
+  a problem shows up as a tripped main in January.
+
+commonProblems:
+  - title: "100-Amp Panels Can't Handle Modern Loads"
+    description: >
+      A 1968 Kennydale split-level with an original GE or Square D 100-amp panel wasn't
+      engineered for simultaneous heat pump operation, induction cooking, and EV charging.
+      The bus bar has no physical space for new 50A or 60A circuits, and the main breaker
+      trips under combined draw. A 200-amp service upgrade — permitted through City of Renton
+      and coordinated with PSE — is the required starting point. The upgrade includes a new
+      meter base, service entrance cable sized for 200A, and a panel with enough open slots
+      to add dedicated circuits without tandem breakers stacked throughout.
+  - title: "Aluminum Branch Wiring in 1965-1973 Builds"
+    description: >
+      Homes in The Highlands and zip 98056 built between 1965 and 1973 frequently used
+      aluminum branch circuit wiring — same national issue as Bellevue and Shoreline homes
+      from that era. Aluminum expands and contracts differently than copper, gradually
+      loosening connections at outlets and fixtures. Warm cover plates and flickering lights
+      are the common signs. AlumiConn connectors or full pigtailing at every device brings
+      the system to current NEC compliance without a full rewire. Every connection point gets
+      inspected — outlets, switches, light fixtures, and the panel lugs themselves.
+  - title: "EV Charger and Induction Range Circuits Need Permits"
+    description: >
+      A dedicated 60A circuit for a Tesla Wall Connector or ChargePoint Home Flex requires
+      an electrical permit through City of Renton plus two inspections — rough-in and final.
+      Same process for a new 50A circuit serving a Samsung or LG induction range. The rough-in
+      inspection happens before drywall closes over the wire run; skipping it means cutting
+      open walls later if an inspector flags it. Skipping the permit entirely creates a red
+      flag for any home inspector at resale, and Renton inspectors do catch unpermitted panel
+      work during real estate transactions.
+
+faq:
+  - q: "How fast can you get to Renton for electrical work?"
+    a: >
+      Renton is a regular part of the King County service area — 98055 through 98059.
+      Free on-site consultations usually happen within a week of first contact. Call
+      (206) 591-1096 to get something scheduled with Vladislav directly — not a scheduler,
+      not a salesperson.
+  - q: "Do you install circuits for Tesla, ChargePoint, or JuiceBox EV chargers?"
+    a: >
+      All three are common in Renton. Tesla Wall Connector and ChargePoint Home Flex both
+      need a 60A dedicated circuit and City of Renton permit. JuiceBox 40 runs on 50A.
+      TopVolk handles the permit pull, breaker, wiring, and PSE coordination for any
+      service upgrade — one contractor, not three separate calls.
+  - q: "How long does a panel upgrade take in Renton, and what does it cost?"
+    a: >
+      A 100A-to-200A service upgrade typically runs 4-8 weeks start to finish — City of
+      Renton permit review is 3-4 weeks, then 1-2 weeks for the physical work and PSE
+      reconnect. That timeline assumes no plan revision requests from the city, which
+      occasionally happen on older service entrances near the Cedar River flood plain.
+      Vladislav gives line-item pricing at the consultation, not a ballpark range. Schedule
+      a free on-site visit or call (206) 591-1096. TopVolk is a WA Licensed Contractor
+      with 100+ projects completed since 2017, and missed deadlines carry a penalty written
+      into the contract.
+  - q: "What's involved in bringing knob-and-tube wiring up to code?"
+    a: >
+      Full replacement is the only permanent fix for knob-and-tube. Partial rewires create
+      a mix of grounded and ungrounded circuits that doesn't satisfy most insurance carriers
+      or home inspectors. In a typical 98055 bungalow, that means opening walls and ceilings
+      at each circuit run, installing new NM cable (Romex) back to the panel, and adding
+      grounded outlets throughout. City of Renton requires an electrical permit for any
+      rewire project, with rough-in and final inspections. Scope and pricing depend on
+      square footage and how accessible the framing cavities are — Vladislav assesses that
+      in person before quoting anything.
