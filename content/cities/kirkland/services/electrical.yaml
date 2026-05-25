@@ -1,0 +1,76 @@
+title: "Kirkland Electrical — Panel Upgrades, EV Chargers & Old Wiring"
+
+intro: |
+  Google's Kirkland campus off 116th Ave NE brought a wave of tech workers
+  into 1960s split-levels throughout the 98034 zip — and the electrical service
+  those homes came with isn't built for today's loads. A ChargePoint EVSE on a
+  50-amp circuit, a Bosch induction range, a Mitsubishi mini-split heat pump —
+  that's potentially 150 amps of new demand going into a panel rated for a
+  fraction of that. The wiring doesn't adjust on its own.
+
+localContext: |
+  Most of Kirkland's housing north of 85th Street — Totem Lake, Kingsgate,
+  North Rose Hill — dates from the mid-1960s through the late 1980s. That's
+  exactly the window for original 100-amp service panels and, in the 1965-1973
+  slice, aluminum branch circuit wiring on 15- and 20-amp runs. South Kirkland
+  and Houghton near Lake Washington hold some Craftsman-era homes from the
+  1940s and 1950s — different vintage, different problems, but the same need for
+  a hard look at the electrical before any major remodel scope opens up the walls.
+
+commonProblems:
+  - title: "100-Amp Service Panels Overwhelmed by Modern Circuits"
+    description: |
+      A 100-amp panel from 1967 was sized for a 30-amp dryer, an electric range,
+      and incandescent lighting. Add a Tesla Wall Connector on a 60-amp dedicated
+      circuit, a heat pump, and a Bosch dishwasher, and that panel is done. Upgrading
+      to 200-amp service means a new meter socket installation coordinated with
+      Puget Sound Energy (PSE), a permit through the City of Kirkland's building
+      department, and a full breaker panel swap. Plan review in Kirkland typically
+      runs one to three weeks for this scope.
+
+  - title: "Aluminum Branch Circuit Wiring in Bridle Trails and Kingsgate Builds"
+    description: |
+      Homes built in Kirkland between 1965 and 1973 — much of Bridle Trails, parts
+      of Kingsgate, older sections of Juanita — may have aluminum on 15- and 20-amp
+      branch circuits. It's not automatically a crisis, but every outlet, switch, and
+      junction box needs AlumiConn connectors or CO/ALR-rated devices to handle the
+      expansion mismatch between aluminum and copper. This is permit-required work,
+      and in older homes it often means opening drywall to access junction boxes
+      buried during a previous renovation.
+
+  - title: "AFCI and GFCI Gaps That Surface During Remodel Permits"
+    description: |
+      Washington State has adopted current NEC, which requires AFCI breakers in
+      bedrooms and GFCI protection in bathrooms, kitchens, garages, and exterior
+      outlets. Kirkland homes from the 1970s have none of that. The issue isn't
+      visible until you pull a permit for a kitchen or bathroom remodel — then the
+      AHJ requires the existing circuits to come up to code before the inspector
+      signs off. We build that compliance scope into the estimate upfront so the
+      number doesn't change mid-project.
+
+faq:
+  - q: "How fast can you get to Kirkland for electrical work?"
+    a: |
+      Kirkland is a regular part of our schedule — we work across the 98033 and
+      98034 zip codes regularly. From Seattle, it's 20-30 minutes via SR-520 or
+      I-405 depending on traffic. Call (206) 591-1096 to schedule a free on-site
+      estimate with Vladislav directly. No sales staff, no callbacks from a
+      dispatcher — you talk to the contractor.
+
+  - q: "Do you handle EV charger circuit installations in Kirkland?"
+    a: |
+      Yes. We run 50-amp and 60-amp dedicated circuits for Tesla Wall Connector,
+      ChargePoint Home Flex, and JuiceBox units. Every install is permitted through
+      the City of Kirkland's building department and inspected. We've done these
+      in Juanita, Houghton, Bridle Trails, and Totem Lake — most take one day
+      once the permit is issued. WA Licensed Contractor, 100+ projects completed
+      since 2017.
+
+  - q: "What does a 100A-to-200A panel upgrade cost in Kirkland, and how long does it take?"
+    a: |
+      Panel upgrades in this area typically run $4,000–$7,000 depending on panel
+      location, PSE coordination requirements, and whether the meter socket needs
+      replacement. Timeline: Kirkland permit review is usually 1-3 weeks; the
+      physical work is 1-2 days. The project timeline goes into the contract —
+      if we miss it, we pay a penalty. Call (206) 591-1096 for a line-item quote,
+      not a vague range.
