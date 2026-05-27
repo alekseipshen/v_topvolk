@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME } from '@/lib/utils';
 
 export const metadata = {
-  title: 'Service Areas | Home Renovation in Seattle, Bellevue, Tacoma & King County',
-  description: 'TopVolk Construction serves 65+ cities across the Seattle metro area. Professional home renovation in King, Snohomish, Pierce & Kitsap counties. Call (206) 591-1096.',
+  title: 'Service Areas | Home Renovation Across Western & Central Washington',
+  description: 'TopVolk Construction serves 100+ cities across Western & Central Washington — Seattle metro, Olympic Peninsula, North Sound, South Sound, and the Wenatchee Valley. Call (206) 591-1096.',
   alternates: {
     canonical: 'https://www.topvolk.org/service-areas',
   },
@@ -35,10 +35,10 @@ export default function ServiceAreasPage() {
               </div>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              We Serve the Entire Seattle Metro Area
+              We Serve Western & Central Washington
             </h1>
             <p className="text-xl md:text-2xl text-gold-100 mb-8">
-              Professional home renovation services across King, Snohomish, Pierce & Kitsap counties
+              Professional home renovation services across {counties.length} counties — from the Olympic Peninsula to the Wenatchee Valley
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
@@ -59,17 +59,18 @@ export default function ServiceAreasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              Professional Home Renovation Throughout Greater Seattle
+              Professional Home Renovation Across Washington State
             </h2>
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
-                Since 2017, <strong>{BUSINESS_NAME}</strong> has been the trusted choice for home 
-                renovation across the Seattle metropolitan area. Our experienced team delivers quality 
+                Since 2017, <strong>{BUSINESS_NAME}</strong> has been a trusted choice for home
+                renovation across Western and Central Washington. Our experienced team delivers quality
                 craftsmanship for kitchen remodels, bathroom renovations, deck installations, and more.
               </p>
               <p className="text-base md:text-lg leading-relaxed">
-                We work with homeowners throughout King County, Snohomish County, Pierce County, and Kitsap County. 
-                Licensed, insured, and committed to exceeding expectations on every project.
+                We work with homeowners throughout the Seattle metro, North Sound, Olympic Peninsula, South Sound,
+                Southwest Washington, and the Wenatchee Valley. Licensed, insured, and committed to exceeding
+                expectations on every project.
               </p>
             </div>
           </div>
@@ -84,11 +85,11 @@ export default function ServiceAreasPage() {
               Our Service Regions
             </h2>
             <p className="text-xl text-gray-600">
-              Serving 4 counties across the Seattle metro area
+              Serving {counties.length} counties across Western & Central Washington
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
             {counties.map((county) => {
               const countyCount = citiesByCounty[county.slug]?.length || 0;
               return (
@@ -157,7 +158,7 @@ export default function ServiceAreasPage() {
               Don&apos;t See Your City?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              We serve all areas within the greater Seattle region. Call us to discuss your renovation project.
+              We serve homeowners across Western and Central Washington. Call us to discuss your renovation project.
             </p>
             <a
               href={`tel:${PHONE_NUMBER}`}

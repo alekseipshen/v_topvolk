@@ -70,6 +70,8 @@ export const seattleCounties: County[] = [
       'Brier',
       'Edmonds',
       'Everett',
+      'Gold Bar',
+      'Granite Falls',
       'Lake Stevens',
       'Lynnwood',
       'Marysville',
@@ -86,12 +88,13 @@ export const seattleCounties: County[] = [
     name: 'Pierce County',
     slug: 'pierce-county',
     description: 'Quality construction services across Pierce County including Tacoma, Puyallup, and Lakewood',
-    totalCities: 18,
+    totalCities: 19,
     cities: [
       'Auburn',
       'Bonney Lake',
       'Buckley',
       'Dupont',
+      'Eatonville',
       'Edgewood',
       'Fife',
       'Fircrest',
@@ -119,6 +122,157 @@ export const seattleCounties: County[] = [
       'Poulsbo',
       'Port Orchard',
       'Silverdale'
+    ]
+  },
+  {
+    name: 'Whatcom County',
+    slug: 'whatcom-county',
+    description: 'Serving Whatcom County including Bellingham, Lynden, Ferndale, and Blaine',
+    totalCities: 4,
+    cities: [
+      'Bellingham',
+      'Blaine',
+      'Ferndale',
+      'Lynden'
+    ]
+  },
+  {
+    name: 'Skagit County',
+    slug: 'skagit-county',
+    description: 'Serving Skagit County including Mount Vernon, Burlington, Anacortes, and Sedro-Woolley',
+    totalCities: 4,
+    cities: [
+      'Anacortes',
+      'Burlington',
+      'Mount Vernon',
+      'Sedro-Woolley'
+    ]
+  },
+  {
+    name: 'Island County',
+    slug: 'island-county',
+    description: 'Serving Island County including Oak Harbor and Coupeville',
+    totalCities: 2,
+    cities: [
+      'Coupeville',
+      'Oak Harbor'
+    ]
+  },
+  {
+    name: 'Clallam County',
+    slug: 'clallam-county',
+    description: 'Serving Clallam County on the Olympic Peninsula including Port Angeles, Sequim, and Forks',
+    totalCities: 3,
+    cities: [
+      'Forks',
+      'Port Angeles',
+      'Sequim'
+    ]
+  },
+  {
+    name: 'Jefferson County',
+    slug: 'jefferson-county',
+    description: 'Serving Jefferson County including Port Townsend',
+    totalCities: 1,
+    cities: [
+      'Port Townsend'
+    ]
+  },
+  {
+    name: 'Grays Harbor County',
+    slug: 'grays-harbor-county',
+    description: 'Serving Grays Harbor County including Aberdeen, Hoquiam, Ocean Shores, and surrounding towns',
+    totalCities: 7,
+    cities: [
+      'Aberdeen',
+      'Elma',
+      'Hoquiam',
+      'McCleary',
+      'Montesano',
+      'Ocean Shores',
+      'Westport'
+    ]
+  },
+  {
+    name: 'Pacific County',
+    slug: 'pacific-county',
+    description: 'Serving Pacific County including Raymond',
+    totalCities: 1,
+    cities: [
+      'Raymond'
+    ]
+  },
+  {
+    name: 'Lewis County',
+    slug: 'lewis-county',
+    description: 'Serving Lewis County including Centralia, Chehalis, Napavine, and Winlock',
+    totalCities: 4,
+    cities: [
+      'Centralia',
+      'Chehalis',
+      'Napavine',
+      'Winlock'
+    ]
+  },
+  {
+    name: 'Cowlitz County',
+    slug: 'cowlitz-county',
+    description: 'Serving Cowlitz County including Longview and Kelso',
+    totalCities: 2,
+    cities: [
+      'Kelso',
+      'Longview'
+    ]
+  },
+  {
+    name: 'Mason County',
+    slug: 'mason-county',
+    description: 'Serving Mason County including Shelton',
+    totalCities: 1,
+    cities: [
+      'Shelton'
+    ]
+  },
+  {
+    name: 'Thurston County',
+    slug: 'thurston-county',
+    description: 'Serving Thurston County including Olympia, Lacey, Tumwater, and surrounding cities',
+    totalCities: 5,
+    cities: [
+      'Lacey',
+      'Olympia',
+      'Tenino',
+      'Tumwater',
+      'Yelm'
+    ]
+  },
+  {
+    name: 'Chelan County',
+    slug: 'chelan-county',
+    description: 'Serving Chelan County in Central Washington including Wenatchee and Leavenworth',
+    totalCities: 2,
+    cities: [
+      'Leavenworth',
+      'Wenatchee'
+    ]
+  },
+  {
+    name: 'Douglas County',
+    slug: 'douglas-county',
+    description: 'Serving Douglas County in Central Washington including East Wenatchee',
+    totalCities: 1,
+    cities: [
+      'East Wenatchee'
+    ]
+  },
+  {
+    name: 'Kittitas County',
+    slug: 'kittitas-county',
+    description: 'Serving Kittitas County in Central Washington including Ellensburg and Cle Elum',
+    totalCities: 2,
+    cities: [
+      'Cle Elum',
+      'Ellensburg'
     ]
   }
 ];

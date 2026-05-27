@@ -1,7 +1,21 @@
-// Seattle Metro Service Areas (Major Regions)
+// Service Areas (Western & Central Washington)
 export const counties = [
   { slug: 'king-county', name: 'King County' },
   { slug: 'snohomish-county', name: 'Snohomish County' },
   { slug: 'pierce-county', name: 'Pierce County' },
   { slug: 'kitsap-county', name: 'Kitsap County' },
+  { slug: 'whatcom-county', name: 'Whatcom County' },
+  { slug: 'skagit-county', name: 'Skagit County' },
+  { slug: 'island-county', name: 'Island County' },
+  { slug: 'clallam-county', name: 'Clallam County' },
+  { slug: 'jefferson-county', name: 'Jefferson County' },
+  { slug: 'grays-harbor-county', name: 'Grays Harbor County' },
+  { slug: 'pacific-county', name: 'Pacific County' },
+  { slug: 'lewis-county', name: 'Lewis County' },
+  { slug: 'cowlitz-county', name: 'Cowlitz County' },
+  { slug: 'mason-county', name: 'Mason County' },
+  { slug: 'thurston-county', name: 'Thurston County' },
+  { slug: 'chelan-county', name: 'Chelan County' },
+  { slug: 'douglas-county', name: 'Douglas County' },
+  { slug: 'kittitas-county', name: 'Kittitas County' },
 ];

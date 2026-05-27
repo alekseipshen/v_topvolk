@@ -14,7 +14,7 @@ export const config = {
 };
 
 // ============================================
-// CITY MAPPING (Seattle Metro Area — King, Snohomish, Pierce, Kitsap)
+// CITY MAPPING (Western & Central Washington)
 // ============================================
 // Inlined because Edge Runtime restricts imports
 const CITY_NAME_TO_SLUG: Record<string, string> = {
@@ -64,6 +64,8 @@ const CITY_NAME_TO_SLUG: Record<string, string> = {
   'Brier': 'brier',
   'Edmonds': 'edmonds',
   'Everett': 'everett',
+  'Gold Bar': 'gold-bar',
+  'Granite Falls': 'granite-falls',
   'Lake Stevens': 'lake-stevens',
   'Lynnwood': 'lynnwood',
   'Marysville': 'marysville',
@@ -79,6 +81,8 @@ const CITY_NAME_TO_SLUG: Record<string, string> = {
   'Bonney Lake': 'bonney-lake',
   'Buckley': 'buckley',
   'Dupont': 'dupont',
+  'DuPont': 'dupont',
+  'Eatonville': 'eatonville',
   'Edgewood': 'edgewood',
   'Fife': 'fife',
   'Fircrest': 'fircrest',
@@ -99,6 +103,73 @@ const CITY_NAME_TO_SLUG: Record<string, string> = {
   'Poulsbo': 'poulsbo',
   'Port Orchard': 'port-orchard',
   'Silverdale': 'silverdale',
+
+  // Whatcom County
+  'Bellingham': 'bellingham',
+  'Blaine': 'blaine',
+  'Ferndale': 'ferndale',
+  'Lynden': 'lynden',
+
+  // Skagit County
+  'Anacortes': 'anacortes',
+  'Burlington': 'burlington',
+  'Mount Vernon': 'mount-vernon',
+  'Sedro-Woolley': 'sedro-woolley',
+
+  // Island County
+  'Coupeville': 'coupeville',
+  'Oak Harbor': 'oak-harbor',
+
+  // Clallam County
+  'Forks': 'forks',
+  'Port Angeles': 'port-angeles',
+  'Sequim': 'sequim',
+
+  // Jefferson County
+  'Port Townsend': 'port-townsend',
+
+  // Grays Harbor County
+  'Aberdeen': 'aberdeen',
+  'Elma': 'elma',
+  'Hoquiam': 'hoquiam',
+  'McCleary': 'mccleary',
+  'Montesano': 'montesano',
+  'Ocean Shores': 'ocean-shores',
+  'Westport': 'westport',
+
+  // Pacific County
+  'Raymond': 'raymond',
+
+  // Lewis County
+  'Centralia': 'centralia',
+  'Chehalis': 'chehalis',
+  'Napavine': 'napavine',
+  'Winlock': 'winlock',
+
+  // Cowlitz County
+  'Kelso': 'kelso',
+  'Longview': 'longview',
+
+  // Mason County
+  'Shelton': 'shelton',
+
+  // Thurston County
+  'Lacey': 'lacey',
+  'Olympia': 'olympia',
+  'Tenino': 'tenino',
+  'Tumwater': 'tumwater',
+  'Yelm': 'yelm',
+
+  // Chelan County
+  'Leavenworth': 'leavenworth',
+  'Wenatchee': 'wenatchee',
+
+  // Douglas County
+  'East Wenatchee': 'east-wenatchee',
+
+  // Kittitas County
+  'Cle Elum': 'cle-elum',
+  'Ellensburg': 'ellensburg',
 };
 
 export function middleware(request: NextRequest) {
