@@ -1,0 +1,23 @@
+title: "Auburn HVAC — Heat Pump Conversions & IRA Rebates"
+
+intro: |
+  Green River valley fog rolls in from October through April, and Auburn's ambient humidity runs higher than most homeowners account for when sizing HVAC systems. The builder-grade gas furnaces still running in West Auburn and along Auburn Way North — in the 98002 zip — were designed for a world where gas cost almost nothing and energy code barely existed. That calculus has shifted. Mitsubishi and Daikin ductless heat pumps are making conversions practical across Auburn's housing eras, and federal IRA rebates can offset $2,000 or more on qualifying systems if the equipment meets the efficiency thresholds.
+
+localContext: |
+  Auburn's residential stock covers the full spectrum. The 1960s–70s ranchers in the 98001 and 98002 zip codes near downtown and along the Auburn Way North corridor have original ductwork sized for heating only — duct leakage of 25–30% is common in homes this age. Out on the Lea Hill plateau in 98092, it's mostly 1990s–2000s tract homes with better duct systems but aging single-stage furnaces nearing the end of their service life. In any Auburn home older than 25 years, a Manual J load calculation and duct leakage test should happen before a new system goes in — otherwise you're sizing equipment to a fiction.
+
+commonProblems:
+  - title: "Gas Furnace Replacement — 95%+ AFUE Systems and Heat Pump Conversions"
+    description: "Single-stage gas furnaces in Auburn's older ranchers run at 60–80% AFUE — you're losing 20–40 cents of every heating dollar up the flue. A Daikin or Mitsubishi ducted heat pump operates above 300% COP in mild PNW winters, making it significantly more efficient even at current electric rates. The conversion involves replacing the air handler, running a refrigerant line set to the outdoor compressor, and often upgrading from 150-amp to 200-amp electrical service. Federal IRA rebates cover up to $2,000 on the heat pump unit itself — income limits apply, and the contractor must pull a proper mechanical permit."
+  - title: "Hot and Cold Rooms — Ductwork Imbalance in 1960s–70s Homes"
+    description: "The ranchers along Auburn Way North were built without Manual J load calculations. Duct runs were sized by rule-of-thumb, and back bedrooms consistently get starved for CFM while the living room overheats. Sealing leaky duct joints with mastic, re-balancing dampers, and adding a ductless mini-split to a stubborn problem zone corrects this without full duct replacement. Nest and ecobee smart thermostats help with scheduling and zoning — but they can't compensate for a 30% leakage rate at the trunk line."
+  - title: "Mini-Split Installation for DADUs and Room Additions"
+    description: "WA HB 1337 opened DADU permitting across Auburn lots, and most new detached ADUs don't have existing duct systems to tap. A Mitsubishi or Daikin single-zone 12,000–18,000 BTU wall-mount handles a 400–600 sq ft DADU efficiently through Auburn winters. Multi-zone systems can serve both a new addition and an older bedroom the main forced-air system never heated evenly. The City of Auburn Building Division requires a mechanical permit for any mini-split installation — that's part of the project scope from day one."
+
+faq:
+  - q: "How fast can you get to Auburn for HVAC?"
+    a: "Auburn is roughly 30 minutes south of Seattle via SR-167, traffic permitting. We schedule on-site consultations within a week for most HVAC projects. Call (206) 591-1096 — Vladislav does the estimate himself, so you're talking to the contractor from the first call, not a commissioned closer."
+  - q: "What HVAC brands do you install and service in Auburn?"
+    a: "For new installs, we work primarily with Mitsubishi Electric, Daikin, and Bosch heat pump systems. On existing forced-air setups, we service and replace Carrier and Lennox equipment. Ecobee and Nest smart thermostats are part of most new installs for zoning and energy monitoring."
+  - q: "What does a heat pump conversion cost, and do you pull the permit?"
+    a: "A gas-to-heat pump conversion in Auburn typically runs $8,000–$18,000 depending on duct condition and whether the electrical panel needs an upgrade. Mechanical permits through the City of Auburn Building Division are included in the project price — not billed as a separate line item. Timeline from signed contract to final inspection runs 3–5 weeks. TopVolk is a WA Licensed Contractor, 100+ projects completed since 2017, with deadline penalties written into every contract."
