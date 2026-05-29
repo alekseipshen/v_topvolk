@@ -1,0 +1,79 @@
+title: "Marysville Electrical — 100A Panels Can't Keep Up Anymore"
+
+intro: |
+  The subdivisions off 88th St NE and around Allen Creek filled in through the
+  1980s and 1990s with 100-amp service and builder-grade wiring — enough for that
+  era, not enough for a Mitsubishi mini-split, a ChargePoint Level 2 charger, and
+  a Bosch induction range running at the same time. That's a real load conflict.
+  TopVolk handles panel upgrades and EV circuits for Marysville homeowners as part
+  of larger renovation scopes. WA Licensed Contractor, 100+ projects completed
+  since 2017.
+
+localContext: |
+  Homes in the 98270 zip range from mid-1970s stick-frame to 2000s tract builds —
+  enough variation that you'll find aluminum wiring concerns in the older stock and
+  undersized 100A service in 1990s neighborhoods near Smokey Point. The Grove
+  area and older blocks closer to downtown Marysville still have original Federal
+  Pacific Stab-Lok panels, which many insurers flag outright. Snohomish County PDS
+  handles permit review here, not Seattle SDCI — plan review timelines run
+  differently and homeowners who assume Seattle's process apply get caught off guard.
+
+commonProblems:
+  - title: "100A Service Maxed Out by Heat Pumps and EV Charger Circuits"
+    description: |
+      A Mitsubishi or Daikin mini-split heat pump draws 20-30 amps continuous.
+      Stack a 50A circuit for a JuiceBox or Tesla Wall Connector on top of that,
+      plus a modern LG appliance load, and the main breaker is living on the edge.
+      The fix is a 200A service upgrade — new meter base, new main panel, and
+      coordination with Puget Sound Energy (PSE) for the utility reconnect.
+      Snohomish County PDS requires a permit and final inspection before PSE
+      will re-energize. Two-to-four weeks for plan review is typical; work itself
+      is usually one to two days on site.
+
+  - title: "Aluminum Branch Wiring in 1965-1975 Marysville Homes"
+    description: |
+      Parts of Marysville's older 98271 zip stock — especially blocks built
+      between 1965 and 1973 — were wired with aluminum branch circuits, standard
+      practice at the time. Aluminum expands and contracts at a different rate than
+      copper, which loosens connections at outlets and switches over years of thermal
+      cycling. AlumiConn connectors or full pigtailing with copper at every device
+      is the correct remediation. AFCI breakers help with arc detection but don't
+      fix the underlying connection problem at the device level.
+
+  - title: "AFCI and GFCI Requirements Triggered by Permit Work"
+    description: |
+      Pulling a permit in Marysville today means meeting current NEC — AFCI
+      breakers for bedrooms, hallways, and living areas; GFCI protection for
+      bathrooms, kitchen counters, garages, and all exterior circuits. That matters
+      when adding a dedicated circuit for a Navien tankless water heater or a
+      50A induction range circuit. An inspector with Snohomish County PDS will
+      fail rough-in inspection if the correct breaker types aren't installed.
+      It's not optional, even on a simple circuit addition.
+
+faq:
+  - q: "How fast can you get to Marysville for electrical work?"
+    a: |
+      TopVolk runs projects regularly up I-5 into Snohomish County — Marysville
+      is roughly 35 miles north of Seattle, 40-50 minutes outside peak traffic.
+      Call (206) 591-1096 to schedule a site visit with Vladislav directly.
+      Panel upgrades typically start within one to two weeks of permit submission
+      to Snohomish County PDS.
+
+  - q: "Do you install EV charger circuits for Tesla and ChargePoint in Marysville?"
+    a: |
+      Yes. Tesla Wall Connectors need a dedicated 60A circuit; ChargePoint Home
+      Flex and JuiceBox 40 run on 50A. All require a permit through Snohomish
+      County PDS and PSE notification if tied to a service upgrade. Rough-in and
+      final inspections are both required before the charger goes live. Vladislav
+      handles the permit submission — you don't deal with the building department
+      yourself.
+
+  - q: "What does a 200A panel upgrade cost in Marysville, and what's the timeline?"
+    a: |
+      Panel upgrades in Snohomish County typically run $3,500-$6,500 depending
+      on meter base condition, whether a subpanel is needed, and what PSE requires
+      for the service entrance rebuild. Plan two to four weeks for Snohomish County
+      PDS plan review, then one to two days of actual work. Deadline penalties are
+      written into the contract — if TopVolk misses the agreed date, there's a
+      financial consequence. Vladislav provides a line-item quote after the
+      on-site consultation.
