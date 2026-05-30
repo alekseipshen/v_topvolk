@@ -1,0 +1,29 @@
+title: "Marysville Garage Construction — Built for Snohomish County"
+
+intro: |
+  Smokey Point subdivisions along 88th Street NE were designed for the 1998 buyer — two-car garage, 400 square feet, built-in shelving, and not much else. Nobody spec'd a 60-amp circuit for a Bosch Level 2 EV charger, or engineered the slab to carry workshop loads above a DADU. Vladislav has run garage builds across 98270 and 98271 since 2017 — 100+ projects across the Seattle metro — and Snohomish County PDS permitting is part of the plan from the first site visit.
+
+localContext: |
+  Most of Marysville's residential buildout happened between 1992 and 2010 — tract homes on 7,000–9,000 square-foot lots with attached single or double garages. Zip 98271 near downtown has older 1960s ranchers with single-car garages that sit too close to the property line to expand legally under current setback requirements. Newer developments off Grove Road in zip 98270 typically have lot coverage available for a detached structure, but Snohomish County PDS plan review runs 6-10 weeks — and that clock starts only after a complete, engineer-stamped permit set is submitted. October through April, Marysville averages steady rain that can delay poured flatwork; scheduling the sub-base inspection and concrete pour during a dry window is part of the project calendar from day one.
+
+commonProblems:
+  - title: "ADU Above the Garage: Structural Load and Permit Complexity Under WA HB 1337"
+    description: |
+      WA HB 1337 allows a DADU above a new garage on any Marysville single-family lot — but structural implications start at the footing. LVL beams at the garage header, PSL posts at load-bearing corners, and engineered floor joists are all required when carrying habitable space above. Snohomish County PDS requires stamped structural drawings for this scope. Footings also get sized up — something that cannot be corrected once the slab is poured and inspected.
+  - title: "EV Circuit Pre-Wire: Run Conduit During Rough-In, Not After Drywall"
+    description: |
+      Marysville homes built before 2015 commonly run 100-amp main panels — not enough headroom for a dedicated 60-amp EV circuit without a service upgrade. Pre-wiring conduit and a 60A breaker during garage rough-in costs a fraction of what retrofit work runs after drywall closes. Bosch and ChargePoint both spec a 60A circuit; a Tesla Wall Connector can flex to 48A, but conduit and breaker sizing still need to be designed into the permit set from the start.
+  - title: "Concrete Slab Spec: Vapor Barrier and Sub-Base on West-Side Marysville Lots"
+    description: |
+      Lots near Ebey Slough on the west side of town sit on clay-heavy soil with a high seasonal water table. A 4-inch fiber-reinforced slab is code minimum, but on those lots you need compacted gravel sub-base and a vapor barrier underneath — or moisture wicks through the concrete, warps DriCore subfloor panels, and corrodes metal storage. Snohomish PDS inspects the sub-base before the pour. That inspection has to be scheduled and cleared before concrete trucks show up.
+
+faq:
+  - q: "How fast can you get to Marysville for Garage Construction?"
+    a: |
+      Marysville is about 35 miles north of Seattle via I-5 — 98270 and 98271 are a regular part of Vladislav's service area. No travel surcharge for the initial on-site visit. Call (206) 591-1096 to schedule. You get a direct line-item estimate from the person who'll manage the build, not a commissioned closer reading off a price sheet.
+  - q: "Do you pre-wire for specific EV charger brands during the garage build?"
+    a: |
+      The rough-in is brand-agnostic — a 60A circuit and conduit stub works for Bosch, ChargePoint, Tesla Wall Connector, and most other Level 2 units. Vladislav specs the electrical during the permit set so it passes rough-in inspection. Homeowners pick the actual charger later, which avoids $800–1,200 in retrofit electrical costs after walls are closed.
+  - q: "What's the full timeline for a Marysville garage build from permits to final inspection?"
+    a: |
+      Snohomish County PDS plan review runs 4-8 weeks for a standard detached garage; add another 6-8 weeks if an ADU above is included. Construction adds 6-10 weeks. End-to-end for a garage-with-ADU: 4-6 months is realistic. Call (206) 591-1096 early — TopVolk is a WA Licensed Contractor, the schedule books ahead, and deadline penalties are written into the contract.
