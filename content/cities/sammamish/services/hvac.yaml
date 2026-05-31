@@ -1,0 +1,41 @@
+title: "Sammamish HVAC — Heat Pump Conversions & Duct Rebalancing"
+
+intro: |
+  The subdivisions that filled Sammamish's 98074 and 98075 zip codes between 1997 and 2012 — Klahanie, Trossachs, Aldarra — shipped with 80% AFUE gas furnaces sized for original construction. Those systems are now 15-25 years old. Mitsubishi Electric Hyper-Heat and Carrier Infinity heat pumps are the natural replacements, but getting the tonnage right means running a Manual J load calculation against actual square footage, not just matching BTU ratings. Vladislav does that assessment on-site, not over the phone. Sammamish's plateau elevation — sitting at 500 to 600 feet — means outdoor temps routinely drop 4-6 degrees colder than Seattle proper during January cold snaps, and low-temperature heating capacity matters when selecting equipment.
+
+localContext: |
+  Sammamish homes in 98075 run large — typically 2,800 to 4,500 sq ft on two floors, craftsman or colonial exteriors on sloped lots facing east toward the Cascade foothills. A single duct system trying to condition an open main floor plus four or five bedrooms upstairs is a setup for chronic imbalance.
+
+  Seattle Energy Code requirements for new mechanical permits through King County DPER mean a furnace-for-furnace swap often triggers a whole-system review anyway — plan for it from the start. Static pressure tests on existing trunk-and-branch ductwork frequently expose undersized returns that the original builder's HVAC sub glossed over. That's not a problem you discover at final inspection; it's one you find before the new air handler goes in.
+
+commonProblems:
+  - title: "Heat Exchanger Failures in Late-1990s Gas Furnaces"
+    description: |
+      Carrier and Lennox furnaces installed in Sammamish builds from 1998 to 2006 are past typical service life. A cracked heat exchanger is not a repair situation — carbon monoxide risk makes it a replacement decision, and King County DPER requires a mechanical permit for the swap.
+
+      High-efficiency 95%+ AFUE replacement with a two-stage variable-speed blower motor integrates with existing ductwork if static pressure tests within spec. Not all duct systems pass that test on the first try. Some Klahanie-era builds used flex duct runs with excessive bends that choke airflow even before the duct starts leaking — that gets addressed during rough-in, not after. Call (206) 591-1096 to schedule an on-site assessment before committing to equipment.
+
+  - title: "Ductwork Imbalance — Hot Upstairs, Cold Main Floor"
+    description: |
+      Colonial-style homes in Klahanie and Trossachs often run a single air handler through an undersized trunk with branch runs that choke supply CFM to upper-floor bedrooms. The result is a 6-8 degree differential that no thermostat setting fixes.
+
+      Mastic duct sealing plus branch balancing dampers correct the problem without replacing the air handler — but it requires actual airflow measurement before any adjustments, not trial-and-error damper turns. A Duct Blaster test quantifies leakage; a digital manometer maps the static pressure profile room by room. Trossachs homes with bonus rooms over garages are especially prone to this — the branch run to that space is almost always undersized relative to the room's heating load.
+
+  - title: "Mini-Split Installation for ADUs and Bonus Room Additions"
+    description: |
+      WA HB 1337 opened the door for two ADUs per single-family lot in Sammamish, and each unit needs its own mechanical system. Mitsubishi MXZ multi-zone and Daikin Aurora mini-splits handle this without tying into the main duct system.
+
+      Refrigerant line sets on north-facing walls need UV-rated insulation; condensate freeze-up during cold snaps is a real issue on the Sammamish Plateau at 500-plus feet elevation. Rough-in placement matters here. King County DPER mechanical permits for mini-split installation in new ADUs run 3-6 weeks for plan review — factor that into the project timeline before scheduling subcontractors.
+
+faq:
+  - q: "How fast can you get to Sammamish for HVAC work?"
+    a: |
+      Sammamish is 25-35 minutes from Seattle — straight east on I-90 to SR-202, no complicated routing. Consultations are typically scheduled 2-4 business days out depending on current project load. Call (206) 591-1096 and Vladislav picks up directly, not a dispatch center. No call screening, no sales staff asking for your email first.
+
+  - q: "Which brands do you install or replace in Sammamish homes?"
+    a: |
+      Carrier Infinity, Lennox XC series, Mitsubishi Electric, and Daikin Aurora are the most common in this area. Mitsubishi and Daikin cover ADU and addition work well; Carrier and Lennox make sense for whole-home central replacements where existing ductwork is sound. For homes with Bosch or Mitsubishi mini-splits already installed in bonus rooms, we can expand the existing multi-zone setup rather than adding a second system. TopVolk has completed 100+ projects since 2017 across King County — WA Licensed Contractor, general contracting.
+
+  - q: "Does an HVAC replacement in Sammamish require permits, and what does it cost?"
+    a: |
+      King County DPER requires a mechanical permit for full system replacements — that covers rough-in and final inspection both. Plan review at DPER currently runs 3-5 weeks for standard residential mechanical. Heat pump conversions in Sammamish typically run $14,000-$24,000 depending on duct condition and whether a new air handler is needed. IRA tax credits cover 30% of equipment and installation costs for qualifying heat pump systems. Deadline penalties are written into the contract — not a verbal commitment, an actual clause. Free on-site consultation: (206) 591-1096.

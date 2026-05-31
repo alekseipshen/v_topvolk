@@ -1,0 +1,29 @@
+title: "Sammamish Electrical — Panel Upgrades & EV Chargers, 98074"
+
+intro: |
+  The Sammamish Plateau filled in mostly between 1985 and 2005 — homes wired for 100-amp service before heat pumps and Level 2 chargers became standard equipment. A Rivian R1S pulling 48 amps continuous overnight, combined with a Mitsubishi mini-split and an induction range, pushes a typical original panel past its rated capacity. Beaver Lake and Pine Lake neighborhoods are running into this every week now.
+
+  Electrical capacity is the bottleneck nobody designed for in 1997.
+
+localContext: |
+  Most of the 98075 zip — Trossachs, Aldarra, Evans Creek — was built during the 1990s tract-home boom with 100-amp or 125-amp panels and builder-grade wiring. Those electrical systems were sized for a refrigerator, some recessed lighting, and a gas furnace. The 98074 side, around Pine Lake and Inglewood, has similar vintage. That original load calculation is irrelevant to how these homes get used in 2026.
+
+  Puget Sound Energy serves the area.
+
+  Any panel swap or service upgrade in Sammamish requires a PSE disconnect order coordinated with the electrical permit — the City of Sammamish runs its own permit portal, separate from King County DPER. Plan review for a 200-amp service upgrade with load calculation typically takes two to four weeks. Scheduling the PSE crew to pull the meter adds another variable. Heavy rain October through April also accelerates oxidation on older electrical connections and junction boxes, especially in crawlspaces under homes near Beaver Lake and the northern Plateau corridors — worth flagging during any panel inspection.
+
+commonProblems:
+  - title: "100A Panel Can't Handle an EV Charger Plus a Heat Pump"
+    description: "A 50A or 60A EV charger circuit for a Tesla Wall Connector or ChargePoint unit needs its own dedicated breaker. Stack a Mitsubishi or Bosch heat pump on top, and a 100-amp main breaker hits capacity fast — before accounting for kitchen loads. Induction ranges pull 40-50A on their own. Upgrading to a 200-amp service panel, coordinated with a PSE disconnect order and City of Sammamish electrical permit, is the standard fix. The electrical work involves replacing the meter base, service entrance cable, grounding electrode system, and main panel — typically a full day on site, sometimes two. WA Licensed Contractor. Call (206) 591-1096."
+  - title: "Aluminum Branch Wiring in Sammamish's Older 1960s–1970s Homes"
+    description: "A portion of Sammamish's older stock — homes from the mid-1960s through 1973, scattered through the Pine Lake area and older Plateau subdivisions — was built with aluminum branch circuits. Aluminum oxidizes at connection points and raises fire risk over time. The accepted remediation is AlumiConn connectors or copper pigtailing at every device and junction box — labor-intensive electrical work that requires a permit and rough-in inspection before drywall closes back up. Every outlet, switch, and fixture on those circuits gets opened, cleaned, and properly reconnected before the electrical inspector signs off."
+  - title: "LED Dimmer Conflicts and AFCI Breaker Requirements on Permit Pull"
+    description: "Current NEC code requires AFCI breakers in bedrooms and most living areas — a requirement that surfaces the moment you pull a panel upgrade or addition permit in Sammamish. LED retrofit cans in a remodel frequently trip non-compatible dimmers. That's a $15 fix if you catch it before the electrical rough-in inspection closes, or a callback and re-inspection fee if you don't. Matching Lutron or Leviton dimmer wattage ratings to specific bulb load types, plus confirming GFCI protection on bathroom and kitchen circuits, is what clears final inspection sign-off."
+
+faq:
+  - q: "How fast can you get to Sammamish for an electrical consultation?"
+    a: "Sammamish is a straightforward run from Seattle via I-90 east, typically 35-45 minutes depending on traffic. For a panel upgrade or EV charger estimate, call (206) 591-1096 — Vladislav can usually schedule an on-site electrical visit within a few days. No call center, no sales staff, you talk directly to the contractor. He's pulled electrical permits through the City of Sammamish portal on projects in 98074 and 98075 both."
+  - q: "Do you install Tesla Wall Connectors and ChargePoint EV chargers in Sammamish?"
+    a: "Both Tesla Wall Connectors and ChargePoint units are common electrical installs in Sammamish. Vladislav runs the 50A or 60A dedicated circuit, handles the City of Sammamish electrical permit, and coordinates the PSE disconnect if a panel upgrade is part of the scope. JuiceBox and other NEMA 14-50 setups too. A standalone EV charger circuit permit often clears faster than a full panel upgrade — sometimes within a week if the load calculation is straightforward."
+  - q: "What does a 200A panel upgrade cost in Sammamish, and how long does the project take?"
+    a: "The physical electrical work on a panel swap typically runs one to two days. City of Sammamish plan review adds two to four weeks depending on load calculations and whether the meter base or service entrance cable also need replacing. Total cost varies — call (206) 591-1096 for a line-item quote specific to your address and existing service configuration. Deadline penalties are written into the contract. 100+ projects completed since 2017 across Seattle Metro."
