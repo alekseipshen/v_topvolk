@@ -1,88 +1,45 @@
-title: "Federal Way Electrical — Panel Upgrades, EV Circuits & Rewiring"
+title: "Federal Way Electrical — Panel Upgrades for 1970s–90s Homes"
 
 intro: |
-  Twin Lakes and Steel Lake have a familiar electrical problem. The ranchers built between 1970
-  and 1985 came with 100-amp panels. That was enough back then. It's not enough now — not
-  with a Bosch induction range pulling 50 amps and a heat pump install on the list. Federal
-  Way runs on PSE (Puget Sound Energy). A 200A electrical service upgrade means a City of
-  Federal Way permit plus separate utility coordination with PSE for the meter and service
-  entrance. TopVolk handles both tracks as one job. No handing you off to a separate
-  electrician mid-project.
+  Steel Lake and Twin Lakes — dense residential neighborhoods in zip 98003 — are built mostly on 1970s ranchers and split-levels. Most still run original 100-amp service panels. Those panels weren't sized for a Mitsubishi heat pump, a 50-amp EV charger circuit, and a modern kitchen all drawing current at once. That's where Federal Way electrical work gets complicated fast.
+
+  PSE handles utility disconnect and reconnect here, not Seattle City Light. That adds a separate scheduling step to any electrical service upgrade. Homeowners moving from north Seattle don't always expect it — and it adds 2-4 weeks to the timeline before work can finish.
 
 localContext: |
-  Zip 98023 covers Twin Lakes and the Dash Point corridor. Dense belt of ranchers and
-  split-levels, framed between 1968 and 1985. A chunk of those were built during the aluminum
-  wiring era — 1965 to 1973. That affects every outlet, junction box, and electrical panel
-  connection in the house. Zip 98003, closer to Pacific Highway S and The Commons, is
-  1980s-to-1990s builder-grade construction. Panels with undersized main breakers. No AFCI
-  protection in bedrooms. Branch circuits never sized for a modern home office running two
-  monitors, a standing desk, and a laser printer. These are common electrical issues in
-  Federal Way homes, and they tend to surface during remodels or when a new appliance shows
-  up on the doorstep.
+  Most residential construction in 98003 and 98023 happened between 1968 and 1988. Split-levels and ranchers in the Mirror Lake and Twin Lakes corridors often have aluminum branch circuit wiring. It was standard practice during the copper price spike from 1965 to 1973.
+
+  That aluminum wiring needs remediation at every connection point — outlets, switches, fixture boxes. Without it, aluminum oxidizes against steel terminals and creates resistive heat over time. AlumiConn connectors or full copper pigtailing at each device is the fix that holds up through inspection. Federal Way runs electrical permits through its own Community Development department, separate from King County DPER. Plan review on a full panel upgrade typically runs 3-6 weeks.
 
 commonProblems:
-  - title: "100A panel at capacity before the heat pump or EV charger gets added"
+  - title: "Aluminum Branch Wiring in Federal Way's 1970s Tract Homes"
     description: |
-      A Mitsubishi mini-split heat pump draws 25–40 amps of dedicated electrical capacity.
-      A Level 2 EV charger — Tesla Wall Connector or JuiceBox 48 — needs a 50A or 60A
-      double-pole slot. In a 1970s Federal Way rancher, that 100A main breaker is already
-      feeding a range, dryer, water heater, and base lighting load. There's no room. A 200A
-      electrical service upgrade with a new panel clears the path for all of it.
+      Homes in the Twin Lakes area and along the SW 320th Street corridor built between 1965 and 1973 routinely used aluminum branch circuit wiring. It's one of the most common electrical issues we find in Federal Way homes. Without remediation at every connection point — outlets, switches, fixture boxes — aluminum oxidizes against steel terminals and creates resistive heat over time.
 
-      We calculate your actual load before quoting. Some Federal Way homes can add a 40A EV
-      circuit with a load-management device and skip the full panel replacement. Others can't.
-      Either way, you get the real answer upfront — not a guess that changes after demo day.
+      Leviton and Hubbell make CO/ALR-rated devices for aluminum-compatible terminations. But AlumiConn connectors or copper pigtailing behind each device is the approach that holds up through inspection and beyond. It needs to be scoped before the electrical permit application goes in.
 
-  - title: "Aluminum branch-circuit wiring in 1965–1973 builds"
+  - title: "100-Amp Panels Maxed Out by Heat Pumps and EV Chargers"
     description: |
-      Thousands of Twin Lakes and Adelaide homes were wired with aluminum branch circuits.
-      Standard electrical practice from the mid-1960s through the early 1970s. At outlet and
-      switch connections, aluminum oxidizes, expands and contracts with heat cycles, and works
-      loose. That's a fire risk.
+      A Square D QO or Siemens 100-amp panel from 1978 wasn't built for today's load mix. Add a ChargePoint Home Flex on a dedicated 50A circuit, a Mitsubishi heat pump compressor, and a kitchen running a dishwasher and microwave at the same time — the load calculation often lands well past 150 amps. A 200A electrical service upgrade is the standard path forward.
 
-      Electrical remediation means AlumiConn connectors at every device location, or copper
-      pigtailing throughout. During kitchen or bathroom remodels we open the walls anyway.
-      That's the right time to address the most critical circuits — rather than scheduling a
-      standalone electrical rewire as a separate project six months later.
+      PSE disconnect/reconnect slots in South King County run 2-4 weeks out. Utility coordination has to start before the electrical permit is even submitted. That sequencing is part of how we scope electrical projects in Federal Way from day one.
 
-  - title: "Outdated panels and missing AFCI/GFCI breakers in pre-2000 homes"
+  - title: "Missing AFCI and GFCI Protection Per Current NEC"
     description: |
-      Current NEC requires AFCI breakers in every bedroom. GFCI protection in kitchens,
-      bathrooms, garages, and exterior circuits. Most Federal Way homes built before 2000 have
-      neither. Some still run original Federal Pacific Stab-Lok panels — a known fire-risk
-      concern separate from the code gaps.
+      Current NEC requires AFCI breakers in bedrooms and GFCI protection in bathrooms, kitchens, garages, and exterior circuits. Most pre-2000 Federal Way homes have neither. A permit-required panel swap or room addition triggers full code compliance on all affected circuits.
 
-      Replacing the electrical panel brings you to current code, installs proper AFCI and GFCI
-      breakers where required, and usually surfaces deferred work: junction boxes without
-      covers, abandoned circuits still energized, undersized wire on kitchen circuits. Better
-      to find it now than during a future inspection or insurance claim. Call (206) 591-1096
-      if you're not sure what panel you have — Vladislav can walk you through it in 10 minutes.
+      That means AFCI breaker replacement across bedroom circuits — Square D QO-CAFI, Eaton BR series, or Siemens equivalents — needs to be in scope before the electrical permit application goes in. Pricing it as an afterthought causes budget surprises mid-project.
 
 faq:
-  - q: "How fast can you get to Federal Way for electrical project work?"
+  - q: "How fast can you get to Federal Way for electrical work?"
     a: |
-      Federal Way is 30–35 minutes south via I-5 from our Seattle base — quicker if we route
-      via 99 and avoid the downtown merge. We schedule site visits most weekdays. Call
-      (206) 591-1096 and Vladislav comes out personally. He looks at the panel and any
-      specific electrical circuits, then puts a written scope together on the spot. You're
-      talking to the contractor doing the work, not a sales rep.
+      Federal Way is about 25 miles south of Seattle via I-5. That's 30-40 minutes outside peak hours — closer to an hour during the afternoon commute through Tukwila. Vladislav schedules on-site electrical assessments Monday through Saturday. Call (206) 591-1096 to set up a free consultation at your property in Federal Way.
 
-  - q: "Do you coordinate the PSE utility work for a panel upgrade in Federal Way?"
+  - q: "Do you handle EV charger installations — Tesla Wall Connector, ChargePoint, JuiceBox?"
     a: |
-      Yes. A 200A electrical service upgrade in Federal Way requires a City permit plus PSE
-      notification for the meter base and service entrance work. We pull the City permit,
-      schedule rough-in and final inspections, and handle the PSE paperwork — so both
-      processes run in parallel rather than sequentially. That matters for timeline. TopVolk
-      is a WA Licensed Contractor with 100+ projects completed since 2017 across King and
-      Pierce counties.
+      Yes. Level 2 chargers — Tesla Wall Connector, ChargePoint Home Flex, JuiceBox 48 — all need a dedicated 240V circuit, typically 50A or 60A. The first step is always a panel load calculation. If the existing Square D or Siemens panel is near capacity, a sub-panel or full 200A electrical service upgrade is usually the cleaner path before running charger wire.
 
-  - q: "What does an electrical panel upgrade or EV charger circuit cost in Federal Way?"
+  - q: "What's the permit process for a panel upgrade in Federal Way?"
     a: |
-      A 100A-to-200A electrical panel replacement with City permit runs $5,000–$8,000.
-      The range depends on service entrance length, whether the meter base needs replacing,
-      and drywall repair scope. Adding a dedicated 60A EV circuit is typically $900–$1,600
-      on top of that.
+      Federal Way electrical permits go through the city's Community Development department — not King County DPER. A 200A service upgrade needs a permit, a rough-in inspection, and a PSE disconnect/reconnect appointment scheduled in advance. Plan review runs 3-6 weeks.
 
-      Fixed-price written quotes — no ranges that balloon after demo. Missed-deadline
-      penalties are written into the contract, not just mentioned in conversation. Schedule
-      a free site consultation to get a real number for your specific Federal Way home.
+      Vladislav, WA Licensed Contractor, handles the permit application directly — 100+ projects completed since 2017 across King, Snohomish, and Pierce counties. You just need to be home on inspection day. Call (206) 591-1096 to get the process started.

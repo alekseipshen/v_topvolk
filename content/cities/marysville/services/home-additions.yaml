@@ -1,99 +1,31 @@
-title: "Marysville Home Additions — Adding On to the 90s Build-Out"
+title: "Marysville Home Additions — Build Out, Stay Put in 98270"
 
 intro: |
-  Soper Hill and the subdivisions fanning east of I-5 — Marysville's 1990s-2000s buildout
-  put solid lots under homes that no longer match the households using them. Aging parents who
-  need to be close but not too close. Teenagers who should have real walls. Remote work that's
-  outgrown a kitchen table.
+  Permit applications for room additions and DADUs in Marysville go through Snohomish County PDS — not the city, not Seattle SDCI.
 
-  A detached ADU under WA HB 1337 or a second-story addition solves that without selling.
-  Kitchen expansions here often involve planning around Bosch integrated appliance packages —
-  something we coordinate from framing forward, not as an afterthought. Vladislav Volkov
-  handles these projects directly. Call (206) 591-1096 to schedule an on-site walk-through.
+  Most housing in 98270 and 98271 was built between the mid-1990s and mid-2000s during Marysville's growth surge. Those homes are hitting their limits — three bedrooms, one bath, no dedicated home office, no real space for a multigenerational household. Plenty of those lots qualify for a detached ADU under WA HB 1337, which statewide now allows two ADUs per single-family lot. Getting the site plan right on first submission matters because a bounce-back from Snohomish County PDS resets the plan review clock entirely, adding weeks before framing even starts.
+
+  A Mitsubishi mini-split handles heating and cooling in a new addition without extending ductwork through finished walls.
 
 localContext: |
-  The 98270 zip code runs from downtown Marysville east toward Getchell — 1940s-1960s homes
-  near the Ebey Slough waterfront alongside 1990s-2000s suburban tracts further inland. Older
-  downtown houses often carry post-and-pier foundations that need evaluation before any
-  second-story work. That evaluation isn't optional — it's part of the structural engineer's
-  scope before the permit application even opens.
+  The older blocks around Comeford Park and the State Avenue downtown corridor hold housing from the 1940s through the 1960s — post-and-pier foundations, smaller lots, some original galvanized plumbing still in service. Those homes need a structural and foundation assessment before any second-story addition reaches the drawing stage. Vertical loads change everything when the original framing was spec'd for single-story living, and a structural engineer needs to sign off on supplemental footing pads and LVL beam sizing before Snohomish County PDS opens a plan review file.
 
-  The 98271 zip, covering Smokey Point and the corridor north toward Arlington, skews toward
-  mid-2000s platform-frame construction — structurally more predictable, but load-bearing wall
-  removal still requires LVL beam sizing and an engineer's stamp. City of Marysville plan
-  review for major additions typically runs 8-12 weeks. Snohomish County PDS handles
-  unincorporated parcels outside city limits — different portal, different reviewer, similar
-  timeline. Factor that into your project schedule before you pick a move-in date.
+  East Marysville in 98271 is a different story.
 
-  Marysville's climate adds another layer. Roughly 34 inches of rain annually, concentrated
-  October through May, means vapor barriers in crawlspaces aren't a suggestion — they're code.
-  Any addition that touches the building envelope needs a continuous air barrier detail and
-  proper flashing at the rim joist connection. North-facing walls accumulate mildew fast
-  without the right assembly.
+  Out there, housing shifts to 1990s and 2000s ramblers on larger parcels: slab-on-grade construction, builder-grade framing, more room on the lot for a DADU footprint. Setback and FAR calculations still apply — PDS enforces those regardless of HB 1337 — but the structural approach is simpler when you're adding horizontal square footage rather than going vertical on a foundation that was never designed for it.
 
 commonProblems:
-  - title: "ADU Permitting Under WA HB 1337 Through City of Marysville"
-    description: |
-      WA HB 1337 allows up to two ADUs per single-family lot statewide, but City of Marysville
-      runs its own plan review — separate from Snohomish County PDS. A DADU in 98270 or 98271
-      still needs setback verification, FAR calculation, lot coverage review, and utility
-      connection drawings before the application opens.
-
-      Most 7,000-8,000 sq ft lots here can support a 600-700 sq ft detached unit. Height limit
-      for a DADU is typically 24 ft. Separate utility connection adds cost but also gives the
-      unit independent metering — useful if the plan is rental income. Plan review runs 8-12
-      weeks once the application is complete.
-
-  - title: "Second-Story Engineering on 1990s-Era Platform-Frame Foundations"
-    description: |
-      Standard platform framing in Marysville's 1990s tract homes handles single-story loads
-      fine — but a second story triggers a structural engineer's full assessment of foundation
-      capacity, rim joist integrity, and bearing wall sizing. LVL beam replacements at header
-      locations are common. Joist hanger upgrades and blocking additions often show up on the
-      engineer's redlines too.
-
-      On older 1950s-era homes near downtown, post-and-pier foundations sometimes need
-      reinforcement before upper-floor loads apply. That work happens before framing starts.
-      Rough-in inspection must clear before insulation or drywall hang begins — no shortcuts
-      through that sequence.
-
-  - title: "HVAC Zoning for New Additions in Marysville's Wet Climate"
-    description: |
-      Pushing a 1990s forced-air system to cover a new 400-600 sq ft addition frequently
-      exceeds its static pressure design limits — the original system was sized for the original
-      floor plan, nothing more.
-
-      Marysville's wet winters and cool shoulder seasons make a dedicated Mitsubishi mini-split
-      the better answer: independent zoning, no ductwork penetrations through existing framing,
-      better year-round efficiency. MEP coordination for the electrical circuit and refrigerant
-      line happens at rough-in, before drywall. R-49 insulation in the ceiling assembly and a
-      proper vapor barrier on the crawlspace floor complete the thermal envelope — skipping
-      either creates moisture problems within a couple of winters.
+  - title: "Foundation Capacity for Second-Story Additions"
+    description: "Most 1990s ramblers in east Marysville sit on slab-on-grade foundations not engineered for vertical loads. Adding a second story means a structural engineer calculates bearing capacity at each column and header, designs supplemental footing pads, and specifies LVL beams at every load transfer point. All of it must appear in stamped structural drawings before Snohomish County PDS accepts a plan review application. Submit incomplete documentation and the review clock resets entirely — weeks lost before a single piece of framing goes up."
+  - title: "ADU Setback and FAR Compliance Under WA HB 1337"
+    description: "WA HB 1337 (2024) allows two ADUs per single-family lot statewide — Marysville included. Snohomish County still enforces its own setback requirements: typically 5 ft side yard and 15 ft rear for a DADU, with FAR limits layered on top. A 700 sq ft DADU on a 7,500 sq ft lot can push against lot coverage thresholds once the primary structure, new ADU footprint, garage, and impervious surface are all modeled together in the site plan — and impervious surface math catches people off guard more often than the FAR limits do. Getting that calculation right on first submission is what avoids a six-week review reset from PDS. Call (206) 591-1096 to schedule a free on-site consultation; Vladislav reviews the lot dimensions and zoning envelope before a single drawing gets started."
+  - title: "Matching Siding and Rooflines on Older Marysville Homes"
+    description: "Cedar lap siding near the State Avenue corridor has been weathering PNW rain since the 1940s. A new addition needs siding that matches not just in color, but in profile — Hardie cement-board cut to match original lap dimensions holds paint significantly longer than cedar on north-facing exposures where moisture builds season after season. Roofline integration matters equally: tying a bump-out into an existing 4:12 pitch requires matching the framing angles precisely, or the addition reads as bolt-on from the street."
 
 faq:
-  - q: "How fast can you get to Marysville for a home addition consultation?"
-    a: |
-      Marysville is 35-40 minutes north of Seattle via I-5 — we schedule site visits across
-      98270 and 98271 without travel fees. Vladislav comes out for the walk-through personally,
-      not a salesperson. Consultation is free and includes a rough scope discussion on-site.
-      Call (206) 591-1096 to book.
-
-  - q: "Do you build kitchen additions around Bosch or Thermador appliance layouts?"
-    a: |
-      Yes. Kitchen additions in Marysville regularly include Bosch dishwashers and integrated
-      refrigerators, KitchenAid or Thermador ranges, and occasionally Sub-Zero units. Electrical
-      circuits, cabinet depths, and rough-in dimensions are all coordinated to the actual
-      appliance specs before cabinets are ordered — prevents costly rework from roughing-in to
-      generic assumptions. Range hood CFM requirements also factor into the mechanical drawings
-      early, especially for high-output gas ranges that need makeup air.
-
-  - q: "What does a home addition cost in Marysville, and how long does it take?"
-    a: |
-      A 400-600 sq ft main-floor addition runs $80K-$160K depending on finish level and
-      structural complexity. DADU projects under WA HB 1337 typically run $130K-$200K+ with
-      City of Marysville plan review adding 8-12 weeks. End-to-end from permit submission to
-      final inspection: 4-7 months.
-
-      Vladislav Volkov is a WA Licensed Contractor with 100+ projects completed since 2017.
-      Missed deadlines are penalized — written into every contract. You get a line-item quote,
-      not a range, after the on-site consultation.
+  - q: "How far is Marysville from your primary service area?"
+    a: "Marysville is about 35 miles north of Seattle on I-5 — within our Snohomish County coverage. Travel runs 45-60 minutes through Lynnwood and Everett. Vladislav does the walkthrough himself — 100+ projects since 2017, WA Licensed Contractor. Call (206) 591-1096."
+  - q: "What heating system works best for home additions in the Marysville area?"
+    a: "Separate HVAC zones are almost always the right call. Mitsubishi and Bosch mini-split heat pumps work well here — no new ductwork through finished walls, and they handle PNW's mix of humid winters and mild summers efficiently. A 12,000 BTU single-zone unit covers most primary suite or bonus room additions without oversizing the system. Where a new addition spans multiple rooms, a ducted mini-split with concealed air handling roughed in during framing gives better distribution and avoids wall penetrations after drywall is hung."
+  - q: "How long does a home addition take from permit to final inspection in Marysville?"
+    a: "Snohomish County PDS plan review for a major addition runs 6-10 weeks. A room addition or primary suite typically takes 3-5 months from permit submission to final inspection. A detached ADU under WA HB 1337 is 5-7 months end-to-end. Deadline compliance is written into the contract — penalties apply if we miss the agreed schedule. Call (206) 591-1096 for a free on-site estimate with actual line-item pricing."
