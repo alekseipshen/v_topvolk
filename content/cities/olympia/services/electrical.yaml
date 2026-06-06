@@ -1,0 +1,163 @@
+title: "Olympia Electrical — Panel Upgrades, EV Circuits & Wiring Fixes"
+
+intro: |
+  Capitol Way's corridor of 1920s and 1930s Craftsman bungalows runs about two miles
+  from the State Capitol dome — and a lot of those homes are still on 100-amp service
+  that was installed before anyone owned a heat pump, let alone a Level 2 EV charger.
+  The South Capitol neighborhood alone has dozens of properties where the main panel
+  hasn't been touched since the 1970s. Add a Mitsubishi heat pump pulling 20-plus amps
+  continuously alongside a 50-amp Tesla Wall Connector, and the math stops working fast.
+  Puget Sound Energy serves most of Olympia, and coordinating a panel upgrade with PSE
+  means scheduling a service disconnect — that alone adds a week or more to the timeline
+  if it isn't planned correctly from the start. TopVolk Construction handles that process
+  for homeowners in the 98501 and 98502 zip codes, managing the permit through the City
+  of Olympia Development Services, the PSE coordination, and the rough-in and final
+  inspections from start to finish.
+
+localContext: |
+  Olympia's housing stock splits clearly along age lines, and the age determines the
+  electrical problem almost every time. The South Capitol and downtown-adjacent blocks
+  in 98501 hold most of the pre-1950 construction — Craftsman bungalows and a handful
+  of older Victorians where knob-and-tube wiring is still live in attic cavities and
+  crawlspaces. Westside Olympia in 98502 has a dense band of 1960s and early-1970s
+  ranchers, which is exactly the construction window — 1965 to 1973 — when aluminum
+  branch-circuit wiring was common. That aluminum wiring requires AlumiConn connectors
+  or copper pigtailing to be code-compliant; it's a fire hazard if left on standard
+  receptacles. Northeast Olympia around 98506 trends toward 1980s and 1990s builds —
+  generally on 150- or 200-amp panels, but older breaker brands like Federal Pacific
+  Stab-Lok still show up at inspection. Thurston County averages over 50 inches of
+  rain per year, and that moisture works into crawlspaces and older electrical
+  enclosures, making vapor barrier condition and weatherproofing around exterior panels
+  a real factor here.
+
+commonProblems:
+  - title: "100A Panel Maxed Out After Heat Pump and EV Charger Addition"
+    description: "Homes in the 98501 and 98502 zip codes were built with 100-amp service
+      — enough for the loads of the era, but not for a Mitsubishi MXZ heat pump running
+      alongside a 50-amp Level 2 charger for a Chevy Bolt or Ford F-150 Lightning. A
+      50A EV circuit alone consumes half the available capacity before accounting for the
+      HVAC, kitchen range, dryer, and water heater. The fix is a 200A service upgrade:
+      new meter base, new main panel (Siemens or Square D QO are the two we spec most
+      often), updated grounding electrode system, and a PSE disconnect scheduled in
+      advance. Expect three to five days of work and a permit through the City of Olympia
+      Development Services. Budget roughly $4,500–$7,000 depending on panel location,
+      service entrance routing, and whether the meter base needs to be relocated or
+      replaced entirely."
+
+  - title: "Aluminum Branch-Circuit Wiring in 1965–1973 Westside Ranchers"
+    description: "The ranchers along Harrison Avenue NW and the streets west of Black
+      Lake Boulevard in 98502 sit squarely in the aluminum-wiring construction window.
+      Aluminum expands and contracts more than copper, which gradually loosens connections
+      at receptacles and switches. That loose connection arcs, and arcing causes fires —
+      it's the reason insurance carriers in Washington increasingly flag aluminum-wired
+      homes. The NEC-accepted fix is AlumiConn multi-port connectors at every device
+      location, or CO/ALR-rated receptacles and switches throughout the house.
+      AlumiConn connectors run $4–$6 each; a full house with 40–60 device locations
+      lands around $800–$1,400 in parts. Labor to open every box, assess condition,
+      and re-terminate correctly runs four to eight hours depending on house size. This
+      is not a DIY repair — improper connections on aluminum wiring can pass visual
+      inspection and still arc under load."
+
+  - title: "Knob-and-Tube Wiring Still Live in South Capitol Bungalows"
+    description: "Pre-1940 homes in South Capitol routinely have knob-and-tube running
+      through joist bays and attic cavities alongside Romex added in later decades.
+      Knob-and-tube has no ground conductor, runs hotter than modern wiring, and most
+      homeowner's insurance carriers in Washington will no longer write a policy on a
+      home with live K&T unless it's been remediated or formally documented. The City of
+      Olympia requires a permit for full rewiring; plan review through the Olympia
+      Development Services office typically takes two to four weeks for residential
+      electrical. A full rewire on a 1,400–1,800 sq ft bungalow — new wiring, updated
+      panel, AFCI breakers per current NEC in all bedrooms — runs $12,000–$22,000
+      depending on wall access and whether plaster needs to be opened. TopVolk is a WA
+      Licensed Contractor and coordinates rough-in and final inspections with the city
+      inspector directly."
+
+  - title: "EV Charger Circuit Installation When the Existing Panel Is Nearly Full"
+    description: "A dedicated 50A or 60A circuit for a ChargePoint Home Flex or
+      JuiceBox 48 sounds straightforward — until the panel is open and shows eight
+      double-pole breakers with four open slots on a 100-amp main. Load calculations
+      matter here. Per the NEC, a 40-amp continuous load requires the circuit conductor
+      and breaker to be rated at 125% — so a 50A breaker minimum, 6 AWG copper
+      minimum. If the panel can't support the added load without exceeding 80% capacity
+      during peak use, the options are a sub-panel, a load management device like an
+      Emporia Load Controller, or a full service upgrade. Load calculations get run
+      before the permit is pulled so there are no surprises at rough-in inspection.
+      EV charger circuit installs in Olympia, permit included, typically run
+      $800–$1,600 depending on panel distance, conduit routing, and whether load
+      management hardware is required."
+
+  - title: "AFCI and GFCI Breaker Upgrades Flagged at Sale or Refinance"
+    description: "Home inspectors in Thurston County flag missing AFCI and GFCI
+      protection constantly on older Olympia properties — and for good reason. The 2023
+      NEC, adopted in Washington, requires AFCI protection in virtually every living
+      space and GFCI protection in kitchens, bathrooms, garages, crawlspaces, and
+      outdoor circuits. A 1970s rancher on the Westside or an early-1980s split-level in
+      Northeast Olympia might have zero AFCI breakers and only a few GFCI receptacles
+      scattered near sinks. Upgrading to Siemens AFCI/GFCI combination breakers — which
+      run $45–$65 each — across a 16-circuit panel costs roughly $900–$1,800 in parts
+      and labor. That's far less than a full rewire and typically enough to satisfy a
+      lender or inspector requiring code compliance before closing. This scope comes up
+      repeatedly on pre-sale electrical upgrades across the Olympia metro."
+
+faq:
+  - q: "How fast can you get to Olympia for electrical work?"
+    a: "Olympia is roughly 60 miles south of Seattle on I-5 — typically 60 to 75 minutes
+      from our base, depending on Tacoma traffic. Estimate visits for Thurston County get
+      scheduled in morning slots to avoid the worst of the afternoon backup. From first
+      call to on-site estimate is usually three to five business days. For permitted work
+      like a panel upgrade, add two to four weeks for City of Olympia permit review before
+      the work starts. Call (206) 591-1096 to get on the schedule — Vladislav does the
+      estimate himself, so you're talking directly to the person who will be on the job,
+      not a sales rep handing you off to someone else."
+
+  - q: "What does a 200-amp service upgrade cost in Olympia?"
+    a: "A straight 200A panel upgrade in Olympia — new Siemens or Square D QO main panel,
+      updated grounding electrode system, permit through the City of Olympia Development
+      Services, and PSE disconnect coordination — typically runs $4,500–$7,000. What moves
+      the number: whether the meter base needs replacement (add $600–$900), how far the
+      panel sits from the service entrance, and whether subpanel wiring downstream needs
+      updating. Panel location in a garage versus a central utility room can change conduit
+      routing by half a day of labor. We provide line-item quotes after the on-site visit —
+      no vague ranges. Free estimate, call (206) 591-1096."
+
+  - q: "Do I need a permit for electrical work in Olympia, and who handles it?"
+    a: "Yes — nearly all electrical work beyond direct device replacement requires a permit in
+      Olympia. Panel upgrades, new circuits (EV chargers, sub-panels, rewiring), and service
+      entrance work all go through the City of Olympia Development Services office. The permit
+      application includes load calculations, a panel schedule, and sometimes a site plan.
+      Plan review for residential electrical typically takes two to four weeks. The work then
+      requires rough-in inspection and a final inspection before PSE will reconnect. TopVolk
+      is a WA Licensed Contractor and handles the permit application, inspection scheduling,
+      and PSE coordination — homeowners don't have to track any of that paperwork themselves."
+
+  - q: "Can knob-and-tube wiring be replaced without tearing out all the walls?"
+    a: "Sometimes — but it depends on access. In South Capitol bungalows, a lot of the branch
+      circuits can be fished through the attic or crawlspace without opening finished walls.
+      Kitchens, bathrooms, and walls with blocking or mid-century fire-stops usually need some
+      drywall access. The estimate walk-through covers exactly which walls get opened and how
+      patching gets handled. Partial rewires — replacing the highest-risk circuits first,
+      bedroom circuits for AFCI compliance and kitchen and bath circuits for GFCI — are a
+      practical middle ground when budget is a constraint. Plan on $6,000–$14,000 for a
+      partial rewire depending on scope and access conditions. TopVolk has completed 100+
+      projects since 2017 across the Seattle metro and south Puget Sound area."
+
+  - q: "What warranty do you provide on electrical work in Olympia?"
+    a: "Workmanship is guaranteed for one year from the final inspection date. If something
+      fails due to installation within that window, we come back and fix it at no charge.
+      Missed project deadlines carry a penalty clause written into the contract — that's an
+      actual contractual commitment, not a marketing line. Manufacturer warranties vary:
+      Siemens and Square D both carry limited lifetime warranties on their main panels, and
+      most breakers carry one-year to ten-year coverage depending on the product. All permitted
+      work goes through a city inspection before the job closes — that independent third-party
+      sign-off is built into the process, not optional."
+
+  - q: "Do you cover Lacey, Tumwater, and other parts of Thurston County?"
+    a: "Yes — we work throughout the Olympia metro, including Lacey (98503 and 98513),
+      Tumwater (98512), and unincorporated Thurston County. Lacey and Tumwater have their
+      own permit offices, so the application process differs slightly from City of Olympia
+      projects, but the electrical work and inspection sequence is the same. We've handled
+      panel upgrades and EV charger installs across all three cities. Scheduling for the
+      south Puget Sound area typically runs two to three weeks out for most permitted
+      projects. Call (206) 591-1096 or schedule a free on-site consultation — Vladislav
+      comes out, walks the panel and service entrance, and delivers a written quote before
+      any work starts."
