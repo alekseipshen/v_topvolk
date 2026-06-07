@@ -1,0 +1,182 @@
+title: "Burien Electrical — 200A Upgrades, EV Circuits & Old Wiring"
+
+intro: |
+  Seahurst and the older blocks near Three Tree Point have a dense run of post-WWII ranchers
+  — mostly 1948 to 1965 builds — and a lot of them are still on 60-amp or 100-amp panels
+  that were never touched when the original owners passed the house along. PSE (Puget Sound
+  Energy) services Burien, and a service upgrade here means coordinating a utility hold,
+  pulling a permit through the City of Burien or King County DPER depending on your parcel,
+  and scheduling a PSE meter pull — all before an electrician's first wire lands. That is
+  three moving parts that general handymen routinely skip. Homeowners near Seahurst Park
+  adding a Mitsubishi mini-split heat pump are hitting the same wall: a 100A main breaker
+  with no margin for a dedicated 30A or 40A branch circuit. Bosch heat pump water heaters,
+  induction ranges, and a Level 2 EV charger all need their own circuits — an undersized
+  panel simply cannot deliver. Downtown Burien's 1960s corridor has a separate issue:
+  aluminum branch wiring from the 1965–1973 building boom, which requires AlumiConn
+  connectors or full pigtailing to pass inspection today.
+
+localContext: |
+  Burien's housing stock breaks into two clear clusters, and both create specific electrical
+  headaches. The pre-1965 homes in Seahurst (98166) and along the older streets near Three
+  Tree Point Lighthouse were wired on 60A or 100A service — some with cloth-wrapped Romex,
+  a few with knob-and-tube still active in attic runs. Then there is a second wave of
+  1965–1978 ranchers in Boulevard Park and the corridors off SW 148th St, concentrated in
+  the 98148 zip, that used aluminum branch wiring during the copper shortage era. Both groups
+  now appear regularly in King County DPER permit history for panel replacements and EV
+  charger installs. The 98146 zip — covering downtown Burien and the newer townhome clusters
+  near SW 152nd St — skews toward 2000s construction, but even those homes are adding Tesla
+  Wall Connectors and JuiceBox 48 chargers that push total calculated load past what a
+  standard 200A panel handles comfortably when a heat pump, electric range, and dryer are
+  already on the system. Properties inside Burien city limits permit through the City of
+  Burien; unincorporated parcels just outside use King County DPER. Washington State
+  electrical permits — required for any panel or new circuit work — go through L&I separately.
+
+commonProblems:
+  - title: "100A Panel at Capacity — No Room for EV, Heat Pump, or Range Circuit"
+    description: >-
+      A 100-amp main breaker panel — standard equipment in Burien's 1950s and early 1960s
+      ranchers — runs out of headroom the moment a homeowner adds a Level 2 EV charger and
+      a heat pump in the same year. A 50A or 60A EV circuit for a Tesla Wall Connector or
+      ChargePoint Home Flex, plus a 30A or 40A heat pump circuit, can push a 100A panel to
+      90-plus percent calculated load — which fails the load calculation required for permit
+      approval. The fix is a service upgrade to 200A: new meter base, new panel (Square D
+      QO200 or Siemens ES series are common choices), updated grounding electrode system, and
+      a PSE utility hold for the meter pull. Including permit fees and PSE coordination, a
+      200A upgrade in Burien runs $3,500–$5,500 depending on whether the meter base is
+      exterior or inside a utility closet and whether the service entrance cable needs
+      replacement. PSE will not reconnect without a signed L&I inspection — pulling the
+      permit is not optional.
+
+  - title: "Aluminum Branch Wiring in 1965–1973 Burien Ranchers"
+    description: >-
+      The aluminum wiring era in Burien — primarily the ranchers and split-levels in the
+      98148 corridor and parts of Boulevard Park — is well-documented in CPSC safety data.
+      Aluminum expands and contracts more than copper through temperature cycles, which
+      loosens connections at device boxes over time. That loosening causes arcing, which is a
+      fire hazard. The code-compliant remediation is AlumiConn multi-port connectors at every
+      outlet and switch box, pigtailing aluminum to short copper leads — wire nuts are not
+      listed for aluminum-to-copper connections and will not pass inspection. A full pigtail
+      job on a 1,400 sq ft rancher typically takes one to two days and runs $1,800–$3,500
+      depending on outlet count and attic accessibility. AFCI breakers at the panel are added
+      at the same time in most cases to catch arc faults the pigtailing alone cannot address.
+      All of this requires a Washington State electrical permit through L&I — the inspector
+      verifies each connection at rough-in.
+
+  - title: "AFCI and GFCI Breaker Requirements Under NEC 2020"
+    description: >-
+      Washington adopted NEC 2020, and any significant panel alteration in Burien now
+      triggers AFCI breaker requirements for bedrooms, living areas, hallways, and kitchen
+      circuits — plus GFCI protection in bathrooms, kitchens, garages, and all exterior
+      outlets. Older homes in Gregory Heights and the streets around Seahurst Park often have
+      standard breakers throughout with no AFCI or GFCI coverage anywhere in the panel.
+      Adding a subpanel or upgrading service is the trigger that brings the whole system to
+      current code under the AHJ's review. AFCI/GFCI combination breakers — Square D QO
+      CAFCI or Siemens AFCI dual-function — run $40–$80 per breaker versus $8–$15 for a
+      standard breaker, so a full panel retrofit can add $600–$1,200 in breaker costs alone.
+      TopVolk pulls all required permits through the City of Burien or King County DPER
+      depending on jurisdiction. Vladislav handles L&I electrical permit coordination
+      directly — no subcontractor relay, no paperwork that falls through the cracks.
+
+  - title: "EV Charger Circuit Costs — What Drives the Price in Burien"
+    description: >-
+      A dedicated 50A or 60A 240V circuit for a Level 2 EV charger — JuiceBox 48,
+      ChargePoint Home Flex, or Tesla Wall Connector — runs $400–$900 in Burien when the
+      panel has available capacity and the garage is attached. The price climbs when the
+      panel is in a detached structure across the property, when conduit has to run through
+      finished drywall, or when a load calculation shows the 200A panel cannot absorb the new
+      circuit without a load management device. Trenching across a yard for underground
+      conduit — schedule 80 PVC minimum for direct burial runs — adds $15–$30 per linear
+      foot. An L&I electrical permit is required for any 240V circuit install; the permit
+      runs $40–$80 for this scope and inspection is typically same-week in King County.
+      Vladislav does the load calc on-site before quoting. If the panel needs upgrading
+      first, that is spelled out in writing — not discovered during rough-in.
+
+  - title: "Knob-and-Tube Wiring in Pre-1950 Homes Near Seahurst Park"
+    description: >-
+      Some of the oldest streets in Seahurst (98166), particularly in the blocks closest to
+      Seahurst Park and the beach access points near Three Tree Point, still have original
+      knob-and-tube conductors active in wall cavities. K&T has no ground conductor, cannot
+      support GFCI protection, and most Washington homeowners insurance carriers now require
+      its removal as a condition of coverage or charge a significant surcharge. Partial
+      removal — new Romex circuits run from the panel to specific rooms while the rest stays
+      on K&T — is a phased approach some homeowners use across two or three years. A full
+      rewire of a 1,200–1,600 sq ft pre-1950 home typically runs $12,000–$22,000 depending
+      on attic access, ceiling construction, and whether the panel is replaced at the same
+      time. Drywall gets opened, patched, and painted — the job is disruptive. Eliminating
+      K&T resets the insurable value of the home and removes a fire risk that no AFCI breaker
+      can fully compensate for.
+
+faq:
+  - q: "How fast can you get to Burien for electrical work?"
+    a: >-
+      Burien is a straightforward run from Seattle — SR-509 south from West Seattle gets
+      there in 15–20 minutes from most job sites. For a panel upgrade or EV charger install,
+      Vladislav can usually schedule an on-site estimate within a few days of first contact.
+      Straightforward jobs like a single 240V EV circuit often start within one to two weeks
+      of the estimate. More complex work — a 200A service upgrade coordinated with PSE —
+      takes longer because the utility hold and permit review add two to four weeks before
+      the first wire can be pulled. Call (206) 591-1096 to walk through what you have and
+      get a realistic timeline, not a vague answer from someone who has not seen the panel.
+
+  - q: "What does a 200A panel upgrade cost in Burien?"
+    a: >-
+      A 200A service upgrade in Burien — new panel, new meter base, updated grounding
+      electrode system, and PSE coordination — typically runs $3,500–$5,500. That range
+      moves based on whether the existing service entrance cable needs replacing, how far the
+      meter is from the main panel, and whether AFCI/GFCI breakers are required as part of
+      the scope (they usually are under NEC 2020), which adds $600–$1,000 to the panel
+      population cost. Permit fees run $150–$300 for this scope. Vladislav quotes line-item
+      — materials, labor, permit fees, and the PSE service call shown separately, no lump
+      sum. Missed milestones carry a financial penalty written into the contract. Schedule a
+      free on-site estimate at (206) 591-1096.
+
+  - q: "Do I need a permit for electrical work in Burien, and who handles the paperwork?"
+    a: >-
+      Yes — any service upgrade, new circuit, or subpanel work requires a Washington State
+      electrical permit through L&I plus a local building permit from the City of Burien (for
+      parcels inside city limits) or King County DPER (for unincorporated properties just
+      outside). TopVolk — WA Licensed Contractor — pulls all permits directly. L&I
+      electrical permits for a panel upgrade or EV circuit run $40–$200 depending on scope
+      and are issued online within a few days for standard scopes. Plan review in Burien does
+      not carry the 4–8 week wait that Seattle SDCI sometimes does for major work. PSE will
+      not reconnect service without a signed inspection. Vladislav manages the permit
+      paperwork, L&I scheduling, and the PSE utility hold — you do not have to track down
+      the inspector yourself.
+
+  - q: "Can you install an EV charger if my panel is already full?"
+    a: >-
+      A full panel does not automatically mean no EV charger — it means a load calculation
+      has to happen first. Washington electrical code requires a load calc for any new 240V
+      circuit addition when the service is at or near capacity. If the calc shows the panel
+      cannot support a 50A or 60A circuit, the options are a service upgrade to 200A, an
+      energy management device like Emporia Vue or Enel X JuiceBox that throttles charger
+      output based on real-time load, or a load-shedding circuit arrangement. JuiceBox 48
+      and ChargePoint Home Flex both support load management protocols natively.
+      Vladislav runs the load calc on-site before any number is written down — if a panel
+      upgrade is necessary, that is in the proposal, not a surprise delivered after rough-in
+      starts.
+
+  - q: "How long does a full rewire take in a typical Burien rancher?"
+    a: >-
+      A 1,200–1,500 sq ft Burien rancher takes five to eight days of electrical work for a
+      complete rewire including the panel. Drywall patching afterward adds two to five days
+      depending on how many walls were opened. Total project timeline from permit pull to
+      final L&I inspection runs three to five weeks — inspection is typically scheduled
+      within a week of rough-in sign-off. Knob-and-tube removal in a home with a finished
+      basement or no attic access takes longer because the old conductors have to be chased
+      out of enclosed cavities. The $12,000–$22,000 range reflects that variability
+      directly. A house with an open attic and accessible crawlspace is a faster job than
+      one with insulated dropped ceilings and a slab foundation throughout. Call
+      (206) 591-1096 — Vladislav walks the house with you before any number is written.
+
+  - q: "Do you cover other cities near Burien for electrical work?"
+    a: >-
+      TopVolk covers the full King County area and the broader Seattle Metro. From Burien,
+      that is a short drive to Tukwila, SeaTac, Des Moines, Normandy Park, Renton, and
+      White Center — all in regular rotation. Vashon Island jobs come up too; ferry
+      logistics get factored into scheduling and quoted transparently. Most jobs in this
+      corridor can be scheduled within one to two weeks for an initial estimate and three to
+      four weeks for project start on permitted work. 100+ projects completed since 2017
+      across King, Snohomish, Pierce, and Kitsap counties — the schedule fills up in spring
+      and summer. Call (206) 591-1096 early if you are planning a panel upgrade or rewire
+      before the busy season.
