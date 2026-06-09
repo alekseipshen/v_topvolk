@@ -1,0 +1,181 @@
+title: "Bothell Electrical — Panel Upgrades, EV Circuits & Rewiring"
+
+intro: |
+  Canyon Park's run of 1968–1975 split-levels and ranchers in 98011 came wired for a world
+  with one refrigerator, a few lamp circuits, and an electric range — not a Tesla Wall
+  Connector, a Mitsubishi heat pump, and an induction range all hitting the panel at once.
+  Puget Sound Energy serves most of Bothell, and any panel swap here requires coordinating
+  a utility disconnect before the meter pull; that step isn't optional, and contractors who
+  skip it create real problems at final inspection. A lot of these same houses also have
+  aluminum branch circuit wiring from the 1965–1973 window — it hasn't failed yet, but it
+  needs AlumiConn connectors or proper pigtailing to copper before you safely add load.
+  Over in the North Creek corridor and 98021, the housing stock shifts to 1990s–2000s
+  builds with 200-amp service already in place, but aging load centers and zero AFCI
+  protection on bedroom circuits are the most common calls we get. TopVolk Construction
+  LLC has completed electrical scopes on 100+ projects across Bothell and the broader King
+  and Snohomish County area since 2017 — owner-operated by Vladislav Volkov, WA Licensed
+  Contractor.
+
+localContext: |
+  Bothell spans both King and Snohomish counties, which matters the moment you pull a
+  permit: work inside Bothell city limits goes through the City of Bothell Building
+  Department, while unincorporated parcels just outside the boundary fall under King County
+  DPER or Snohomish County PDS depending on which side of the line the address sits on.
+  The 98011 and 98012 zip codes cover most of the older residential stock — Canyon Park,
+  the blocks near Bothell-Everett Highway, and the established neighborhoods along North
+  Creek. Homes built between 1965 and 1975 in these areas frequently have aluminum wiring
+  on the 15-amp and 20-amp branch circuits, plus original Federal Pacific or Zinsco panels
+  that most AHJs will no longer approve for new permit work. The 98021 zip pulls in the
+  North Creek corridor and Fitzgerald Road neighborhoods — mostly 1990s and early-2000s
+  construction with adequate panel capacity but rarely any AFCI protection on bedroom
+  circuits, which current NEC requires when you open a renovation permit. PNW humidity
+  doesn't spare electrical components either: corroded neutral connections and loose
+  aluminum terminations are a consistent finding in crawlspace subpanels in this area,
+  particularly on north-facing exposures where condensation runs October through April.
+
+commonProblems:
+  - title: "Aluminum Branch Circuit Wiring in Canyon Park-Era Homes"
+    description: |
+      Houses built in Bothell between 1965 and 1973 — particularly the ranchers and
+      bi-levels in the Canyon Park and Shelton View areas — were frequently wired with
+      aluminum on the 15-amp and 20-amp branch circuits. Aluminum expands and contracts
+      at a different rate than the copper terminals on outlets and switches, which loosens
+      connections over decades and creates heat and arcing at device terminals. The correct
+      fix isn't full rewiring in most cases — it's installing AlumiConn multi-port
+      connectors at every device location, or pigtailing short copper leads to the devices
+      using properly rated wire nuts. Outlets and switches rated CO/ALR can handle aluminum
+      directly and are used where accessible. A typical Bothell ranch with 12–15 branch
+      circuits runs $2,500–$4,500 for a full AlumiConn remediation with permit; plan on a
+      rough-in inspection and a final inspection from the City of Bothell Building
+      Department before the job closes.
+
+  - title: "100A to 200A Panel Upgrade for EV Chargers and Heat Pumps"
+    description: |
+      A 100-amp service was standard for a 1,800 sq ft Bothell home in 1972. Add a Level 2
+      EV charger — a 50A or 60A circuit for a ChargePoint Home Flex or JuiceBox 48 — plus
+      a Mitsubishi heat pump and a Bosch induction range, and that panel can't keep up.
+      Especially if it's a Federal Pacific Stab-Lok load center, which PSE and most AHJs
+      want replaced regardless of remaining capacity. A 200-amp upgrade in Bothell means a
+      new load center, a new service entrance cable from the PSE meter base, and a utility
+      coordination call that typically adds 2–4 weeks to the permit timeline. City of
+      Bothell plan review for a service upgrade usually runs 2–3 weeks on top of that.
+      All-in cost for a 200A upgrade with a new panel and meter base is typically
+      $3,500–$6,000, depending on the distance from the meter to the panel and whether the
+      service entrance needs to be rerouted through finished space.
+
+  - title: "AFCI and GFCI Breaker Compliance When You Pull a Renovation Permit"
+    description: |
+      Pull a permit for a kitchen or bathroom remodel in Bothell and the City of Bothell
+      Building Department will expect the entire electrical scope to meet current NEC —
+      which means AFCI protection on all bedroom circuits and GFCI protection in bathrooms,
+      kitchens, garages, and crawlspaces. Homes from the 1980s and 1990s in 98012 and
+      98021 almost never have arc-fault breakers already in place; adding them isn't just
+      a compliance checkbox, it's a genuine fire prevention measure that insurance carriers
+      are increasingly asking about at renewal. A Square D QO or Eaton BR AFCI/GFCI combo
+      breaker runs $45–$75 per slot at the panel; a typical renovation scope that triggers
+      a full AFCI retrofit on 8–10 circuits adds $800–$1,500 to the electrical budget.
+      Vladislav handles rough-in inspection and final inspection scheduling directly — no
+      sub-contractor phone tag, no middleman relaying messages. As a WA Licensed
+      Contractor, TopVolk pulls permits in our name and carries liability through every
+      inspection.
+
+  - title: "EV Charger Circuit Installation: Cost, Panel Capacity, and Permit"
+    description: |
+      A dedicated 50-amp or 60-amp 240V circuit for a Tesla Wall Connector, ChargePoint
+      Home Flex, or JuiceBox 48 is one of the most common electrical requests in Bothell
+      right now — and the cost swings considerably based on where your panel sits relative
+      to the garage. A panel in the attached garage right next to the charging location
+      might be a $600–$900 job: new 60A breaker, a short run of 6 AWG wire, and a proper
+      NEMA 14-50 or hardwired outlet. A panel in the basement or utility room with 40+ feet
+      to the garage, conduit through finished space, and a load calculation showing you're
+      already near capacity on a 100-amp service — that's a different project, closer to
+      $2,500–$4,000 including a service upgrade. The permit is required for any new 240V
+      circuit in Bothell; skipping it creates real problems when you sell or file an
+      insurance claim. Timeline from on-site estimate to an energized circuit: typically
+      1–3 weeks depending on permit review load.
+
+  - title: "Knob-and-Tube Wiring in Pre-1950 Homes Near Bothell Landing"
+    description: |
+      The older residential blocks near Bothell Landing Park along the Sammamish River
+      carry a smaller but real stock of pre-1950 Craftsman bungalows and early-period
+      colonials — some still running knob-and-tube wiring in the walls and attic. K&T
+      isn't illegal to own, but you can't add load to it, you can't insulate over it
+      (it needs air circulation to dissipate heat), and you can't get a permit approved on
+      circuits you're modifying without addressing it. Washington insurance carriers are
+      increasingly declining to renew policies on homes with active K&T, particularly after
+      a remodel triggers an inspection. Full rewiring of a 1,400–1,800 sq ft Bothell
+      bungalow runs $12,000–$22,000 depending on finished wall complexity, attic access,
+      and whether a panel upgrade is included. That price covers permit, rough-in and final
+      inspections, drywall patching at access points, and a blue tape walkthrough before
+      sign-off. Partial rewires scoped to specific circuits are possible but require careful
+      documentation for the AHJ.
+
+faq:
+  - q: "How fast can TopVolk get to Bothell for an electrical estimate?"
+    a: |
+      Bothell is a straightforward run from anywhere in the King or Snohomish County
+      service area — SR-522 and I-405 both feed directly into the city, and we're
+      typically scheduling on-site visits within 3–5 business days of the first call.
+      The estimate is free, done on-site, and Vladislav is the one showing up — not a
+      commissioned closer reading from a tablet. From signed contract to permit submittal
+      is usually 1–2 weeks; City of Bothell plan review for most electrical scopes runs
+      another 2–3 weeks before a start date. Call (206) 591-1096 to schedule.
+
+  - q: "What does a 200-amp panel upgrade cost in Bothell?"
+    a: |
+      A straightforward 200-amp service upgrade in Bothell — new load center, service
+      entrance cable, meter base coordination with PSE — typically runs $3,500–$6,000.
+      What moves that number up: a Federal Pacific or Zinsco panel requiring removal
+      (add $300–$500), a service entrance relocation, or a long conduit run through
+      finished space to reach the panel. What moves it down: an accessible service
+      entrance, an existing 200-amp meter base that PSE accepts, and a simple panel swap
+      in the same location. Vladislav provides line-item pricing on-site — no vague ranges,
+      no surprises added at rough-in. Call (206) 591-1096 or schedule a free consultation.
+
+  - q: "Does electrical work in Bothell require a permit, and who manages the process?"
+    a: |
+      Any new circuit, panel upgrade, or service change in Bothell requires a permit
+      through the City of Bothell Building Department. Work on unincorporated parcels just
+      outside city limits may fall under King County DPER instead — the parcel address
+      determines jurisdiction, and it's worth confirming before submittal. TopVolk handles
+      permit applications, plan review submittal, and inspection scheduling as part of
+      every electrical scope; you don't manage that process. Rough-in inspection happens
+      after wiring is complete but before drywall close-up; final inspection happens after
+      devices, covers, and fixtures are installed. As a WA Licensed Contractor, we pull
+      permits in our name and carry liability through every inspection.
+
+  - q: "Can you install an EV charger if my panel is already close to capacity?"
+    a: |
+      Yes, but it starts with a load calculation before any pricing. A 100-amp panel
+      running a heat pump, electric range, water heater, and standard branch circuits may
+      not have headroom for a 50A or 60A EV circuit without a service upgrade first.
+      Vladislav does the load calc on-site — if the panel supports it, the EV circuit goes
+      in as a standalone job. If it doesn't, we scope the panel upgrade and EV circuit
+      together so you're not paying for two separate mobilizations and two permit fees.
+      Compatible with Tesla Wall Connector, ChargePoint Home Flex, JuiceBox 48, and other
+      Level 2 EVSE units. Combined panel upgrade and EV circuit in Bothell: typically
+      3–6 weeks from contract to energized circuit, including permit.
+
+  - q: "What warranty applies to electrical work TopVolk completes?"
+    a: |
+      All electrical work carries a 1-year labor warranty — if something we wired fails
+      due to workmanship, we come back and fix it at no charge. Materials carry
+      manufacturer warranties: breakers and load centers from Square D, Eaton, or Leviton
+      typically come with 10-year or lifetime limited coverage. The more durable protection
+      is the permit and inspection record itself — work that passed a City of Bothell
+      inspection is documented, and that documentation matters for insurance renewals,
+      refinancing appraisals, and resale disclosures. Deadlines are written into every
+      TopVolk contract with a penalty clause: if we miss the agreed completion date, there
+      is a financial consequence on our side. That is not standard contractor practice, but
+      it is how Vladislav runs the business.
+
+  - q: "Does TopVolk cover areas near Bothell — Kenmore, Woodinville, Mill Creek?"
+    a: |
+      Regular service area includes Kenmore (98028), Woodinville (98072), Mill Creek
+      (98012), Kirkland (98033, 98034), and Redmond (98052) — all within 15–20 minutes of
+      Bothell depending on I-405 traffic. Edmonds, Lynnwood, and Mountlake Terrace on the
+      Snohomish County side are also covered. Scheduling windows depend on project size and
+      current workload; most estimates happen within a week of the first call. Permitted
+      electrical projects typically start within 3–5 weeks of contract signing, depending
+      on City of Bothell or King County DPER plan review timelines. Call (206) 591-1096
+      to check current availability.

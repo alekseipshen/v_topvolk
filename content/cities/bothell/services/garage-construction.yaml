@@ -1,0 +1,169 @@
+title: "Bothell Garage Construction — New Builds, ADUs & EV Pre-Wire"
+
+intro: |
+  Canyon Park and the North Creek corridor make up a large slice of Bothell's residential
+  fabric from the mid-1980s through the late 1990s — split-levels and two-story colonials
+  where the original builder included a single-car attached garage that's now too small for
+  a full-size truck, a second car, and anything resembling actual storage. Lot sizes along
+  Norway Hill and out toward the 98011 zip code tend to run 7,000–10,000 square feet, which
+  usually leaves room for a detached structure — but the permit path surprises most
+  homeowners. Bothell straddles King and Snohomish counties, so depending on which side of
+  the municipal line your address sits, you may be working with the City of Bothell Building
+  Division or a county-level jurisdiction, and those processes are not interchangeable. WA
+  HB 1337 (the 2024 statewide ADU law) changed the equation further: a new detached garage
+  can now legally carry a full living unit above it — an 800-square-foot DADU over a
+  two-car bay — which pushes the structural and permit scope well beyond a basic accessory
+  structure. TopVolk Construction has completed 100+ projects across King and Snohomish
+  counties since 2017; Vladislav Volkov does the estimate himself and runs the job directly.
+
+localContext: |
+  The 98011 zip — the older, closer-in stretch near Bothell Landing Park and the Sammamish
+  River Trail — was mostly built out between the late 1960s and early 1980s. Lots there are
+  tighter, setbacks are older-code, and a number of properties still run on post-and-pier
+  foundations. South Bothell toward Canyon Park (98021) skews newer, but "newer" here means
+  1988–1998 builder-grade: decent framing, but attached garages were sized for compact cars,
+  not a full-size pickup and a pile of gear. For detached garage builds within Bothell city
+  limits, the City's Building Division requires stamped structural drawings and a full permit
+  package — plan review typically runs 4–8 weeks for a standalone garage and longer for a
+  garage-plus-ADU combination. Properties in unincorporated King County adjacent to Bothell
+  (the Maywood Hills area, for instance) go through King County DPER instead, with its own
+  setback tables and timeline. PNW climate shapes the build from day one: ground-contact
+  framing must be pressure-treated (PT) lumber per IRC, the concrete slab needs proper
+  drainage slope given Bothell's 37-plus inches of annual rainfall, and north-facing walls
+  need Hardie cement-board siding to hold up against the moss and moisture cycle that runs
+  October through May.
+
+commonProblems:
+  - title: "Single-car garage too small — detached two-car build with DADU above"
+    description: "A lot of 98021 properties have a 12-foot-wide attached garage that was fine in
+      1993 but doesn't work for two vehicles and real storage today. Adding a detached two-car
+      garage is straightforward in concept — but under WA HB 1337, homeowners should decide at
+      the outset whether to add a DADU above the new structure, because tearing back into a
+      finished garage roof later is expensive and disruptive. A two-car bay with an 800-square-foot
+      DADU above requires LVL beams to carry the floor load, a separate utility connection, and
+      full IRC life-safety compliance for the dwelling unit. The City of Bothell permit package
+      needs stamped structural drawings, a site plan showing lot coverage, setback dimensions,
+      and energy code compliance documentation. On a typical Canyon Park lot, expect 5–7 months
+      from permit submission to final inspection for a garage-plus-ADU project; total construction
+      costs typically fall in the $125,000–$180,000 range depending on ADU finish level and
+      utility hookup complexity."
+
+  - title: "EV charger circuit pre-wire and subpanel sizing"
+    description: "Garages built in the 1990s almost always have a single 15- or 20-amp circuit
+      fed from the house panel — nowhere near enough for a Level 2 EV charger, which needs a
+      dedicated 50-amp or 60-amp circuit. Running that circuit during new garage construction costs
+      a fraction of what it costs to retrofit later: no finished walls to open, no separate
+      mobilization charge. A detached garage nearly always needs its own 100-amp subpanel to
+      support the EV circuit, workshop circuits, and garage lighting without crowding capacity.
+      The conduit sleeve needs to be installed under the slab before the concrete pour — a
+      surface-mounted conduit run added after the fact is ugly and vulnerable. Hardware like a
+      ChargePoint Home Flex or a hardwired Wallbox Pulsar Plus works off a properly sized
+      60-amp circuit; we size the rough-in to accommodate either. The AHJ in Bothell schedules
+      rough-in electrical inspections 3–5 business days out, so coordinating that timing before
+      drywall is part of the project schedule."
+
+  - title: "Setback and lot coverage math catching homeowners off guard"
+    description: "Bothell's zoning setbacks for accessory structures vary by zone — in most
+      residential zones, a detached garage must sit at least 5 feet from the side property line
+      and 5 feet from the rear. FAR (Floor Area Ratio) and lot coverage limits cap total structure
+      on the parcel, including the new garage footprint, and on a 7,500-square-foot lot with a
+      large existing house footprint, there's sometimes far less room than the homeowner expects.
+      Properties in unincorporated King County near Bothell fall under King County DPER rules,
+      which run different setback tables than the city code — an important distinction if your
+      address is on the edge of the Maywood Hills area. TopVolk pulls the recorded plat and
+      confirms jurisdiction before any drawings are started, so there are no surprises at permit
+      submission. Vladislav handles plan review correspondence directly. Missed inspection
+      milestones are covered by a deadline penalty clause written into every TopVolk contract —
+      not a verbal promise. Call (206) 591-1096 to schedule a free on-site estimate and get
+      the real numbers for your specific lot."
+
+  - title: "Matching the existing house exterior — siding, roofline, and trim"
+    description: "A detached garage that looks like it was bolted on last spring drops the
+      perceived value of the property. In Canyon Park and along the North Creek corridor, most
+      homes built after 1995 run Hardie lap siding — it holds paint in the PNW moisture cycle
+      without the rot and mildew issues cedar develops on north-facing walls over 10–15 years.
+      Matching the existing roofline pitch matters equally: a shallow 4:12 pitch on a house with
+      a 9:12 roof reads wrong from the street. TopVolk designs the garage to match or deliberately
+      complement the main house profile — same fascia depth, same lap exposure, same Hardie
+      panel color family. For a workshop-heavy garage where roof longevity is the priority,
+      standing-seam metal roofing is an option worth discussing. Budget $9,000–$15,000 for
+      exterior finish work on a two-car garage depending on roofline complexity and trim detail.
+      Getting it right during the build costs a fraction of a full reclad five years later."
+
+  - title: "Concrete slab specification and drainage — decisions before the pour"
+    description: "A garage slab poured to bare minimum residential spec — 4-inch unreinforced —
+      will crack under vehicle loading within a few years, particularly given Bothell's wet
+      winters and occasional freeze-thaw cycles. The correct spec for a working garage is a
+      4-inch fiber-reinforced slab over 4 inches of compacted gravel base, with control joints
+      cut at 10-foot maximum intervals. For a workshop or heavy-use bay, 5-inch thickness with
+      rebar at mid-depth is worth the upcharge. Drainage details get locked in before the pour,
+      not after: the slab should slope 1/8 inch per foot toward the door opening, and a floor
+      drain is worth adding if the owner plans to wash vehicles or run power equipment inside.
+      A vapor barrier under the slab is code-required in most Washington jurisdictions and
+      critical in Bothell's crawlspace-adjacent climate. Once the slab is cured, a drainage
+      problem means demo. TopVolk walks the base prep with the concrete sub before the truck
+      arrives."
+
+faq:
+  - q: "How fast can TopVolk get out to Bothell for a garage construction estimate?"
+    a: "Bothell is a regular part of our service area — Canyon Park and the North Creek
+      corridor are roughly 20–30 minutes from our King County base depending on I-405 and SR-522
+      traffic. Vladislav does every estimate himself, on-site, and comes with a tape measure and
+      a camera, not a commission structure. For a standard detached garage project, we can usually
+      schedule a site visit within 3–5 business days of your call and return a written line-item
+      quote within a week of that visit. Call (206) 591-1096 to get on the schedule — no cost,
+      no obligation."
+
+  - q: "What does a new detached garage typically cost in Bothell?"
+    a: "A two-car detached garage — fiber-reinforced concrete slab, stick-frame, insulated walls,
+      one sectional door — runs $55,000–$85,000 in the current Bothell market depending on size
+      and finish level. Add a 100-amp subpanel and 60-amp EV pre-wire and budget an additional
+      $4,000–$7,000. A garage with a DADU above starts around $125,000 and climbs based on ADU
+      finish level, roofline complexity, and separate utility hookup costs. City of Bothell permit
+      fees for a garage-plus-ADU package typically add $3,500–$6,000 to the project total.
+      TopVolk provides a written quote broken down by trade — concrete, framing, roofing, exterior
+      finish, electrical — no vague ranges, no surprises mid-project."
+
+  - q: "What permits are required for a new garage in Bothell, and how long does plan review take?"
+    a: "For a detached garage within Bothell city limits, the City of Bothell Building Division
+      issues the building permit. The submittal package needs a site plan showing setbacks and
+      lot coverage, floor and elevation drawings, and stamped structural calculations for the
+      framing system. Standard plan review runs 4–6 weeks for a basic garage; a garage-plus-DADU
+      combination adds time because the ADU triggers energy code compliance review and life-safety
+      requirements. If your property is in unincorporated King County near Bothell, King County
+      DPER handles the permit under its own process and timeline. TopVolk submits and manages
+      the permit package under our WA Licensed Contractor status — Vladislav tracks the review
+      queue and handles correction responses directly so the process doesn't stall."
+
+  - q: "Can you build an ADU above a new detached garage in Bothell?"
+    a: "Yes — WA HB 1337 (effective 2024) allows up to two ADUs on a single-family lot statewide,
+      which means a DADU above a new detached garage is legally available on most Bothell
+      residential parcels. The structural scope is meaningfully different from a basic garage:
+      LVL or PSL beams carry the floor system, the walls need to meet dwelling-unit energy code
+      (R-21 min in walls, R-49 in the ceiling), and the ADU needs a separate utility connection
+      in most cases. The permit package is more involved — figure 6–8 weeks for plan review on
+      a garage-plus-DADU combination with the City of Bothell. A blue tape walkthrough and punch
+      list are standard at project completion. End-to-end timeline from permit submission to
+      final inspection typically runs 5–7 months. Call (206) 591-1096 to discuss whether your
+      lot and zoning classification make this viable."
+
+  - q: "How long will a new garage hold up in the Bothell climate, and what kind of warranty do you provide?"
+    a: "A properly built garage in Bothell should last 40–60 years with normal maintenance —
+      the main variables are the quality of the exterior envelope and the drainage details under
+      and around the slab. Hardie cement-board siding carries a 30-year limited manufacturer
+      warranty and doesn't rot or hold moisture the way wood-based products do in PNW conditions.
+      The concrete slab, framed with proper expansion joints and a vapor barrier, should stay
+      intact for the life of the structure if the base prep was done correctly. TopVolk provides
+      a one-year workmanship warranty on all labor, and the contract includes a deadline penalty
+      clause — if we miss agreed milestones, we pay the penalty, not you. Subcontractor warranty
+      terms (roofing, electrical) are passed through in writing at project close."
+
+  - q: "Does TopVolk serve areas near Bothell — Kenmore, Woodinville, Kirkland?"
+    a: "Yes — Kenmore, Woodinville, Kirkland, Redmond, Bellevue, and Shoreline are all regular
+      service areas, most of them 15–25 minutes from the Canyon Park corridor. Many projects in
+      that geography share the same permit jurisdiction or fall under King County DPER for
+      unincorporated addresses. TopVolk has completed 100+ projects across King and Snohomish
+      counties since 2017 — garage builds, ADUs, additions, and full kitchen and bath remodels.
+      Current scheduling typically books new construction starts 4–6 weeks out depending on
+      project load. Call (206) 591-1096 or reach out to schedule a free on-site consultation —
+      Vladislav comes to the property, looks at the lot, and gives you real numbers in writing."
