@@ -1,0 +1,211 @@
+title: "Edmonds HVAC — Heat Pumps, Mini-Splits & Duct Work"
+
+intro: |
+  Riding the ferry back from Kingston on a July evening, you'd never guess that
+  half the houses on those bluffs above Brackett's Landing are still running
+  30-year-old gas furnaces with zero cooling capacity. Edmonds sits in a
+  temperature band where August highs in the low 80s are no longer rare, but
+  most of the split-levels and 1970s ranchers in Seaview and the Five Corners
+  neighborhoods were built for heat only — no cooling coil, no refrigerant
+  lines, nothing. The Inflation Reduction Act changed the math on heat pump
+  conversions significantly. A Mitsubishi Hyper Heat system now qualifies for
+  up to $2,000 in federal tax credits plus potential Snohomish County PUD
+  rebates, which means a lot of homeowners in 98020 are finally moving on work
+  they'd been deferring for years. TopVolk Construction handles the full scope —
+  equipment selection, permit submission to Edmonds Development Services,
+  installation, and final inspection — with Vladislav Volkov on every project
+  from the first estimate through the blue tape walkthrough.
+
+localContext: |
+  Edmonds splits pretty cleanly between the older stock near downtown (98020)
+  and the larger-lot residential areas running toward Esperance and Perrinville
+  (98026). The 98020 homes — mostly built 1955 through 1975 — frequently have
+  original ductwork sized for a gas furnace only, with return-air grilles too
+  small to handle cooling CFM without causing the evaporator coil to ice up.
+  The 98026 corridor has more 1980s and 1990s construction where central AC was
+  sometimes included, but the refrigerant is R-22, which was phased out in 2020
+  and can no longer be legally recharged after a leak. Proximity to Puget Sound
+  matters more than most homeowners expect — salt-laden marine air accelerates
+  corrosion on condenser coils and electrical connections, particularly on
+  west-facing equipment. Washington State Energy Code (WSEC) now requires heat
+  pump water heaters or equivalent efficiency measures on most mechanical
+  permits, so replacement projects often trigger a broader scope than the
+  initial call suggests. Edmonds city-limit parcels permit through the city's
+  own Development Services portal; unincorporated lots near Esperance go through
+  Snohomish County PDS.
+
+commonProblems:
+  - title: "Converting Gas Furnaces to Heat Pumps in 98020 Split-Levels"
+    description: |
+      A gas-only forced-air system in a 1965 split-level off 9th Avenue N is
+      the standard setup in this part of Edmonds. Converting to a heat pump
+      means more than swapping the outdoor unit — the air handler needs a
+      compatible refrigerant circuit, and the existing ductwork has to move
+      enough CFM for both heating and cooling loads. Mitsubishi's MXZ and SVZ
+      ducted series handles this well; the Hyper Heat line maintains rated
+      heating capacity down to 5°F outside, which covers the occasional January
+      cold snap off the Sound. Manual J load calculations come first — before
+      any equipment gets ordered. The 25C federal tax credit covers 30% of
+      equipment and installation up to $2,000 for qualifying heat pumps, and
+      Snohomish County PUD rebates can layer on top. A single-zone heat pump
+      conversion with air handler compatibility work in 98020 typically runs
+      $9,000–$15,000 installed, before credits.
+
+  - title: "Ductless Mini-Splits for Edmonds ADUs and Bonus Rooms"
+    description: |
+      WA HB 1337 opened up ADU construction across Edmonds — and most new
+      DADUs and finished bonus rooms above garages need independent HVAC that
+      doesn't draw from the main system. A Mitsubishi or Daikin ductless
+      mini-split is usually the cleanest answer: one outdoor condenser, one or
+      two wall-mounted air handlers, refrigerant lines run through a small
+      penetration in the wall, and no ductwork required. A 9,000–18,000 BTU
+      head covers most ADU footprints from 400 to 800 square feet without
+      oversizing, which matters for dehumidification performance in Edmonds's
+      damp shoulder seasons from October through May. Edmonds Development
+      Services requires a mechanical permit and an energy compliance form for
+      mini-split installations that penetrate the building envelope. TopVolk
+      pulls the permit, installs the system, and schedules both the rough-in and
+      final inspections — Vladislav handles the permit paperwork directly with
+      the city, not through a third-party expeditor. Single-zone ductless
+      installs run $4,500–$8,500 depending on lineset length and mounting
+      location.
+
+  - title: "Duct Leakage and Hot/Cold Rooms in 1970s Ranchers Near Seaview"
+    description: |
+      A lot of the 1970s ranch houses in Seaview and the neighborhoods running
+      north toward Esperance have ductwork laid out for maximum heat delivery to
+      the living room — not balanced airflow. Bedrooms at the end of a long
+      supply run get half the airflow they should; kitchens stay 5°F warmer than
+      the rest of the house in summer. The fix involves duct leakage testing
+      with a Duct Blaster, sealing boots and joints with mastic compound (tape
+      fails within a few years in the PNW's humidity swings), adding balancing
+      dampers on the supply runs, and sometimes a booster fan on a long branch.
+      Aeroseal duct sealing is an option for fully enclosed duct systems where
+      physical access is limited. In 98020, some of these older systems lose
+      25–30% of conditioned air to the crawlspace before it reaches the
+      registers. TopVolk is a WA Licensed Contractor and handles the full scope
+      of duct work under a single mechanical permit. Duct sealing and rebalancing
+      projects typically run $1,200–$3,800 depending on access and system size.
+
+  - title: "End-of-Life R-22 Condensers in 98026 Perrinville Homes"
+    description: |
+      The 1985–1995 homes in the Perrinville area and along 76th Ave W in 98026
+      often came with central AC from the builder — R-22 refrigerant, original
+      condenser on a concrete pad, original evaporator coil in the air handler.
+      R-22 production ended in 2020. If that system develops a refrigerant leak
+      today, there's no legal path to recharge it — you're buying a new system
+      whether the timing is convenient or not. The smart move is replacing both
+      the condenser and evaporator coil at the same time and switching to R-410A
+      or R-32. Bosch heat pump systems have built a strong following in the
+      Pacific Northwest for their efficiency in the 30–50°F range where Seattle
+      Metro spends most of its shoulder-season hours. We also install Carrier and
+      Trane mid-tier systems for homeowners prioritizing parts availability over
+      premium efficiency. A full condenser-plus-coil replacement with line flush
+      in 98026 runs $6,500–$12,000 depending on tonnage and efficiency tier.
+
+  - title: "Smart Thermostat and Zoning Upgrades — WSEC Requirements Included"
+    description: |
+      Older Edmonds homes frequently have a single thermostat controlling the
+      entire house — same temperature for the upstairs master bedroom and the
+      rarely used guest room on the main floor. Ecobee SmartThermostat Premium
+      and Nest Learning Thermostat both integrate with most modern forced-air
+      systems and add remote sensor capability for multi-room averaging. But
+      smart thermostats alone don't solve a zoning problem. Independent
+      temperature control by zone requires zone dampers installed in the
+      ductwork, wired to a zone control board — Honeywell and Arzel both make
+      reliable systems for residential setups. This matters especially in
+      Edmonds two-stories where upper floors overheat in July because warm air
+      stratifies upward. WSEC compliance for mechanical permits in Edmonds now
+      requires programmable or smart thermostat capability on most new or
+      replacement systems — so if you're already replacing a furnace or heat
+      pump, the thermostat upgrade is typically part of the permitted scope.
+      Two-zone systems on existing forced-air setups run $2,000–$4,500 installed.
+
+faq:
+  - q: "How fast can you get to Edmonds for HVAC work?"
+    a: |
+      Edmonds is about 25 miles north of Seattle via I-5 — typical drive time
+      is 35–45 minutes, closer to 30 minutes off-peak. We cover all of
+      Snohomish County and can usually schedule a free on-site consultation
+      within 3–5 business days of your first call. For straightforward furnace
+      or heat pump replacements, installation typically happens 2–4 weeks after
+      the estimate, once equipment is ordered and the mechanical permit clears
+      Edmonds Development Services — standard processing there runs 5–10
+      business days for residential HVAC. Call (206) 591-1096 and you'll reach
+      Vladislav directly, not a dispatcher or sales coordinator. He'll ask a
+      few questions about your system, confirm a visit time, and show up with a
+      measuring tape and a notepad — not a presentation deck.
+
+  - q: "What does HVAC installation or replacement cost in Edmonds?"
+    a: |
+      Pricing varies significantly by scope. A ductless mini-split for an ADU
+      or bonus room typically runs $4,500–$8,500 installed for a single zone.
+      A gas furnace replacement — mid-efficiency, no duct modifications — starts
+      around $4,000–$6,500. A full heat pump conversion, including removing the
+      gas furnace, replacing the air handler, installing a cold-climate heat
+      pump, and modifying return-air ductwork, runs $10,000–$18,000 before IRA
+      tax credits. Those credits can reduce the net cost by $2,000–$4,000
+      depending on the system and your tax situation. Every quote from TopVolk
+      is written, line-itemized, and specific — no ranges, no "starting at"
+      placeholders. You get a real number for real equipment and real labor.
+      Schedule a free on-site estimate by calling (206) 591-1096.
+
+  - q: "Do I need a permit for HVAC work in Edmonds, and who handles it?"
+    a: |
+      Most HVAC work in Edmonds city limits requires a mechanical permit through
+      the City of Edmonds Development Services department. That includes furnace
+      or heat pump replacement, ductless mini-split installation, new duct runs,
+      and any HVAC tied to an ADU or addition. Like-for-like equipment swaps
+      sometimes qualify for a simplified permit path, but confirm with the AHJ
+      before assuming. Unincorporated parcels near the city edge — including
+      parts of Esperance — fall under Snohomish County PDS jurisdiction, which
+      is a different submittal process entirely. TopVolk is a WA Licensed
+      Contractor and handles permit applications directly; we prepare the
+      mechanical drawings, submit to the correct jurisdiction, schedule
+      rough-in inspections, and walk through final inspection before closing
+      the job.
+
+  - q: "Can you add central air conditioning to an existing gas furnace system?"
+    a: |
+      Yes — if the air handler is compatible and the existing ductwork can move
+      enough CFM for cooling loads. The critical check is return-air capacity.
+      Most 1970s and 1980s forced-air systems in Edmonds were designed for heat
+      only, with return grilles sized for lower winter airflow. Cooling demands
+      more air movement; undersized returns cause the evaporator coil to ice up
+      and the system to short-cycle. We measure return-air square footage and
+      static pressure before quoting any cooling add-on. If the ducts pass,
+      adding an AC coil and a new condenser to an existing forced-air system
+      typically runs $5,500–$9,500 depending on tonnage and SEER rating. We
+      install Bosch, Carrier, and Mitsubishi ducted systems for this application
+      — equipment choice depends on the existing air handler and your efficiency
+      priorities.
+
+  - q: "What warranty does a new HVAC system carry after installation?"
+    a: |
+      Most brands we install — Mitsubishi, Daikin, Bosch, Carrier — carry
+      10-year parts warranties when registered within 60 days of installation.
+      Our labor warranty on installation work runs one year: if there's a
+      workmanship issue — incorrect refrigerant charge, loose electrical
+      connection, improperly pitched condensate drain line — we fix it at no
+      charge. The PNW's marine climate is harder on outdoor equipment than
+      inland areas; Puget Sound air accelerates coil corrosion faster than in
+      drier climates. On west-facing or exposed condenser installations in
+      Edmonds, we apply a corrosion-inhibiting coil coating as standard
+      practice. Annual maintenance keeps most manufacturer warranties valid and
+      catches small problems — low refrigerant, failing capacitor, dirty
+      evaporator coil — before they turn into a compressor replacement.
+
+  - q: "Do you work in cities near Edmonds, and how far out is your schedule?"
+    a: |
+      From Edmonds we regularly work in Lynnwood, Mountlake Terrace, Shoreline,
+      Kenmore, Bothell, Mukilteo, and Everett. King County is part of our
+      service area too — Shoreline and Lake Forest Park are 20–25 minutes south.
+      Snohomish County coverage includes Mill Creek, Snohomish city, and points
+      east toward the foothills where freeze-thaw cycles in winter put extra
+      stress on refrigerant systems. Scheduling for estimates is typically 1–2
+      weeks out; installation runs 2–6 weeks from estimate depending on
+      equipment lead times and permit processing. If you're anywhere in
+      Snohomish County and want a specific price and timeline for HVAC work,
+      call (206) 591-1096. Vladislav picks up, asks the right questions, and
+      gives you a real answer — 100+ projects completed since 2017 across the
+      Seattle metro area.

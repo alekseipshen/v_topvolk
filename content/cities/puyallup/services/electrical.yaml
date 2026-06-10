@@ -1,0 +1,181 @@
+title: "Puyallup Electrical — Panel Upgrades, EV Circuits & Rewires"
+
+intro: |
+  The houses on the east side of downtown Puyallup — the blocks around Pioneer Park
+  and along 5th Street SE in 98371 — were built when a 60-amp panel was standard and
+  nobody had heard of a heat pump. Plenty of those homes are now pushing three
+  generations old, with knob-and-tube wiring still live in the walls and galvanized
+  plumbing that eats renovation budgets before you touch an outlet. A few miles south,
+  the 1988-era ranchers filling South Hill in 98374 came with 100-amp Square D panels —
+  enough for a GE refrigerator and a clothes dryer, not a Tesla Wall Connector and a
+  Bosch heat pump water heater running on the same service. Vladislav Volkov at TopVolk
+  Construction has managed electrical scopes across 100+ remodel and renovation projects
+  since 2017, working with licensed electricians across Pierce, King, Snohomish, and
+  Kitsap counties to coordinate panel upgrades, service entrance work, and full rewires.
+  You talk directly to the person running the project — not a salesperson, not a
+  call center.
+
+localContext: |
+  Most of the electrical problems we see in Puyallup split along age lines. The older
+  residential blocks in 98371 and 98372 — particularly the Craftsman-era homes near the
+  Ezra Meeker Mansion Historic District in downtown Puyallup — often still have original
+  knob-and-tube circuits running through uninsulated attic cavities. Around 37 inches of
+  rain falls here annually, predominantly October through May, and that moisture cycling
+  accelerates the deterioration of cloth-wrapped K&T insulation already brittle after
+  70-plus years. Aluminum wiring shows up regularly in the split-levels built between
+  1965 and 1973 across the South Hill corridor in 98374, where the standard fix is
+  AlumiConn connectors or full pigtailing at every device. The 1980s and '90s tract
+  housing that covers most of 98373 and 98375 presents a different problem: structurally
+  sound wiring, but 100-amp load centers that simply cannot support what modern
+  homeowners are adding — Level 2 EV chargers, Mitsubishi mini-splits, induction ranges.
+  Puget Sound Energy (PSE) coordinates utility shutoffs for panel changeouts here, and
+  Pierce County PALS is the permit authority for residential electrical work throughout
+  the area.
+
+commonProblems:
+  - title: "100-Amp Panel Can't Keep Up With Modern Loads in South Hill"
+    description: |
+      The most common electrical call from South Hill and East Puyallup homeowners in
+      98374 is a 100-amp panel tripping the main breaker when the heat pump runs while
+      the dryer is going. A service upgrade to 200 amps isn't just swapping a breaker
+      box — it involves a new service entrance conductor, weatherhead or underground
+      lateral upgrade, new main disconnect, and PSE coordinating a meter shutoff for the
+      changeover. Most 98374 homes with original Square D or Siemens 100-amp load centers
+      can run this scope in a single day once the permit is in hand. Pierce County PALS
+      plan review for a straightforward service upgrade typically takes 2-3 weeks. Budget
+      $3,500-$6,000 depending on whether the service entrance needs repositioning and how
+      many circuits need to be redistributed to a sub-panel.
+
+  - title: "Knob-and-Tube Wiring in Pre-1950 Downtown Puyallup Homes"
+    description: |
+      Pre-1950 homes in the 98371 zip code — Craftsman bungalows near downtown Puyallup
+      and the Pioneer Park neighborhood — frequently still have original knob-and-tube
+      (K&T) wiring on at least some circuits. Insurance carriers are increasingly flagging
+      K&T as uninsurable without replacement: no equipment ground, cloth-wrapped
+      insulation that's brittle after 80-plus years, and conductors rated for loads a
+      fraction of what a modern kitchen pulls. Replacing K&T isn't a simple swap — attic
+      insulation must come out first because K&T cannot be buried, junction boxes get
+      installed at every splice, and new circuits must meet current NEC AFCI requirements
+      for bedroom wiring. Full K&T replacement in a 1,400 sq ft bungalow typically runs
+      3-5 weeks and $12,000-$22,000 depending on access, attic configuration, and circuit
+      count.
+
+  - title: "Aluminum Branch Wiring in 1965-1973 Builds Needs Proper Remediation"
+    description: |
+      Split-levels and ranchers built in Puyallup between 1965 and 1973 — many of them
+      in established neighborhoods along Canyon Road E in 98371 and older South Hill
+      subdivisions — were wired with aluminum branch circuit conductors. Aluminum expands
+      and contracts more than copper under thermal cycling, loosening connections at
+      outlets and switches over time and creating an arcing hazard that standard outlets
+      won't show until something fails. The two code-accepted remedies are AlumiConn
+      connectors (a pigtail splice joining aluminum to a short copper tail at each device)
+      or the COPALUM crimp method. AlumiConn is the more practical choice for most
+      homeowners — no specialized installer required, done device by device without
+      opening walls. A full 3-bedroom house runs 2-3 days and $3,000-$6,500. TopVolk is
+      a WA Licensed Contractor and manages the Pierce County PALS permit process
+      end-to-end, with deadline penalties written into the contract.
+
+  - title: "EV Charger Circuits: The Panel Capacity Problem Nobody Warns You About"
+    description: |
+      Adding a Level 2 EV charger — Tesla Wall Connector, ChargePoint Home Flex, or
+      JuiceBox Pro 40 — requires a dedicated 50-amp or 60-amp, 240-volt circuit from the
+      panel to the garage. If the panel is still at 100 amps and already loaded, this is
+      often when homeowners discover they don't have capacity to add a 50-amp two-pole
+      breaker without upgrading service first. A 200-amp panel with room to spare changes
+      the calculus: the work itself is typically one day — new 6-gauge or 4-gauge copper
+      conductors, a two-pole breaker, and either a NEMA 14-50 receptacle or a hardwired
+      connection at the charger. Pierce County PALS requires a permit for any new 240V
+      circuit, with rough-in and final inspections. A straightforward garage run on an
+      adequate panel runs $800-$1,800. Stack it with a panel upgrade if the service needs
+      to come up anyway — pulling two permits simultaneously saves 2-3 weeks.
+
+  - title: "AFCI and GFCI Compliance Triggered by Permitted Remodels"
+    description: |
+      Any permitted remodel in Puyallup that touches electrical — adding a bathroom vanity
+      circuit, opening a kitchen wall, finishing a basement — triggers current NEC
+      requirements for AFCI breakers in bedrooms and GFCI protection in bathrooms,
+      kitchens, garages, and outdoor locations. Outdoor circuits and crawlspace
+      receptacles matter particularly in Puyallup's wet climate: heavy rain October
+      through May means unprotected outdoor receptacles see real moisture infiltration,
+      not theoretical risk. On older panels, existing 15-amp breakers often can't simply
+      be swapped for Siemens or Square D AFCI combination units because the bus bar
+      spacing won't accept modern AFCI devices, sometimes requiring a sub-panel or full
+      panel swap to reach compliance. LED recessed lighting retrofits trip the same
+      requirement — replacing a ceiling fixture with new recessed cans requires
+      AFCI-protected circuits per NEC 210.12. Leviton and Lutron combination AFCI/GFCI
+      devices handle device-level installs when a full breaker swap isn't warranted.
+      Budget $150-$400 per circuit for standalone compliance work.
+
+faq:
+  - q: "How fast can you get to Puyallup for electrical work?"
+    a: |
+      Puyallup sits about 35 miles south of Seattle — roughly 45-50 minutes down I-5 or
+      WA-167 from the Renton junction depending on traffic. From the Seattle Metro base,
+      scheduling a free on-site consultation in 98371 or 98374 typically takes 2-5
+      business days. After the walkthrough, Vladislav delivers a line-item written quote
+      within 48 hours — not a vague range that shifts at contract signing. For most
+      electrical scopes (panel upgrades, EV charger circuits, rewires), work starts within
+      2-3 weeks of permit submission to Pierce County PALS. Call (206) 591-1096 to set up
+      a visit directly with Vladislav.
+
+  - q: "What does a 200-amp panel upgrade cost in Puyallup?"
+    a: |
+      A straightforward 100A-to-200A service upgrade in Puyallup typically runs
+      $3,500-$6,000. The spread depends on whether the service entrance — weatherhead,
+      meter can, service entrance cable — also needs replacing, how many circuits need to
+      be redistributed, and whether any sub-panel work is involved. PSE schedules a brief
+      utility shutoff at the meter for the changeover, coordinated during the permitting
+      process through Pierce County PALS. Quotes from TopVolk are fully itemized — every
+      line is visible before you sign. Call (206) 591-1096 or schedule a free on-site
+      consultation to get exact numbers for your specific panel and service entrance
+      condition.
+
+  - q: "Do I need a permit for electrical work in Puyallup, and how does that process work?"
+    a: |
+      Yes — panel replacements, new 240V circuits, service upgrades, and rewires all
+      require permits and inspections in Puyallup. Permits go through Pierce County PALS
+      (Permit and Licensing System), which handles residential electrical permitting for
+      the city. Plan review for a standard residential electrical scope runs 2-3 weeks;
+      simpler work like a single new branch circuit can sometimes get over-the-counter
+      approval. TopVolk is a WA Licensed Contractor and handles the PALS application
+      directly — homeowners don't need to navigate the portal themselves. Missed permit
+      milestone dates carry written penalties in the contract, so timelines aren't just
+      estimates.
+
+  - q: "Can you replace knob-and-tube wiring in older Puyallup homes?"
+    a: |
+      Yes, and it's one of the most common scopes in the pre-1950 housing stock near
+      downtown Puyallup in 98371. Full K&T replacement means pulling new 12-gauge or
+      14-gauge copper through walls and attic cavities, installing junction boxes at every
+      splice, and bringing affected circuits up to current NEC standards — including AFCI
+      protection on all bedroom circuits. Attic insulation has to be removed before the
+      rewire and reinstalled after; that scope factors into the overall budget. On a
+      1,200-1,600 sq ft bungalow, figure 3-5 weeks from permit to final inspection.
+      TopVolk coordinates the licensed electricians, manages the permit through Pierce
+      County PALS, and stays on-site for rough-in and final inspections. Call
+      (206) 591-1096 to schedule a walkthrough.
+
+  - q: "What warranty applies to electrical work completed through TopVolk?"
+    a: |
+      Permit-backed electrical work in Washington is inspected by the AHJ — in most of
+      Puyallup, that's Pierce County building inspectors. A passed final inspection
+      confirms the work meets current NEC. Beyond that, TopVolk provides a written
+      workmanship warranty covering installation defects on completed scopes. For
+      equipment — Siemens or Square D load centers, Leviton devices — manufacturer
+      warranties apply, typically 10-15 years on the panel hardware itself. Wiring
+      installed correctly doesn't wear out; what fails are loose connections, which is
+      why torque specs and listed connectors matter at every termination. Any callback on
+      completed work is addressed at no charge. Vladislav answers directly at
+      (206) 591-1096 — no call center, no ticketing queue.
+
+  - q: "Do you serve areas near Puyallup, or just within city limits?"
+    a: |
+      Pierce County and the broader South Sound are both regular service territory —
+      Tacoma, Federal Way, Auburn, Sumner, Bonney Lake, and unincorporated South Hill
+      (98374, 98375) all fall within normal scheduling range. King County projects in
+      Kent, Renton, and Auburn are also on the table depending on scope and timing. For
+      electrical work specifically, unincorporated South Hill uses the same Pierce County
+      PALS permit process as Puyallup proper, so the workflow is identical. Current
+      scheduling for new electrical projects runs about 2-4 weeks out. Call
+      (206) 591-1096 to check availability — Vladislav will give you a straight answer
+      on timeline.

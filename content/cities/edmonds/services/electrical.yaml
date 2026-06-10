@@ -1,0 +1,154 @@
+title: "Edmonds Electrical — Panel Upgrades & EV Charger Installs"
+
+intro: |
+  Driving off the Kingston ferry and up the hill into downtown Edmonds, you pass block
+  after block of well-kept 1960s ranchers and split-levels that were built when a 100-amp
+  panel was genuinely plenty. That was before Mitsubishi heat pumps, Tesla Wall Connectors,
+  induction ranges, and Level 2 EV charging became standard asks at this price point.
+  Snohomish County PUD — SnoPUD — has a specific interconnect process for service upgrades
+  that differs from PSE or Seattle City Light, and permits run through the City of Edmonds
+  building department, not Snohomish County PDS. TopVolk Construction LLC has coordinated
+  electrical scope on 100+ projects since 2017 across Snohomish County, including panel
+  swaps, EV charger circuits, and full rewiring work in homes near Brackett's Landing and
+  up into the Meadowdale neighborhood. Vladislav Volkov handles every project directly —
+  you talk to the person who knows the job, not a salesperson running an estimate sheet.
+
+localContext: |
+  The housing stock in 98020 — the downtown and waterfront-adjacent blocks — skews
+  older. Cape Cods and Craftsman-influenced homes built between 1940 and 1960 are common
+  along the streets east of the ferry terminal, and a number still have original 60-amp
+  or 100-amp services that were never touched. Some have knob-and-tube remnants in attic
+  spaces, which creates real friction when an insulation contractor or appraiser gets
+  involved. Move a few miles east into 98026 — the Seaview and Esperance areas — and
+  the housing shifts to the 1965–1975 split-level and rancher era. That build window is
+  the aluminum wiring zone: homes wired between roughly 1965 and 1973 used aluminum
+  branch-circuit conductors that oxidize at connections over time, raising resistance and
+  generating heat at receptacles and switches. Both neighborhoods sit in the Puget Sound
+  lowlands where October-through-May rain keeps crawlspaces humid year-round, which makes
+  vapor barrier condition and panel placement relevant to any serious electrical upgrade.
+
+commonProblems:
+  - title: "100A to 200A Panel Upgrade for EV and Heat Pump Loads in 98020 Homes"
+    description: "A standard 100-amp Square D or Eaton load center — still common in Edmonds
+      homes built before 1975 — maxes out fast once you add a Mitsubishi heat pump (roughly
+      30–40 amps on a dedicated circuit), a Level 2 EV charger like a Tesla Wall Connector
+      or ChargePoint Home Flex (50–60 amps), and a modern induction range. The math stops
+      working. A 200-amp service upgrade means a new meter socket, new main breaker panel,
+      updated grounding electrode system, and a signed work order with SnoPUD before they'll
+      reconnect at the service entrance. Permit plan review through the City of Edmonds
+      building department typically runs 2–4 weeks. All-in cost — permit, materials, labor,
+      and SnoPUD coordination — runs $3,500–$6,500 on a straightforward single-family home,
+      more if the meter socket is original and needs replacement at the same time."
+
+  - title: "Aluminum Branch Wiring in Seaview and Esperance Split-Levels (1965–1973)"
+    description: "Homes in the 98026 zip built between 1965 and 1973 — particularly in
+      Seaview and the Esperance blocks just outside Edmonds city limits — frequently have
+      aluminum conductors on 15- and 20-amp branch circuits. Aluminum oxidizes at device
+      connections, raising resistance and causing heat buildup at outlets, switches, and
+      junction boxes. Replacing outlets with standard copper-rated devices does nothing —
+      the fix that holds is pigtailing each device with AlumiConn connectors or installing
+      Co/ALR-rated receptacles throughout. A full branch-circuit pigtail on a 1,800 sq ft
+      split-level takes 2–4 days and typically costs $1,500–$3,000 depending on device
+      count. Esperance is unincorporated Snohomish County, so permits go through Snohomish
+      County PDS — not the City of Edmonds permit center. TopVolk routes the application
+      to the correct AHJ from the start."
+
+  - title: "EV Charger Circuit Installation — Tesla, ChargePoint, JuiceBox in Edmonds Garages"
+    description: "A Level 2 charger needs a dedicated 240V circuit — 50A for a Tesla Wall
+      Connector or ChargePoint Home Flex, 60A for a JuiceBox Pro 48. Older Edmonds panels
+      with limited breaker slots often need a tandem breaker evaluation or sub-panel before
+      that circuit can land anywhere. The conduit run matters too: a detached garage across
+      40 feet of crawlspace in an older 98020 home adds wire, conduit, and sometimes a
+      trenched underground run. City of Edmonds requires a permit for EV charger installations
+      — this gets skipped regularly by handymen and creates problems at resale when an
+      inspector flags unpermitted work. TopVolk pulls the permit as a WA Licensed Contractor,
+      coordinates rough-in and final inspections, and handles the full conduit run. Timeline
+      from permit application to an energized charger: roughly 3–5 weeks on a standard
+      single-family job."
+
+  - title: "AFCI and GFCI Breaker Compliance Under Current NEC Requirements"
+    description: "Washington state has adopted the 2023 NEC, which expanded AFCI breaker
+      requirements beyond bedrooms to cover nearly all living spaces. GFCI protection now
+      extends to laundry areas, unfinished basements, garages, and outdoor circuits — not
+      just bathrooms and kitchens. Pulling a permit for a kitchen or bathroom remodel in
+      Edmonds triggers a full electrical code review, which often means upgrading existing
+      breakers to AFCI/GFCI combination units — Siemens, Square D QO, and Eaton BR series
+      are the common choices depending on the existing panel brand. This surprises homeowners
+      who budgeted only for the finish work. Budget $150–$300 per circuit for AFCI/GFCI
+      breaker swap-outs, and expect 4–8 circuits as a realistic count on a mid-size kitchen
+      remodel in a pre-1990 Edmonds home. TopVolk includes this scope in the upfront line-item
+      estimate so it doesn't show up as a change order mid-project."
+
+  - title: "Recessed Lighting Retrofit and Dimmer Compatibility in Late-1980s–1990s Homes"
+    description: "Edmonds homes from the 1985–1998 build window — common in the hillside
+      neighborhoods above the waterfront — often have original can lights wired for
+      incandescent PAR bulbs on 300-watt rotary dimmers. Swapping to LED recessed lighting
+      means the fixtures need to be IC-rated (insulation contact) and airtight, and the
+      dimmers need to be LED-compatible — a Lutron Caséta or Leviton Decora Smart dimmer,
+      not the 1994 unit still on the wall. Mismatched dimmers cause flicker, audible buzz,
+      and premature lamp failure. On a full great room and kitchen retrofit — 20 to 28
+      recessed cans — labor and materials run $2,500–$5,500 depending on ceiling access,
+      attic clearance, and whether new circuits are required. The City of Edmonds requires
+      a permit for new circuit work; swap-in retrofit cans on existing circuits typically
+      fall under minor electrical and don't require plan review."
+
+faq:
+  - q: "How fast can you get to Edmonds for an electrical project?"
+    a: "Edmonds is about 25 miles north of Seattle via I-5 or Highway 99 — typically 35–50
+      minutes from our base depending on traffic, less if coming from Shoreline or Mountlake
+      Terrace. For an initial site walkthrough and estimate, Vladislav can usually schedule
+      within a few days of your call. After agreeing on scope, permit submission to the City
+      of Edmonds generally follows within a week. From permit approval to project start, most
+      electrical jobs run on a 3–6 week total timeline, with SnoPUD scheduling being the main
+      variable on any service upgrade work. Call (206) 591-1096 to set up a free on-site
+      consultation."
+
+  - q: "What does a 200-amp panel upgrade cost in Edmonds?"
+    a: "A straightforward 100A-to-200A panel upgrade in an Edmonds single-family home typically
+      runs $3,500–$6,500 all-in — City of Edmonds permit, materials, labor, and SnoPUD
+      coordination included. The spread comes from meter socket condition (older 98020 homes
+      often need the socket replaced simultaneously), panel location relative to the service
+      entrance, and whether the grounding electrode system needs updating to 2023 NEC. Adding
+      a sub-panel for a detached garage or an ADU adds $1,200–$2,500 on top. TopVolk provides
+      line-item pricing after the on-site visit — not a range with an asterisk. Call
+      (206) 591-1096 to schedule a free estimate."
+
+  - q: "Does electrical work in Edmonds require a permit, and who files it?"
+    a: "Panel upgrades, new circuits, EV charger installations, and any service entrance work
+      all require permits in Edmonds. Properties inside city limits permit through the City
+      of Edmonds Development Services — not Snohomish County PDS, which handles unincorporated
+      areas like Esperance in 98026. Edmonds plan review runs 2–4 weeks for standard
+      residential electrical. TopVolk handles the full permit package as a WA Licensed
+      Contractor — application, supporting documents, inspection scheduling, and final
+      sign-off. You don't need to track down a separate electrician to manage the paperwork
+      or navigate which AHJ has jurisdiction over your address."
+
+  - q: "Do you install EV charger circuits for Tesla, Rivian, and other EVs?"
+    a: "Yes. The most common installs are the Tesla Wall Connector (48A hardwired), ChargePoint
+      Home Flex (50A hardwired or NEMA 14-50), and JuiceBox Pro 48 (60A). Each has slightly
+      different circuit requirements, and some existing panels need a load calculation before
+      a new 50- or 60-amp circuit can be added. TopVolk sizes the circuit correctly, pulls
+      the required permit, and handles the full conduit run from panel to garage — including
+      underground runs to detached structures. SnoPUD doesn't need to be involved for a
+      charger-only circuit addition with no meter upgrade. Timeline for a permitted EV
+      circuit in Edmonds: 3–5 weeks from application to an energized outlet."
+
+  - q: "What warranty comes with the electrical work?"
+    a: "Workmanship on electrical installations carries a 2-year warranty through TopVolk —
+      covering connections, conduit runs, panel wiring, and fixture installation. Panels
+      (Square D, Siemens, Eaton), breakers, and devices carry manufacturer warranties,
+      typically 1–10 years by product. LED fixtures like Halo or Lithonia recessed cans
+      are usually warranted 5 years by the manufacturer. If something fails inside the
+      workmanship window, Vladislav comes back — no call center, no third-party warranty
+      company. Larger projects also include a deadline penalty clause in the contract: if
+      TopVolk misses a committed milestone, you receive a credit. That's in writing before
+      any work starts."
+
+  - q: "Do you serve other cities near Edmonds for electrical work?"
+    a: "Yes — Shoreline (98133, 98155), Lynnwood (98036, 98087), Mountlake Terrace (98043),
+      Kenmore (98028), and Bothell (98011, 98021) are all within the regular service area.
+      Mukilteo and Woodway are a few minutes from Edmonds and come up regularly. Permits
+      in these cities route through either the respective city permit center or Snohomish
+      County PDS for unincorporated areas — TopVolk handles the routing correctly based on
+      your address. New project scheduling typically runs 1–2 weeks out. Call (206) 591-1096
+      to check availability and get a site visit on the calendar."
