@@ -1,0 +1,192 @@
+title: "Longview Electrical — Panel Upgrades & Wiring in Cowlitz County"
+
+intro: |
+  Lake Sacajawea sits at the center of one of the most deliberately planned cities
+  in the Pacific Northwest — and the homes surrounding it, built between 1923 and
+  1945 when Long-Bell Lumber Company laid out Longview's grid, are running
+  electrical systems designed for a world before induction ranges, heat pumps, or
+  Level 2 EV chargers. Most of those houses in the 98632 zip code landed with
+  60-amp or 100-amp Federal Pacific or Zinsco panels that simply cannot support
+  what families plug in today. A heat pump, a Tesla Wall Connector on a dedicated
+  60A circuit, a GE electric range — that's already at or beyond what the original
+  service entrance was built to handle. Vladislav Volkov has done panel swaps in
+  older Longview neighborhoods where knob-and-tube wiring was still live in the
+  attic, tucked behind late-added insulation batts slowly cooking the original
+  rubber insulation. TopVolk Construction LLC serves the Longview area as a WA
+  Licensed Contractor — 100+ projects completed since 2017, direct communication
+  with the owner, and no sales staff between you and the person actually doing
+  the work.
+
+localContext: |
+  The bulk of Longview's older residential stock sits in the 98632 zip,
+  particularly in the original planned neighborhoods west of Commerce Avenue and
+  along the Lake Sacajawea corridor. Pre-war bungalows and Craftsman-inflected
+  cottages from the 1920s and 1930s — especially the blocks off Nichols Boulevard
+  and the 15th Avenue corridor — frequently still have active knob-and-tube
+  circuits in walls and attics, along with ungrounded two-prong outlets throughout.
+  Moving east toward the Mint Farm area and the newer tracts closer to the
+  Washington Way corridor in 98632, you hit a wave of 1960s and early-1970s
+  housing where aluminum branch circuit wiring was used on 15A and 20A circuits
+  during the copper price spike of that era. Cowlitz County's wet winters — roughly
+  comparable to Seattle's 37 inches of annual rain — accelerate corrosion on older
+  service entrance cables, meter bases, and any aluminum wiring running through
+  damp crawlspaces. Pacific Power serves most of Longview, and any service upgrade
+  requires utility coordination for the service entrance disconnect before the City
+  of Longview Building Division will sign off on the final inspection.
+
+commonProblems:
+  - title: "100A to 200A Panel Upgrades for Heat Pumps, EV Chargers, and Modern Loads"
+    description: |
+      A 100-amp service was standard issue for a three-bedroom house in 1965 and
+      genuinely adequate for that era's electrical load. Add a heat pump, an EV
+      charger on a dedicated 50A circuit, an induction range, and a Navien tankless
+      water heater — and that 100A main breaker trips on a regular Tuesday evening.
+      The panel swap involves pulling the existing meter base, upgrading the service
+      entrance cable to #2 AWG aluminum or #4 AWG copper, installing a new 200A
+      main breaker panel (Square D QO200L30PG is a common spec), and coordinating
+      with Pacific Power for the service drop disconnect and reconnect. City of
+      Longview Building Division requires a permit for any service upgrade, with a
+      rough-in inspection before the meter is re-energized and a final inspection
+      to close the permit. Budget $3,500–$6,500 for a straightforward swap in a
+      single-story house with accessible service entrance; mast replacement or
+      meter base upgrades push costs higher.
+
+  - title: "Knob-and-Tube Wiring Replacement in Pre-1950 Longview Homes"
+    description: |
+      Longview's founding-era homes — built in the 1920s and 1930s when the city
+      was platted — were wired with knob-and-tube as standard practice. No ground
+      conductor, no sheathing, and rubber insulation that dries and cracks after
+      80-plus years of thermal cycling. Splice points are the biggest failure risk:
+      where the original electricians made connections inside walls using cloth-
+      wrapped conductors, those joints loosen over decades of expansion and
+      contraction. Insurance carriers increasingly refuse to write homeowner's
+      policies on houses with active knob-and-tube circuits — often the first hard
+      signal a homeowner gets that the wiring needs to go. Full replacement means
+      fishing 12/2 or 14/2 NM-B (Romex) to every outlet and fixture, installing
+      AFCI breakers per current NEC in the new panel, and patching selectively
+      opened drywall. Expect $8,000–$20,000 for a 1,200–1,800 sq ft Longview
+      bungalow and 1–3 weeks of work.
+
+  - title: "Aluminum Branch Circuit Wiring Remediation in 1960s–70s Longview Builds"
+    description: |
+      Tract housing built in Longview between 1965 and 1973 — ranchers and
+      split-levels on the city's eastern residential streets — frequently used
+      aluminum wiring on 15A and 20A branch circuits. Aluminum and copper expand
+      at different rates; over decades, those connections at outlets, switches, and
+      fixtures loosen, arc, and overheat. The fix isn't a full rewire in most cases.
+      AlumiConn connectors (listed under UL 2459 for aluminum-to-copper
+      connections) let a licensed electrician pigtail each device with short copper
+      leads, removing aluminum from the device termination entirely. Every outlet
+      box and switch box on affected circuits needs to be opened and remediated —
+      typically 40–80 connection points in a 1,500 sq ft house. City of Longview
+      Building Division requires a permit for this work. Vladislav walks the house
+      first, identifies which circuits are aluminum, and delivers a line-item quote.
+      WA Licensed Contractor. Call (206) 591-1096 to schedule.
+
+  - title: "AFCI and GFCI Breaker Upgrades Under Current NEC Adoption"
+    description: |
+      Washington State has adopted the 2020 NEC, which requires arc-fault circuit
+      interrupter (AFCI) breakers on bedroom circuits and, in newer work, on living
+      area and hallway circuits as well. Older Longview homes permitted before that
+      code cycle weren't required to retrofit at the time — but if you pull a permit
+      for any renovation today, the City of Longview Building Division will require
+      bringing affected circuits into current NEC compliance. Eaton BR-series AFCI
+      breakers and Square D QO-series AFCI breakers both run $35–$55 per breaker
+      installed; outfitting a 20-slot panel with a full complement of AFCI and
+      ground-fault circuit interrupter (GFCI) breakers typically runs $1,200–$2,500
+      in labor and materials. Bathroom, kitchen countertop, garage, and exterior
+      outlets also require GFCI protection — a gap that shows up in virtually every
+      pre-1980 Longview house Vladislav has walked. Catching all of it during a
+      panel swap is always cheaper than a separate return trip.
+
+  - title: "Level 2 EV Charger Circuit Installation in Longview Homes"
+    description: |
+      Pacific Power's EV incentives have made electric vehicle ownership practical
+      across Longview's income range, and demand for Level 2 charger circuits has
+      climbed sharply. A ChargePoint Home Flex, JuiceBox 48, or Tesla Wall
+      Connector needs a dedicated 50A or 60A, 240V circuit run from the panel to
+      the garage or carport — hardwired or terminated at a NEMA 14-50 receptacle
+      depending on the charger model. If the existing panel is a 100A service
+      already carrying a heat pump and electric range, that circuit may not fit
+      without a panel upgrade happening first. Vladislav does a load calculation
+      on-site — actual numbers, not guesses — before recommending whether a
+      circuit-only job is feasible. A single EV charger circuit with a 50A
+      receptacle runs $500–$1,200 depending on panel distance and conduit routing.
+      Permit required through City of Longview Building Division. Circuit-only
+      installs typically finish in 1–2 days after permit approval.
+
+faq:
+  - q: "How fast can you get to Longview for electrical work?"
+    a: |
+      Longview is roughly 2–2.5 hours south of Seattle via I-5, so we schedule
+      Longview jobs in dedicated day-trip or multi-day blocks rather than same-day
+      calls. For a panel upgrade or rewire consultation, Vladislav typically
+      schedules an on-site estimate within 5–10 business days of your call. Once
+      scope is confirmed and the City of Longview Building Division permit is
+      submitted, expect 2–4 weeks for permit turnaround on standard residential
+      electrical before work can start. The on-site visit is with the owner — not
+      a salesperson running a commission — and the quote is a line-item breakdown.
+      Call (206) 591-1096 to get scheduled.
+
+  - q: "What does a panel upgrade cost in Longview?"
+    a: |
+      A straightforward 100A to 200A service upgrade in a Longview house runs
+      $3,500–$6,500 — existing mast is sound, service entrance cable is accessible,
+      and Pacific Power's service drop is already configured for 200A service.
+      If the meter base needs replacement or the service entrance cable runs
+      through finished space, add $500–$1,500. A detached garage sub-panel or
+      a second distribution panel adds $800–$2,000 depending on feeder run length.
+      Every TopVolk quote is a line-item breakdown — not a vague estimate range
+      to be revised later. Free on-site estimate with Vladislav. Call
+      (206) 591-1096 to set up the visit.
+
+  - q: "Do I need a permit for electrical panel or wiring work in Longview?"
+    a: |
+      Yes, without exception. Any service upgrade, panel replacement, new circuit
+      installation, or rewire requires a permit through the City of Longview
+      Building Division. Residential electrical permits in Longview typically
+      move through plan review in 5–15 business days for standard work. Rough-in
+      inspection happens before drywall closes on rewire jobs and before Pacific
+      Power reconnects the service drop on panel swaps; final inspection closes
+      the permit after everything is energized and tested. TopVolk handles permit
+      application paperwork as part of the project scope — you don't chase
+      inspectors or figure out the submittal portal yourself. WA Licensed
+      Contractor.
+
+  - q: "Do I need a panel upgrade before installing a Level 2 EV charger?"
+    a: |
+      Not always — it depends on the existing panel's available capacity. A 200A
+      service with meaningful spare load can usually accommodate a dedicated 50A
+      or 60A circuit for a ChargePoint Home Flex or JuiceBox 48 without touching
+      the panel. A 100A service already running a heat pump, electric range, and
+      water heater is a different story — the load calculation often won't support
+      the added circuit without upgrading the service first. Vladislav runs the
+      numbers on-site before recommending anything. If a panel upgrade is needed
+      anyway, the EV circuit gets added during that same project at reduced
+      incremental cost since the panel is already open and accessible.
+
+  - q: "What warranty covers electrical work TopVolk does in Longview?"
+    a: |
+      Workmanship is warranted for one year from project completion. If a
+      connection fails, a breaker trips due to an installation error, or a circuit
+      has a fault traceable to the work done, we come back and correct it at no
+      charge. Materials carry manufacturer warranty: Square D QO-series panels and
+      breakers are backed by Schneider Electric's product coverage; Eaton BR-series
+      breakers carry comparable protection. What's not covered: damage from
+      subsequent work by others, flooding or pest intrusion after project
+      completion, or appliance failures unrelated to the circuit. Deadline
+      penalties are written into the contract — if TopVolk misses the agreed
+      completion date, there is a financial penalty on our end, not just an
+      apology.
+
+  - q: "Do you cover Kelso and other nearby areas around Longview?"
+    a: |
+      Yes — Kelso (98626) is adjacent to Longview and adds essentially no travel
+      overhead. Woodland (98674) and Castle Rock (98611) are also reachable on
+      the same trip block. In Kelso's older housing stock along Allen Street and
+      near Tam O'Shanter Park, the same knob-and-tube and aluminum wiring
+      conditions common in Longview's 98632 neighborhoods show up regularly —
+      same era of construction, same electrical issues. Unincorporated Cowlitz
+      County areas between these cities are also in range. Call (206) 591-1096
+      or reach out through the site to confirm scheduling availability for your
+      specific address.

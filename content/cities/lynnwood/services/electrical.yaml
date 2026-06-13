@@ -1,0 +1,189 @@
+title: "Lynnwood Electrical — 200A Upgrades, Rewires & EV Circuits"
+
+intro: |
+  Aluminum wiring runs through the walls of thousands of Lynnwood homes built
+  between 1965 and 1973 — the split-levels and ranchers clustered around Scriber
+  Lake Park and along 196th St SW that filled out this city before Alderwood Mall
+  even opened. Back then, aluminum was cheaper than copper and fully code-legal.
+  Today it's the reason outlets feel warm, breakers trip for no clear reason, and
+  homeowner's insurance carriers start asking uncomfortable questions at renewal.
+  PSE (Puget Sound Energy) serves this area, and a panel upgrade here means
+  coordinating a meter pull with PSE's scheduling department — not just swapping
+  breakers on a Saturday. Add the current push for EV charging in driveways across
+  98036 and 98087, induction ranges showing up in remodeled kitchens, and
+  Mitsubishi mini-split heat pumps replacing old baseboard electric throughout the
+  city, and the original 100-amp service that carried these homes for 50 years is
+  simply out of runway. TopVolk Construction LLC has completed 100+ projects across
+  Snohomish County since 2017 — call (206) 591-1096 to talk through what your
+  specific house actually needs.
+
+localContext: |
+  Lynnwood's residential housing breaks into two distinct waves. The 1950s
+  post-war ramblers sit mostly on the western side of the city in 98036 — smaller
+  lots, original galvanized plumbing, and in some cases knob-and-tube wiring still
+  active in attics. The second wave of tract development from 1965 through the
+  mid-1970s pushed east into 98087 along 44th Ave W and north toward the Edmonds
+  border, and that's where aluminum branch circuit wiring is concentrated. NEC 2020
+  — adopted by both the City of Lynnwood and Snohomish County PDS — requires AFCI
+  breakers in bedrooms and GFCI protection in bathrooms, kitchens, garages, and
+  exterior outlets. Pulling a permit for any electrical work in an older Lynnwood
+  home means current-code compliance gets applied to adjacent circuits, not just
+  the ones you're touching. The City of Lynnwood runs its own permit center
+  separate from Snohomish County PDS, so plan review for a panel upgrade or rewire
+  goes through the city directly. Typical plan review turnaround runs 2-4 weeks —
+  factor that into any project timeline tied to a home sale or appliance delivery.
+
+commonProblems:
+  - title: "Aluminum Branch Circuit Wiring in Lynnwood's 1965-1973 Tract Homes"
+    description: |
+      The split-levels between Scriber Lake and 68th Ave W — most built right inside
+      the aluminum wiring window — develop oxidation and loose connections at every
+      device termination over time. Aluminum expands and contracts at a different rate
+      than the steel screws on standard outlets and switches. That differential
+      movement loosens the connection. Loose connections arc. Arcing is how house
+      fires start in walls with no visible warning. The fix isn't automatically a full
+      rewire: AlumiConn push-in connectors pigtailed to short copper leads at each
+      outlet, switch, and fixture box is a code-accepted remediation method far less
+      invasive than opening every wall. On a typical 1,400 sq ft rancher in 98036,
+      AlumiConn pigtailing across all devices runs $2,500–$5,500. Full copper rewire
+      on that same home is $8,000–$15,000 depending on attic access and whether
+      ceilings are drywall or original plaster.
+
+  - title: "100-Amp to 200-Amp Service Upgrades Driven by Heat Pumps and EV Chargers"
+    description: |
+      A Level 2 EV charger — Tesla Wall Connector, ChargePoint Home Flex, or JuiceBox
+      48 — needs a dedicated 50A or 60A circuit on its own breaker. A Mitsubishi
+      mini-split system covering a 1,800 sq ft home with two indoor heads pulls
+      another two dedicated circuits. Add an induction range, heat pump water heater,
+      and electric dryer, and a 100-amp panel is maxed before half the house wakes up
+      in the morning. PSE requires a service upgrade to be scheduled through their
+      meter department — you get the City of Lynnwood permit first, PSE pulls the
+      meter on the scheduled date, and the panel work happens while the service is
+      de-energized. From permit application to an energized 200A panel, budget 3-6
+      weeks in Lynnwood. The upgrade itself — new meter base, 200A main breaker
+      panel, and reconnection — runs $3,500–$6,500 installed, depending on panel
+      location and whether the service entrance needs rerouting.
+
+  - title: "AFCI and GFCI Upgrades Triggered by Kitchen and Bathroom Remodel Permits"
+    description: |
+      Pulling a remodel permit in Lynnwood doesn't just cover the room you're
+      renovating. The city's electrical inspector applies NEC 2020 to the circuits
+      serving adjacent spaces, which means an open kitchen permit can flag bedroom
+      circuits for AFCI breaker upgrades and a bathroom remodel can expose a garage
+      circuit that's never had GFCI protection. On older panels — particularly the
+      Square D and Zinsco equipment that showed up in 1970s Lynnwood homes — adding
+      AFCI-compatible breakers sometimes means the panel enclosure itself can't
+      accept them, which pushes toward a full panel replacement. TopVolk sequences
+      this into the overall remodel scope: permit application, plan review, rough-in
+      inspection, and final inspection are all scheduled into the project timeline.
+      Deadline penalties are written into the contract. WA Licensed Contractor,
+      owner-led by Vladislav Volkov — you talk to the person running the job, not a
+      project coordinator passing messages.
+
+  - title: "EV Charger Circuit Installation — What Panel Capacity Actually Determines Cost"
+    description: |
+      Lynnwood homeowners in 98087 adding a ChargePoint Home Flex or Tesla Wall
+      Connector need a permit for the dedicated circuit — no exception, regardless of
+      what some installers say about "just adding an outlet." The City of Lynnwood
+      requires an electrical permit for any new circuit. If the panel has spare
+      breaker slots and available ampacity, a permitted 60A dedicated circuit with
+      6 AWG copper wire to a NEMA 14-50 outlet or hardwired charger runs $800–$1,800
+      installed. If the panel is already loaded — common in homes with original
+      electric baseboard heat still running — a panel upgrade comes first, and the
+      math changes entirely. A detached garage far from the main panel sometimes
+      justifies a 60A sub-panel instead of a long wire run through the house, which
+      can actually save money on wire and labor. Panel-limited situations with a new
+      sub-panel and EV circuit typically land between $2,500 and $4,500 total.
+
+  - title: "Knob-and-Tube Replacement in Lynnwood's Older Pre-1955 Stock"
+    description: |
+      Lynnwood has a smaller pre-war housing inventory than Capitol Hill or Ballard,
+      but original 1940s and early 1950s homes do exist — particularly on the older
+      blocks west of Highway 99 toward Edmonds in 98036. Knob-and-tube wiring carries
+      no ground conductor. That means anything requiring a grounded outlet — computers,
+      medical equipment, modern appliances — operates without a safety ground.
+      Insurance companies are increasingly declining renewals on homes with active
+      knob-and-tube circuits, and some carriers require a licensed electrician's
+      letter confirming the system before they'll write a new policy at all. Full
+      rewire on a 1,100–1,400 sq ft bungalow takes 3-5 days and costs $7,000–$14,000
+      depending on attic and crawlspace access. Homes with original plaster walls
+      cost more — fishing wire through plaster is slower and messier than working
+      through drywall. These jobs get priced after a physical walkthrough, not
+      over the phone.
+
+faq:
+  - q: "How fast can you get to Lynnwood for an electrical consultation?"
+    a: |
+      Lynnwood is a straight shot up I-5 from Seattle or accessible via I-405 from
+      the Eastside — typically 20-35 minutes from most of TopVolk's regular project
+      areas. Vladislav can schedule an on-site consultation within a few days for most
+      projects, and same-week is usually possible for urgent situations like a failed
+      panel, an insurance-required rewire, or a PSE disconnect notice. The consult is
+      free and done by the person who will actually run the job — not a salesperson.
+      Call (206) 591-1096 to set something up. We cover all of Snohomish County,
+      including Lynnwood, Edmonds, Mountlake Terrace, Mukilteo, and Mill Creek.
+
+  - q: "What does a 200-amp panel upgrade cost in Lynnwood?"
+    a: |
+      A standard 100A to 200A service upgrade in Lynnwood — new meter base, 200A
+      main breaker panel, and PSE coordination for the meter pull — typically runs
+      $3,500–$6,500. What moves that number: panel location (exterior wall vs.
+      interior utility room), whether the meter base needs repositioning, and the
+      condition of the existing service entrance conductors. If the home also needs
+      AlumiConn remediation at devices at the same time, add $2,000–$5,000 to the
+      total depending on circuit count. We provide a written line-item quote after the
+      on-site walkthrough — no vague ranges and no surprises at invoice. Call
+      (206) 591-1096 or schedule a free on-site estimate to get started.
+
+  - q: "Does Lynnwood require permits for panel upgrades and EV charger circuits?"
+    a: |
+      Yes. The City of Lynnwood processes its own electrical permits through its
+      permit center — this is separate from Snohomish County PDS, which handles
+      unincorporated county areas like parts of Mountlake Terrace and Mill Creek
+      that fall outside city limits. An electrical permit is required for service
+      upgrades, any new dedicated circuit (including EV chargers), and rewiring work.
+      Plan review for a straightforward panel upgrade typically runs 2-3 weeks.
+      TopVolk handles permit applications as part of the project scope — you don't
+      navigate the Lynnwood portal yourself. Work requires a rough-in inspection and
+      a final inspection by the city's electrical inspector before the permit closes.
+      TopVolk is a WA Licensed Contractor with all required documentation for permit
+      submissions in Lynnwood and across Snohomish County.
+
+  - q: "Can you install a Tesla Wall Connector or ChargePoint charger at my Lynnwood home?"
+    a: |
+      Yes — we install dedicated EV charger circuits for Tesla Wall Connectors,
+      ChargePoint Home Flex, and JuiceBox 48 units. All three require a dedicated
+      50A or 60A circuit with 6 AWG copper minimum for the run length involved.
+      The first step is always a panel capacity check. A large portion of Lynnwood
+      homes in 98087 built in the 1965-1975 window have 100A panels that are already
+      running near capacity with electric heat or aging appliances — in those cases,
+      the panel upgrade has to come first, which we scope and price together.
+      If your panel has available headroom, the charger circuit with permit typically
+      runs $800–$1,800. We pull the permit, schedule the city inspection, and
+      coordinate with PSE when a service upgrade is part of the scope.
+
+  - q: "How do I know if my Lynnwood home needs AlumiConn pigtailing or a full rewire?"
+    a: |
+      AlumiConn pigtailing at devices is a legitimate, code-accepted repair when the
+      aluminum wiring itself is in good condition — no prior overheating events, no
+      scorched insulation at junction boxes, no melted device contacts. It works well
+      and is significantly less disruptive than opening walls. A full copper rewire
+      makes more sense when there's evidence of heat damage, when a major remodel has
+      walls open anyway, or when an insurance carrier specifically requires copper
+      replacement rather than device-level remediation. For knob-and-tube, there's no
+      halfway option — if it's active and load-bearing, it needs to be replaced
+      entirely. We assess this during the on-site walkthrough and give written pricing
+      for both paths where both are viable. No upsell to a full rewire when pigtailing
+      is the right answer for the situation.
+
+  - q: "Do you cover other Snohomish County cities near Lynnwood?"
+    a: |
+      TopVolk works throughout Snohomish County — Edmonds, Mountlake Terrace,
+      Shoreline (King County border), Bothell, Mill Creek, Mukilteo, Marysville, and
+      Everett are all regular service areas. Electrical work in unincorporated
+      Snohomish County goes through Snohomish County PDS rather than a city permit
+      center, which changes the plan review process and timeline slightly. No travel
+      surcharges for work in Snohomish County — it's our regular territory. Call
+      (206) 591-1096 to discuss your project. Most on-site consultations can be
+      scheduled within the week, and written quotes follow within 2-3 business days
+      of the site visit.
