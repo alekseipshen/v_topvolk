@@ -1,0 +1,179 @@
+title: "Wenatchee Electrical — Panel Upgrades & EV Wiring for PUD Homes"
+
+intro: |
+  Chelan County PUD runs on Columbia River hydropower — some of the lowest electricity
+  rates in Washington state, which is exactly why so many Wenatchee homeowners are
+  electrifying everything at once: heat pumps, induction ranges, Level 2 EV chargers.
+  The problem is the wiring behind the walls. The craftsman bungalows and two-story
+  foursquares near Pybus Public Market and along the Wenatchee Ave corridor were built
+  for a 100-amp world — before a Mitsubishi MXZ mini-split, a Tesla Wall Connector on
+  a 60-amp circuit, and a 240V induction range all landed on the same service panel.
+  That original equipment handled a 1940s kitchen and a few lamps. It does not handle
+  modern electrification loads without tripping breakers at best, and creating arc-fault
+  hazards at worst. TopVolk Construction LLC has completed 100+ remodel and renovation
+  projects since 2017 across the Seattle Metro and Eastern Washington. Vladislav Volkov
+  handles every project directly — homeowners talk to the person doing the work, not a
+  scheduler reading from a script.
+
+localContext: |
+  The older residential core in central Wenatchee — streets like Columbia, Methow, and
+  Yakima in the 98801 zip code — contains a dense stretch of pre-1950 craftsman bungalows
+  and American Foursquares. A meaningful number still have original knob-and-tube wiring
+  active in the attic or interior walls, often layered under decades of insulation that was
+  added without disconnecting the open-air K&T runs first. That's a code violation and an
+  insurance problem. Up the hillside in Sunnyslope, in the 98802 zip, the housing stock
+  shifts to 1965–1973 split-levels and ranchers — right in the aluminum branch-circuit
+  wiring window. Aluminum expands and contracts at a rate that doesn't match copper
+  terminals on outlets and breakers; over years of Wenatchee's cold winters and 100°F
+  summers, those connections loosen. The Columbia Basin freeze-thaw cycle accelerates
+  the problem faster than it would in milder climates west of the Cascades. Electrical
+  work inside Wenatchee city limits requires a City of Wenatchee Building Department
+  permit; projects in unincorporated Chelan County route through the county building
+  department separately, with Chelan County PUD coordinating on any service changes.
+
+commonProblems:
+  - title: "100A Panels Can't Handle Wenatchee's New Electrical Loads"
+    description: |
+      A 100-amp service panel sized in 1952 was never meant to carry a Mitsubishi MXZ
+      multi-zone heat pump (30–40A startup draw), a 60-amp Tesla Wall Connector circuit,
+      and an induction range pulling another 40–50A simultaneously. The panel doesn't
+      fail gracefully — breakers trip, AFCI breakers nuisance-trip under harmonic load,
+      and in older panels the bus bar connections can overheat. The fix is a 200-amp
+      service upgrade: new Square D QO200 main panel, replacement meter base and
+      weatherhead if the originals are corroded, and coordination with Chelan County PUD
+      to upgrade the service entrance conductors from the street. PUD scheduling typically
+      adds 2–4 weeks after the city permit is issued. Full 200-amp upgrade in Wenatchee
+      runs $3,500–$6,500 depending on meter base condition, weatherhead replacement, and
+      panel-to-meter distance. That includes the building permit and final inspection.
+
+  - title: "Knob-and-Tube Wiring in Downtown Wenatchee's Pre-1950 Homes"
+    description: |
+      Knob-and-tube wiring is an open-air system — ceramic knobs stapled to joists,
+      ceramic tubes protecting wire runs through framing, no ground conductor, no
+      insulation rating. The 2021 NEC adopted in Washington prohibits adding new loads to
+      ungrounded K&T circuits, and most insurers won't extend coverage on remodeled spaces
+      where K&T is still active. Replacement means running new Southwire NM-B Romex from
+      the panel, either by opening drywall on interior walls or fishing wire through drill
+      paths — which is slower but keeps finishes intact. A full K&T replacement in a
+      1,400 sq ft bungalow in the 98801 zip runs $8,000–$18,000 depending on how
+      accessible the framing is and how many circuits need individual runs. The permit
+      requires rough-in inspection before any drywall closes, and final inspection once
+      all circuits are connected and devices are installed. Leaving K&T in place when
+      adding an addition or ADU voids the work on the new scope.
+
+  - title: "Aluminum Wiring in Sunnyslope's 1965–1973 Ranchers"
+    description: |
+      Aluminum branch-circuit wiring was installed in thousands of ranchers and split-levels
+      built across Wenatchee's hillside neighborhoods during a roughly eight-year window.
+      The wiring itself isn't the problem — it's the connections. Aluminum and copper
+      expand at different rates, so every outlet, switch, and breaker lug where aluminum
+      meets copper becomes a loose connection over time. Loose connections arc. The
+      NEC-approved fix for existing aluminum wiring is AlumiConn AL-rated pigtail
+      connectors at every device location: the aluminum conductor gets a short copper tail
+      added under a listed AlumiConn connector torqued to spec, and the copper connects
+      to the device normally. Expect $50–$120 per device location; a typical 1,800 sq ft
+      rancher has 40–60 locations, putting full pigtailing at $3,000–$6,500. A City of
+      Wenatchee building permit is required, and the rough-in inspection verifies
+      connector torque. TopVolk is a WA Licensed Contractor — permits are pulled in our
+      name and managed through final sign-off.
+
+  - title: "EV Charger Circuits and What the 2020 NEC Actually Requires Here"
+    description: |
+      A Level 2 charger — ChargePoint Home Flex, JuiceBox 48, or Tesla Wall Connector —
+      needs a dedicated 240V circuit: 50A minimum, 60A if you're running a dual-car
+      household or future-proofing. In Wenatchee's older homes where the garage was added
+      as a detached structure in the 1970s, that circuit run might require conduit through
+      the crawlspace, buried conduit across the yard, or a surface-mounted raceway along
+      the exterior. Separately, Washington's adoption of the 2020 NEC mandates AFCI
+      breakers on all bedroom circuits and GFCI protection in bathrooms, kitchens, garages,
+      and exterior outlets. Older panels with tandem breakers often don't have compatible
+      AFCI breakers in the manufacturer's lineup anymore — another practical reason to
+      upgrade to 200A before adding the EV circuit. Charger circuit alone runs $500–$1,200
+      installed; combining it with a panel upgrade during one mobilization saves the second
+      trip cost, which matters when the job site is in Wenatchee.
+
+  - title: "LED Recessed Lighting Retrofit and Dimmer Compatibility"
+    description: |
+      The 1980s and 1990s tract homes in Wenatchee — particularly the ranchers and two-story
+      colonials in East Wenatchee adjacent neighborhoods — came standard with incandescent
+      recessed cans. Swapping to LED retrofit bulbs is straightforward, but dimmer
+      compatibility is not. A Lutron Caseta smart dimmer needs a minimum load threshold;
+      a single 8-watt LED retrofit bulb won't meet it, causing buzz or flicker. The fix
+      is either specifying a compatible LED from Lutron's approved lamp list, grouping
+      multiple fixtures on the same dimmer circuit, or using a Leviton Decora no-neutral
+      smart switch where only a hot and switched leg are available in the box. Halo LT
+      series LED retrofit kits run $15–$35 per fixture; labor for a full 8-can kitchen
+      retrofit runs $600–$1,100 depending on ceiling height and trim alignment. Any new
+      fixture in a bathroom or exterior soffit also needs GFCI protection per current
+      NEC — that's a new GFCI outlet or a GFCI breaker on that circuit.
+
+faq:
+  - q: "How fast can you get to Wenatchee for electrical work?"
+    a: |
+      Wenatchee is roughly 2.5 hours from Seattle via US-2 through Stevens Pass — longer
+      in winter when mountain pass conditions slow things down. Vladislav schedules
+      Wenatchee and Chelan County consultations in clusters, typically 1–2 dedicated
+      east-side days per month, so response time is measured in days rather than hours.
+      The on-site estimate is free; permit applications and Chelan County PUD coordination
+      can happen remotely once the scope is confirmed. From first call to permit-ready
+      typically runs 2–4 weeks for electrical scope in Chelan County. Call (206) 591-1096
+      to get on the schedule — the sooner you're on the east-side list, the shorter the
+      wait.
+
+  - q: "What does a 200-amp service upgrade cost in Wenatchee?"
+    a: |
+      Most 200-amp panel upgrades in Wenatchee run $3,500–$6,500 for the full scope:
+      new Square D QO200 main breaker panel, service entrance conductors, and Chelan
+      County PUD coordination for the service drop. What moves the price is whether the
+      original meter base and weatherhead need replacement (add $400–$800), how far the
+      panel sits from the meter, and whether detached structures like a garage or shop
+      need reconnecting. That range includes the City of Wenatchee building permit and
+      final inspection. An on-site visit with Vladislav produces a line-item quote with
+      actual numbers — call (206) 591-1096 to schedule the free estimate.
+
+  - q: "Do I need a permit to upgrade my panel or rewire my Wenatchee home?"
+    a: |
+      Yes, every time — no exceptions. Panel upgrades, service changes, and branch wiring
+      work inside Wenatchee city limits require a permit from the City of Wenatchee
+      Building Department. Work in unincorporated Chelan County routes through the county
+      building department instead. Residential electrical permits typically go through plan
+      review in 1–2 weeks, followed by a rough-in inspection before walls close, and a
+      final inspection after all connections are made and covers are on. Chelan County PUD
+      also requires its own service inspection before reconnecting power after a panel swap.
+      TopVolk is a WA Licensed Contractor — we pull permits in our name and manage the
+      process from submittal through final sign-off. You don't track down inspectors.
+
+  - q: "Can you install an EV charger if my existing panel is already full?"
+    a: |
+      Maybe — it depends on a load calculation per NEC Article 220, not just counting
+      breakers. Most homes don't run every circuit at peak simultaneously, so a 100-amp
+      panel might have real headroom for a 50-amp EV circuit once actual demand is
+      calculated. If the math doesn't work, there are two paths: upgrade to 200A first,
+      or install an Emporia Energy load management system that automatically dials back
+      EV charging current when the dryer or range kicks on. Both the ChargePoint Home
+      Flex and JuiceBox 48 integrate with Emporia's load-sharing protocol. Either way,
+      the permit drawings document the calculation and the chosen solution — nothing gets
+      guessed or assumed on a live panel.
+
+  - q: "What warranty covers electrical work on my Wenatchee home?"
+    a: |
+      Labor carries a one-year warranty — any connection, termination, or fixture that
+      fails under normal use gets corrected at no charge. Square D QO breakers carry a
+      lifetime manufacturer warranty on the breaker itself. AlumiConn connectors are
+      rated for the building's lifespan when installed to manufacturer torque specs, which
+      get verified at rough-in inspection. Southwire NM-B cable is rated for 60 years
+      under NEC service conditions. The written contract specifies what's covered and for
+      how long. If TopVolk misses a deadline written into that contract, there's a
+      financial penalty on our end — that's in writing before work starts, not something
+      said verbally during the estimate.
+
+  - q: "Do you cover East Wenatchee and other parts of Chelan County?"
+    a: |
+      East Wenatchee is in Douglas County technically, but it's on the same site visit —
+      same trip across the mountains. Chelan County work extends to Cashmere, Leavenworth,
+      and the Lake Chelan area for panel upgrades, full rewires, and ADU electrical scopes.
+      Smaller Valley communities are evaluated based on project size and trip timing.
+      Scheduling in this region runs on the east-side calendar — Vladislav batches
+      Wenatchee-area visits to make the drive worthwhile for both sides. Call (206) 591-1096
+      or request a free on-site consultation directly with Vladislav. No sales staff, no
+      intake form that goes to a call center.
