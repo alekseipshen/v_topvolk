@@ -1,0 +1,182 @@
+title: "University Place Electrical — Panel Upgrades & EV Circuits"
+
+intro: |
+  Chambers Bay sits about a mile west of University Place's oldest residential
+  streets — and the ranchers and split-levels built in the 1960s along Grandview
+  Drive W and 40th Street W are generating most of the electrical calls in 98466
+  right now. PSE (Puget Sound Energy) serves both zip codes here, so a panel swap
+  or new circuit means coordinating a PSE meter pull — not Seattle City Light.
+  Most of these homes came stock with 100-amp Federal Pacific Stab-Lok panels,
+  which insurance carriers increasingly flag and which simply can't carry a modern
+  load: heat pump, EV charger, induction range, all at once. Installing a JuiceBox
+  48 EV charger on a saturated 100A panel isn't just inconvenient — it creates real
+  arc-fault risk. TopVolk Construction LLC handles the full scope: permit filing
+  with Pierce County PALS, PSE coordination, panel replacement, and circuit
+  rough-in, with Vladislav Volkov on the job directly. 100+ projects completed
+  since 2017 across King, Pierce, Snohomish, and Kitsap counties.
+
+localContext: |
+  University Place's housing stock breaks into two main eras. Zip code 98466
+  holds a large share of post-war and early 1960s construction — single-story
+  ranchers and modest split-levels near Curran Apple Orchard Park and the Cirque
+  neighborhood. These homes frequently have original 100-amp service with
+  ungrounded two-prong outlets and the occasional knob-and-tube remnant tucked
+  behind insulated walls. Zip code 98467 covers newer development closer to the
+  Bridgeport area and some 1980s–90s tract builds — better service capacity but
+  often with builder-grade panels aging toward the end of their useful life. The
+  1965–1973 window is especially relevant here: homes built during that stretch
+  commonly have aluminum branch circuit wiring, which requires AlumiConn
+  connectors or copper pigtailing at every device termination. Pierce County PALS
+  handles all permit applications in University Place — the city contracts out
+  its permitting, so there's no separate city building counter. Plan review for
+  a panel upgrade typically runs 2–4 weeks. PSE requires advance scheduling for
+  meter pulls, so timeline planning matters from day one.
+
+commonProblems:
+  - title: "100A Federal Pacific or Zinsco Panel — Can't Support Modern Electrical Loads"
+    description: |
+      Federal Pacific Stab-Lok breakers have a documented failure-to-trip problem —
+      they don't always open under overcurrent conditions, which is the entire job
+      of a breaker. Zinsco panels have a related bus bar corrosion issue that causes
+      breakers to weld to the bus and fail to interrupt faults. Both show up in
+      University Place homes built between 1955 and 1975, concentrated in the 98466
+      zip. The fix is a full panel replacement: typically a 200A Square D QO or
+      Eaton CH series load center, new service entrance conductors, and an updated
+      grounding electrode system per NEC 250. A 200A upgrade also requires a PSE
+      meter pull, which adds scheduling lead time — plan 4–6 weeks from permit
+      submission to Pierce County PALS final inspection. Straight panel swap cost
+      runs $3,500–$6,500 depending on service entrance configuration and interior
+      circuit condition.
+
+  - title: "Aluminum Branch Circuit Wiring in University Place's 1965–1973 Builds"
+    description: |
+      Aluminum was used for residential branch circuits during a copper shortage
+      from roughly 1965 to 1973. It's not inherently dangerous if the connections
+      are maintained — but aluminum expands and contracts differently than copper,
+      and over fifty years, terminations at outlets and switches loosen. That's
+      where overheating starts. In University Place homes near the Grandview area
+      built during those years, proper remediation means AlumiConn push-in
+      connectors or CO/ALR-rated devices at every single termination point.
+      A full assessment involves opening every outlet box, checking for oxidation
+      (the gray-to-white discoloration on aluminum conductors), and re-terminating
+      with anti-oxidant compound. Noalox alone on old connections isn't a fix —
+      every device needs correct CO/ALR rating or a copper pigtail. This work
+      requires an electrical permit in Pierce County. Budget $1,500–$4,000
+      depending on circuit count and house footprint.
+
+  - title: "EV Charger Circuit Installation — Dedicated 50A or 60A Run From Panel"
+    description: |
+      A Level 2 EV charger — JuiceBox 48, ChargePoint Home Flex, or Tesla Wall
+      Connector — needs a dedicated 50A or 60A circuit from the panel to the
+      garage. On a 100A panel already serving a heat pump and an electric range,
+      that circuit likely doesn't fit without a panel upgrade first. Load
+      calculation per NEC 220 determines whether existing service capacity can
+      absorb the additional draw. If the panel has headroom, the rough-in involves
+      running 6 AWG or 4 AWG copper to the garage, installing a flush-mount outlet
+      or hardwiring the unit, and filing for an electrical permit with Pierce County
+      PALS — two inspections required: rough-in before walls close, then final.
+      Total installed cost for a charger circuit on an existing 200A panel runs
+      $800–$1,800 depending on run length and conduit requirements. Call
+      (206) 591-1096 — Vladislav comes out, runs the load numbers, and gives you
+      a fixed quote before any work starts.
+
+  - title: "AFCI and GFCI Breaker Upgrades Triggered by Renovation Permits"
+    description: |
+      Pull a kitchen or bathroom permit in Pierce County and the inspector will
+      expect current NEC compliance on every circuit touched during the work.
+      That means AFCI protection for bedroom circuits and GFCI protection for
+      bathrooms, kitchens, garages, and exterior outlets — per NEC 2020, which
+      Pierce County has adopted. On older University Place homes in 98466, this
+      surfaces during a kitchen remodel when the inspector flags that existing
+      circuits lack AFCI breakers. Square D QO AFCI/GFCI combination breakers
+      run $50–$80 each; Eaton CH series are in the same range. A typical kitchen
+      or bath permit scope involves 4–8 breakers. Tracing circuits in a 1960s
+      home with unlabeled panels takes time — factor that into the schedule.
+      Budget $400–$1,200 for AFCI/GFCI compliance work tied to a renovation
+      permit, separate from the primary remodel cost.
+
+  - title: "LED Recessed Lighting Retrofit and Dimmer Compatibility Problems"
+    description: |
+      Swapping out incandescent can lights for LED retrofit kits sounds
+      straightforward — and it mostly is, until the dimmer starts flickering or
+      buzzing. Many University Place homes in the Bridgeport area have Lutron or
+      Leviton dimmers wired for incandescent loads. LEDs require a dimmer rated
+      for LED minimum load; mismatched combinations cause visible flicker,
+      audible buzz from the fixture, or early LED failure. The right fix: Lutron
+      Caséta or Leviton Decora Smart dimmers, which handle LED loads down to
+      near-zero minimum. Retrofit IC-rated LED wafers like the Halo LT series drop
+      directly into existing can housings — no new housing cut required in most
+      cases. Each fixture takes 20–30 minutes when wiring is accessible. For a
+      whole-house refresh across 20–30 fixtures including new dimmers, budget
+      $1,500–$3,500 installed.
+
+faq:
+  - q: "How fast can you get to University Place for an electrical estimate?"
+    a: |
+      University Place is right off SR-16 and I-5 — from our regular project areas
+      in King and Pierce counties, that's usually 30–45 minutes depending on Tacoma
+      traffic near the Nalley Valley interchange. Street parking is easy on
+      residential blocks near Chambers Creek Regional Park and throughout the Cirque
+      neighborhood. For an on-site estimate, scheduling typically runs 5–7 business
+      days out. No commissioned sales rep involved — Vladislav Volkov walks the job
+      and delivers a line-item quote on site. Call (206) 591-1096 to get on the
+      calendar. TopVolk is a WA Licensed Contractor covering all of Pierce County.
+
+  - q: "What does a 200-amp panel upgrade cost in University Place?"
+    a: |
+      A 200A panel replacement in University Place runs $3,500–$6,500 installed.
+      Service entrance condition is the biggest variable — if existing conduit and
+      meter base are in good shape, you're toward the lower end. Add aluminum
+      wiring remediation throughout the house, or a subpanel for a detached garage,
+      and costs climb accordingly. The Pierce County PALS permit, PSE meter pull
+      coordination, and both required inspections are included in our scope. No
+      range estimates: TopVolk provides a fixed quote before work starts, with
+      deadline penalties written into the contract if we miss the agreed completion
+      date.
+
+  - q: "Do I need a permit for electrical work in University Place, and who handles it?"
+    a: |
+      Almost all electrical work beyond basic device swaps requires a permit in
+      University Place. Pierce County PALS processes applications online — plan
+      review for a panel upgrade or new EV charger circuit runs about 2–4 weeks.
+      After permit issuance, PSE needs 5–10 business days advance notice to pull
+      the meter. Two inspections follow: rough-in before walls close, then final
+      after all cover plates and fixtures are installed. As a WA Licensed
+      Contractor, TopVolk pulls the permit directly — we file the application,
+      schedule inspections, and coordinate the PSE pull. You don't chase
+      paperwork. That's part of the job scope.
+
+  - q: "Can you install a Level 2 EV charger circuit in my University Place garage?"
+    a: |
+      Yes — it's one of the more frequent scopes in Pierce County right now. The
+      process starts with a load calculation to confirm panel capacity. If your
+      service can absorb the draw, we run a dedicated 50A or 60A circuit to the
+      garage and install the outlet or hardwire the unit. JuiceBox 48 and
+      ChargePoint Home Flex both need a 50A circuit; the Tesla Wall Connector
+      can run on 60A for faster charge rates. If your panel is a maxed-out 100A
+      Federal Pacific or similar, we scope the panel upgrade at the same time to
+      handle both in one permit. Call (206) 591-1096 — Vladislav walks through
+      the load numbers with you during the site visit before any work is quoted.
+
+  - q: "What warranty does TopVolk provide on electrical work in University Place?"
+    a: |
+      Workmanship carries a 2-year warranty — if something we wired fails due to
+      an installation error, we come back and fix it. Equipment warranties depend
+      on the manufacturer: Square D and Eaton panels carry 1–5 year limited
+      warranties on the hardware. EV charger units like JuiceBox and ChargePoint
+      Home Flex include 3-year manufacturer warranties registered in your name.
+      More practically: Vladislav is the one on the job, so a callback means
+      calling the same person who did the work. That direct accountability tends
+      to matter more than warranty fine print when something comes up two years
+      later.
+
+  - q: "Do you cover areas near University Place, or just within city limits?"
+    a: |
+      University Place is a regular part of our Pierce County coverage. TopVolk
+      also works throughout Tacoma (98402, 98405, 98406), Lakewood, Gig Harbor,
+      and Puyallup — all straightforward drives from University Place. For projects
+      further out in Kitsap or Snohomish counties, we're there too; 100+ projects
+      completed since 2017 span all four counties. Non-emergency electrical scopes
+      in University Place typically schedule 2–3 weeks out. Call (206) 591-1096
+      or schedule a free on-site consultation — Vladislav looks at the actual
+      panel and wiring, and gives you a fixed quote the same visit.
