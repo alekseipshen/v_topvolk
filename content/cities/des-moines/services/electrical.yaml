@@ -1,0 +1,171 @@
+title: "Des Moines Electrical — Panel Upgrades & EV Circuits, 98198"
+
+intro: |
+  The ranchers and split-levels packed along Pacific Ridge and Marine Hills went up mostly
+  between 1962 and 1978 — right in the window when aluminum branch wiring was standard
+  practice. PSE (Puget Sound Energy) serves the 98198 zip code, and when homeowners here
+  call to add a Tesla Wall Connector or upgrade to a heat pump, the existing 100A panel
+  almost always hits its limit before the permit is even submitted. TopVolk Construction LLC
+  has handled panel swaps and EV circuit installs across Des Moines and the surrounding south
+  King County corridor since 2017 — 100+ projects completed, owner-led by Vladislav Volkov.
+  Des Moines Beach Park sits less than a mile from some of the densest 1960s-era housing in
+  the city, and that housing era comes with real electrical baggage: aluminum wiring,
+  undersized service, and breakers never designed for a ChargePoint Home Flex or a Mitsubishi
+  heat pump compressor draw.
+
+localContext: |
+  The housing stock in Des Moines clusters into two distinct eras. South of Kent-Des Moines
+  Road in the 98198 zip, most homes date from 1963-1975 — tract ranchers on flat lots with
+  original 100A service and, frequently, aluminum branch wiring in the bedroom circuits.
+  The Redondo neighborhood along the waterfront runs slightly older, with some post-war 1950s
+  builds carrying 60A service that hasn't been touched since a Zinsco or Federal Pacific panel
+  was first installed. North toward the SeaTac border in the 98148 overlap zone, there's denser
+  1980s-90s stock that typically has copper wiring and 150A service but still falls short for
+  EV charging or whole-home electrification. Des Moines doesn't fall under Seattle SDCI —
+  electrical permits pull through the City of Des Moines permit center, and PSE coordinates
+  on the utility side for any service entrance upgrades. Plan review for a panel upgrade
+  typically runs 2-4 weeks; Vladislav pulls all permits directly so nothing waits on a
+  homeowner to track down paperwork.
+
+commonProblems:
+  - title: "100A Panels Maxed Out by EV Chargers and Heat Pumps"
+    description: |
+      A 100A service panel sized in 1968 was built for a refrigerator, a few circuits of
+      incandescent lighting, and maybe an electric range. Add a Level 2 EV charger — even
+      a modest 32A ChargePoint Home Flex — and you're looking at a panel that can't safely
+      support the new load without a load calculation showing available headroom. The fix is
+      a 200A service upgrade: new meter base, new service entrance conductors, new Square D
+      QO or Eaton BR panel, coordinated disconnect notification with PSE. In Des Moines, PSE
+      requires a utility notification form before the meter is pulled — Vladislav handles that
+      paperwork as part of the job. A straight 200A upgrade with a 40-circuit panel typically
+      runs $3,500-$5,500 depending on whether the service entrance needs to be relocated or
+      the existing meter base is already compatible. After the upgrade, a dedicated 50A or 60A
+      EV circuit can be added without further compromise.
+
+  - title: "Aluminum Wiring in 1965-1973 Homes — Proper Remediation, Not a Patch"
+    description: |
+      Roughly half the ranchers in the Marine Hills and Pacific Ridge neighborhoods were wired
+      with aluminum branch circuit conductors — standard practice during the copper shortage of
+      the late 1960s. The problem isn't the aluminum itself; it's oxidation at device connections
+      that causes loose terminations, arcing, and heat buildup behind outlet covers. The correct
+      fix is AlumiConn push-in connectors (UL-listed for aluminum-to-copper pigtailing) or
+      CO/ALR-rated receptacles at every device location — not just at the panel. Full aluminum
+      wiring remediation in a typical 3-bedroom rancher runs 2-4 days and $2,500-$5,000
+      depending on the device count and whether junction boxes need to be accessed through
+      finished ceilings. Vladislav uses AlumiConn connectors rather than the older wire nut
+      method, which degrades over time under thermal cycling. King County building inspectors
+      want to see this work permitted and inspected — a final inspection sign-off matters for
+      insurance renewals and future resale disclosures.
+
+  - title: "AFCI and GFCI Breaker Upgrades Required Under Current NEC"
+    description: |
+      Washington State adopted the 2023 NEC, which requires AFCI protection for virtually all
+      bedroom, living room, and hallway circuits in a dwelling. Homes built before 2002 have
+      none of it. A panel replacement automatically triggers full compliance, meaning every
+      bedroom circuit needs a dedicated AFCI breaker — Square D QO AFCI or Eaton CAFCI — in
+      the new panel. GFCI protection is required in bathrooms, kitchens, garages, and exterior
+      outlets. For homeowners not doing a full panel swap, retrofitting AFCI breakers into an
+      existing panel is possible but depends entirely on the brand — Federal Pacific Stab-Lok
+      panels cannot accept modern AFCI breakers at all and need full replacement before any
+      code-compliant upgrade is possible. Vladislav pulls every permit through the City of Des
+      Moines permit center, which schedules rough-in and final inspections for all panel work.
+      WA Licensed Contractor on all jobs. Timeline from permit application to final inspection
+      typically runs 3-5 weeks for a standard panel swap.
+
+  - title: "EV Charger Circuit Installation for Tesla, JuiceBox, and ChargePoint"
+    description: |
+      A 50A dedicated circuit is the baseline for any Level 2 home charger — enough for a
+      Tesla Wall Connector running at 48A (9.6kW continuous) or a JuiceBox 48 at full output.
+      The circuit runs from the panel to the garage or carport: 6 AWG copper wire in conduit,
+      a dedicated 50A or 60A breaker, and either a NEMA 14-50 outlet or a hardwired termination
+      at the charger mount point. In Des Moines homes where the panel sits in a rear utility
+      room and the garage is attached at the front, that run can be 40-70 feet of conduit
+      through finished walls or attic space — labor adds up fast. Cost range: $800-$1,800 for
+      the circuit alone, separate from any panel upgrade. If the existing panel has no open
+      50A slot, a tandem breaker evaluation or panel upgrade is required before the EV circuit
+      can be added cleanly. Vladislav gives a line-item quote at the free on-site consultation —
+      no vague ranges, no surprises on the invoice.
+
+  - title: "Knob-and-Tube Wiring in Redondo's Pre-1952 Housing Stock"
+    description: |
+      The older post-war homes in Redondo — some built as early as 1945-1952 — occasionally
+      still carry original knob-and-tube (K&T) wiring in the attic and wall cavities. K&T has
+      no ground conductor, can't support proper GFCI protection, and is specifically excluded
+      from coverage by most homeowners insurance carriers when discovered during a policy
+      renewal inspection. Full K&T replacement in a 1,400 sq ft home typically runs
+      $8,000-$14,000 depending on finished wall access and panel condition. The work involves
+      fishing new 12 AWG or 14 AWG NM-B (Romex) through walls, attic rerouting, and a new
+      panel if the original fuse box is still in place. Seattle's heavy rain season — roughly
+      37 inches annually, concentrated October through May — accelerates insulation breakdown
+      on old knob insulators in damp crawlspaces and attics. This work requires a permit and
+      rough-in inspection before walls close. Call (206) 591-1096 to schedule a free on-site
+      walkthrough with Vladislav before the next insurance renewal hits.
+
+faq:
+  - q: "How fast can you get to Des Moines for an electrical estimate?"
+    a: |
+      Vladislav covers the south King County corridor regularly — Des Moines is a
+      straightforward run down I-5 or SR-99 from the Seattle metro, typically 20-35 minutes
+      depending on traffic near SeaTac. For an on-site consultation, the usual scheduling
+      window is 3-7 days out. From consultation to permit submittal runs another 3-5 days;
+      City of Des Moines permit review for a panel upgrade typically takes 2-4 weeks. Call
+      (206) 591-1096 to get on the schedule — Vladislav does the estimate himself, not a
+      commissioned closer, so the person measuring your panel is the same person pulling
+      the permit.
+
+  - q: "What does a 200A panel upgrade cost in Des Moines?"
+    a: |
+      A straight 200A service upgrade — new meter base, new 40-space Square D or Eaton panel,
+      service entrance conductors, and PSE coordination — runs $3,500-$5,500 for most Des Moines
+      homes. What moves the number: whether the meter base needs physical relocation (adds
+      $400-$800), how many circuits transfer from the old panel, and whether AFCI breakers are
+      required on bedroom circuits per the current NEC adoption. Adding a 50A EV circuit at the
+      same time typically adds $600-$900 since the panel is already open. Exact pricing comes
+      from a line-item quote at the free on-site consultation — no estimates over the phone
+      from photos.
+
+  - q: "Does panel work in Des Moines require a city permit?"
+    a: |
+      Yes — any service upgrade, panel replacement, or new circuit over 30A requires a permit
+      through the City of Des Moines permit center. This is separate from King County DPER,
+      which covers unincorporated areas; Des Moines is an incorporated city with its own
+      building department. PSE also requires a separate utility notification before pulling
+      the meter for service entrance work. Vladislav handles both the city permit and the PSE
+      coordination paperwork on every panel job — the homeowner doesn't chase anything. A
+      rough-in inspection is required after panel installation but before the meter reconnects,
+      and a final inspection closes the permit. Permit fees for a panel upgrade in Des Moines
+      typically run $180-$320 depending on scope. WA Licensed Contractor on all work.
+
+  - q: "Can aluminum wiring be remediated without replacing the whole panel?"
+    a: |
+      In most cases, yes. If the existing panel is a current Square D, Eaton, or Siemens unit
+      in good condition, aluminum wiring remediation can proceed independently — AlumiConn
+      connectors at every device location, CO/ALR-rated outlets and switches throughout, and
+      a load calculation review to confirm the panel rating still fits. The exception: Federal
+      Pacific Stab-Lok and Zinsco panels need to go regardless of wiring, given their
+      well-documented breaker-failure histories. For a 3-bedroom rancher in the Marine Hills
+      area, aluminum remediation without a panel swap typically runs $2,500-$4,500. Vladislav
+      inspects both the panel and the branch wiring at the consultation and gives a clear
+      recommendation before anything is scoped.
+
+  - q: "What warranty covers the electrical work?"
+    a: |
+      All labor carries a 2-year workmanship warranty. Panels and breakers — Square D, Eaton,
+      Siemens — carry manufacturer warranties ranging from 5 to 10 years depending on the
+      product line. The more durable protection is the permit itself: a permitted panel
+      installation means a licensed city inspector signed off, which matters for homeowners
+      insurance and resale. Deadline commitments are written into every contract with a
+      penalty clause — if a milestone is missed, there's a financial consequence paid to the
+      homeowner, not just an apology. TopVolk has completed 100+ projects across King,
+      Snohomish, Pierce, and Kitsap counties since 2017, and Vladislav's name is on every
+      single one.
+
+  - q: "What other south King County cities do you cover near Des Moines?"
+    a: |
+      Burien, SeaTac, Normandy Park, Kent, Federal Way, and Renton are all regular service
+      areas — most sit within 15-20 minutes of Des Moines along SR-99 or I-5. Tukwila and
+      Auburn are covered as well. Scheduling from first call to on-site consultation runs
+      3-7 days; permit-to-completion on a panel upgrade is typically 4-7 weeks total,
+      depending on City of Des Moines permit review time. Call (206) 591-1096 or request a
+      free on-site consultation — Vladislav quotes and manages the job directly, so there's
+      no handoff between the person who sold the work and the person executing it.
