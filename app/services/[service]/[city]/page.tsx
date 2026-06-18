@@ -55,9 +55,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // → 79 regression on `bathroom remodel fife` (and ~38 similar cities)
   // because the pipeline cannot cover all 80 cities × 4 services overnight.
 
+  const year = new Date().getFullYear();
+
+  // AEO: lead the meta description with the unique direct-answer when available.
+  const metaContent = loadCityServiceContent(citySlug, serviceSlug);
+  const fallbackDescription = `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2017. Call ${PHONE_DISPLAY}.`;
+  const description =
+    typeof metaContent?.answer === 'string' && metaContent.answer.trim()
+      ? metaContent.answer.trim()
+      : fallbackDescription;
+
   return {
-    title: `${service.name} in ${city.name}, WA`,
-    description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2017. Call ${PHONE_DISPLAY}.`,
+    title: `${service.name} in ${city.name}, WA (${year})`,
+    description,
     keywords: `${service.name.toLowerCase()}, ${city.name}, Seattle area, home renovation, construction contractor`,
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,

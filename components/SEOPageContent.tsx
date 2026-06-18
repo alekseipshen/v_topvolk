@@ -19,10 +19,19 @@ export default function SEOPageContent({
   cityName,
   serviceName,
 }: SEOPageContentProps) {
+  const lastUpdated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
   return (
     <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto space-y-10">
+          {/* AEO: direct-answer lead (spoiler) + freshness signal */}
+          <div className={content.answer ? 'border-l-4 border-blue-600 bg-blue-50 rounded-r-lg p-4' : ''}>
+            {content.answer && (
+              <p className="text-base md:text-lg font-medium text-gray-900 leading-relaxed">{content.answer}</p>
+            )}
+            <p className={`text-xs text-gray-500 ${content.answer ? 'mt-2' : ''}`}>Last updated {lastUpdated}</p>
+          </div>
+
           {content.title && (
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               {content.title}

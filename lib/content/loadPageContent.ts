@@ -13,6 +13,7 @@ export interface CommonProblemItem {
 }
 
 export interface PageContent {
+  answer?: string;
   title?: string;
   intro?: string;
   localContext?: string;
