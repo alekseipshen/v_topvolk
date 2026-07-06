@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { Pool } from 'pg';
 import {
   getLeadNotificationHTML,
   getLeadNotificationText,
@@ -16,6 +17,65 @@ interface LeadData {
   recaptchaToken: string;
 }
 
+const LEAD_SITE = 'topvolk';
+
+// schema.table — must be set in env, validated at module load
+const LEADS_TABLE = process.env.LEADS_TABLE;
+const TABLE_RE = /^[a-z_][a-z0-9_]*\.[a-z_][a-z0-9_]*$/i;
+if (LEADS_TABLE && !TABLE_RE.test(LEADS_TABLE)) {
+  throw new Error(`Invalid LEADS_TABLE format: ${LEADS_TABLE}`);
+}
+
+// Singleton pool across warm invocations.
+// We strip ?sslmode=... from the connection string because `pg` parses it from
+// the URL and enforces cert verification, overriding our explicit ssl option.
+// Railway's PG proxy uses a self-signed cert chain.
+let pool: Pool | null = null;
+function getPool(): Pool | null {
+  if (!pool && process.env.DATABASE_URL) {
+    const cleaned = process.env.DATABASE_URL.replace(/([?&])sslmode=[^&]*(&|$)/g, (_m, p1, p2) =>
+      p1 === '?' && p2 === '' ? '' : p1 === '?' ? '?' : p2,
+    );
+    pool = new Pool({
+      connectionString: cleaned,
+      ssl: { rejectUnauthorized: false },
+      max: 3,
+      idleTimeoutMillis: 10_000,
+    });
+  }
+  return pool;
+}
+
+async function insertLead(request: NextRequest, data: LeadData): Promise<void> {
+  const p = getPool();
+  if (!p || !LEADS_TABLE) return;
+  const ua = request.headers.get('user-agent');
+  const xff = request.headers.get('x-forwarded-for');
+  const ip = xff ? xff.split(',')[0].trim() : null;
+  const page = request.headers.get('referer') || null;
+  await p.query(
+    `INSERT INTO ${LEADS_TABLE}
+       (name, phone, email, service_slug, service_name, city_slug, city_name, message, source, page, user_agent, ip, site, extra)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14::jsonb)`,
+    [
+      data.name,
+      data.phone,
+      data.email || null,
+      null,
+      data.service || null,
+      null,
+      null,
+      data.message || null,
+      'website',
+      page,
+      ua,
+      ip,
+      LEAD_SITE,
+      null,
+    ],
+  );
+}
+
 // Helper function to add delay between emails
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -28,13 +88,13 @@ async function sendTelegram(data: {
   service?: string;
   url?: string;
   timestamp?: string;
-}) {
+}): Promise<boolean> {
   const botToken = process.env.TELEGRAM_BOT_TOKEN?.trim();
   const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
 
   if (!botToken || !chatId) {
     console.log('[TELEGRAM] Skipping - no bot token or chat ID configured');
-    return;
+    return false;
   }
 
   const pstTime = data.timestamp
@@ -73,11 +133,14 @@ async function sendTelegram(data: {
     if (!res.ok) {
       const err = await res.text();
       console.error('[TELEGRAM] Error:', err);
+      return false;
     } else {
       console.log('[TELEGRAM] Notification sent');
+      return true;
     }
   } catch (error) {
     console.error('[TELEGRAM] Error:', error);
+    return false;
   }
 }
 
@@ -95,61 +158,66 @@ async function sendEmails(data: {
   source?: string;
   url?: string;
   timestamp?: string;
-}) {
+}): Promise<boolean> {
   const resendApiKey = process.env.RESEND_API_KEY?.trim();
   const emailRecipient1 = process.env.EMAIL_RECIPIENT_1?.trim();
   const emailRecipient2 = process.env.EMAIL_RECIPIENT_2?.trim();
   const emailFromAddress = process.env.EMAIL_FROM?.trim() || 'noreply@topvolk.org';
-  
+
   if (!resendApiKey || (!emailRecipient1 && !emailRecipient2)) {
     console.log('[EMAIL] Skipping - no API key or recipients configured');
-    return;
+    return false;
   }
 
-  try {
-    const resend = new Resend(resendApiKey);
-    
-    // Prepare email promises for parallel sending
-    const ownerEmails: Promise<any>[] = [];
-    
-    // Send to first recipient
-    if (emailRecipient1) {
-      ownerEmails.push(
+  const resend = new Resend(resendApiKey);
+
+  // Prepare owner-email promises for parallel sending
+  const ownerEmails: Promise<void>[] = [];
+
+  // Send to first recipient
+  if (emailRecipient1) {
+    ownerEmails.push(
+      resend.emails.send({
+        from: `TopVolk Construction <${emailFromAddress}>`,
+        to: emailRecipient1,
+        subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
+        html: getLeadNotificationHTML(data),
+        text: getLeadNotificationText(data),
+      }).then(() => {
+        console.log(`[EMAIL] Sent to ${emailRecipient1}`);
+      })
+    );
+  }
+
+  // Send to second recipient (in parallel with first)
+  if (emailRecipient2) {
+    // Small delay to avoid rate limiting
+    ownerEmails.push(
+      delay(1000).then(() =>
         resend.emails.send({
           from: `TopVolk Construction <${emailFromAddress}>`,
-          to: emailRecipient1,
+          to: emailRecipient2,
           subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
           html: getLeadNotificationHTML(data),
           text: getLeadNotificationText(data),
         }).then(() => {
-          console.log(`[EMAIL] Sent to ${emailRecipient1}`);
+          console.log(`[EMAIL] Sent to ${emailRecipient2}`);
         })
-      );
-    }
-    
-    // Send to second recipient (in parallel with first)
-    if (emailRecipient2) {
-      // Small delay to avoid rate limiting
-      ownerEmails.push(
-        delay(1000).then(() => 
-          resend.emails.send({
-            from: `TopVolk Construction <${emailFromAddress}>`,
-            to: emailRecipient2,
-            subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
-            html: getLeadNotificationHTML(data),
-            text: getLeadNotificationText(data),
-          }).then(() => {
-            console.log(`[EMAIL] Sent to ${emailRecipient2}`);
-          })
-        )
-      );
-    }
-    
-    // Wait for both owner emails to complete
-    await Promise.all(ownerEmails);
-    
-    // Send confirmation email to customer (only if email provided)
-    if (data.email) {
+      )
+    );
+  }
+
+  // Owner notification counts as delivered if at least one owner email succeeds.
+  const ownerResults = await Promise.allSettled(ownerEmails);
+  const ownerOk = ownerResults.some((r) => r.status === 'fulfilled');
+  ownerResults.forEach((r) => {
+    if (r.status === 'rejected') console.error('[EMAIL] Error:', r.reason);
+  });
+
+  // Send confirmation email to customer (only if email provided).
+  // This ack does NOT count toward delivery success.
+  if (data.email) {
+    try {
       await delay(1000);
       await resend.emails.send({
         from: `TopVolk Construction <${emailFromAddress}>`,
@@ -159,12 +227,12 @@ async function sendEmails(data: {
         text: getCustomerConfirmationText(data.name),
       });
       console.log(`[EMAIL] Confirmation sent to customer: ${data.email}`);
+    } catch (ackError) {
+      console.error('[EMAIL] Confirmation error:', ackError);
     }
-    
-  } catch (emailError) {
-    console.error('[EMAIL] Error:', emailError);
-    // Don't throw - we don't want to fail the entire request
   }
+
+  return ownerOk;
 }
 
 export async function POST(request: NextRequest) {
@@ -223,18 +291,27 @@ export async function POST(request: NextRequest) {
 
     // Send to n8n webhook for processing
     const webhookUrl = process.env.N8N_WEBHOOK_URL;
+    let n8nOk = false;
     if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(leadPayload),
-      });
+      try {
+        const n8nRes = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(leadPayload),
+        });
+        n8nOk = n8nRes.ok;
+        if (!n8nRes.ok) {
+          console.error('[N8N] Webhook error:', n8nRes.status);
+        }
+      } catch (n8nError) {
+        console.error('[N8N] Webhook error:', n8nError);
+      }
     }
 
     // ============================================
-    // Send notifications: Email + Telegram (in parallel)
+    // Send notifications: Email + Telegram (in parallel) + PG archive
     // ============================================
 
     const notificationData = {
@@ -248,11 +325,34 @@ export async function POST(request: NextRequest) {
       timestamp: leadPayload.timestamp,
     };
 
-    // Send email and Telegram in parallel
-    await Promise.all([
+    // Send email and Telegram in parallel; archive to PG best-effort alongside.
+    const [emailResult, tgResult, pgResult] = await Promise.allSettled([
       sendEmails(notificationData),
       sendTelegram(notificationData),
+      insertLead(request, data),
     ]);
+
+    const emailOk = emailResult.status === 'fulfilled' && emailResult.value;
+    const tgOk = tgResult.status === 'fulfilled' && tgResult.value;
+    if (emailResult.status === 'rejected') {
+      console.error('[EMAIL] Error:', emailResult.reason);
+    }
+    if (tgResult.status === 'rejected') {
+      console.error('[TELEGRAM] Error:', tgResult.reason);
+    }
+    if (pgResult.status === 'rejected') {
+      console.error('pg insert failed:', pgResult.reason);
+    }
+
+    // Lead is "delivered" if any delivery channel (n8n / owner email / Telegram)
+    // reached its destination. PG is best-effort archive and does not count.
+    // The customer ack email also does not count.
+    if (!n8nOk && !emailOk && !tgOk) {
+      return NextResponse.json(
+        { error: 'Notification delivery failed' },
+        { status: 502 }
+      );
+    }
 
     // Return success to client
     return NextResponse.json({
