@@ -4,6 +4,7 @@ import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
 import { HomepageSchemas } from '@/components/StructuredData';
 import { featuredServices } from '@/lib/data/services';
+import { homeWorks, homePreviews } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
 import Link from 'next/link';
@@ -240,7 +241,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <WorksGallery />
+          <WorksGallery works={homeWorks} previews={homePreviews} />
         </div>
       </section>
 

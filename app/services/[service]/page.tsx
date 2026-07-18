@@ -9,6 +9,7 @@ import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
 import { services, visibleServices } from '@/lib/data/services';
+import { serviceGalleries } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
@@ -195,7 +196,7 @@ export default async function ServicePage({ params }: PageProps) {
               Our Recent Remodel Works
             </h2>
           </div>
-          <WorksGallery />
+          <WorksGallery works={serviceGalleries[serviceSlug]?.works} previews={serviceGalleries[serviceSlug]?.previews} />
         </div>
       </section>
 

@@ -2,33 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
+import { defaultWorks, defaultPreviews, type Work, type Preview } from '@/lib/data/gallery';
 
-// All photos - available in lightbox (removed AI-generated _02 and _05)
-const allWorks = [
-  { image: '/assets/works/_01.jpg', alt: 'Home Renovation Project 1' },
-  { image: '/assets/works/_03.jpg', alt: 'Home Renovation Project 3' },
-  { image: '/assets/works/_04.jpg', alt: 'Home Renovation Project 4' },
-  { image: '/assets/works/_06.jpg', alt: 'Home Renovation Project 6' },
-  { image: '/assets/works/_07.jpg', alt: 'Home Renovation Project 7' },
-  { image: '/assets/works/_08.jpg', alt: 'Home Renovation Project 8' },
-  { image: '/assets/works/_09.jpg', alt: 'Home Renovation Project 9' },
-  { image: '/assets/works/_10.jpg', alt: 'Home Renovation Project 10' },
-  { image: '/assets/works/_11.jpg', alt: 'Home Renovation Project 11' },
-  { image: '/assets/works/_12.jpg', alt: 'Home Renovation Project 12' },
-  { image: '/assets/works/_13.jpg', alt: 'Home Renovation Project 13' },
-  { image: '/assets/works/_14.jpg', alt: 'Home Renovation Project 14' },
-  { image: '/assets/works/_15.jpg', alt: 'Home Renovation Project 15' },
-];
+type WorksGalleryProps = {
+  // Optional overrides. When omitted, the generic renovation set is used.
+  works?: Work[];
+  previews?: Preview[];
+};
 
-// Preview thumbnails shown in gallery grid
-const previewWorks = [
-  { preview: '/assets/works/_01m.jpg', index: 0 },
-  { preview: '/assets/works/_03m.jpg', index: 1 },
-  { preview: '/assets/works/_04m.jpg', index: 2 },
-  { preview: '/assets/works/_06m.jpg', index: 3 },
-];
+export default function WorksGallery({ works, previews }: WorksGalleryProps) {
+  const allWorks = works ?? defaultWorks;
+  const previewWorks = previews ?? defaultPreviews;
 
-export default function WorksGallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
