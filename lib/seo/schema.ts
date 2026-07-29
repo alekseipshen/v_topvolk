@@ -52,9 +52,12 @@ export function generateOrganizationSchema() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
+        // Mirrors the Google Business Profile exactly (Mon-Sat 09:00-17:00).
+        // GBP is the canonical source for NAP + hours: it is what searchers see,
+        // and any drift between it and the site is a NAP-consistency hit.
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '07:00',
-        closes: '19:00',
+        opens: '09:00',
+        closes: '17:00',
       },
     ],
     aggregateRating: {
@@ -117,9 +120,12 @@ export function generateLocalBusinessSchema(params: SchemaParams) {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
+        // Mirrors the Google Business Profile exactly (Mon-Sat 09:00-17:00).
+        // GBP is the canonical source for NAP + hours: it is what searchers see,
+        // and any drift between it and the site is a NAP-consistency hit.
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '07:00',
-        closes: '19:00',
+        opens: '09:00',
+        closes: '17:00',
       },
     ],
     aggregateRating: {
