@@ -36,14 +36,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   return {
     title: `Home Renovation in ${city.name}, WA`,
-    description: `Home renovation in ${city.name}, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2017. Call ${PHONE_DISPLAY}.`,
+    description: `Home renovation in ${city.name}, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2023. Call ${PHONE_DISPLAY}.`,
     keywords: `home renovation ${city.name}, construction contractor ${city.name}, remodeling ${city.name}, Seattle area contractor`,
     alternates: {
       canonical: `${SITE_URL}/cities/${city.slug}`,
     },
     openGraph: {
       title: `Home Renovation in ${city.name}, WA | ${BUSINESS_NAME}`,
-      description: `Home renovation in ${city.name}, WA. Licensed contractor since 2017.`,
+      description: `Home renovation in ${city.name}, WA. Licensed contractor since 2023.`,
       url: `${SITE_URL}/cities/${city.slug}`,
     },
   };
@@ -108,7 +108,7 @@ export default async function CityPage({ params }: PageProps) {
               <p className="text-base md:text-lg leading-relaxed">
                 From kitchen remodels and bathroom renovations to custom deck installations and complete 
                 home transformations, we deliver quality craftsmanship with direct communication and 
-                transparent pricing. With over 100 projects completed since 2017, Vladislav Volkov is 
+                transparent pricing. With over 100 projects completed since 2023, Vladislav Volkov is 
                 your trusted local contractor.
               </p>
 

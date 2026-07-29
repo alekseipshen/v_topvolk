@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     default: 'TopVolk Construction | Home Renovation in Seattle, WA',
     template: '%s | TopVolk Construction',
   },
-  description: 'Home renovation in Seattle, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2017. Call (206) 591-1096 for a free estimate.',
+  description: 'Home renovation in Seattle, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2023. Call (206) 591-1096 for a free estimate.',
   keywords: 'home renovation, Seattle, kitchen remodel, bathroom remodel, deck installation, construction contractor, King County',
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
     title: 'TopVolk Construction | Professional Home Renovation in Seattle',
-    description: 'Expert home renovation services in Seattle, Bellevue, Tacoma. Licensed contractor with 100+ projects since 2017.',
+    description: 'Expert home renovation services in Seattle, Bellevue, Tacoma. Licensed contractor with 100+ projects since 2023.',
     type: 'website',
     url: SITE_URL,
     siteName: 'TopVolk Construction LLC',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'TopVolk Construction | Home Renovation in Seattle',
-    description: 'Expert home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2017.',
+    description: 'Expert home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since 2023.',
     images: [`${SITE_URL}/og-image.jpg`],
   },
   robots: {

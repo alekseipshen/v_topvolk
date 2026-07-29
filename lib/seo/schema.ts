@@ -2,7 +2,7 @@ import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME, BUSINESS_EMAIL, GOOGLE_RATI
 
 const SITE_URL = 'https://www.topvolk.org';
 const REVIEW_COUNT = 32;
-const FOUNDED_YEAR = 2017;
+const FOUNDED_YEAR = 2023;
 
 interface SchemaParams {
   city?: string;
@@ -27,7 +27,7 @@ export function generateOrganizationSchema() {
     email: BUSINESS_EMAIL,
     foundingDate: `${FOUNDED_YEAR}`,
     priceRange: '$$',
-    description: 'Professional home renovation and construction services in the greater Seattle area. Kitchen remodels, bathroom renovations, deck installations, and general contracting since 2017.',
+    description: 'Professional home renovation and construction services in the greater Seattle area. Kitchen remodels, bathroom renovations, deck installations, and general contracting since 2023.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Seattle',

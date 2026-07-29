@@ -37,14 +37,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   return {
     title: `${service.name} in Seattle Area`,
-    description: `Professional ${service.name.toLowerCase()} in Seattle, Bellevue, Tacoma. Licensed contractor since 2017. Call ${PHONE_DISPLAY} for a free estimate.`,
+    description: `Professional ${service.name.toLowerCase()} in Seattle, Bellevue, Tacoma. Licensed contractor since 2023. Call ${PHONE_DISPLAY} for a free estimate.`,
     keywords: `${service.name.toLowerCase()}, Seattle, ${service.slug}, home renovation, construction contractor`,
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}`,
     },
     openGraph: {
       title: `${service.name} in Seattle Area | ${BUSINESS_NAME}`,
-      description: `Professional ${service.name.toLowerCase()} in Seattle, Bellevue, Tacoma. Licensed contractor since 2017.`,
+      description: `Professional ${service.name.toLowerCase()} in Seattle, Bellevue, Tacoma. Licensed contractor since 2023.`,
       url: `${SITE_URL}/services/${service.slug}`,
     },
   };
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: PageProps) {
     },
     {
       question: `Is ${BUSINESS_NAME} licensed and insured?`,
-      answer: `Yes, ${BUSINESS_NAME} is a fully licensed and insured construction contractor serving the greater Seattle area since 2017. We have completed over 100 projects across King, Snohomish, and Pierce Counties.`,
+      answer: `Yes, ${BUSINESS_NAME} is a fully licensed and insured construction contractor serving the greater Seattle area since 2023. We have completed over 100 projects across King, Snohomish, and Pierce Counties.`,
     },
   ];
 
@@ -178,7 +178,7 @@ export default async function ServicePage({ params }: PageProps) {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
               <p className="text-gray-600">
-                100+ projects completed since 2017. Full responsibility with penalties for missed deadlines.
+                100+ projects completed since 2023. Full responsibility with penalties for missed deadlines.
               </p>
             </div>
           </div>
@@ -216,7 +216,7 @@ export default async function ServicePage({ params }: PageProps) {
               </p>
               
               <p className="text-base md:text-lg leading-relaxed">
-                With over 100 projects completed since 2017, <strong>{BUSINESS_NAME}</strong> delivers professional 
+                With over 100 projects completed since 2023, <strong>{BUSINESS_NAME}</strong> delivers professional 
                 {service.name.toLowerCase()} services across Seattle, Bellevue, Tacoma, and surrounding King County areas. 
                 Vladislav Volkov, a licensed and insured contractor, provides direct communication, transparent pricing, 
                 and takes full responsibility for every project.

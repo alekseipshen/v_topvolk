@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   // AEO: lead the meta description with the unique direct-answer when available.
   const metaContent = loadCityServiceContent(citySlug, serviceSlug);
-  const fallbackDescription = `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2017. Call ${PHONE_DISPLAY}.`;
+  const fallbackDescription = `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2023. Call ${PHONE_DISPLAY}.`;
   const description =
     typeof metaContent?.answer === 'string' && metaContent.answer.trim()
       ? metaContent.answer.trim()
@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     openGraph: {
       title: `${service.name} in ${city.name}, WA | ${BUSINESS_NAME}`,
-      description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Licensed contractor since 2017.`,
+      description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Licensed contractor since 2023.`,
       url: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
   };
@@ -218,7 +218,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
               <p className="text-gray-600">
-                100+ projects completed since 2017. Full responsibility with penalties for missed deadlines.
+                100+ projects completed since 2023. Full responsibility with penalties for missed deadlines.
               </p>
             </div>
           </div>
@@ -245,7 +245,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 </p>
 
                 <p className="text-base md:text-lg leading-relaxed">
-                  {service.description} With over 100 projects completed since 2017, Vladislav Volkov
+                  {service.description} With over 100 projects completed since 2023, Vladislav Volkov
                   delivers quality craftsmanship with direct communication and transparent pricing.
                 </p>
 

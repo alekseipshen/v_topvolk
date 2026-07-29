@@ -45,7 +45,7 @@ export default function Footer() {
                 {BUSINESS_EMAIL}
               </a>
             </p>
-            <p className="text-sm mt-4">100+ Projects Since 2017</p>
+            <p className="text-sm mt-4">100+ Projects Since 2023</p>
             <p className="text-sm">Licensed & Insured</p>
             <p className="text-sm">{GOOGLE_RATING}★ Rating ({GOOGLE_REVIEW_COUNT} reviews)</p>
           </div>
@@ -159,7 +159,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="max-w-4xl mx-auto text-xs text-gray-400 text-center space-y-2">
             <p>
-              <strong className="text-gray-300">{BUSINESS_NAME}</strong> - Professional construction contractor specializing in residential remodeling and custom builds. Licensed and insured contractor serving Seattle, Bellevue, Tacoma, and surrounding King County areas since 2017.
+              <strong className="text-gray-300">{BUSINESS_NAME}</strong> - Professional construction contractor specializing in residential remodeling and custom builds. Licensed and insured contractor serving Seattle, Bellevue, Tacoma, and surrounding King County areas since 2023.
             </p>
             <p>
               All project estimates are provided free of charge. We take full responsibility for every project and maintain direct communication with our clients throughout the construction process.

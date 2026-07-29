@@ -56,7 +56,7 @@ export default function Hero({ title, subtitle = 'Licensed contractor specializi
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm p-2 md:px-4 md:py-2 rounded shadow-md text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
                   <Award className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-gold-500" />
-                  <div className="font-semibold text-xs md:text-base text-gray-900">Since 2017 • 100+ Projects</div>
+                  <div className="font-semibold text-xs md:text-base text-gray-900">Since 2023 • 100+ Projects</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm p-2 md:px-4 md:py-2 rounded shadow-md text-center md:text-left flex md:flex-row flex-col md:items-center md:gap-3">
                   <Shield className="w-6 h-6 mx-auto md:mx-0 mb-1 md:mb-0 text-gold-500" />
