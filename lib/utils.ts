@@ -24,6 +24,9 @@ export const BUSINESS_ADDRESS = '';
 export const GOOGLE_RATING = 4.9;
 export const GOOGLE_REVIEW_COUNT = '30+';
 export const GOOGLE_BUSINESS_PROFILE_URL = 'https://share.google/GCqeuaL4bJXcZpNR5';
+// Direct Google reviews page for TopVolk Construction LLC (placeid resolved from
+// the GBP entity). Opens the reviews list, not a plain Google search for the company.
+export const GOOGLE_REVIEWS_URL = 'https://search.google.com/local/reviews?placeid=ChIJNZUUdtUSYoUR2_JfPfJXKeA';
 
 // Professional icons (Lucide React style)
 export const icons = {
