@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react';
 import { reviews } from '@/lib/data/reviews';
-import { GOOGLE_BUSINESS_PROFILE_URL } from '@/lib/utils';
+import { GOOGLE_REVIEWS_URL } from '@/lib/utils';
 
 // Google-style avatar colors (different colors for each reviewer)
 const avatarColors = [
@@ -26,7 +26,7 @@ export default function Reviews() {
             Real reviews from Google Business Profile
           </p>
           <a
-            href={GOOGLE_BUSINESS_PROFILE_URL}
+            href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
