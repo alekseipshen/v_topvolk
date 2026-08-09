@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_ADDRESS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 import { featuredServices } from '@/lib/data/services';
-import { seattleCounties } from '@/lib/data/seattle-counties';
+import { seattleCounties, getAllCities } from '@/lib/data/seattle-counties';
 
 export default function Footer() {
   // Major renovation services (top 6 visible — hidden services excluded)
@@ -15,6 +16,18 @@ export default function Footer() {
     slug: county.slug,
     cityCount: county.totalCities
   }));
+
+  // Service-area map follows the page's city (e.g. /services/.../auburn -> Auburn)
+  // instead of a fixed Seattle pin; falls back to a regional Puget Sound view.
+  const pathname = usePathname();
+  const cityForMap = getAllCities().find(
+    (c) => (pathname || '').split('/').filter(Boolean).includes(c.slug)
+  );
+  const mapQuery = cityForMap ? `${cityForMap.name}, WA` : 'Puget Sound, WA';
+  const mapZoom = cityForMap ? 11 : 8;
+  const mapTitle = cityForMap
+    ? `TopVolk Construction service area near ${cityForMap.name}, WA`
+    : 'TopVolk Construction service area across Western & Central Washington';
 
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -144,13 +157,13 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-3 text-center">Service Area</h4>
           <div className="rounded-lg overflow-hidden max-w-4xl mx-auto">
             <iframe
-              src="https://maps.google.com/maps?q=Seattle,WA&t=&z=9&ie=UTF8&iwloc=&output=embed"
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&t=&z=${mapZoom}&ie=UTF8&iwloc=&output=embed`}
               width="100%"
               height="240"
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="TopVolk Construction service area: Seattle Metro, King, Snohomish, Pierce, Kitsap counties"
+              title={mapTitle}
             />
           </div>
         </div>

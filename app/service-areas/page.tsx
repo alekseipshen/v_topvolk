@@ -99,7 +99,7 @@ export default function ServiceAreasPage() {
                   className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition border-2 border-transparent hover:border-gold-500"
                 >
                   <h3 className="font-bold text-xl text-gray-900 mb-2">{county.name}</h3>
-                  <p className="text-sm text-gray-600">{countyCount} cities</p>
+                  <p className="text-sm text-gray-600">{countyCount} {countyCount === 1 ? 'city' : 'cities'}</p>
                 </a>
               );
             })}
@@ -129,7 +129,7 @@ export default function ServiceAreasPage() {
                   className="bg-gray-50 rounded-lg shadow-lg p-6 md:p-8 scroll-mt-32"
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 pb-4 border-b-2 border-gold-500">
-                    {county.name} <span className="text-gray-500 text-xl">({countyCities.length} cities)</span>
+                    {county.name} <span className="text-gray-500 text-xl">({countyCities.length} {countyCities.length === 1 ? 'city' : 'cities'})</span>
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                     {countyCities.map((city) => (
