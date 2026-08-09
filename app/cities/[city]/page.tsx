@@ -74,7 +74,7 @@ export default async function CityPage({ params }: PageProps) {
     : [];
 
   const primaryCounty = cityCounties[0]?.name;
-  const localArea = countyNames || 'the greater Seattle area';
+  const localArea = countyNames || 'Western & Central Washington';
 
   // Query-targeted service depth for this city. Only VISIBLE services are
   // listed here — Home Additions, Electrical, Plumbing, Foundation Repair and
@@ -167,7 +167,7 @@ export default async function CityPage({ params }: PageProps) {
               <p className="text-base md:text-lg leading-relaxed">
                 Looking for a reliable construction contractor in <strong>{city.name}</strong>? 
                 {BUSINESS_NAME} provides professional home renovation and remodeling services throughout 
-                {city.name} and the greater Seattle area in {countyNames}.
+                {city.name} and surrounding communities in {countyNames}.
               </p>
               
               <p className="text-base md:text-lg leading-relaxed">

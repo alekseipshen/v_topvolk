@@ -182,10 +182,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Service Areas in Seattle
+              Service Areas Across Washington
             </h2>
             <p className="text-xl text-gray-600">
-              Serving 3 counties with 56 cities across the greater Seattle area
+              Serving {seattleCounties.length} counties with {seattleCounties.reduce((sum, c) => sum + (c.totalCities || 0), 0)} cities across Western &amp; Central Washington
             </p>
           </div>
 
