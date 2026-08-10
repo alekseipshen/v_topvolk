@@ -1,4 +1,7 @@
 import { PHONE_NUMBER, PHONE_DISPLAY, BUSINESS_NAME, BUSINESS_EMAIL, GOOGLE_RATING } from '@/lib/utils';
+import { reviews } from '@/lib/data/reviews';
+import { featuredServices } from '@/lib/data/services';
+import type { FaqItem } from '@/lib/data/faqs';
 
 const SITE_URL = 'https://www.topvolk.org';
 const REVIEW_COUNT = 32;
@@ -223,6 +226,79 @@ export function generateBreadcrumbSchema(params: { items: Array<{ name: string; 
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: items,
+  };
+}
+
+/**
+ * Review schemas -- homepage. One node per review that is actually rendered by
+ * the <Reviews /> section, read from the same lib/data/reviews source so the
+ * markup never claims a review the visitor can't see. Dates in the source are
+ * relative ("3 months ago"), so datePublished is intentionally omitted rather
+ * than fabricated.
+ */
+export function generateReviewSchemas() {
+  return reviews.map((r) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    itemReviewed: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}#business`,
+      name: BUSINESS_NAME,
+    },
+    author: { '@type': 'Person', name: r.author },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: r.rating.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    reviewBody: r.text,
+  }));
+}
+
+/**
+ * Service schemas -- homepage. One node per featured service shown in the
+ * "Our Services" grid, linked back to the business entity via @id.
+ */
+export function generateHomepageServiceSchemas() {
+  return featuredServices.map((s) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: s.title,
+    serviceType: s.name,
+    description: s.description,
+    url: `${SITE_URL}/services/${s.slug}`,
+    provider: {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': `${SITE_URL}#business`,
+      name: BUSINESS_NAME,
+      telephone: PHONE_NUMBER,
+      url: SITE_URL,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Seattle' },
+      { '@type': 'City', name: 'Bellevue' },
+      { '@type': 'City', name: 'Tacoma' },
+    ],
+  }));
+}
+
+/**
+ * FAQPage schema -- mirrors the visible FAQ section on the homepage. Pass the
+ * same items array that the section renders so the two never drift.
+ */
+export function generateFaqPageSchema(items: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
+      },
+    })),
   };
 }
 

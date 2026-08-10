@@ -10,7 +10,11 @@ import {
   generateLocalBusinessSchema,
   generateServiceSchema,
   generateBreadcrumbSchema,
+  generateReviewSchemas,
+  generateHomepageServiceSchemas,
+  generateFaqPageSchema,
 } from '@/lib/seo/schema';
+import { homeFaqs } from '@/lib/data/faqs';
 
 interface LocalBusinessProps {
   city?: string;
@@ -42,6 +46,12 @@ export function HomepageSchemas() {
   const org = generateOrganizationSchema();
   const site = generateWebSiteSchema();
   const business = generateLocalBusinessSchema({});
+  const services = generateHomepageServiceSchemas();
+  const reviewNodes = generateReviewSchemas();
+  const faq = generateFaqPageSchema(homeFaqs);
+  const breadcrumb = generateBreadcrumbSchema({
+    items: [{ name: 'Home', url: 'https://www.topvolk.org' }],
+  });
 
   return (
     <>
@@ -56,6 +66,22 @@ export function HomepageSchemas() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(business) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(services) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewNodes) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
     </>
   );

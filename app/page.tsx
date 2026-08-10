@@ -6,6 +6,7 @@ import { HomepageSchemas } from '@/components/StructuredData';
 import { featuredServices } from '@/lib/data/services';
 import { homeWorks, homePreviews } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
+import { homeFaqs } from '@/lib/data/faqs';
 import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -242,6 +243,34 @@ export default function HomePage() {
           </div>
 
           <WorksGallery works={homeWorks} previews={homePreviews} />
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions */}
+      <section id="faq" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Answers to common questions about our Seattle home renovation services
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {homeFaqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 p-6 rounded-lg border border-gray-200"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
