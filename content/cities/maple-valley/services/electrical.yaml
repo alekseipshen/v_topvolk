@@ -16,7 +16,7 @@ localContext: |
 
   That's where you'll occasionally find a 60A service entrance that was fine for a 1960s farmhouse, or aluminum branch wiring on 15A bedroom circuits. The newer 98038 subdivisions have a different problem set: builder-grade panels sized to pass inspection at the time, no dedicated EV infrastructure, and AFCI breaker requirements that weren't part of the original scope.
 
-  City of Maple Valley issues permits for electrical work within city limits. Panel swaps, service upgrades, and new dedicated circuits all require a permit and inspection. PSE handles the meter disconnect and reconnect, which adds a scheduling layer to any service upgrade.
+  Washington L&I issues permits for electrical work within city limits. Panel swaps, service upgrades, and new dedicated circuits all require a permit and inspection. PSE handles the meter disconnect and reconnect, which adds a scheduling layer to any service upgrade.
 
   PNW winters are mild in Maple Valley compared to the foothills, but freeze events in January stress older service entrance cable and weatherhead connections — especially on homes that haven't had those components updated in 20-plus years.
 
@@ -25,7 +25,7 @@ commonProblems:
     description: |
       A 100A service entrance was standard for a three-bedroom house in 1997. Run a load calculation today — Level 2 EV charger at 48A continuous, heat pump at 24A, electric dryer at 25A, kitchen loads — and you're past 100A before anyone turns on a light.
 
-      The fix is a full 200A service upgrade: new service entrance cable from the weatherhead to a Square D QO 200A main panel, coordinated PSE meter pull, and a City of Maple Valley electrical permit. Panel placement usually stays the same to keep costs down. If the meter base is original to the home, replacing it at the same time makes sense.
+      The fix is a full 200A service upgrade: new service entrance cable from the weatherhead to a Square D QO 200A main panel, coordinated PSE meter pull, and a Washington L&I electrical permit. Panel placement usually stays the same to keep costs down. If the meter base is original to the home, replacing it at the same time makes sense.
 
       The work itself takes one to two days. Budget $3,500–$6,500 depending on service entrance run length and whether the meter base needs replacement. PSE's reconnect scheduling adds a few days to the overall timeline.
 
@@ -51,7 +51,7 @@ commonProblems:
 
       The base cost — circuit breaker, wire run, outlet or hardwire connection — runs $400–$800 for a straightforward installation where the panel is in the garage or adjacent utility room and there's capacity available. Add $150–$300 if the run goes through finished walls or needs conduit through the attic. If the existing panel is 100A and already loaded, the service upgrade comes first — add $3,500–$6,500 to the total.
 
-      A City of Maple Valley permit is required for EV charger circuits. Vladislav provides a written, line-item quote before any work starts — the number on the quote is the number on the invoice, with deadline penalties written into the contract if the schedule slips. Call (206) 591-1096 for a free on-site estimate.
+      A Washington L&I permit is required for EV charger circuits. Vladislav provides a written, line-item quote before any work starts — the number on the quote is the number on the invoice, with deadline penalties written into the contract if the schedule slips. Call (206) 591-1096 for a free on-site estimate.
 
   - title: "LED Recessed Lighting Retrofits and Dimmer Compatibility Problems"
     description: |
@@ -66,7 +66,7 @@ faq:
     a: |
       Maple Valley sits about 30–40 minutes from central Seattle via SR-169, or roughly 20 minutes from Renton. Access to most neighborhoods in the 98038 zip code is straightforward — no ferry, no significant traffic bottleneck outside of evening commute hours on 169.
 
-      For a panel assessment or EV circuit installation, scheduling within one to two weeks is typical. Permit-required work like a 200A service upgrade takes longer — plan on two to four weeks from assessment to permit approval through the City of Maple Valley, then one to two days for the work itself, plus PSE's scheduling window for the meter pull.
+      For a panel assessment or EV circuit installation, scheduling within one to two weeks is typical. Permit-required work like a 200A service upgrade takes longer — plan on two to four weeks from assessment to permit approval through Washington L&I, then one to two days for the work itself, plus PSE's scheduling window for the meter pull.
 
       Call (206) 591-1096 and you'll reach Vladislav directly. He can give you a current schedule and a realistic timeline on the spot.
 
@@ -80,7 +80,7 @@ faq:
 
   - q: "Do I need a permit for electrical work in Maple Valley, and how long does it take?"
     a: |
-      Yes — the City of Maple Valley requires a permit for panel replacements, service upgrades, new circuits (including EV charger circuits), and sub-panel installations. Replacing a receptacle or a light switch doesn't require a permit. Opening the panel does.
+      Yes — Washington L&I requires a permit for panel replacements, service upgrades, new circuits (including EV charger circuits), and sub-panel installations. Replacing a receptacle or a light switch doesn't require a permit. Opening the panel does.
 
       Permit review for a standard service upgrade typically takes one to three weeks through the City's Community Development Department. For unincorporated parcels in the 98042 zip code that fall outside city limits, King County DPER handles the permit instead.
 
@@ -104,7 +104,7 @@ faq:
 
   - q: "Does TopVolk serve cities near Maple Valley, and how do I schedule?"
     a: |
-      TopVolk covers the southeast King County corridor regularly — Maple Valley, Covington, Black Diamond, Renton, Auburn, and Kent are all active service areas. Snoqualmie and North Bend in the Snoqualmie Valley are also covered. Electrical work there often involves King County DPER permits on older rural properties.
+      TopVolk covers the southeast King County corridor regularly — Maple Valley, Covington, Black Diamond, Renton, Auburn, and Kent are all active service areas. Snoqualmie and North Bend in the Snoqualmie Valley are also covered. The electrical permit there still comes from Washington L&I on older rural properties.
 
       Issaquah and Sammamish to the north are part of the regular schedule too. Pierce County work in Puyallup or Bonney Lake is handled case by case depending on project scope.
 
