@@ -10,6 +10,7 @@ import SEOPageContent from '@/components/SEOPageContent';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
 import { services, visibleServices } from '@/lib/data/services';
 import { getAllCities } from '@/lib/data/seattle-counties';
+import { sortByDistance } from '@/lib/data/cityCoords';
 import { loadCityServiceContent } from '@/lib/content/loadPageContent';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
@@ -90,8 +91,12 @@ export default async function ServiceCityPage({ params }: PageProps) {
     notFound();
   }
   
-  // Get other cities for this service (limit to 8)
-  const otherCities = allCities.filter(c => c.slug !== city.slug).slice(0, 8);
+  // Cities we also serve, nearest first — an alphabetical slice used to put
+  // Aberdeen and Anacortes on a Bellevue page.
+  const otherCities = sortByDistance(
+    city.slug,
+    allCities.filter(c => c.slug !== city.slug),
+  ).slice(0, 8);
 
   // Get other services (limit to 5) — exclude hidden so insurance-removed
   // services don't get suggested from any visible page.

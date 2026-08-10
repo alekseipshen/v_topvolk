@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import Reviews from '@/components/Reviews';
 import { LocalBusinessSchema, BreadcrumbSchema, FAQSchema } from '@/components/StructuredData';
 import { getAllCities, seattleCounties, getCountiesForCity } from '@/lib/data/seattle-counties';
+import { sortByDistance } from '@/lib/data/cityCoords';
 import { featuredServices } from '@/lib/data/services';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
@@ -62,15 +63,19 @@ export default async function CityPage({ params }: PageProps) {
   const cityCounties = getCountiesForCity(city.name);
   const countyNames = cityCounties.map(c => c.name).join(' and ');
   
-  // Get nearby cities (from same county, limit to 8)
-  const nearbyCities = cityCounties.length > 0 
-    ? cityCounties[0].cities
-        .filter(c => c !== city.name)
-        .slice(0, 8)
-        .map(cityName => ({
-          name: cityName,
-          slug: cityName.toLowerCase().replace(/\s+/g, '-')
-        }))
+  // Nearby cities: same county, ordered by actual distance rather than
+  // alphabetically — King County alone holds 41 cities, so the first eight by
+  // name were rarely the closest ones.
+  const nearbyCities = cityCounties.length > 0
+    ? sortByDistance(
+        city.slug,
+        cityCounties[0].cities
+          .filter(c => c !== city.name)
+          .map(cityName => ({
+            name: cityName,
+            slug: cityName.toLowerCase().replace(/\s+/g, '-')
+          })),
+      ).slice(0, 8)
     : [];
 
   const primaryCounty = cityCounties[0]?.name;
