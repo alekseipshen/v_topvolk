@@ -61,7 +61,7 @@ export default function PromoSection() {
           <p className="text-lg md:text-xl text-gray-300 mb-8 md:mb-10">
             Book your renovation this week and save on labor costs.
             <br className="hidden md:block" />
-            Materials priced separately at cost.
+            Materials are billed separately and are not included in the discount.
           </p>
 
           {/* Countdown */}
