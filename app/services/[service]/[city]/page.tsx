@@ -209,7 +209,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
               <p className="text-gray-600">
-                100+ projects completed since 2023. Full responsibility with penalties for missed deadlines.
+                100+ projects completed since 2023. We pay $100 for every day past the agreed deadline.
               </p>
             </div>
           </div>
@@ -253,8 +253,8 @@ export default async function ServiceCityPage({ params }: PageProps) {
 
                 <p className="text-base md:text-lg leading-relaxed">
                   We serve homeowners throughout {city.name} with free estimates, detailed project plans,
-                  and quality inspection before completion. Licensed, insured, and committed to your satisfaction
-                  - with penalties paid if deadlines are missed.
+                  and quality inspection before completion. Licensed, insured, and committed to your satisfaction.
+                  We pay $100 for every day past the agreed deadline.
                 </p>
               </div>
 

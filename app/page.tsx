@@ -87,7 +87,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Transparent Pricing</h3>
               <p className="text-gray-600">
-                Detailed estimates with no hidden fees. Full responsibility - penalties paid if deadlines are missed.
+                Detailed estimates with no hidden fees. Full responsibility: we pay $100 for every day past the agreed deadline.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function HomePage() {
               <p className="text-base md:text-lg leading-relaxed">
                 From <strong>kitchen remodels</strong> and <strong>bathroom renovations</strong> to custom <strong>deck installations</strong>
                 and complete home transformations, we deliver quality craftsmanship with direct communication and transparent pricing.
-                Licensed, insured, and committed to your satisfaction - with penalties paid if deadlines are missed.
+                Licensed, insured, and committed to your satisfaction. We pay $100 for every day past the agreed deadline.
               </p>
             </div>
           </div>

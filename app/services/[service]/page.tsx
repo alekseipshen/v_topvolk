@@ -66,7 +66,7 @@ export default async function ServicePage({ params }: PageProps) {
     },
     {
       question: `How long does a ${service.name.toLowerCase()} project take?`,
-      answer: `Project timelines depend on scope and complexity. We provide a detailed timeline during your free consultation and take full responsibility for meeting deadlines, with penalties paid if deadlines are missed.`,
+      answer: `Project timelines depend on scope and complexity. We provide a detailed timeline during your free consultation and take full responsibility for meeting deadlines: we pay $100 for every day past the agreed deadline.`,
     },
     {
       question: `Is ${BUSINESS_NAME} licensed and insured?`,
@@ -178,7 +178,7 @@ export default async function ServicePage({ params }: PageProps) {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
               <p className="text-gray-600">
-                100+ projects completed since 2023. Full responsibility with penalties for missed deadlines.
+                100+ projects completed since 2023. We pay $100 for every day past the agreed deadline.
               </p>
             </div>
           </div>

@@ -129,7 +129,7 @@ export default async function CityPage({ params }: PageProps) {
     },
     {
       question: `How long does a kitchen or bathroom remodel take in ${city.name}?`,
-      answer: `Most bathroom remodels take two to four weeks and kitchen remodels four to eight weeks, depending on scope. We give ${city.name} clients a firm timeline up front and pay penalties if agreed deadlines are missed.`,
+      answer: `Most bathroom remodels take two to four weeks and kitchen remodels four to eight weeks, depending on scope. We give ${city.name} clients a firm timeline up front and pay $100 for every day past the agreed deadline.`,
     },
     {
       question: `Which areas near ${city.name} do you serve?`,
@@ -179,8 +179,8 @@ export default async function CityPage({ params }: PageProps) {
 
               <p className="text-base md:text-lg leading-relaxed">
                 We serve homeowners throughout {city.name} with free estimates, detailed project plans, 
-                and quality inspection before completion. Licensed, insured, and committed to your satisfaction 
-                - with penalties paid if deadlines are missed.
+                and quality inspection before completion. Licensed, insured, and committed to your satisfaction.
+                We pay $100 for every day past the agreed deadline.
               </p>
             </div>
           </div>
