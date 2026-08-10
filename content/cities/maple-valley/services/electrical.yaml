@@ -90,7 +90,7 @@ faq:
     a: |
       A Level 2 EV charger requires a dedicated 240V circuit. The NEC 80% continuous load rule means the breaker must be sized at 125% of the charger's draw. A ChargePoint Home Flex at 48A continuous needs a 60A breaker. A JuiceBox 48 runs on that same 60A circuit.
 
-      A Tesla Wall Connector works on a 60A circuit for most vehicles, or a 100A circuit if you want maximum charge speed on a high-capacity battery. Wire gauge matches the breaker — a 60A circuit uses 6 AWG copper in conduit, or 4 AWG aluminum if the run is long.
+      A Tesla Wall Connector runs on a 60A circuit, which is the largest Tesla lists and gives its maximum 48A output. Wire gauge matches the breaker — a 60A circuit uses 6 AWG copper in conduit, or 4 AWG aluminum if the run is long.
 
       Vladislav sizes the circuit based on your specific charger model and future-proofs the conduit if you're planning to add a second EV. Running conduit for a second circuit at the same time as the first cuts the labor cost significantly.
 

@@ -77,14 +77,14 @@ commonProblems:
       connector torque. TopVolk is a WA Licensed Contractor — permits are pulled in our
       name and managed through final sign-off.
 
-  - title: "EV Charger Circuits and What the 2020 NEC Actually Requires Here"
+  - title: "EV Charger Circuits and What the 2023 NEC Actually Requires Here"
     description: |
       A Level 2 charger — ChargePoint Home Flex, JuiceBox 48, or Tesla Wall Connector —
       needs a dedicated 240V circuit: 50A minimum, 60A if you're running a dual-car
       household or future-proofing. In Wenatchee's older homes where the garage was added
       as a detached structure in the 1970s, that circuit run might require conduit through
       the crawlspace, buried conduit across the yard, or a surface-mounted raceway along
-      the exterior. Separately, Washington's adoption of the 2020 NEC mandates AFCI
+      the exterior. Separately, Washington's adoption of the 2023 NEC mandates AFCI
       breakers on all bedroom circuits and GFCI protection in bathrooms, kitchens, garages,
       and exterior outlets. Older panels with tandem breakers often don't have compatible
       AFCI breakers in the manufacturer's lineup anymore — another practical reason to
@@ -167,7 +167,7 @@ faq:
       financial penalty on our end — that's in writing before work starts, not something
       said verbally during the estimate.
 
-  - q: "Do you cover East Wenatchee and other parts of Chelan County?"
+  - q: "Do you cover East Wenatchee and other nearby communities?"
     a: |
       East Wenatchee is in Douglas County technically, but it's on the same site visit —
       same trip across the mountains. Chelan County work extends to Cashmere, Leavenworth,
