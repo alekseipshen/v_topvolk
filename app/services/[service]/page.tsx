@@ -9,6 +9,7 @@ import Reviews from '@/components/Reviews';
 import WorksGallery from '@/components/WorksGallery';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
 import { services, visibleServices } from '@/lib/data/services';
+import { buildServiceFaqs } from '@/lib/data/serviceFaqs';
 import { serviceGalleries } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
@@ -58,21 +59,8 @@ export default async function ServicePage({ params }: PageProps) {
     notFound();
   }
   
-  // Generate FAQ items for this service
-  const faqItems = [
-    {
-      question: `How much does ${service.name.toLowerCase()} cost in Seattle?`,
-      answer: `${service.name} costs vary depending on the scope and materials. ${BUSINESS_NAME} provides free, detailed estimates with transparent pricing and no hidden fees. Call ${PHONE_DISPLAY} for a personalized quote.`,
-    },
-    {
-      question: `How long does a ${service.name.toLowerCase()} project take?`,
-      answer: `Project timelines depend on scope and complexity. We provide a detailed timeline during your free consultation and take full responsibility for meeting deadlines: we pay $100 for every day past the agreed deadline.`,
-    },
-    {
-      question: `Is ${BUSINESS_NAME} licensed and insured?`,
-      answer: `Yes, ${BUSINESS_NAME} is a fully licensed and insured construction contractor serving the greater Seattle area since 2023. We have completed over 100 projects across King, Snohomish, and Pierce Counties.`,
-    },
-  ];
+  // Single source for the visible FAQ block and the FAQPage JSON-LD below.
+  const faqItems = buildServiceFaqs(service);
 
   return (
     <>
