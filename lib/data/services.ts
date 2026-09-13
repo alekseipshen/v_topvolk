@@ -55,14 +55,15 @@ export const services = [
   },
 
   // Additional services
+  // Visible again (2026-09): dedicated ADU section lives at
+  // app/services/adu-construction/page.tsx; content in lib/data/adu.ts.
   {
     slug: 'adu-construction',
     name: 'ADU Construction',
-    title: 'ADU Construction',
-    description: 'Build an Accessory Dwelling Unit (ADU) for rental income or family housing. Complete ADU design and construction services.',
+    title: 'ADU & Backyard Cottages',
+    description: 'Detached backyard cottages (DADU), attached units, garage and basement conversions. Design, permits and construction for rental income or family housing.',
     image: '/assets/services/adu-construction.jpg',
-    services: ['ADU design', 'Permit processing', 'Foundation work', 'Complete construction'],
-    hidden: true
+    services: ['Detached ADU (DADU) construction', 'Attached ADU & basement units', 'Garage conversions', 'Design, permits & utility connections']
   },
   {
     slug: 'flooring-installation',
