@@ -25,6 +25,12 @@ export interface AduModel {
   bathrooms: string;
   buildTime: string;
   startingPrice: number;
+  /** Estimated monthly rent range, USD. Anchored to 2026 Seattle apartment
+   *  benchmarks (studio ≈ $1,350–1,650, 1BR ≈ $1,800–2,000, 2BR ≈ $2,400–2,650
+   *  citywide) plus a new-build private-cottage premium; consistent with the
+   *  $2,200–$2,800/mo already published on the city ADU pages. Estimates. */
+  rentMin: number;
+  rentMax: number;
   image: string;
   imageAlt: string;
   idealFor: string;
@@ -43,6 +49,8 @@ export const aduModels: AduModel[] = [
     bathrooms: '1',
     buildTime: '3–4 months',
     startingPrice: 180000,
+    rentMin: 1600,
+    rentMax: 1900,
     image: '/assets/adu/studio-400.jpg',
     imageAlt: 'Concept rendering of a 400 sq ft detached studio ADU with a gable metal roof and cedar entry in a Seattle backyard',
     idealFor: 'Rental income, home office, guest suite',
@@ -59,6 +67,8 @@ export const aduModels: AduModel[] = [
     bathrooms: '1',
     buildTime: '4–5 months',
     startingPrice: 240000,
+    rentMin: 2000,
+    rentMax: 2500,
     image: '/assets/adu/one-bedroom-600.jpg',
     imageAlt: 'Concept rendering of a 600 sq ft one-bedroom detached ADU with a shed roof and cedar deck in a Seattle backyard',
     idealFor: 'Long-term rental, parents, adult children',
@@ -76,6 +86,8 @@ export const aduModels: AduModel[] = [
     bathrooms: '1–2',
     buildTime: '5–6 months',
     startingPrice: 300000,
+    rentMin: 2600,
+    rentMax: 3200,
     image: '/assets/adu/two-bedroom-800.jpg',
     imageAlt: 'Concept rendering of an 800 sq ft two-bedroom backyard cottage ADU with a covered porch and dormer in a Seattle backyard',
     idealFor: 'Multigenerational living, family rental',
@@ -92,6 +104,8 @@ export const aduModels: AduModel[] = [
     bathrooms: '1',
     buildTime: '2–3 months',
     startingPrice: 95000,
+    rentMin: 1500,
+    rentMax: 1800,
     image: '/assets/adu/garage-conversion.jpg',
     imageAlt: 'Concept rendering of a detached garage converted into a living unit with a new window wall and patio in a Seattle backyard',
     idealFor: 'Budget-conscious owners, quick rental',
@@ -100,6 +114,42 @@ export const aduModels: AduModel[] = [
     features: ['Uses existing structure', 'New insulation & windows', 'Kitchenette & bathroom', 'No new foundation needed'],
   },
 ];
+
+export interface AduIncomeWay {
+  title: string;
+  description: string;
+}
+
+// "How an ADU pays for itself" — the earning angle a dedicated ADU builder
+// leads with. No financing or home-value percentages: TopVolk has no lending
+// partner, and no Seattle appraisal study supports a specific value premium.
+export const aduIncomeWays: AduIncomeWay[] = [
+  {
+    title: 'Long-term rental income',
+    description:
+      'A one-bedroom backyard cottage in Seattle rents for roughly $2,000–$2,500 a month, a two-bedroom for $2,600–$3,200. That is $24,000–$38,000 a year from space you already own, every year, for as long as you hold the property.',
+  },
+  {
+    title: 'Live in the ADU, rent the main house',
+    description:
+      'The fastest way to cut your housing cost: move into the cottage and rent out the 3-bedroom house at full market rent. Many Seattle homeowners cover most of their mortgage this way.',
+  },
+  {
+    title: 'Housing for family instead of rent',
+    description:
+      'Parents, adult children or a caregiver get a private home with a full kitchen and bathroom on your lot. Compared with a separate apartment or assisted living, the savings run into thousands of dollars a year.',
+  },
+  {
+    title: 'A second dwelling raises what your property is worth',
+    description:
+      'A permitted, inspected ADU is a second legal home on the parcel. Appraisers count it, and buyers pay for the income it produces. Washington now allows two ADUs per lot, so the option to build is itself part of your property’s value.',
+  },
+];
+
+export function paybackYears(price: number, monthlyRent: number): number {
+  if (monthlyRent <= 0) return 0;
+  return price / (monthlyRent * 12);
+}
 
 export interface AduType {
   name: string;
@@ -204,6 +254,14 @@ export function buildAduFaqs(): FaqItem[] {
     {
       question: 'How long does an ADU project take from start to move-in?',
       answer: `Design and permit preparation start within two weeks of signing. Seattle SDCI plan review takes about 2–6 weeks for a pre-approved DADU plan and 6–12 weeks for a custom design; construction then runs 10–16 weeks. Four to seven months end-to-end is realistic for most lots. You get a written timeline before work starts, and ${BUSINESS_NAME} pays $100 for every day past the agreed deadline.`,
+    },
+    {
+      question: 'How much rental income can a Seattle ADU earn?',
+      answer: 'Based on 2026 Seattle rent benchmarks, a new detached studio rents for about $1,600–$1,900 a month, a one-bedroom cottage for $2,000–$2,500, a two-bedroom for $2,600–$3,200, and a converted garage studio for $1,500–$1,800. A one-bedroom unit built for $240,000 therefore returns roughly $24,000–$30,000 a year in gross rent, a simple payback of eight to ten years, after which the income is yours for as long as you own the home. Actual rent depends on neighborhood, finishes and parking.',
+    },
+    {
+      question: 'Does an ADU increase my home’s value?',
+      answer: 'A permitted ADU is a second legal dwelling on your parcel: appraisers count its square footage and buyers pay for the rental income it produces, so a finished unit adds to what the property is worth as well as generating cash flow while you own it. The exact premium depends on your neighborhood and the unit, so we do not promise a fixed percentage. What we can guarantee is a fully permitted, inspected unit with a certificate of occupancy, which is what makes the value real to a lender or a buyer.',
     },
     {
       question: 'How many ADUs can I build on my lot in Washington?',

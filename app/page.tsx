@@ -187,7 +187,7 @@ export default function HomePage() {
               ADU &amp; Backyard Cottages in Seattle
             </h2>
             <p className="text-xl text-gray-600">
-              Add a rental unit or a home for family — design, permits and construction from one team
+              A backyard cottage that earns $2,000–$3,200/mo in rent, or a home for family — design, permits and construction from one team
             </p>
           </div>
 
@@ -232,7 +232,10 @@ export default function HomePage() {
                       <span className="inline-flex items-center gap-1"><BedDouble className="w-4 h-4 text-gold-500" />{model.bedrooms}</span>
                       <span className="inline-flex items-center gap-1"><Bath className="w-4 h-4 text-gold-500" />{model.bathrooms}</span>
                     </div>
-                    <p className="text-gray-600 mb-4">{model.idealFor}</p>
+                    <p className="text-gray-600 mb-2">{model.idealFor}</p>
+                    <p className="text-sm font-semibold text-gold-600 mb-4">
+                      Rents ≈ {formatPrice(model.rentMin)}–{formatPrice(model.rentMax)}/mo
+                    </p>
                     <span className="text-gold-500 font-semibold hover:underline">View details →</span>
                   </div>
                 </Link>
