@@ -298,14 +298,14 @@ export default function AduConstructionPage() {
                 );
               })}
 
-              <div className="sm:col-span-2 bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="sm:col-span-2 bg-white rounded-lg shadow-md overflow-x-auto">
                 <table className="w-full text-sm md:text-base">
                   <thead>
                     <tr style={{ backgroundColor: '#334e64' }} className="text-white">
                       <th className="text-left p-3 md:p-4 font-semibold">Configuration</th>
                       <th className="text-left p-3 md:p-4 font-semibold">Build from</th>
                       <th className="text-left p-3 md:p-4 font-semibold" style={{ color: '#F4B942' }}>Est. rent / mo</th>
-                      <th className="text-left p-3 md:p-4 font-semibold">Per year</th>
+                      <th className="text-left p-3 md:p-4 font-semibold hidden sm:table-cell">Per year</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -316,7 +316,7 @@ export default function AduConstructionPage() {
                         <td className="p-3 md:p-4 text-gray-900 font-medium whitespace-nowrap">
                           {formatPrice(model.rentMin)}–{formatPrice(model.rentMax)}
                         </td>
-                        <td className="p-3 md:p-4 text-gray-900 font-medium whitespace-nowrap">
+                        <td className="p-3 md:p-4 text-gray-900 font-medium whitespace-nowrap hidden sm:table-cell">
                           {formatPrice(model.rentMin * 12)}–{formatPrice(model.rentMax * 12)}
                         </td>
                       </tr>
