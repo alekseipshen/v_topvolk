@@ -7,7 +7,8 @@ import { featuredServices } from '@/lib/data/services';
 import { homeWorks, homePreviews } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { homeFaqs } from '@/lib/data/faqs';
-import { CheckCircle, Clock, Users, Wrench, Building2 } from 'lucide-react';
+import { aduModels, formatPrice } from '@/lib/data/adu';
+import { CheckCircle, Clock, Users, Wrench, Building2, Ruler, BedDouble, Bath } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -173,6 +174,78 @@ export default function HomePage() {
               style={{ backgroundColor: '#F4B942', color: '#ffffff' }}
             >
               View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ADU / Backyard Cottages */}
+      <section id="adu" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ADU &amp; Backyard Cottages in Seattle
+            </h2>
+            <p className="text-xl text-gray-600">
+              Add a rental unit or a home for family — design, permits and construction from one team
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {aduModels
+              .filter((m) => m.slug !== 'garage-conversion')
+              .map((model) => (
+                <Link
+                  key={model.slug}
+                  href={`/services/adu-construction#model-${model.slug}`}
+                  prefetch={false}
+                  className={`bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group border ${
+                    model.popular ? 'border-gold-500' : 'border-gray-200'
+                  }`}
+                >
+                  <div className="relative w-full h-48 overflow-hidden">
+                    <Image
+                      src={model.image}
+                      alt={model.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {model.popular && (
+                      <span
+                        className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-semibold text-white shadow"
+                        style={{ backgroundColor: '#F4B942' }}
+                      >
+                        Most Popular
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <h3 className="text-xl font-semibold text-gray-900">{model.name}</h3>
+                      <span className="text-sm font-bold whitespace-nowrap" style={{ color: '#334e64' }}>
+                        from {formatPrice(model.startingPrice)}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                      <span className="inline-flex items-center gap-1"><Ruler className="w-4 h-4 text-gold-500" />{model.sqft} sq ft</span>
+                      <span className="inline-flex items-center gap-1"><BedDouble className="w-4 h-4 text-gold-500" />{model.bedrooms}</span>
+                      <span className="inline-flex items-center gap-1"><Bath className="w-4 h-4 text-gold-500" />{model.bathrooms}</span>
+                    </div>
+                    <p className="text-gray-600 mb-4">{model.idealFor}</p>
+                    <span className="text-gold-500 font-semibold hover:underline">View details →</span>
+                  </div>
+                </Link>
+              ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/services/adu-construction"
+              className="inline-block px-8 py-3 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg text-white"
+              style={{ backgroundColor: '#334e64' }}
+            >
+              Explore ADU Options
             </Link>
           </div>
         </div>

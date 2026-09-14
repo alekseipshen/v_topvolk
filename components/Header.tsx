@@ -44,6 +44,9 @@ export default function Header() {
         <Link href="/services" className="text-gray-100 hover:text-gold-400 transition font-medium">
           Services
         </Link>
+            <Link href="/services/adu-construction" className="text-gray-100 hover:text-gold-400 transition font-medium">
+              ADU
+            </Link>
             <Link href="/#service-areas" className="text-gray-100 hover:text-gold-400 transition font-medium">
               Areas
             </Link>
@@ -121,6 +124,13 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
+              </Link>
+              <Link
+                href="/services/adu-construction"
+                className="text-gray-100 hover:text-gold-400 transition py-2 font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                ADU
               </Link>
               <Link
                 href="/#service-areas"
