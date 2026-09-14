@@ -16,11 +16,16 @@ import {
   CalendarDays,
   FileCheck,
   Phone,
+  DollarSign,
+  KeyRound,
+  HeartHandshake,
+  TrendingUp,
 } from 'lucide-react';
 import Hero from '@/components/Hero';
 import PromoSection from '@/components/PromoSection';
 import Reviews from '@/components/Reviews';
 import AduQuoteButton from '@/components/AduQuoteButton';
+import AduRoiCalculator from '@/components/AduRoiCalculator';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
 import { services, visibleServices } from '@/lib/data/services';
 import {
@@ -30,6 +35,7 @@ import {
   aduIncludes,
   aduPlanComparison,
   aduPreApprovedBenefits,
+  aduIncomeWays,
   buildAduFaqs,
   formatPrice,
   formatBedrooms,
@@ -61,6 +67,7 @@ export const metadata: Metadata = {
 };
 
 const typeIcons = [Home, Building2, Warehouse, Layers];
+const incomeIcons = [DollarSign, KeyRound, HeartHandshake, TrendingUp];
 
 export default function AduConstructionPage() {
   const faqItems = buildAduFaqs();
@@ -85,7 +92,7 @@ export default function AduConstructionPage() {
 
       <Hero
         title="ADU Construction in Seattle"
-        subtitle="Backyard cottages, attached units and garage conversions • Design, permits and construction from one team • Free site assessment"
+        subtitle="Backyard cottages that earn $2,000–$3,200/mo in rent, or a home for family • Design, permits and construction from one team • Free site assessment"
         applianceImage={service.image}
       />
 
@@ -99,7 +106,8 @@ export default function AduConstructionPage() {
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
                 An accessory dwelling unit turns unused backyard, garage or basement space into a legal,
-                independent home — for rental income, for parents or adult children, or for a private office.
+                independent home that pays you back: a one-bedroom cottage in Seattle rents for about
+                $2,000–$2,500 a month, or houses parents or adult children instead of a separate apartment.
                 Washington now allows up to two ADUs on most residential lots, and Seattle offers
                 pre-approved cottage plans that cut permit time to weeks.
               </p>
@@ -198,6 +206,9 @@ export default function AduConstructionPage() {
                       <div className="text-2xl font-bold" style={{ color: '#334e64' }}>
                         {formatPrice(model.startingPrice)}
                       </div>
+                      <div className="text-xs font-semibold text-gold-600 mt-1">
+                        Rents ≈ {formatPrice(model.rentMin)}–{formatPrice(model.rentMax)}/mo
+                      </div>
                     </div>
                   </div>
 
@@ -257,8 +268,75 @@ export default function AduConstructionPage() {
         </div>
       </section>
 
+      {/* How an ADU pays for itself */}
+      <section id="income" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Turn Your Backyard Into Income
+            </h2>
+            <p className="text-xl text-gray-600">
+              A permitted ADU is the one home improvement that pays you back every month
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {aduIncomeWays.map((way, index) => {
+                const Icon = incomeIcons[index % incomeIcons.length];
+                return (
+                  <div key={way.title} className="bg-white p-6 rounded-lg shadow-md">
+                    <div
+                      className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                      style={{ backgroundColor: 'rgba(244, 185, 66, 0.15)' }}
+                    >
+                      <Icon className="w-7 h-7" style={{ color: '#F4B942' }} />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{way.title}</h3>
+                    <p className="text-gray-600 text-sm">{way.description}</p>
+                  </div>
+                );
+              })}
+
+              <div className="sm:col-span-2 bg-white rounded-lg shadow-md overflow-x-auto">
+                <table className="w-full text-sm md:text-base">
+                  <thead>
+                    <tr style={{ backgroundColor: '#334e64' }} className="text-white">
+                      <th className="text-left p-3 md:p-4 font-semibold">Configuration</th>
+                      <th className="text-left p-3 md:p-4 font-semibold">Build from</th>
+                      <th className="text-left p-3 md:p-4 font-semibold" style={{ color: '#F4B942' }}>Est. rent / mo</th>
+                      <th className="text-left p-3 md:p-4 font-semibold hidden sm:table-cell">Per year</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {aduModels.map((model, index) => (
+                      <tr key={model.slug} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                        <td className="p-3 md:p-4 font-semibold text-gray-900">{model.name}</td>
+                        <td className="p-3 md:p-4 text-gray-600">{formatPrice(model.startingPrice)}</td>
+                        <td className="p-3 md:p-4 text-gray-900 font-medium whitespace-nowrap">
+                          {formatPrice(model.rentMin)}–{formatPrice(model.rentMax)}
+                        </td>
+                        <td className="p-3 md:p-4 text-gray-900 font-medium whitespace-nowrap hidden sm:table-cell">
+                          {formatPrice(model.rentMin * 12)}–{formatPrice(model.rentMax * 12)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className="p-3 md:p-4 border-t border-gray-200 text-xs text-gray-500">
+                  Rent estimates for new-build units, based on 2026 Seattle rent benchmarks. Actual rent depends on
+                  neighborhood, finishes and parking. Gross figures, before taxes and maintenance.
+                </div>
+              </div>
+            </div>
+
+            <AduRoiCalculator />
+          </div>
+        </div>
+      </section>
+
       {/* Seattle Pre-Approved DADU Plans */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -379,6 +457,9 @@ export default function AduConstructionPage() {
                       <div className="font-semibold text-gray-900">{model.name}</div>
                       <div className="text-sm text-gray-500">
                         {model.sqft} sq ft · {formatBedrooms(model.bedrooms)} · {model.bathrooms} bath
+                      </div>
+                      <div className="text-xs font-semibold text-gold-600">
+                        Rents ≈ {formatPrice(model.rentMin)}–{formatPrice(model.rentMax)}/mo
                       </div>
                     </div>
                     <div className="text-lg font-bold whitespace-nowrap" style={{ color: '#334e64' }}>
