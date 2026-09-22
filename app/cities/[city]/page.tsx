@@ -58,6 +58,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       url: `${SITE_URL}/cities/${city.slug}`,
     },
+    // Without this the card falls back to the site-wide twitter description in
+    // layout.tsx, which still carries "Licensed contractor since 2023".
+    twitter: {
+      title: `${title} | ${BUSINESS_NAME}`,
+      description,
+    },
   };
 }
 
