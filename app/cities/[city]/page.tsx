@@ -9,6 +9,7 @@ import { LocalBusinessSchema, BreadcrumbSchema, FAQSchema } from '@/components/S
 import { getAllCities, seattleCounties, getCountiesForCity } from '@/lib/data/seattle-counties';
 import { sortByDistance } from '@/lib/data/cityCoords';
 import { featuredServices } from '@/lib/data/services';
+import { getCityIntent } from '@/lib/data/cityIntent';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
 const SITE_URL = 'https://www.topvolk.org';
@@ -34,17 +35,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = allCities.find(c => c.slug === citySlug);
   
   if (!city) return {};
-  
+
+  // Name the service this city page already ranks for, so the snippet contains
+  // the words people typed. Cities with no measured demand keep the generic
+  // wording. Source of the map: Clients/TopVolk/SEO/build-city-intent.py
+  const intent = getCityIntent(city.slug);
+  const title = intent ? intent.title : `Home Remodeling in ${city.name}, WA`;
+  const lead = intent ? intent.lead : 'Home remodeling';
+  const description =
+    `${lead} in ${city.name}, WA. Licensed and insured general contractor, ` +
+    `free estimates. Call ${PHONE_DISPLAY}.`;
+
   return {
-    title: `Home Renovation in ${city.name}, WA`,
-    description: `Home renovation in ${city.name}, WA: kitchens, bathrooms, decks, basements. Licensed contractor since 2023. Call ${PHONE_DISPLAY}.`,
-    keywords: `home renovation ${city.name}, construction contractor ${city.name}, remodeling ${city.name}, Seattle area contractor`,
+    title,
+    description,
+    keywords: `${lead.toLowerCase()} ${city.name}, remodeling contractor ${city.name}, home remodeling ${city.name}, Seattle area contractor`,
     alternates: {
       canonical: `${SITE_URL}/cities/${city.slug}`,
     },
     openGraph: {
-      title: `Home Renovation in ${city.name}, WA | ${BUSINESS_NAME}`,
-      description: `Home renovation in ${city.name}, WA. Licensed contractor since 2023.`,
+      title: `${title} | ${BUSINESS_NAME}`,
+      description,
       url: `${SITE_URL}/cities/${city.slug}`,
     },
   };
@@ -59,6 +70,14 @@ export default async function CityPage({ params }: PageProps) {
     notFound();
   }
   
+  // The H1 says the same thing as the title tag. The subtitle and the service
+  // list below keep signalling the full range, so a named headline does not
+  // narrow what the page offers.
+  const cityIntent = getCityIntent(city.slug);
+  const heroTitle = cityIntent
+    ? cityIntent.title.replace(/, WA$/, '')
+    : `Home Remodeling Services in ${city.name}`;
+
   // Get counties this city belongs to
   const cityCounties = getCountiesForCity(city.name);
   const countyNames = cityCounties.map(c => c.name).join(' and ');
@@ -156,7 +175,7 @@ export default async function CityPage({ params }: PageProps) {
       <FAQSchema items={faqs} />
 
       <Hero
-        title={`Home Renovation Services in ${city.name}`}
+        title={heroTitle}
         subtitle={`Professional construction and remodeling services in ${city.name} and surrounding areas • Licensed & Insured • Free estimates`}
       />
       
