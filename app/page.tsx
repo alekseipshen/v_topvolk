@@ -44,9 +44,9 @@ export default function HomePage() {
                   <CheckCircle className="w-10 h-10" style={{ color: '#F4B942' }} />
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">100+ Projects Since 2023</h3>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Licensed & Insured</h3>
               <p className="text-gray-600">
-                Professional construction contractor with extensive experience in residential remodeling and custom builds.
+                Licensed Washington general contractor, insured and bonded, with a written workmanship warranty in every project agreement.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -109,7 +109,7 @@ export default function HomePage() {
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
                 Transform your home with <strong>TopVolk Construction LLC</strong> - a professional construction contractor
-                specializing in residential remodeling. Since 2023, Vladislav Volkov has completed over 100 projects across
+                specializing in residential remodeling. Vladislav Volkov works with homeowners across
                 Seattle, Bellevue, Tacoma, and surrounding King County areas.
               </p>
 

@@ -8,9 +8,10 @@
  * ever submitted through it. A sitemap index has to be hand-written, hence a
  * route handler.
  *
- * Phase 3 (3 420 service x city combinations) stays out on purpose: only 8.9%
- * of the published pages are indexed today, so submitting the tail would push
- * breadth the domain cannot carry. It is added when the declared set indexes.
+ * There is no phase 3 any more. It listed 3 420 service x city combinations
+ * by position in the grid; on 2026-09-29 that was replaced by the index
+ * allowlist, and phase 2 now lists exactly the service x city pages that are
+ * allowed to be indexed.
  */
 
 const BASE_URL = 'https://www.topvolk.org';

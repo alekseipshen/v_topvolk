@@ -63,8 +63,8 @@ export default function ServiceAreasPage() {
             </h2>
             <div className="text-gray-700 space-y-4">
               <p className="text-base md:text-lg leading-relaxed">
-                Since 2023, <strong>{BUSINESS_NAME}</strong> has been a trusted choice for home
-                renovation across Western and Central Washington. Our experienced team delivers quality
+                <strong>{BUSINESS_NAME}</strong> handles home renovation across Western and
+                Central Washington. Our experienced team delivers quality
                 craftsmanship for kitchen remodels, bathroom renovations, deck installations, and more.
               </p>
               <p className="text-base md:text-lg leading-relaxed">

@@ -6,7 +6,7 @@ import { BUSINESS_NAME, PHONE_DISPLAY } from '@/lib/utils';
  * teaser). Modeled on a dedicated ADU builder site — types, sample models,
  * pre-approved plans, process, pricing, FAQ — but written for the Seattle
  * market and kept consistent with facts the site already publishes:
- * founded 2023, 100+ projects, $100/day late commitment, free estimates,
+ * $100/day late commitment, free estimates,
  * permits passed through at cost, King/Snohomish/Pierce service area.
  *
  * ⚠️ Pricing: `startingPrice` values are planning figures for the greater
@@ -297,7 +297,7 @@ export function buildAduFaqs(): FaqItem[] {
     },
     {
       question: `Is ${BUSINESS_NAME} licensed and insured for ADU construction?`,
-      answer: `Yes. ${BUSINESS_NAME} is a fully licensed and insured construction contractor in Washington State, serving the greater Seattle area since 2023 with more than 100 completed projects across King, Snohomish and Pierce counties. Construction work is covered by a written workmanship warranty specified in your project agreement.`,
+      answer: `Yes. ${BUSINESS_NAME} is a fully licensed and insured construction contractor in Washington State, serving homeowners across King, Snohomish and Pierce counties. Construction work is covered by a written workmanship warranty specified in your project agreement.`,
     },
   ];
 }

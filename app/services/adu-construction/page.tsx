@@ -53,7 +53,7 @@ const service = services.find((s) => s.slug === SLUG)!;
 
 export const metadata: Metadata = {
   title: 'ADU Construction in Seattle — Backyard Cottages, DADU & Garage Conversions',
-  description: `Build a detached ADU, backyard cottage or garage conversion in the Seattle area. Seattle pre-approved DADU plans, permits handled, 4–7 months to move-in. Licensed contractor since 2023. Call ${PHONE_DISPLAY} for a free site assessment.`,
+  description: `Build a detached ADU, backyard cottage or garage conversion in the Seattle area. Seattle pre-approved DADU plans, permits handled, 4–7 months to move-in. Licensed and insured contractor. Call ${PHONE_DISPLAY} for a free site assessment.`,
   keywords: 'ADU construction Seattle, DADU builder, backyard cottage Seattle, garage conversion ADU, accessory dwelling unit contractor, pre-approved DADU plans',
   alternates: {
     canonical: `${SITE_URL}/services/${SLUG}`,
@@ -539,7 +539,7 @@ export default function AduConstructionPage() {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">One Team, Start to Finish</h3>
               <p className="text-gray-600">
-                Design, permits, foundation, framing, plumbing, electrical and finishes — 100+ projects completed since 2023.
+                Design, permits, foundation, framing, plumbing, electrical and finishes, under one written agreement.
               </p>
             </div>
           </div>

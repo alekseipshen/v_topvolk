@@ -58,8 +58,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
       url: `${SITE_URL}/cities/${city.slug}`,
     },
-    // Without this the card falls back to the site-wide twitter description in
-    // layout.tsx, which still carries "Licensed contractor since 2023".
+    // Without this the card falls back to the generic site-wide twitter
+    // description in layout.tsx instead of the city's own intent.
     twitter: {
       title: `${title} | ${BUSINESS_NAME}`,
       description,
@@ -203,8 +203,8 @@ export default async function CityPage({ params }: PageProps) {
               <p className="text-base md:text-lg leading-relaxed">
                 From kitchen remodels and bathroom renovations to custom deck installations and complete 
                 home transformations, we deliver quality craftsmanship with direct communication and 
-                transparent pricing. With over 100 projects completed since 2023, Vladislav Volkov is 
-                your trusted local contractor.
+                transparent pricing. Vladislav Volkov is your local contractor: free estimates and
+                $100 for every day past the agreed deadline.
               </p>
 
               <p className="text-base md:text-lg leading-relaxed">

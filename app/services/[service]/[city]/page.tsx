@@ -12,6 +12,7 @@ import { services, visibleServices } from '@/lib/data/services';
 import { getAllCities } from '@/lib/data/seattle-counties';
 import { sortByDistance } from '@/lib/data/cityCoords';
 import { loadCityServiceContent } from '@/lib/content/loadPageContent';
+import { isServiceCityIndexable } from '@/lib/data/indexAllowlist';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 
 const SITE_URL = 'https://www.topvolk.org';
@@ -50,17 +51,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!service || !city) return {};
 
-  // All cities in seattle-counties.ts are real service areas. Index them.
-  // Pipeline-generated YAML, when present, upgrades the page; when absent,
-  // the static template still ranks. Earlier noindex behavior caused a 7.7
-  // → 79 regression on `bathroom remodel fife` (and ~38 similar cities)
-  // because the pipeline cannot cover all 80 cities × 4 services overnight.
+  // Every service renders in every city (30 × 118 = 3 540 pages), but over 90
+  // days only a quarter of them earned a single impression and most of the
+  // rest are the same template with a different city name. Only pages that
+  // earn attention stay indexable: the list is generated from Search Console
+  // and GA4 by Clients/TopVolk/SEO/build-index-allowlist.py. The earlier
+  // blanket noindex hid pages that were ranking (`bathroom remodel fife`, 7.7
+  // → 79); this one keeps any page with 10+ impressions, a click or an
+  // organic visit, and a page that starts earning returns on the next run.
+  const indexable = isServiceCityIndexable(service.slug, city.slug);
 
   const year = new Date().getFullYear();
 
   // AEO: lead the meta description with the unique direct-answer when available.
   const metaContent = loadCityServiceContent(citySlug, serviceSlug);
-  const fallbackDescription = `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed contractor since 2023. Call ${PHONE_DISPLAY}.`;
+  const fallbackDescription = `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Free estimates, licensed and insured contractor. Call ${PHONE_DISPLAY}.`;
   const description =
     typeof metaContent?.answer === 'string' && metaContent.answer.trim()
       ? metaContent.answer.trim()
@@ -70,12 +75,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${service.name} in ${city.name}, WA (${year})`,
     description,
     keywords: `${service.name.toLowerCase()}, ${city.name}, Seattle area, home renovation, construction contractor`,
+    // Indexable pages inherit the layout's robots (with its googleBot preview
+    // directives); the rest say noindex to every crawler, googleBot included.
+    ...(indexable
+      ? {}
+      : { robots: { index: false, follow: true, googleBot: { index: false, follow: true } } }),
     alternates: {
       canonical: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
     openGraph: {
       title: `${service.name} in ${city.name}, WA | ${BUSINESS_NAME}`,
-      description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Licensed contractor since 2023.`,
+      description: `Expert ${service.name.toLowerCase()} in ${city.name}, WA. Licensed and insured, free estimates.`,
       url: `${SITE_URL}/services/${service.slug}/${city.slug}`,
     },
   };
@@ -214,7 +224,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Quality Guaranteed</h3>
               <p className="text-gray-600">
-                100+ projects completed since 2023. We pay $100 for every day past the agreed deadline.
+                Written workmanship warranty, and we pay $100 for every day past the agreed deadline.
               </p>
             </div>
           </div>
@@ -252,7 +262,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 </p>
 
                 <p className="text-base md:text-lg leading-relaxed">
-                  {service.description} With over 100 projects completed since 2023, Vladislav Volkov
+                  {service.description} Vladislav Volkov
                   delivers quality craftsmanship with direct communication and transparent pricing.
                 </p>
 

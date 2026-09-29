@@ -30,7 +30,7 @@ export function generateOrganizationSchema() {
     email: BUSINESS_EMAIL,
     foundingDate: `${FOUNDED_YEAR}`,
     priceRange: '$$',
-    description: 'Professional home renovation and construction services in the greater Seattle area. Kitchen remodels, bathroom renovations, deck installations, and general contracting since 2023.',
+    description: 'Professional home renovation and construction services in the greater Seattle area. Kitchen remodels, bathroom renovations, deck installations, and general contracting.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Seattle',
@@ -313,13 +313,13 @@ function generateBusinessDescription(params: SchemaParams): string {
   const service = getEffectiveService(params);
 
   if (city && service) {
-    return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor since ${FOUNDED_YEAR}. Call ${PHONE_DISPLAY} for a free estimate.`;
+    return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed and insured contractor. Call ${PHONE_DISPLAY} for a free estimate.`;
   } else if (city) {
-    return `Professional home renovation services in ${formatName(city)}, WA. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since ${FOUNDED_YEAR}.`;
+    return `Professional home renovation services in ${formatName(city)}, WA. Kitchen remodels, bathroom renovations, deck installations. Licensed and insured contractor.`;
   } else if (service) {
-    return `Expert ${formatName(service).toLowerCase()} services in Seattle and surrounding areas. Licensed contractor with 100+ projects since ${FOUNDED_YEAR}.`;
+    return `Expert ${formatName(service).toLowerCase()} services in Seattle and surrounding areas. Licensed and insured contractor.`;
   }
-  return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed contractor since ${FOUNDED_YEAR}.`;
+  return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations. Licensed and insured contractor.`;
 }
 
 function generateServiceDescription(params: SchemaParams): string {
@@ -329,7 +329,7 @@ function generateServiceDescription(params: SchemaParams): string {
   if (city && service) {
     return `Professional ${formatName(service).toLowerCase()} services in ${formatName(city)}, WA. Licensed contractor, quality craftsmanship, free estimates. Call ${PHONE_DISPLAY}.`;
   } else if (service) {
-    return `Professional ${formatName(service).toLowerCase()} services in Seattle and King County area. Licensed contractor with 100+ completed projects.`;
+    return `Professional ${formatName(service).toLowerCase()} services in Seattle and King County area. Licensed and insured contractor.`;
   }
   return `Professional home renovation services in Seattle area. Kitchen remodels, bathroom renovations, deck installations, and more.`;
 }

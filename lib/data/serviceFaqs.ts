@@ -15,7 +15,7 @@ const SITE_URL = 'https://www.topvolk.org';
  * Every answer here restates something the site already publishes — the $100
  * per-day late commitment, free preliminary estimates, permits passed through
  * at cost, written workmanship warranty per project agreement, Mon-Sat 9-5,
- * King/Snohomish/Pierce service area, founded 2023, 100+ projects. Nothing is
+ * King/Snohomish/Pierce service area. Nothing is
  * introduced that is not already claimed elsewhere on the site, so the FAQPage
  * JSON-LD stays a mirror of on-page content and of reality.
  *
@@ -57,7 +57,7 @@ export function buildServiceFaqs(service: ServiceLike): FaqItem[] {
     },
     {
       question: `Is ${BUSINESS_NAME} licensed and insured?`,
-      answer: `Yes. ${BUSINESS_NAME} is a fully licensed and insured construction contractor operating in Washington State, serving the greater Seattle area since 2023 with more than 100 completed projects across King, Snohomish and Pierce counties.`,
+      answer: `Yes. ${BUSINESS_NAME} is a fully licensed and insured construction contractor operating in Washington State, serving homeowners across King, Snohomish and Pierce counties.`,
     },
     {
       question: `Do you handle permits for ${lower}?`,

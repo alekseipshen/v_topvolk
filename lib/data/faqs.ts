@@ -23,11 +23,6 @@ export const homeFaqs: FaqItem[] = [
       'Yes. TopVolk Construction LLC is a licensed and insured general contractor operating in Washington State.',
   },
   {
-    question: 'How long has TopVolk Construction been in business?',
-    answer:
-      'TopVolk Construction has completed more than 100 residential projects across the Seattle area since 2023.',
-  },
-  {
     question: 'What home renovation services does TopVolk offer?',
     answer:
       'We specialize in kitchen remodels, bathroom renovations, deck and patio construction, basement finishing, flooring installation, and full-service general contracting.',
