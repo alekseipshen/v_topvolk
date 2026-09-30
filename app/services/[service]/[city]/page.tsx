@@ -14,6 +14,7 @@ import { sortByDistance } from '@/lib/data/cityCoords';
 import { loadCityServiceContent } from '@/lib/content/loadPageContent';
 import { isServiceCityIndexable } from '@/lib/data/indexAllowlist';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+import { serviceCityHref } from '@/lib/data/serviceCityLinks';
 
 const SITE_URL = 'https://www.topvolk.org';
 
@@ -303,7 +304,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
             {otherCities.map((otherCity) => (
               <Link
                 key={otherCity.slug}
-                href={`/services/${service.slug}/${otherCity.slug}`}
+                href={serviceCityHref(service.slug, otherCity.slug, 'city')}
                 className="bg-white p-4 rounded-lg hover:shadow-md transition text-center border border-gray-200"
               >
                 <MapPin className="w-5 h-5 mx-auto mb-2 text-gold-500" />
@@ -332,7 +333,7 @@ export default async function ServiceCityPage({ params }: PageProps) {
             {otherServices.map((otherService) => (
               <Link
                 key={otherService.slug}
-                href={`/services/${otherService.slug}/${city.slug}`}
+                href={serviceCityHref(otherService.slug, city.slug, 'service')}
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group border border-gray-200"
               >
                 {otherService.image && (

@@ -11,6 +11,7 @@ import { sortByDistance } from '@/lib/data/cityCoords';
 import { featuredServices } from '@/lib/data/services';
 import { getCityIntent } from '@/lib/data/cityIntent';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+import { serviceCityHref } from '@/lib/data/serviceCityLinks';
 
 const SITE_URL = 'https://www.topvolk.org';
 
@@ -233,7 +234,7 @@ export default async function CityPage({ params }: PageProps) {
                   <p className="text-base md:text-lg leading-relaxed text-gray-700">
                     {sh.body}{' '}
                     <Link
-                      href={`/services/${sh.slug}/${citySlug}`}
+                      href={serviceCityHref(sh.slug, citySlug, 'service')}
                       prefetch={false}
                       className="text-gold-500 font-semibold hover:underline"
                     >
@@ -263,7 +264,7 @@ export default async function CityPage({ params }: PageProps) {
             {featuredServices.map((service) => (
               <Link
                 key={service.slug}
-                href={`/services/${service.slug}/${citySlug}`}
+                href={serviceCityHref(service.slug, citySlug, 'service')}
                 prefetch={false}
                 className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
               >

@@ -42,6 +42,7 @@ import {
 } from '@/lib/data/adu';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+import { serviceCityHref } from '@/lib/data/serviceCityLinks';
 
 const SITE_URL = 'https://www.topvolk.org';
 const SLUG = 'adu-construction';
@@ -616,7 +617,7 @@ export default function AduConstructionPage() {
                     return (
                       <Link
                         key={citySlug}
-                        href={`/services/${SLUG}/${citySlug}`}
+                        href={serviceCityHref(SLUG, citySlug, 'city')}
                         className="text-gray-700 hover:text-gold-500 transition py-1 text-sm"
                       >
                         {cityName}

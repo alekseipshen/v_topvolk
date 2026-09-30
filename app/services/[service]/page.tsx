@@ -13,6 +13,7 @@ import { buildServiceFaqs } from '@/lib/data/serviceFaqs';
 import { serviceGalleries } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
+import { serviceCityHref } from '@/lib/data/serviceCityLinks';
 
 const SITE_URL = 'https://www.topvolk.org';
 
@@ -272,7 +273,7 @@ export default async function ServicePage({ params }: PageProps) {
                     return (
                       <Link
                         key={idx}
-                        href={`/services/${service.slug}/${citySlug}`}
+                        href={serviceCityHref(service.slug, citySlug, 'city')}
                         className="text-gray-700 hover:text-gold-500 transition py-1 text-sm"
                       >
                         {cityName}
