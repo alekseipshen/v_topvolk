@@ -35,7 +35,7 @@ export default function PromoSection() {
             <span style={{ color: '#F4B942' }}>0% Financing</span> for 24 Months
           </h2>
           <p className="text-lg md:text-xl text-gray-300 mb-8 md:mb-10">
-            Start your renovation now and pay over time with monthly payments.
+            Start your renovation now and pay over time with monthly payments.{' '}
             <br className="hidden md:block" />
             We walk you through the payment plan at your free estimate.
           </p>
