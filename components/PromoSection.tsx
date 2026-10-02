@@ -1,35 +1,11 @@
 'use client';
 
-import { useWeeklyCountdown } from '@/hooks/useWeeklyCountdown';
 import { useModal } from '@/contexts/ModalContext';
-import { Clock, Phone } from 'lucide-react';
+import { CreditCard, Phone } from 'lucide-react';
 import { PHONE_NUMBER } from '@/lib/utils';
 
-function pad(n: number): string {
-  return n.toString().padStart(2, '0');
-}
-
-function CountdownBlock({ value, label }: { value: number; label: string }) {
-  return (
-    <div className="flex flex-col items-center">
-      <div
-        className="text-3xl md:text-5xl font-extrabold text-white px-3 py-2 md:px-5 md:py-3 rounded-lg min-w-[60px] md:min-w-[80px] text-center"
-        style={{ backgroundColor: '#1f2937' }}
-      >
-        {pad(value)}
-      </div>
-      <span className="text-xs md:text-sm text-gray-300 mt-1 uppercase tracking-wide">
-        {label}
-      </span>
-    </div>
-  );
-}
-
 export default function PromoSection() {
-  const { days, hours, minutes, seconds, isExpired } = useWeeklyCountdown();
   const { openModal } = useModal();
-
-  if (isExpired) return null;
 
   return (
     <section
@@ -50,36 +26,19 @@ export default function PromoSection() {
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
-            <Clock className="w-4 h-4" style={{ color: '#F4B942' }} />
-            Limited Time Offer
+            <CreditCard className="w-4 h-4" style={{ color: '#F4B942' }} />
+            Flexible Payment Plans
           </div>
 
           {/* Headline */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-3">
-            <span style={{ color: '#F4B942' }}>15% OFF</span> All Labor
+            <span style={{ color: '#F4B942' }}>0% Financing</span> for 24 Months
           </h2>
           <p className="text-lg md:text-xl text-gray-300 mb-8 md:mb-10">
-            Book your renovation this week and save on labor costs.
+            Start your renovation now and pay over time with monthly payments.
             <br className="hidden md:block" />
-            Materials are billed separately and are not included in the discount.
+            We walk you through the payment plan at your free estimate.
           </p>
-
-          {/* Countdown */}
-          <div className="flex justify-center gap-3 md:gap-5 mb-8 md:mb-10">
-            <CountdownBlock value={days} label="Days" />
-            <div className="text-3xl md:text-5xl font-bold text-white/30 self-start pt-2 md:pt-3">
-              :
-            </div>
-            <CountdownBlock value={hours} label="Hours" />
-            <div className="text-3xl md:text-5xl font-bold text-white/30 self-start pt-2 md:pt-3">
-              :
-            </div>
-            <CountdownBlock value={minutes} label="Min" />
-            <div className="text-3xl md:text-5xl font-bold text-white/30 self-start pt-2 md:pt-3">
-              :
-            </div>
-            <CountdownBlock value={seconds} label="Sec" />
-          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -102,7 +61,7 @@ export default function PromoSection() {
                 (e.currentTarget.style.backgroundColor = '#F4B942')
               }
             >
-              Claim Your 15% Discount
+              Get My Free Quote
             </button>
             <a
               href={`tel:${PHONE_NUMBER}`}
@@ -120,6 +79,10 @@ export default function PromoSection() {
               Call Now
             </a>
           </div>
+
+          <p className="text-xs md:text-sm text-gray-400 mt-6">
+            Subject to credit approval. Terms and eligibility vary by project.
+          </p>
         </div>
       </div>
     </section>

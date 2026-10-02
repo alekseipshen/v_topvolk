@@ -121,8 +121,8 @@ export interface AduIncomeWay {
 }
 
 // "How an ADU pays for itself" — the earning angle a dedicated ADU builder
-// leads with. No financing or home-value percentages: TopVolk has no lending
-// partner, and no Seattle appraisal study supports a specific value premium.
+// leads with. No home-value percentages: no Seattle appraisal study supports a
+// specific value premium. The 0% financing offer lives in PromoSection only.
 export const aduIncomeWays: AduIncomeWay[] = [
   {
     title: 'Long-term rental income',
