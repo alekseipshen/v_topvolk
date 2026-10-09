@@ -17,7 +17,7 @@ commonProblems:
 
   - title: "HVAC Zoning for Detached ADUs"
     description: |
-      Detached ADUs under WA HB 1337 sit outside the main house's mechanical envelope. Running ductwork from an existing forced-air system to a DADU means penetrating the foundation, crossing an unconditioned crawlspace, and coordinating with the AHJ inspection sequence — all for a zone that'll be occupied independently. Most DADUs we build in Kent get a Mitsubishi mini-split: one head unit, one outdoor condenser, no ductwork to run under the house. The rough-in for the line set goes in during framing, before insulation and drywall close up the walls.
+      Detached ADUs under WA HB 1337 sit outside the main house's mechanical envelope. Running ductwork from an existing forced-air system to a DADU means penetrating the foundation, crossing an unconditioned crawlspace, and coordinating with the AHJ inspection sequence — all for a zone that'll be occupied independently. Most DADUs in Kent use a Mitsubishi mini-split: one head unit, one outdoor condenser, no ductwork to run under the house. The rough-in for the line set goes in during framing, before insulation and drywall close up the walls.
 
 faq:
   - q: "How fast can you get to Kent for a Home Additions consultation?"

@@ -9,10 +9,7 @@ intro: |
   60-amp or 100-amp Federal Pacific or Zinsco panels that simply cannot support
   what families plug in today. A heat pump, a Tesla Wall Connector on a dedicated
   60A circuit, a GE electric range — that's already at or beyond what the original
-  service entrance was built to handle. Vladislav Volkov has done panel swaps in
-  older Longview neighborhoods where knob-and-tube wiring was still live in the
-  attic, tucked behind late-added insulation batts slowly cooking the original
-  rubber insulation. TopVolk Construction LLC serves the Longview area as a WA Licensed Contractor — direct communication with the owner, and no sales staff between you and the person actually doing the work.
+  service entrance was built to handle. In older Longview neighborhoods, knob-and-tube wiring can still be live in the attic, tucked behind late-added insulation batts that slowly cook the original rubber insulation. TopVolk Construction LLC serves the Longview area as a WA Licensed Contractor — direct communication with the owner, and no sales staff between you and the person actually doing the work.
 
 localContext: |
   The bulk of Longview's older residential stock sits in the 98632 zip,
@@ -91,9 +88,7 @@ commonProblems:
       breakers and Square D QO-series AFCI breakers both run $35–$55 per breaker
       installed; outfitting a 20-slot panel with a full complement of AFCI and
       ground-fault circuit interrupter (GFCI) breakers typically runs $1,200–$2,500
-      in labor and materials. Bathroom, kitchen countertop, garage, and exterior
-      outlets also require GFCI protection — a gap that shows up in virtually every
-      pre-1980 Longview house Vladislav has walked. Catching all of it during a
+      in labor and materials. Bathroom, kitchen countertop, garage, and exterior outlets also require GFCI protection, a gap that is common in pre-1980 Longview houses. Catching all of it during a
       panel swap is always cheaper than a separate return trip.
 
   - title: "Level 2 EV Charger Circuit Installation in Longview Homes"
@@ -162,7 +157,7 @@ faq:
       anyway, the EV circuit gets added during that same project at reduced
       incremental cost since the panel is already open and accessible.
 
-  - q: "What warranty covers electrical work TopVolk does in Longview?"
+  - q: "What warranty covers electrical work TopVolk coordinates in Longview?"
     a: |
       Workmanship is warranted for three years from project completion. If a
       connection fails, a breaker trips due to an installation error, or a circuit

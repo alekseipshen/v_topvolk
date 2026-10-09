@@ -68,8 +68,7 @@ faq:
     a: >
       All three are common in Renton. Tesla Wall Connector and ChargePoint Home Flex both
       need a 60A dedicated circuit and City of Renton permit. JuiceBox 40 runs on 50A.
-      TopVolk handles the permit pull, breaker, wiring, and PSE coordination for any
-      service upgrade — one contractor, not three separate calls.
+      TopVolk pulls the permit and coordinates PSE for any service upgrade, with the breaker and wiring handled by licensed electrical subcontractors, so it stays one point of contact instead of three separate calls.
   - q: "How long does a panel upgrade take in Renton, and what does it cost?"
     a: >
       A 100A-to-200A service upgrade typically runs 4-8 weeks start to finish — City of

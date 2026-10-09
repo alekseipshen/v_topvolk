@@ -9,9 +9,7 @@ intro: |
   skip it create real problems at final inspection. A lot of these same houses also have
   aluminum branch circuit wiring from the 1965–1973 window — it hasn't failed yet, but it
   needs AlumiConn connectors or proper pigtailing to copper before you safely add load.
-  Over in the North Creek corridor and 98021, the housing stock shifts to 1990s–2000s
-  builds with 200-amp service already in place, but aging load centers and zero AFCI
-  protection on bedroom circuits are the most common calls we get. TopVolk Construction LLC has completed electrical scopes across Bothell and the broader King and Snohomish County area — owner-operated by Vladislav Volkov, WA Licensed Contractor.
+  Over in the North Creek corridor and 98021, the housing stock shifts to 1990s and 2000s builds with 200-amp service already in place, but aging load centers and zero AFCI protection on bedroom circuits are common there. TopVolk Construction LLC serves Bothell and coordinates electrical scopes through licensed electrical subcontractors, owner-operated by Vladislav Volkov, WA Licensed Contractor.
 
 localContext: |
   Bothell spans both King and Snohomish counties, which matters the moment you pull a
@@ -155,8 +153,7 @@ faq:
 
   - q: "What warranty applies to electrical work TopVolk completes?"
     a: |
-      All electrical work carries a three-year labor warranty — if something we wired fails
-      due to workmanship, we come back and fix it at no charge. Materials carry
+      Electrical work, coordinated through licensed electrical subcontractors, carries a three-year labor warranty: if an installation fails due to workmanship, it gets corrected at no charge. Materials carry
       manufacturer warranties: breakers and load centers from Square D, Eaton, or Leviton
       typically come with 10-year or lifetime limited coverage. The more durable protection
       is the permit and inspection record itself — work that passed a City of Bothell

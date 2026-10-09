@@ -7,7 +7,7 @@ intro: |
   induction ranges, and Level 2 EV charging became standard asks at this price point.
   Snohomish County PUD — SnoPUD — has a specific interconnect process for service upgrades
   that differs from PSE or Seattle City Light, and permits run through the City of Edmonds
-  building department, not Snohomish County PDS. TopVolk Construction LLC has coordinated electrical scope on projects across Snohomish County, including panel swaps, EV charger circuits, and full rewiring work in homes near Brackett's Landing and up into the Meadowdale neighborhood. Vladislav Volkov handles every project directly —
+  building department, not Snohomish County PDS. Homes near Brackett's Landing and up into the Meadowdale neighborhood often need panel swaps, EV charger circuits, or full rewiring, with the electrical scope coordinated through licensed electrical subcontractors. Vladislav Volkov handles every project directly —
   you talk to the person who knows the job, not a salesperson running an estimate sheet.
 
 localContext: |
@@ -124,9 +124,7 @@ faq:
     a: "Yes. The most common installs are the Tesla Wall Connector (48A hardwired), ChargePoint
       Home Flex (50A hardwired or NEMA 14-50), and JuiceBox Pro 48 (60A). Each has slightly
       different circuit requirements, and some existing panels need a load calculation before
-      a new 50- or 60-amp circuit can be added. TopVolk sizes the circuit correctly, pulls
-      the required permit, and handles the full conduit run from panel to garage — including
-      underground runs to detached structures. SnoPUD doesn't need to be involved for a
+      a new 50- or 60-amp circuit can be added. TopVolk manages scope, permits and scheduling while licensed electrical subcontractors size the circuit and run conduit from panel to garage, including underground runs to detached structures. SnoPUD doesn't need to be involved for a
       charger-only circuit addition with no meter upgrade. Timeline for a permitted EV
       circuit in Edmonds: 3–5 weeks from application to an energized outlet."
 

@@ -10,6 +10,7 @@ import { getAllCities, seattleCounties, getCountiesForCity } from '@/lib/data/se
 import { sortByDistance } from '@/lib/data/cityCoords';
 import { featuredServices } from '@/lib/data/services';
 import { getCityIntent } from '@/lib/data/cityIntent';
+import { getCityContent } from '@/lib/data/cityContent';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 import { serviceCityHref } from '@/lib/data/serviceCityLinks';
 
@@ -145,7 +146,12 @@ export default async function CityPage({ params }: PageProps) {
     },
   ];
 
+  // City-specific copy (top cities by impressions only). Its FAQs go first so
+  // the questions people actually search lead both the page and the schema.
+  const localContent = getCityContent(city.slug);
+
   const faqs = [
+    ...(localContent?.faqs ?? []),
     {
       question: `Do you offer free estimates in ${city.name}, WA?`,
       answer: `Yes. We provide a free, no-obligation written estimate for every ${city.name} project, with a detailed scope and transparent pricing before any work begins.`,
@@ -217,6 +223,32 @@ export default async function CityPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+
+      {localContent && (
+        <section className="py-12 bg-gray-50 border-t border-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-base md:text-lg leading-relaxed text-gray-700 mb-8">
+                {localContent.intro}
+              </p>
+              <div className="space-y-8">
+                {localContent.sections.map((s) => (
+                  <div key={s.heading}>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-3">{s.heading}</h2>
+                    <div className="space-y-3">
+                      {s.paragraphs.map((p, i) => (
+                        <p key={i} className="text-base md:text-lg leading-relaxed text-gray-700">
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Query-targeted service depth + contextual internal links */}
       <section className="py-14 bg-white border-t border-gray-100">

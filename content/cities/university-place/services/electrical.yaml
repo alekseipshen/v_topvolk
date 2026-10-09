@@ -10,9 +10,7 @@ intro: |
   which insurance carriers increasingly flag and which simply can't carry a modern
   load: heat pump, EV charger, induction range, all at once. Installing a JuiceBox
   48 EV charger on a saturated 100A panel isn't just inconvenient — it creates real
-  arc-fault risk. TopVolk Construction LLC handles the full scope: permit filing
-  with Pierce County PALS, PSE coordination, panel replacement, and circuit
-  rough-in, with Vladislav Volkov on the job directly.
+  arc-fault risk. TopVolk Construction LLC manages the full scope: permit filing with Pierce County PALS, PSE coordination, and scheduling, with panel replacement and circuit rough-in coordinated through licensed electrical subcontractors.
 
 localContext: |
   University Place's housing stock breaks into two main eras. Zip code 98466
@@ -148,9 +146,7 @@ faq:
   - q: "Can you install a Level 2 EV charger circuit in my University Place garage?"
     a: |
       Yes — it's one of the more frequent scopes in Pierce County right now. The
-      process starts with a load calculation to confirm panel capacity. If your
-      service can absorb the draw, we run a dedicated 50A or 60A circuit to the
-      garage and install the outlet or hardwire the unit. JuiceBox 48 and
+      process starts with a load calculation to confirm panel capacity. If your service can absorb the draw, licensed electrical subcontractors run a dedicated 50A or 60A circuit to the garage and install the outlet or hardwire the unit, with TopVolk handling permits and scheduling. JuiceBox 48 and
       ChargePoint Home Flex both need a 50A circuit; the Tesla Wall Connector
       can run on 60A for faster charge rates. If your panel is a maxed-out 100A
       Federal Pacific or similar, we scope the panel upgrade at the same time to
@@ -159,13 +155,11 @@ faq:
 
   - q: "What warranty does TopVolk provide on electrical work in University Place?"
     a: |
-      Workmanship carries a three-year warranty — if something we wired fails due to
-      an installation error, we come back and fix it. Equipment warranties depend
+      Workmanship carries a three-year warranty: if an installation error shows up in the wiring, it gets corrected under that warranty. Equipment warranties depend
       on the manufacturer: Square D and Eaton panels carry 1–5 year limited
       warranties on the hardware. EV charger units like JuiceBox and ChargePoint
       Home Flex include 3-year manufacturer warranties registered in your name.
-      More practically: Vladislav is the one on the job, so a callback means
-      calling the same person who did the work. That direct accountability tends
+      More practically: Vladislav manages the job from scope through scheduling, so a callback means calling the same person who ran the work. That direct accountability tends
       to matter more than warranty fine print when something comes up two years
       later.
 

@@ -88,8 +88,7 @@ commonProblems:
 
   - title: "Gate Hardware Failure — The Most Frequent Post-Install Callback"
     description: |
-      Gate callbacks are the most common service call TopVolk receives from homeowners who had
-      fence work done by someone else. The cause is almost always hardware: cheap hinges not
+      Gates are the most common failure point on an otherwise sound fence. The cause is almost always hardware: cheap hinges not
       rated for gate weight, lag screws that pulled out of a saturated cedar post, or a self-
       closing mechanism not adjusted for the gate's actual mass. Residential cedar gates at six
       feet tall weigh 40–70 pounds depending on picket style; a flat strap hinge from a big-box
