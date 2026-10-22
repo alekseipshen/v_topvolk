@@ -12,10 +12,13 @@ import { indexableServiceCityPaths } from '@/lib/data/indexAllowlist';
  * Clients/TopVolk/SEO/build-index-allowlist.py. Pages outside it render
  * noindex and must never appear in a sitemap.
  */
+import { pageLastmod } from '@/lib/data/pageLastmod';
+
+// lastmod = the page's real last change (lib/data/pageLastmod.ts), never request
+// time: a date that moves on every fetch makes Google ignore lastmod entirely.
 export async function GET() {
   const baseUrl = 'https://www.topvolk.org';
-  const now = new Date().toISOString();
-
+  
   // Remaining cities (the top 20 are in phase 1)
   const remainingCities = cities.slice(20);
 
@@ -23,7 +26,7 @@ export async function GET() {
     // Remaining city pages (cities 21+)
     ...remainingCities.map((city) => ({
       loc: `${baseUrl}/cities/${city.slug}`,
-      lastmod: now,
+      lastmod: pageLastmod(`/cities/${city.slug}`),
       changefreq: 'weekly',
       priority: 0.75,
     })),
@@ -31,7 +34,7 @@ export async function GET() {
     // Service x city pages on the index allowlist
     ...indexableServiceCityPaths.map((path) => ({
       loc: `${baseUrl}${path}`,
-      lastmod: now,
+      lastmod: pageLastmod(path),
       changefreq: 'monthly',
       priority: 0.8,
     })),

@@ -14,6 +14,8 @@
  * allowed to be indexed.
  */
 
+import { LATEST_LASTMOD } from '@/lib/data/pageLastmod';
+
 const BASE_URL = 'https://www.topvolk.org';
 
 const CHILD_SITEMAPS = [
@@ -22,14 +24,12 @@ const CHILD_SITEMAPS = [
 ];
 
 export async function GET() {
-  const now = new Date().toISOString();
-
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${CHILD_SITEMAPS.map(
     (loc) => `  <sitemap>
     <loc>${loc}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${LATEST_LASTMOD}</lastmod>
   </sitemap>`
   ).join('\n')}
 </sitemapindex>`;
