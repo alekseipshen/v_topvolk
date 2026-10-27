@@ -4,20 +4,14 @@ import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { PatternFormat } from 'react-number-format';
+import UsPhoneInput, { isValidUsPhone, usNationalDigits } from '@/components/UsPhoneInput';
 import { services } from '@/lib/data/services';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   phone: z.string()
     .min(10, 'Please enter a valid phone number')
-    .refine((val) => {
-      // US numbers only: area code and exchange start with 2-9; a leading 1 is accepted
-      // only as the country code of an 11-digit entry (1206293806 slipped through as "10 digits").
-      let digitsOnly = val.replace(/\D/g, '');
-      if (digitsOnly.length === 11 && digitsOnly.startsWith('1')) digitsOnly = digitsOnly.slice(1);
-      return /^[2-9]\d{2}[2-9]\d{6}$/.test(digitsOnly);
-    }, 'Please enter a complete 10-digit US phone number, area code first'),
+    .refine(isValidUsPhone, 'Please enter a complete 10-digit US phone number, area code first'),
   email: z.string().email('Please enter a valid email').or(z.literal('')).optional(),
   service: z.string().min(1, 'Please select a service'),
 });
@@ -53,7 +47,7 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
     setSubmitStatus('idle');
 
     try {
-      const cleanedPhone = data.phone.replace(/\D/g, '');
+      const cleanedPhone = usNationalDigits(data.phone);
       const serviceName = services.find(s => s.slug === data.service)?.title || data.service;
 
       const response = await fetch('/api/submit-lead', {
@@ -157,11 +151,9 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
                 name="phone"
                 control={control}
                 render={({ field }) => (
-                  <PatternFormat
+                  <UsPhoneInput
                     {...field}
-                    format="(###) ###-####"
-                    mask="_"
-                    placeholder="(555) 123-4567"
+                    placeholder="+1 (555) 123-4567"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 )}
