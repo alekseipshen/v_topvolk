@@ -13,9 +13,12 @@ const formSchema = z.object({
   phone: z.string()
     .min(10, 'Please enter a valid phone number')
     .refine((val) => {
-      const digitsOnly = val.replace(/\D/g, '');
-      return digitsOnly.length === 10;
-    }, 'Please enter a complete 10-digit phone number'),
+      // US numbers only: area code and exchange start with 2-9; a leading 1 is accepted
+      // only as the country code of an 11-digit entry (1206293806 slipped through as "10 digits").
+      let digitsOnly = val.replace(/\D/g, '');
+      if (digitsOnly.length === 11 && digitsOnly.startsWith('1')) digitsOnly = digitsOnly.slice(1);
+      return /^[2-9]\d{2}[2-9]\d{6}$/.test(digitsOnly);
+    }, 'Please enter a complete 10-digit US phone number, area code first'),
   email: z.string().email('Please enter a valid email').or(z.literal('')).optional(),
   service: z.string().min(1, 'Please select a service'),
 });
