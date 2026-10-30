@@ -149,6 +149,66 @@ function RenderNode({ node }: { node: MarkdocNode }) {
         </blockquote>
       );
 
+    case 'softbreak':
+      return ' ';
+
+    // Tables: price tables in the cost guides rendered as run-on text before 2026-10-30.
+    case 'table':
+      return (
+        <div className="not-prose overflow-x-auto my-8">
+          <table className="w-full border-collapse text-left text-base">
+            {children.map((child, i) => (
+              <RenderNode key={i} node={child} />
+            ))}
+          </table>
+        </div>
+      );
+
+    case 'thead':
+      return (
+        <thead className="bg-gray-100">
+          {children.map((child, i) => (
+            <RenderNode key={i} node={child} />
+          ))}
+        </thead>
+      );
+
+    case 'tbody':
+      return (
+        <tbody>
+          {children.map((child, i) => (
+            <RenderNode key={i} node={child} />
+          ))}
+        </tbody>
+      );
+
+    case 'tr':
+      return (
+        <tr className="border-b border-gray-200">
+          {children.map((child, i) => (
+            <RenderNode key={i} node={child} />
+          ))}
+        </tr>
+      );
+
+    case 'th':
+      return (
+        <th className="px-4 py-3 font-semibold text-gray-900 align-top">
+          {children.map((child, i) => (
+            <RenderNode key={i} node={child} />
+          ))}
+        </th>
+      );
+
+    case 'td':
+      return (
+        <td className="px-4 py-3 text-gray-700 align-top">
+          {children.map((child, i) => (
+            <RenderNode key={i} node={child} />
+          ))}
+        </td>
+      );
+
     case 'image':
       return (
         <img

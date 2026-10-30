@@ -13,6 +13,21 @@ export interface LocalGuide {
 
 export const costGuides: LocalGuide[] = [
   {
+    href: '/blog/adu-dadu-rules-cost-eastside',
+    title: 'ADU & DADU Rules on the Eastside',
+    blurb: 'How many ADUs you can build, size and height caps by city, fees and real costs.',
+  },
+  {
+    href: '/blog/main-floor-remodel-cost-seattle',
+    title: 'Main Floor Remodel Cost',
+    blurb: 'Opening walls, kitchen and living areas on one level: budget, permits and timeline.',
+  },
+  {
+    href: '/blog/whole-house-renovation-cost-seattle',
+    title: 'Whole House Renovation Cost',
+    blurb: 'What a full renovation costs around Seattle and the Eastside, and what drives it.',
+  },
+  {
     href: '/blog/kitchen-remodel-cost-seattle',
     title: 'Kitchen Remodel Cost in Seattle',
     blurb: 'Price ranges by scope, what drives the budget and what permits add.',

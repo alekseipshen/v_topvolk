@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Home Renovation Tips & Blog | TopVolk Construction',
+  title: 'Home Renovation Cost Guides & Tips',
   description: 'Expert tips, guides, and advice for home renovation and remodeling. Kitchen, bathroom, deck projects and more from Seattle area professionals.',
   alternates: {
     canonical: 'https://www.topvolk.org/blog',

@@ -15,6 +15,7 @@ interface PostFrontmatter {
   displayTitle?: string;
   description?: string;
   publishedDate?: string;
+  updatedDate?: string;
   author?: string;
   image?: string;
 }

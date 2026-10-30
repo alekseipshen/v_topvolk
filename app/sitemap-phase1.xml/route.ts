@@ -28,6 +28,9 @@ export async function GET() {
     { loc: `${baseUrl}/blog/kitchen-remodel-cost-seattle`, lastmod: pageLastmod('/blog/kitchen-remodel-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
     { loc: `${baseUrl}/blog/deck-cost-seattle`, lastmod: pageLastmod('/blog/deck-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
     { loc: `${baseUrl}/blog/basement-finishing-cost-seattle`, lastmod: pageLastmod('/blog/basement-finishing-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/adu-dadu-rules-cost-eastside`, lastmod: pageLastmod('/blog/adu-dadu-rules-cost-eastside'), changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/main-floor-remodel-cost-seattle`, lastmod: pageLastmod('/blog/main-floor-remodel-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/whole-house-renovation-cost-seattle`, lastmod: pageLastmod('/blog/whole-house-renovation-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
 
     // All service pages (29 services)
     ...services.map((service) => ({

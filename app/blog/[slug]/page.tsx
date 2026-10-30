@@ -17,19 +17,52 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
 }
 
+const SITE = 'https://www.topvolk.org';
+
+function readableTitle(slug: string, displayTitle?: string): string {
+  return (
+    displayTitle ||
+    slug
+      .split('-')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+  );
+}
+
+function isoDate(d: unknown): string | undefined {
+  if (!d) return undefined;
+  const date = d instanceof Date ? d : new Date(String(d));
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString().slice(0, 10);
+}
+
+// Before 2026-10-30 posts inherited the root layout canonical (the homepage) and used
+// the slug as the title, so Google folded them into the homepage. Each post now
+// declares its own canonical and a readable title (layout template adds the brand).
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  
+
   if (!post) {
     return {
       title: 'Post Not Found',
     };
   }
 
+  const url = `${SITE}/blog/${slug}`;
+  const title = readableTitle(slug, post.displayTitle);
+  const description = post.description || `${title}: a TopVolk Construction guide.`;
   return {
-    title: `${post.title} | TopVolk Construction Blog`,
-    description: post.description || `Read about ${post.title} on TopVolk Construction blog`,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      url,
+      title,
+      description,
+      publishedTime: isoDate(post.publishedDate),
+      modifiedTime: isoDate(post.updatedDate) || isoDate(post.publishedDate),
+    },
   };
 }
 
@@ -41,20 +74,41 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
-  const { displayTitle, title, description, publishedDate, author, image, content } = post;
-  const fallbackTitle = title || slug;
+  const { displayTitle, description, publishedDate, updatedDate, author, image, content } = post;
 
-  // Use displayTitle if available, or convert slug to readable title
-  const articleTitle = displayTitle || fallbackTitle
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-  
+  const articleTitle = readableTitle(slug, displayTitle);
+  const url = `${SITE}/blog/${slug}`;
+  const related = (await getAllPosts()).filter((p) => p.slug !== slug);
+  const articleLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: articleTitle,
+    description: description || undefined,
+    datePublished: isoDate(publishedDate),
+    dateModified: isoDate(updatedDate) || isoDate(publishedDate),
+    mainEntityOfPage: url,
+    author: { '@type': 'Organization', name: 'TopVolk Construction', url: SITE },
+    publisher: { '@type': 'Organization', name: 'TopVolk Construction', url: SITE },
+  };
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+      { '@type': 'ListItem', position: 3, name: articleTitle, item: url },
+    ],
+  };
+
   // Get Markdoc node from content
   const { node } = await content();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleLd, breadcrumbLd]) }}
+      />
       {/* Back Button */}
       <section className="py-6 bg-gray-50 border-b border-gray-200">
         <div className="container mx-auto px-4">
@@ -130,6 +184,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </article>
+
+      {/* More guides: internal links between posts */}
+      {related.length > 0 && (
+        <section className="py-12 bg-gray-50 border-t border-gray-200">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">More Remodeling Guides</h2>
+              <ul className="grid gap-4 md:grid-cols-2">
+                {related.map((p) => (
+                  <li key={p.slug}>
+                    <Link
+                      href={`/blog/${p.slug}`}
+                      className="block bg-white p-5 rounded-lg border border-gray-200 hover:shadow-md transition font-semibold text-gray-900"
+                    >
+                      {readableTitle(p.slug, p.entry.displayTitle)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-gold-500 to-gold-700 text-white">
