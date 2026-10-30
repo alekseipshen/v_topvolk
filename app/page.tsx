@@ -8,6 +8,7 @@ import { homeWorks, homePreviews } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { homeFaqs } from '@/lib/data/faqs';
 import { aduModels, formatPrice } from '@/lib/data/adu';
+import { costGuides, localGuides } from '@/lib/data/localGuides';
 import { CheckCircle, Clock, Users, Wrench, Building2, Ruler, BedDouble, Bath } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -319,6 +320,49 @@ export default function HomePage() {
           </div>
 
           <WorksGallery works={homeWorks} previews={homePreviews} />
+        </div>
+      </section>
+
+      {/* Cost & permit guides: crawl path to rewritten local pages */}
+      <section id="guides" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Remodeling Cost &amp; Permit Guides
+            </h2>
+            <p className="text-xl text-gray-600">
+              Real price ranges and city permit rules before you call a contractor
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
+            {costGuides.map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="block bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{g.title}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{g.blurb}</p>
+              </Link>
+            ))}
+          </div>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Local Project Guides
+          </h3>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {localGuides.map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="block bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition"
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-2">{g.title}</h4>
+                <p className="text-gray-700 text-sm leading-relaxed">{g.blurb}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

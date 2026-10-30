@@ -73,6 +73,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
           message: `Service: ${serviceName}`,
           service: data.service,
           recaptchaToken: 'bypass',
+          gaTracked: typeof window !== 'undefined' && !!(window as any).google_tag_manager?.['GTM-NFXZKDN6'],
         }),
       });
 

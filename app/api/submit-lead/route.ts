@@ -7,6 +7,7 @@ import {
   getCustomerConfirmationHTML,
   getCustomerConfirmationText,
 } from '@/lib/email-templates';
+import { sendServerLead, GA4_SESSION_COOKIE } from '@/lib/server/ga4';
 
 interface LeadData {
   name: string;
@@ -15,6 +16,8 @@ interface LeadData {
   message?: string;
   service?: string;
   recaptchaToken: string;
+  // true when GTM was loaded in the browser, so the client-side GA4 tag counted the lead
+  gaTracked?: boolean;
 }
 
 const LEAD_SITE = 'topvolk';
@@ -352,6 +355,17 @@ export async function POST(request: NextRequest) {
         { error: 'Notification delivery failed' },
         { status: 502 }
       );
+    }
+
+    // Visitor invisible to GTM (blocker, failed load): count the lead in GA4 from the server.
+    if (data.gaTracked !== true) {
+      const ga = await sendServerLead({
+        gaCookie: request.cookies.get('_ga')?.value,
+        sessionCookie: request.cookies.get(GA4_SESSION_COOKIE)?.value,
+        pageLocation: request.headers.get('referer') || undefined,
+        service: data.service,
+      });
+      console.log('[GA4 MP] server generate_lead:', ga);
     }
 
     // Return success to client
