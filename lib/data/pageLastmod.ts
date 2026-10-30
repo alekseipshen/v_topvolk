@@ -5,7 +5,7 @@
 export const DEFAULT_LASTMOD = '2026-09-29';
 
 export const PAGE_LASTMOD: Record<string, string> = {
-  '/': '2026-09-29',
+  '/': '2026-10-30',
   '/blog': '2026-05-06',
   '/blog/basement-finishing-cost-seattle': '2026-07-29',
   '/blog/bathroom-remodel-cost-seattle': '2026-07-29',
