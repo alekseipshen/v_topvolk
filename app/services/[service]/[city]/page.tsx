@@ -25,19 +25,38 @@ interface PageProps {
   }>;
 }
 
+/**
+ * A /services/{service}/{city} combination exists as a page only when it has
+ * something of its own to say: either it is on the index allowlist (it earns
+ * impressions, clicks or organic visits) or the content pipeline wrote a text
+ * for it. The remaining ~1,700 combinations were the same template with a
+ * different city name; they rendered `noindex, follow` and still took most of
+ * Googlebot's visits (URL Inspection sample 2026-11-06: 7 of 20 noindex template
+ * pages recrawled 29-31.10, 3 of 19 allowlisted pages recrawled after 22.10, the
+ * six rewritten pages not since 16.07-30.09). Those combinations now return 404
+ * so the crawl budget goes to pages we want indexed.
+ */
+export function serviceCityPageExists(serviceSlug: string, citySlug: string): boolean {
+  return (
+    isServiceCityIndexable(serviceSlug, citySlug) ||
+    loadCityServiceContent(citySlug, serviceSlug) !== null
+  );
+}
+
 export async function generateStaticParams() {
   const allCities = getAllCities();
   const params: { service: string; city: string }[] = [];
-  
+
   services.forEach((service) => {
     allCities.forEach((city) => {
+      if (!serviceCityPageExists(service.slug, city.slug)) return;
       params.push({
         service: service.slug,
         city: city.slug,
       });
     });
   });
-  
+
   return params;
 }
 
@@ -51,6 +70,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = allCities.find(c => c.slug === citySlug);
 
   if (!service || !city) return {};
+  if (!serviceCityPageExists(service.slug, city.slug)) notFound();
 
   // Every service renders in every city (30 × 118 = 3 540 pages), but over 90
   // days only a quarter of them earned a single impression and most of the
@@ -101,7 +121,11 @@ export default async function ServiceCityPage({ params }: PageProps) {
   if (!service || !city) {
     notFound();
   }
-  
+  // Template-only combination outside the index allowlist: see serviceCityPageExists.
+  if (!serviceCityPageExists(service.slug, city.slug)) {
+    notFound();
+  }
+
   // Cities we also serve, nearest first — an alphabetical slice used to put
   // Aberdeen and Anacortes on a Bellevue page.
   const otherCities = sortByDistance(

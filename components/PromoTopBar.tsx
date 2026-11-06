@@ -23,7 +23,9 @@ export default function PromoTopBar() {
           </span>
         </span>
 
-        {/* CTA button — desktop only */}
+        {/* CTA button. Shown on every viewport since 2026-11-06: it was desktop-only,
+            and organic open_lead_form fell from 6-9 a week to 0-2 after the 0% financing
+            bar replaced the discount on 02.10 while 60-70% of real visitors are on phones. */}
         <button
           onClick={() => {
             if (typeof window !== 'undefined' && (window as any).dataLayer) {
@@ -34,7 +36,7 @@ export default function PromoTopBar() {
             }
             openModal();
           }}
-          className="hidden md:inline-block ml-2 px-4 py-1 bg-gray-900 text-white text-sm font-semibold rounded hover:bg-gray-800 transition cursor-pointer"
+          className="inline-block ml-1 md:ml-2 px-3 md:px-4 py-1 bg-gray-900 text-white text-xs md:text-sm font-semibold rounded hover:bg-gray-800 transition cursor-pointer"
         >
           Get a Free Quote
         </button>

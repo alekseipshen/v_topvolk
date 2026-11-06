@@ -11,6 +11,7 @@ import { sortByDistance } from '@/lib/data/cityCoords';
 import { featuredServices } from '@/lib/data/services';
 import { getCityIntent } from '@/lib/data/cityIntent';
 import { getCityContent } from '@/lib/data/cityContent';
+import { guidesForCity } from '@/lib/data/localGuides';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 import { serviceCityHref } from '@/lib/data/serviceCityLinks';
 
@@ -149,6 +150,7 @@ export default async function CityPage({ params }: PageProps) {
   // City-specific copy (top cities by impressions only). Its FAQs go first so
   // the questions people actually search lead both the page and the schema.
   const localContent = getCityContent(city.slug);
+  const cityGuides = guidesForCity(city.slug);
 
   const faqs = [
     ...(localContent?.faqs ?? []),
@@ -243,6 +245,25 @@ export default async function CityPage({ params }: PageProps) {
                       ))}
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+            {/* Cost & permit guides: these six city pages are recrawled often and are
+                the natural place to send readers (and Googlebot) to the deep guides. */}
+            <div className="max-w-5xl mx-auto mt-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Remodeling Cost &amp; Permit Guides
+              </h2>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                {cityGuides.map((g) => (
+                  <Link
+                    key={g.href}
+                    href={g.href}
+                    className="block bg-white p-5 rounded-lg border border-gray-200 hover:shadow-md transition"
+                  >
+                    <h3 className="text-base font-bold text-gray-900 mb-1">{g.title}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">{g.blurb}</p>
+                  </Link>
                 ))}
               </div>
             </div>

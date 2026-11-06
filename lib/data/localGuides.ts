@@ -49,6 +49,37 @@ export const costGuides: LocalGuide[] = [
   },
 ];
 
+// Service hub -> guides that belong to that service. Why: on 2026-11-06 none of the six
+// /services/* hubs linked to a single blog post, the three guides published 30.10 were
+// still "URL is unknown to Google" / "Discovered" and the whole /blog/* family had 83
+// impressions in 28 days. Hubs are recrawled every few days; the homepage block alone
+// was not enough. Keep each list short (2-4) and only to pages that are index,follow.
+const GUIDES_BY_SERVICE: Record<string, string[]> = {
+  'kitchen-remodel': ['/blog/kitchen-remodel-cost-seattle', '/blog/main-floor-remodel-cost-seattle', '/blog/whole-house-renovation-cost-seattle', '/services/kitchen-remodel/shoreline'],
+  'bathroom-remodel': ['/blog/bathroom-remodel-cost-seattle', '/blog/whole-house-renovation-cost-seattle', '/blog/main-floor-remodel-cost-seattle'],
+  'basement-finishing': ['/blog/basement-finishing-cost-seattle', '/services/basement-finishing/kirkland', '/blog/whole-house-renovation-cost-seattle'],
+  'deck-installation': ['/blog/deck-cost-seattle', '/services/deck-installation/duvall', '/services/deck-installation/sumner'],
+  'adu-construction': ['/blog/adu-dadu-rules-cost-eastside', '/services/adu-construction/kirkland', '/blog/whole-house-renovation-cost-seattle'],
+  'general-contracting': ['/blog/whole-house-renovation-cost-seattle', '/blog/main-floor-remodel-cost-seattle', '/blog/adu-dadu-rules-cost-eastside', '/blog/kitchen-remodel-cost-seattle'],
+  'home-additions': ['/blog/adu-dadu-rules-cost-eastside', '/blog/main-floor-remodel-cost-seattle', '/blog/whole-house-renovation-cost-seattle'],
+  'flooring-installation': ['/services/flooring-installation/bothell', '/blog/main-floor-remodel-cost-seattle', '/blog/whole-house-renovation-cost-seattle'],
+};
+
+export function guidesForService(serviceSlug: string): LocalGuide[] {
+  const hrefs = GUIDES_BY_SERVICE[serviceSlug] ?? [];
+  const all = [...costGuides, ...localGuides];
+  return hrefs
+    .map((href) => all.find((g) => g.href === href))
+    .filter((g): g is LocalGuide => Boolean(g));
+}
+
+// City pages that carry their own block (lib/data/cityContent.ts) also list the
+// cost guides, plus the local guide for that city when one exists.
+export function guidesForCity(citySlug: string): LocalGuide[] {
+  const own = localGuides.filter((g) => g.href.endsWith(`/${citySlug}`));
+  return [...own, ...costGuides];
+}
+
 export const localGuides: LocalGuide[] = [
   {
     href: '/services/kitchen-remodel/shoreline',

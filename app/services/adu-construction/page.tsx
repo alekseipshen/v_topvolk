@@ -25,6 +25,7 @@ import Hero from '@/components/Hero';
 import PromoSection from '@/components/PromoSection';
 import Reviews from '@/components/Reviews';
 import AduQuoteButton from '@/components/AduQuoteButton';
+import AduModelCard from '@/components/AduModelCard';
 import AduRoiCalculator from '@/components/AduRoiCalculator';
 import { ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from '@/components/StructuredData';
 import { services, visibleServices } from '@/lib/data/services';
@@ -171,8 +172,9 @@ export default function AduConstructionPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {aduModels.map((model) => (
-              <div
+              <AduModelCard
                 key={model.slug}
+                model={model.slug}
                 id={`model-${model.slug}`}
                 className={`bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden border ${
                   model.popular ? 'border-gold-500' : 'border-gray-200'
@@ -257,7 +259,7 @@ export default function AduConstructionPage() {
                     className="w-full px-6 py-3 text-base"
                   />
                 </div>
-              </div>
+              </AduModelCard>
             ))}
           </div>
 

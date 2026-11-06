@@ -14,6 +14,7 @@ import { serviceGalleries } from '@/lib/data/gallery';
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 import { serviceCityHref } from '@/lib/data/serviceCityLinks';
+import { guidesForService } from '@/lib/data/localGuides';
 
 const SITE_URL = 'https://www.topvolk.org';
 
@@ -62,6 +63,8 @@ export default async function ServicePage({ params }: PageProps) {
   
   // Single source for the visible FAQ block and the FAQPage JSON-LD below.
   const faqItems = buildServiceFaqs(service);
+  // Cost & permit guides for this service (lib/data/localGuides.ts); empty for most trades.
+  const guides = guidesForService(service.slug);
 
   return (
     <>
@@ -224,6 +227,32 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
       </section>
       
+      {/* Cost & permit guides for this service: crawl path from a hub that is
+          recrawled every few days to posts and local pages that are not. */}
+      {guides.length > 0 && (
+        <section className="py-12 bg-gray-50 border-t border-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+                {service.name} Cost &amp; Permit Guides
+              </h2>
+              <div className={`grid gap-6 md:grid-cols-2 ${guides.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
+                {guides.map((g) => (
+                  <Link
+                    key={g.href}
+                    href={g.href}
+                    className="block bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition"
+                  >
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{g.title}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">{g.blurb}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
