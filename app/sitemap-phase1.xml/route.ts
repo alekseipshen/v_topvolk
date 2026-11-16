@@ -31,6 +31,8 @@ export async function GET() {
     { loc: `${baseUrl}/blog/adu-dadu-rules-cost-eastside`, lastmod: pageLastmod('/blog/adu-dadu-rules-cost-eastside'), changefreq: 'monthly', priority: 0.85 },
     { loc: `${baseUrl}/blog/main-floor-remodel-cost-seattle`, lastmod: pageLastmod('/blog/main-floor-remodel-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
     { loc: `${baseUrl}/blog/whole-house-renovation-cost-seattle`, lastmod: pageLastmod('/blog/whole-house-renovation-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/seattle-adu-electrical-service`, lastmod: pageLastmod('/blog/seattle-adu-electrical-service'), changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/seattle-remodel-permits`, lastmod: pageLastmod('/blog/seattle-remodel-permits'), changefreq: 'monthly', priority: 0.85 },
 
     // All service pages (29 services)
     ...services.map((service) => ({

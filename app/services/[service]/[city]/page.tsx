@@ -35,12 +35,17 @@ interface PageProps {
  * pages recrawled 29-31.10, 3 of 19 allowlisted pages recrawled after 22.10, the
  * six rewritten pages not since 16.07-30.09). Those combinations now return 404
  * so the crawl budget goes to pages we want indexed.
+ *
+ * 2026-11-16: the ~1,500 combinations that had a pipeline text but sat outside
+ * the allowlist (`noindex, follow`) return 404 as well. Ten days after the first
+ * removal URL Inspection showed no shift: 0 of 20 sampled noindex pages and 0 of
+ * 19 sampled allowlisted pages recrawled, while 4 allowlisted pages dropped to
+ * "Crawled - currently not indexed" without a new crawl. A noindex page cannot
+ * rank, so nothing is lost; the YAML stays in content/cities for future merges
+ * into city pages. The allowlist is the single gate for this route now.
  */
 export function serviceCityPageExists(serviceSlug: string, citySlug: string): boolean {
-  return (
-    isServiceCityIndexable(serviceSlug, citySlug) ||
-    loadCityServiceContent(citySlug, serviceSlug) !== null
-  );
+  return isServiceCityIndexable(serviceSlug, citySlug);
 }
 
 export async function generateStaticParams() {

@@ -3,12 +3,30 @@
 import Link from 'next/link';
 import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_EMAIL, BUSINESS_NAME, BUSINESS_ADDRESS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
-import { featuredServices } from '@/lib/data/services';
+import { featuredServices, visibleServices } from '@/lib/data/services';
 import { seattleCounties, getAllCities } from '@/lib/data/seattle-counties';
 
+// Footer services: the 6 featured hubs plus 6 more visible hubs that have
+// allowlisted city pages but no sitewide link. On 2026-11-16 URL Inspection
+// showed 11 of 30 service hubs never crawled by Google (painting, tile,
+// garage-construction, window-installation, handyman among them) although all
+// sit in sitemap-phase1: only /services linked to them. The footer renders on
+// every page, so each hub listed here gets ~480 internal links. Hidden
+// (insurance-gated) services stay out, as everywhere else.
+const EXTRA_FOOTER_SERVICES = [
+  'flooring-installation',
+  'painting',
+  'window-installation',
+  'garage-construction',
+  'tile-installation',
+  'handyman-services',
+];
+
 export default function Footer() {
-  // Major renovation services (top 6 visible — hidden services excluded)
-  const majorServices = featuredServices;
+  const majorServices = [
+    ...featuredServices,
+    ...visibleServices.filter((s) => EXTRA_FOOTER_SERVICES.includes(s.slug)),
+  ];
   
   // Seattle area counties we serve
   const serviceAreas = seattleCounties.map(county => ({
@@ -77,6 +95,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-2">
+                <Link
+                  href="/blog"
+                  className="hover:text-white transition text-sm font-semibold"
+                >
+                  Remodeling Cost & Permit Guides →
+                </Link>
+              </li>
             </ul>
           </div>
 
