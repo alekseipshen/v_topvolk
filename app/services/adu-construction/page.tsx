@@ -44,6 +44,7 @@ import {
 import { seattleCounties } from '@/lib/data/seattle-counties';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 import { serviceCityHref } from '@/lib/data/serviceCityLinks';
+import { guidesForService } from '@/lib/data/localGuides';
 
 const SITE_URL = 'https://www.topvolk.org';
 const SLUG = 'adu-construction';
@@ -73,6 +74,10 @@ const incomeIcons = [DollarSign, KeyRound, HeartHandshake, TrendingUp];
 
 export default function AduConstructionPage() {
   const faqItems = buildAduFaqs();
+  // ADU guides (lib/data/localGuides.ts). This hub has its own template, so until
+  // 2026-11-16 it was the one service hub without a single link to the blog while
+  // URL Inspection showed it "Discovered - currently not indexed".
+  const guides = guidesForService('adu-construction');
 
   return (
     <>
@@ -548,6 +553,31 @@ export default function AduConstructionPage() {
           </div>
         </div>
       </section>
+
+      {/* ADU cost & permit guides: crawl path from the hub to posts and local pages. */}
+      {guides.length > 0 && (
+        <section className="py-12 bg-gray-50 border-t border-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+                ADU Cost &amp; Permit Guides
+              </h2>
+              <div className={`grid gap-6 md:grid-cols-2 ${guides.length >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
+                {guides.map((g) => (
+                  <Link
+                    key={g.href}
+                    href={g.href}
+                    className="block bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition"
+                  >
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{g.title}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">{g.blurb}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <Reviews />
 
