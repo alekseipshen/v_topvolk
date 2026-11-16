@@ -1,6 +1,17 @@
-import Link from 'next/link';
 import type { PageContent } from '@/lib/content/loadPageContent';
 import { PHONE_DISPLAY, PHONE_NUMBER, BUSINESS_NAME } from '@/lib/utils';
+import OpenEstimateButton from '@/components/OpenEstimateButton';
+
+/**
+ * Pipeline YAML uses hard-wrapped block scalars: a single newline is a line wrap,
+ * a blank line is a paragraph break. Split on blank lines, join wraps with a space.
+ */
+function toParagraphs(text: string): string[] {
+  return String(text ?? '')
+    .split(/\n\s*\n/)
+    .map((para) => para.replace(/\s*\n\s*/g, ' ').trim())
+    .filter(Boolean);
+}
 
 interface SEOPageContentProps {
   content: PageContent;
@@ -39,18 +50,22 @@ export default function SEOPageContent({
           )}
 
           {content.intro && (
-            <div className="text-gray-700">
-              <p className="text-base md:text-lg leading-relaxed whitespace-pre-line">
-                {content.intro}
-              </p>
+            <div className="text-gray-700 space-y-4">
+              {toParagraphs(content.intro).map((para, i) => (
+                <p key={i} className="text-base md:text-lg leading-relaxed">
+                  {para}
+                </p>
+              ))}
             </div>
           )}
 
           {content.localContext && (
-            <div className="text-gray-700">
-              <p className="text-base md:text-lg leading-relaxed whitespace-pre-line">
-                {content.localContext}
-              </p>
+            <div className="text-gray-700 space-y-4">
+              {toParagraphs(content.localContext).map((para, i) => (
+                <p key={i} className="text-base md:text-lg leading-relaxed">
+                  {para}
+                </p>
+              ))}
             </div>
           )}
 
@@ -69,9 +84,13 @@ export default function SEOPageContent({
                     <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                       {problem.title}
                     </h3>
-                    <p className="text-gray-700 text-base leading-relaxed whitespace-pre-line">
-                      {problem.description}
-                    </p>
+                    <div className="space-y-3">
+                      {toParagraphs(problem.description).map((para, j) => (
+                        <p key={j} className="text-gray-700 text-base leading-relaxed">
+                          {para}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -83,9 +102,13 @@ export default function SEOPageContent({
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                 Why Choose {BUSINESS_NAME}
               </h2>
-              <p className="text-base md:text-lg leading-relaxed whitespace-pre-line">
-                {content.whyChooseUs}
-              </p>
+              <div className="space-y-4">
+                {toParagraphs(content.whyChooseUs).map((para, i) => (
+                  <p key={i} className="text-base md:text-lg leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+              </div>
             </div>
           )}
 
@@ -106,9 +129,13 @@ export default function SEOPageContent({
                         &#9660;
                       </span>
                     </summary>
-                    <p className="text-gray-700 mt-3 text-base leading-relaxed whitespace-pre-line">
-                      {item.a}
-                    </p>
+                    <div className="mt-3 space-y-3">
+                      {toParagraphs(item.a).map((para, j) => (
+                        <p key={j} className="text-gray-700 text-base leading-relaxed">
+                          {para}
+                        </p>
+                      ))}
+                    </div>
                   </details>
                 ))}
               </div>
@@ -135,12 +162,11 @@ export default function SEOPageContent({
               >
                 Call {PHONE_DISPLAY}
               </a>
-              <Link
-                href="/#request-service"
+              <OpenEstimateButton
                 className="inline-block text-center bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold text-base transition shadow-md hover:shadow-lg"
               >
                 Request Free Quote
-              </Link>
+              </OpenEstimateButton>
             </div>
           </div>
         </div>

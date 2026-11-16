@@ -4,6 +4,7 @@ import Image from 'next/image';
 import PromoSection from '@/components/PromoSection';
 import { visibleServices } from '@/lib/data/services';
 import { BUSINESS_NAME } from '@/lib/utils';
+import OpenEstimateButton from '@/components/OpenEstimateButton';
 
 export const metadata: Metadata = {
   title: `All Services in Seattle Area`,
@@ -94,12 +95,11 @@ export default function AllServicesPage() {
               >
                 Call (206) 591-1096
               </a>
-              <Link
-                href="/#request-service"
+              <OpenEstimateButton
                 className="inline-block bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
               >
                 Request Quote
-              </Link>
+              </OpenEstimateButton>
             </div>
           </div>
         </div>

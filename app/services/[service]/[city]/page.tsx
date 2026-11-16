@@ -15,6 +15,7 @@ import { loadCityServiceContent } from '@/lib/content/loadPageContent';
 import { isServiceCityIndexable } from '@/lib/data/indexAllowlist';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 import { serviceCityHref } from '@/lib/data/serviceCityLinks';
+import OpenEstimateButton from '@/components/OpenEstimateButton';
 
 const SITE_URL = 'https://www.topvolk.org';
 
@@ -314,12 +315,11 @@ export default async function ServiceCityPage({ params }: PageProps) {
                 >
                   Call {PHONE_DISPLAY}
                 </a>
-                <Link
-                  href="/#request-service"
+                <OpenEstimateButton
                   className="inline-block text-center bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
                 >
                   Request Free Quote
-                </Link>
+                </OpenEstimateButton>
               </div>
             </div>
           </div>

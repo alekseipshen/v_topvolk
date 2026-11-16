@@ -14,6 +14,7 @@ import { getCityContent } from '@/lib/data/cityContent';
 import { guidesForCity } from '@/lib/data/localGuides';
 import { BUSINESS_NAME, PHONE_DISPLAY, PHONE_NUMBER } from '@/lib/utils';
 import { serviceCityHref } from '@/lib/data/serviceCityLinks';
+import OpenEstimateButton from '@/components/OpenEstimateButton';
 
 const SITE_URL = 'https://www.topvolk.org';
 
@@ -402,13 +403,12 @@ export default async function CityPage({ params }: PageProps) {
                 <Phone className="w-5 h-5" />
                 Call {PHONE_DISPLAY}
               </a>
-              <Link
-                href="/#request-service"
+              <OpenEstimateButton
                 className="inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
               >
                 <Calendar className="w-5 h-5" />
                 Request Free Quote
-              </Link>
+              </OpenEstimateButton>
             </div>
           </div>
         </div>
