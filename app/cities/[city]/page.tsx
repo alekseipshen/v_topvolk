@@ -194,6 +194,65 @@ export default async function CityPage({ params }: PageProps) {
         subtitle={`Professional construction and remodeling services in ${city.name} and surrounding areas • Licensed & Insured • Free estimates`}
       />
       
+      {/* Services We Offer */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Services in {city.name}
+            </h2>
+            <p className="text-xl text-gray-600">
+              Complete home renovation solutions for {city.name} homeowners
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {featuredServices.map((service) => (
+              <Link
+                key={service.slug}
+                href={serviceCityHref(service.slug, citySlug, 'service')}
+                prefetch={false}
+                className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
+              >
+                {service.image && (
+                  <div className="relative w-full h-48 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {service.title} in {city.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-2">{service.description}</p>
+                  <span className="text-gold-500 font-semibold hover:underline">
+                    Learn more →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/services"
+              className="inline-block px-8 py-3 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
+              style={{ backgroundColor: '#F4B942', color: '#ffffff' }}
+            >
+              View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <Reviews title={`What Our ${city.name} Customers Say`} />
+
       {/* SEO Content */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
@@ -301,58 +360,25 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Services We Offer */}
-      <section className="py-16 bg-gray-50">
+      {/* Local FAQ — long-tail depth + matches FAQPage schema above */}
+      <section className="py-16 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Services in {city.name}
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              {city.name} Home Renovation FAQ
             </h2>
-            <p className="text-xl text-gray-600">
-              Complete home renovation solutions for {city.name} homeowners
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {featuredServices.map((service) => (
-              <Link
-                key={service.slug}
-                href={serviceCityHref(service.slug, citySlug, 'service')}
-                prefetch={false}
-                className="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden group"
-              >
-                {service.image && (
-                  <div className="relative w-full h-48 overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {service.title} in {city.name}
+            <div className="space-y-6">
+              {faqs.map((faq) => (
+                <div key={faq.question}>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {faq.question}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">{service.description}</p>
-                  <span className="text-gold-500 font-semibold hover:underline">
-                    Learn more →
-                  </span>
+                  <p className="text-base leading-relaxed text-gray-700">
+                    {faq.answer}
+                  </p>
                 </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link
-              href="/services"
-              className="inline-block px-8 py-3 rounded-lg font-semibold text-lg transition shadow-md hover:shadow-lg"
-              style={{ backgroundColor: '#F4B942', color: '#ffffff' }}
-            >
-              View All Services
-            </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -419,38 +445,6 @@ export default async function CityPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* Local FAQ — long-tail depth + matches FAQPage schema above */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-              {city.name} Home Renovation FAQ
-            </h2>
-            <div className="space-y-6">
-              {faqs.map((faq) => (
-                <div key={faq.question}>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {faq.question}
-                  </h3>
-                  <p className="text-base leading-relaxed text-gray-700">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            What Our {city.name} Customers Say
-          </h2>
-          <Reviews />
-        </div>
-      </section>
     </>
   );
 }
