@@ -4,6 +4,9 @@
 // or an organic GA4 landing session from any search engine (29 more) over
 // 90 days. 322 of 3540 pass; the rest render `noindex, follow`
 // and stay out of the sitemaps. Other routes are not governed by this list.
+// Hand-maintained additions are merged from lib/data/indexAllowlistManual.ts.
+
+import { MANUAL_ALLOWED } from './indexAllowlistManual';
 
 const ALLOWED = new Set<string>([
   '/services/adu-construction/aberdeen',
@@ -329,6 +332,7 @@ const ALLOWED = new Set<string>([
   '/services/window-installation/white-center',
   '/services/window-installation/yelm',
 ]);
+for (const path of MANUAL_ALLOWED) ALLOWED.add(path);
 
 /** True when /services/{service}/{city} may be indexed and may appear in a sitemap. */
 export function isServiceCityIndexable(serviceSlug: string, citySlug: string): boolean {
@@ -336,4 +340,4 @@ export function isServiceCityIndexable(serviceSlug: string, citySlug: string): b
 }
 
 /** Allowlisted service x city paths, sorted, for the sitemap. */
-export const indexableServiceCityPaths: string[] = Array.from(ALLOWED);
+export const indexableServiceCityPaths: string[] = Array.from(ALLOWED).sort();
