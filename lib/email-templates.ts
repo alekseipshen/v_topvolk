@@ -9,6 +9,7 @@ interface LeadEmailData {
   source?: string;
   url?: string;
   timestamp?: string;
+  callConsent?: boolean;
 }
 
 // Email to business owners (notification about new lead)
@@ -55,7 +56,7 @@ export function getLeadNotificationHTML(data: LeadEmailData): string {
                     </p>
                     
                     <p style="margin: 0 0 8px 0; font-size: 16px; color: #1e293b;">
-                      <strong>Name:</strong> ${data.name}
+                      <strong>Name:</strong> ${data.name || 'not provided'}
                     </p>
                     
                     <p style="margin: 0 0 8px 0; font-size: 16px; color: #1e293b;">
@@ -64,6 +65,10 @@ export function getLeadNotificationHTML(data: LeadEmailData): string {
                     
                     <p style="margin: 0 0 8px 0; font-size: 16px; color: #1e293b;">
                       <strong>Email:</strong> <a href="mailto:${data.email}" style="color: #334e64; text-decoration: none;">${data.email}</a>
+                    </p>
+                    
+                    <p style="margin: 0 0 8px 0; font-size: 16px; color: #1e293b;">
+                      <strong>Calls/SMS consent (AI incl.):</strong> ${data.callConsent ? 'YES' : 'NO, call manually only'}
                     </p>
                     
                     ${data.message ? `
@@ -147,7 +152,7 @@ export function getCustomerConfirmationHTML(name: string): string {
           <tr>
             <td style="padding: 40px 30px;">
               <p style="margin: 0 0 20px 0; font-size: 18px; color: #1e293b;">
-                Hi <strong>${name}</strong>,
+                Hi <strong>${name || 'there'}</strong>,
               </p>
               
               <p style="margin: 0 0 20px 0; font-size: 16px; color: #334155; line-height: 1.6;">
@@ -219,9 +224,10 @@ export function getLeadNotificationText(data: LeadEmailData): string {
 NEW LEAD RECEIVED - ${BUSINESS_NAME}
 
 Customer Details:
-- Name: ${data.name}
+- Name: ${data.name || 'not provided'}
 - Phone: ${data.phone}
 - Email: ${data.email}
+- Calls/SMS consent (AI incl.): ${data.callConsent ? 'YES' : 'NO, call manually only'}
 ${data.message ? `- Message: ${data.message}` : ''}
 
 ${data.source ? `Source: ${data.source}` : ''}
@@ -234,7 +240,7 @@ Call customer: ${data.phone}
 
 export function getCustomerConfirmationText(name: string): string {
   return `
-Hi ${name},
+Hi ${name || 'there'},
 
 Thank you for contacting ${BUSINESS_NAME}! We've received your service request and one of our team members will reach out to you soon.
 

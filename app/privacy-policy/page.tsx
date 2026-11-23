@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
           <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
             <p className="text-sm text-gray-500">
               <strong>Effective Date:</strong> January 9, 2026<br />
-              <strong>Last Updated:</strong> January 9, 2026
+              <strong>Last Updated:</strong> November 23, 2026
             </p>
 
             <section>
@@ -69,6 +69,7 @@ export default function PrivacyPolicyPage() {
                 <li>Analyze website usage and improve user experience</li>
                 <li>Comply with legal obligations and protect our rights</li>
                 <li>Send marketing communications (with your consent)</li>
+                <li>Call or text you about your project request, including calls made with an automated system or AI voice assistant, if you checked the consent box on our form. Consent is not a condition of purchase. Reply STOP to any text to opt out</li>
               </ul>
             </section>
 
@@ -81,6 +82,10 @@ export default function PrivacyPolicyPage() {
                 <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
                 <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information</li>
               </ul>
+              <p>
+                Mobile phone numbers and text messaging consent are never shared with third parties or
+                affiliates for their marketing or promotional purposes.
+              </p>
             </section>
 
             <section>

@@ -7,14 +7,16 @@ import { z } from 'zod';
 import UsPhoneInput, { isValidUsPhone, usNationalDigits } from '@/components/UsPhoneInput';
 import { X } from 'lucide-react';
 import { services } from '@/lib/data/services';
+import CallConsentCheckbox from '@/components/CallConsentCheckbox';
 
 const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  name: z.string().trim().max(100).optional(),
   phone: z.string()
     .min(10, 'Please enter a valid phone number')
     .refine(isValidUsPhone, 'Please enter a complete 10-digit US phone number, area code first'),
   email: z.string().email('Please enter a valid email').or(z.literal('')).optional(),
-  service: z.string().min(1, 'Please select a service'),
+  service: z.string().optional(),
+  callConsent: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -44,6 +46,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
       phone: '',
       email: '',
       service: defaultService,
+      callConsent: false,
     },
   });
 
@@ -61,17 +64,20 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
 
     try {
       const cleanedPhone = usNationalDigits(data.phone);
-      const serviceName = services.find(s => s.slug === data.service)?.title || data.service;
+      const serviceName = data.service
+        ? services.find(s => s.slug === data.service)?.title || data.service
+        : '';
 
       const response = await fetch('/api/submit-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: data.name,
+          name: data.name || '',
           phone: cleanedPhone,
           email: data.email || '',
-          message: `Service: ${serviceName}`,
-          service: data.service,
+          message: serviceName ? `Service: ${serviceName}` : '',
+          service: data.service || '',
+          callConsent: data.callConsent === true,
           recaptchaToken: 'bypass',
           gaTracked: typeof window !== 'undefined' && !!(window as any).google_tag_manager?.['GTM-NFXZKDN6'],
         }),
@@ -84,7 +90,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
             lead_data: {
               email: data.email || '',
               phone: cleanedPhone,
-              service: data.service,
+              service: data.service || '',
               source: 'Website - TopVolk Construction',
             },
           });
@@ -103,7 +109,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
 
   const handleClose = () => {
     setSubmitStatus('idle');
-    reset({ name: '', phone: '', email: '', service: '' });
+    reset({ name: '', phone: '', email: '', service: '', callConsent: false });
     onClose();
   };
 
@@ -137,7 +143,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
               {/* Service */}
               <div>
                 <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-1">
-                  Service *
+                  Service <span className="text-gray-400 font-normal">(optional)</span>
                 </label>
                 <select
                   {...register('service')}
@@ -159,7 +165,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
-                  Your name *
+                  Your name <span className="text-gray-400 font-normal">(optional)</span>
                 </label>
                 <input
                   {...register('name')}
@@ -211,6 +217,8 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                 )}
               </div>
 
+              <CallConsentCheckbox id="callConsent" registration={register('callConsent')} />
+
               {/* Submit */}
               <button
                 type="submit"
@@ -233,7 +241,9 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Thank You, {watchedData.name}!</h3>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {watchedData.name ? `Thank You, ${watchedData.name}!` : 'Thank You!'}
+              </h3>
               <p className="text-gray-600">
                 We&apos;ll contact you shortly to discuss your project and schedule a visit.
               </p>

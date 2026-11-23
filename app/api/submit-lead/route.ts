@@ -8,6 +8,7 @@ import {
   getCustomerConfirmationText,
 } from '@/lib/email-templates';
 import { sendServerLead, GA4_SESSION_COOKIE } from '@/lib/server/ga4';
+import { CONSENT_TEXT, CONSENT_VERSION } from '@/lib/consent';
 
 interface LeadData {
   name: string;
@@ -18,6 +19,19 @@ interface LeadData {
   recaptchaToken: string;
   // true when GTM was loaded in the browser, so the client-side GA4 tag counted the lead
   gaTracked?: boolean;
+  // visitor ticked the calls/texts consent box (AI/automated calls included)
+  callConsent?: boolean;
+}
+
+// Proof of consent kept with every lead: the exact wording, its version and when it was given.
+// IP, user agent and page are stored in their own columns.
+function consentRecord(
+  callConsent: boolean,
+  at: string,
+): { call_consent: boolean; consent_version: string; consent_text?: string; consent_at?: string } {
+  return callConsent
+    ? { call_consent: true, consent_version: CONSENT_VERSION, consent_text: CONSENT_TEXT, consent_at: at }
+    : { call_consent: false, consent_version: CONSENT_VERSION };
 }
 
 const LEAD_SITE = 'topvolk';
@@ -49,7 +63,7 @@ function getPool(): Pool | null {
   return pool;
 }
 
-async function insertLead(request: NextRequest, data: LeadData): Promise<void> {
+async function insertLead(request: NextRequest, data: LeadData, consentAt: string): Promise<void> {
   const p = getPool();
   if (!p || !LEADS_TABLE) return;
   const ua = request.headers.get('user-agent');
@@ -61,7 +75,7 @@ async function insertLead(request: NextRequest, data: LeadData): Promise<void> {
        (name, phone, email, service_slug, service_name, city_slug, city_name, message, source, page, user_agent, ip, site, extra)
        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14::jsonb)`,
     [
-      data.name,
+      data.name || null,
       data.phone,
       data.email || null,
       null,
@@ -74,7 +88,7 @@ async function insertLead(request: NextRequest, data: LeadData): Promise<void> {
       ua,
       ip,
       LEAD_SITE,
-      null,
+      JSON.stringify(consentRecord(data.callConsent === true, consentAt)),
     ],
   );
 }
@@ -91,6 +105,7 @@ async function sendTelegram(data: {
   service?: string;
   url?: string;
   timestamp?: string;
+  callConsent?: boolean;
 }): Promise<boolean> {
   const botToken = process.env.TELEGRAM_BOT_TOKEN?.trim();
   const chatId = process.env.TELEGRAM_CHAT_ID?.trim();
@@ -107,11 +122,14 @@ async function sendTelegram(data: {
   const text = [
     `🔔 <b>New Lead — TopVolk Construction</b>`,
     ``,
-    `👤 <b>Name:</b> ${escapeHtml(data.name)}`,
+    `👤 <b>Name:</b> ${escapeHtml(data.name || 'not provided')}`,
     `📞 <b>Phone:</b> ${escapeHtml(data.phone)}`,
     data.email ? `📧 <b>Email:</b> ${escapeHtml(data.email)}` : null,
     data.service ? `🔧 <b>Service:</b> ${escapeHtml(data.service)}` : null,
     data.message ? `💬 <b>Message:</b> ${escapeHtml(data.message)}` : null,
+    data.callConsent
+      ? `🤖 <b>Calls/SMS consent (AI incl.):</b> YES`
+      : `🤖 <b>Calls/SMS consent (AI incl.):</b> NO, call manually only`,
     ``,
     `🌐 Page: ${escapeHtml(data.url || 'unknown')}`,
     `🕐 ${pstTime} PST`,
@@ -161,6 +179,7 @@ async function sendEmails(data: {
   source?: string;
   url?: string;
   timestamp?: string;
+  callConsent?: boolean;
 }): Promise<boolean> {
   const resendApiKey = process.env.RESEND_API_KEY?.trim();
   const emailRecipient1 = process.env.EMAIL_RECIPIENT_1?.trim();
@@ -183,7 +202,7 @@ async function sendEmails(data: {
       resend.emails.send({
         from: `TopVolk Construction <${emailFromAddress}>`,
         to: emailRecipient1,
-        subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
+        subject: `🔔 New Lead: ${data.name || data.phone} - TopVolk Construction`,
         html: getLeadNotificationHTML(data),
         text: getLeadNotificationText(data),
       }).then(() => {
@@ -200,7 +219,7 @@ async function sendEmails(data: {
         resend.emails.send({
           from: `TopVolk Construction <${emailFromAddress}>`,
           to: emailRecipient2,
-          subject: `🔔 New Lead: ${data.name} - TopVolk Construction`,
+          subject: `🔔 New Lead: ${data.name || data.phone} - TopVolk Construction`,
           html: getLeadNotificationHTML(data),
           text: getLeadNotificationText(data),
         }).then(() => {
@@ -242,8 +261,9 @@ export async function POST(request: NextRequest) {
   try {
     const data: LeadData = await request.json();
 
-    // Validate required fields (email is optional)
-    if (!data.name || !data.phone) {
+    // Phone is the only required field (owner's call, 2026-11-20); name, service, email optional
+    data.name = typeof data.name === 'string' ? data.name.trim() : '';
+    if (!data.phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -280,6 +300,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Prepare lead data for n8n webhook
+    const submittedAt = new Date().toISOString();
     const leadPayload = {
       name: data.name,
       phone: data.phone,
@@ -287,9 +308,10 @@ export async function POST(request: NextRequest) {
       message: data.message || '',
       service: data.service || '',
       source: 'website',
-      timestamp: new Date().toISOString(),
+      timestamp: submittedAt,
       recaptchaScore: recaptchaScore,
       url: request.headers.get('referer') || 'unknown',
+      ...consentRecord(data.callConsent === true, submittedAt),
     };
 
     // Send to n8n webhook for processing
@@ -326,13 +348,14 @@ export async function POST(request: NextRequest) {
       source: 'Website - TopVolk Construction',
       url: leadPayload.url,
       timestamp: leadPayload.timestamp,
+      callConsent: data.callConsent === true,
     };
 
     // Send email and Telegram in parallel; archive to PG best-effort alongside.
     const [emailResult, tgResult, pgResult] = await Promise.allSettled([
       sendEmails(notificationData),
       sendTelegram(notificationData),
-      insertLead(request, data),
+      insertLead(request, data, leadPayload.timestamp),
     ]);
 
     const emailOk = emailResult.status === 'fulfilled' && emailResult.value;
