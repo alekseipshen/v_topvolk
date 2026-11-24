@@ -8,7 +8,7 @@ import {
   getCustomerConfirmationText,
 } from '@/lib/email-templates';
 import { sendServerLead, GA4_SESSION_COOKIE } from '@/lib/server/ga4';
-import { CONSENT_TEXT, CONSENT_VERSION } from '@/lib/consent';
+import { CONSENT_TEXTS, CONSENT_METHODS, LEGACY_CONSENT_VERSION } from '@/lib/consent';
 
 interface LeadData {
   name: string;
@@ -19,19 +19,35 @@ interface LeadData {
   recaptchaToken: string;
   // true when GTM was loaded in the browser, so the client-side GA4 tag counted the lead
   gaTracked?: boolean;
-  // visitor ticked the calls/texts consent box (AI/automated calls included)
+  // visitor gave calls/texts consent (AI/automated calls included): ticked the box (2026-11-23)
+  // or submitted under the consent notice (2026-11-24 on)
   callConsent?: boolean;
+  // wording version the visitor saw; bundles cached before 2026-11-24 send none
+  consentVersion?: string;
 }
 
-// Proof of consent kept with every lead: the exact wording, its version and when it was given.
+// Proof of consent kept with every lead: the exact wording, its version, how it was given and when.
 // IP, user agent and page are stored in their own columns.
+function consentVersionOf(data: { consentVersion?: string }): string {
+  const v = data.consentVersion;
+  return v && CONSENT_TEXTS[v] ? v : LEGACY_CONSENT_VERSION;
+}
+
 function consentRecord(
-  callConsent: boolean,
+  data: { callConsent?: boolean; consentVersion?: string },
   at: string,
-): { call_consent: boolean; consent_version: string; consent_text?: string; consent_at?: string } {
-  return callConsent
-    ? { call_consent: true, consent_version: CONSENT_VERSION, consent_text: CONSENT_TEXT, consent_at: at }
-    : { call_consent: false, consent_version: CONSENT_VERSION };
+): {
+  call_consent: boolean;
+  consent_version: string;
+  consent_method: string;
+  consent_text?: string;
+  consent_at?: string;
+} {
+  const version = consentVersionOf(data);
+  const base = { consent_version: version, consent_method: CONSENT_METHODS[version] };
+  return data.callConsent === true
+    ? { call_consent: true, ...base, consent_text: CONSENT_TEXTS[version], consent_at: at }
+    : { call_consent: false, ...base };
 }
 
 const LEAD_SITE = 'topvolk';
@@ -88,7 +104,7 @@ async function insertLead(request: NextRequest, data: LeadData, consentAt: strin
       ua,
       ip,
       LEAD_SITE,
-      JSON.stringify(consentRecord(data.callConsent === true, consentAt)),
+      JSON.stringify(consentRecord(data, consentAt)),
     ],
   );
 }
@@ -311,7 +327,7 @@ export async function POST(request: NextRequest) {
       timestamp: submittedAt,
       recaptchaScore: recaptchaScore,
       url: request.headers.get('referer') || 'unknown',
-      ...consentRecord(data.callConsent === true, submittedAt),
+      ...consentRecord(data, submittedAt),
     };
 
     // Send to n8n webhook for processing

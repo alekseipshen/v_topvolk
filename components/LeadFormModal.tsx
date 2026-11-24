@@ -7,7 +7,8 @@ import { z } from 'zod';
 import UsPhoneInput, { isValidUsPhone, usNationalDigits } from '@/components/UsPhoneInput';
 import { X } from 'lucide-react';
 import { services } from '@/lib/data/services';
-import CallConsentCheckbox from '@/components/CallConsentCheckbox';
+import SubmitConsentNotice from '@/components/SubmitConsentNotice';
+import { CONSENT_VERSION } from '@/lib/consent';
 
 const formSchema = z.object({
   name: z.string().trim().max(100).optional(),
@@ -16,7 +17,6 @@ const formSchema = z.object({
     .refine(isValidUsPhone, 'Please enter a complete 10-digit US phone number, area code first'),
   email: z.string().email('Please enter a valid email').or(z.literal('')).optional(),
   service: z.string().optional(),
-  callConsent: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -46,7 +46,6 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
       phone: '',
       email: '',
       service: defaultService,
-      callConsent: false,
     },
   });
 
@@ -77,7 +76,9 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
           email: data.email || '',
           message: serviceName ? `Service: ${serviceName}` : '',
           service: data.service || '',
-          callConsent: data.callConsent === true,
+          // submitting under the consent notice is the consent (see lib/consent.ts)
+          callConsent: true,
+          consentVersion: CONSENT_VERSION,
           recaptchaToken: 'bypass',
           gaTracked: typeof window !== 'undefined' && !!(window as any).google_tag_manager?.['GTM-NFXZKDN6'],
         }),
@@ -109,7 +110,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
 
   const handleClose = () => {
     setSubmitStatus('idle');
-    reset({ name: '', phone: '', email: '', service: '', callConsent: false });
+    reset({ name: '', phone: '', email: '', service: '' });
     onClose();
   };
 
@@ -217,8 +218,6 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                 )}
               </div>
 
-              <CallConsentCheckbox id="callConsent" registration={register('callConsent')} />
-
               {/* Submit */}
               <button
                 type="submit"
@@ -229,9 +228,7 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                 {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
               </button>
 
-              <p className="text-xs text-gray-500 text-center">
-                This site is protected by reCAPTCHA and the Google Privacy Policy applies.
-              </p>
+              <SubmitConsentNotice />
             </div>
           ) : (
             /* Success State */

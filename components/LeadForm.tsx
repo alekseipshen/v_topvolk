@@ -6,7 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import UsPhoneInput, { isValidUsPhone, usNationalDigits } from '@/components/UsPhoneInput';
 import { services } from '@/lib/data/services';
-import CallConsentCheckbox from '@/components/CallConsentCheckbox';
+import SubmitConsentNotice from '@/components/SubmitConsentNotice';
+import { CONSENT_VERSION } from '@/lib/consent';
 
 const formSchema = z.object({
   name: z.string().trim().max(100).optional(),
@@ -15,7 +16,6 @@ const formSchema = z.object({
     .refine(isValidUsPhone, 'Please enter a complete 10-digit US phone number, area code first'),
   email: z.string().email('Please enter a valid email').or(z.literal('')).optional(),
   service: z.string().optional(),
-  callConsent: z.boolean(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -41,7 +41,6 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
       phone: '',
       email: '',
       service: defaultService,
-      callConsent: false,
     },
   });
 
@@ -64,7 +63,9 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
           email: data.email || '',
           message: serviceName ? `Service: ${serviceName}` : '',
           service: data.service || '',
-          callConsent: data.callConsent === true,
+          // submitting under the consent notice is the consent (see lib/consent.ts)
+          callConsent: true,
+          consentVersion: CONSENT_VERSION,
           recaptchaToken: 'bypass',
           gaTracked: typeof window !== 'undefined' && !!(window as any).google_tag_manager?.['GTM-NFXZKDN6'],
         }),
@@ -187,8 +188,6 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
               )}
             </div>
 
-            <CallConsentCheckbox id="inline-callConsent" registration={register('callConsent')} />
-
             {/* Submit */}
             <button
               type="submit"
@@ -198,6 +197,8 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
             >
               {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
             </button>
+
+            <SubmitConsentNotice />
 
             {submitStatus === 'success' && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
@@ -209,10 +210,6 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
                 Something went wrong. Please try again or call us directly.
               </div>
             )}
-
-            <p className="text-xs text-gray-500 text-center">
-              This site is protected by reCAPTCHA and the Google Privacy Policy applies.
-            </p>
           </form>
         </div>
       </div>
