@@ -4,7 +4,7 @@
 //
 // 2026-11-23: optional unchecked checkbox, owner's wording.
 // 2026-11-24: checkbox removed at the owner's request; the notice sits next to the submit
-//   button (directly above it from 2026-11-24.2) and clicking it is the signature. Automated/AI calls must stay named in
+//   button (directly above it in 2026-11-24.2, directly below it from 2026-11-24.3) and clicking it is the signature. Automated/AI calls must stay named in
 //   the notice, and "not a condition of purchase" is backed by the phone number to call instead.
 // If the wording changes, add a new version and point CONSENT_VERSION at it.
 import { PHONE_DISPLAY } from '@/lib/utils';
@@ -27,15 +27,23 @@ export const CONSENT_TEXTS: Record<string, string> = {
     'number provided about your project request, including calls made with an automated system or an ' +
     `artificial (AI) voice. Consent is not a condition of purchase: to get a quote without it, call us at ${PHONE_DISPLAY}. ` +
     'Message and data rates may apply. Reply STOP to opt out.',
+  // Owner's call (2026-11-24): short notice directly UNDER the button, the button pinned in the
+  // modal so it is visible without scrolling. Same elements as .2, shorter wording.
+  '2026-11-24.3':
+    'By clicking "Get Free Estimate", you agree TopVolk Construction LLC may call and text you at the ' +
+    'number provided about your project, including automated or artificial (AI) voice calls. ' +
+    `Consent is not a condition of purchase: you can call us at ${PHONE_DISPLAY} instead. ` +
+    'Msg & data rates may apply. Reply STOP to opt out.',
 };
 
 export const CONSENT_METHODS: Record<string, string> = {
   '2026-11-23': 'checkbox',
   '2026-11-24': 'submit_notice',
   '2026-11-24.2': 'submit_notice_above_button',
+  '2026-11-24.3': 'submit_notice_below_button',
 };
 
-export const CONSENT_VERSION = '2026-11-24.2';
+export const CONSENT_VERSION = '2026-11-24.3';
 export const CONSENT_TEXT = CONSENT_TEXTS[CONSENT_VERSION];
 
 // Bundles cached before 2026-11-24 send no version: they still showed the checkbox.

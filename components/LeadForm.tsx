@@ -188,9 +188,6 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
               )}
             </div>
 
-            {/* Consent notice directly above the button (see lib/consent.ts) */}
-            <SubmitConsentNotice />
-
             {/* Submit */}
             <button
               type="submit"
@@ -200,6 +197,9 @@ export default function LeadForm({ defaultService = '' }: LeadFormProps) {
             >
               {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
             </button>
+
+            {/* Consent notice directly under the button (see lib/consent.ts) */}
+            <SubmitConsentNotice />
 
             {submitStatus === 'success' && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">

@@ -117,10 +117,16 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-sm p-3 sm:p-4">
+      {/* Column layout: header and the submit footer never scroll away, only the fields do,
+          so "Get Free Estimate" is on screen without scrolling at any viewport height.
+          z-[1000] keeps the modal above PromoTopBar (z-60), which covered the close button on short phones. */}
+      <div
+        className="relative w-full max-w-lg max-h-[calc(100vh-1.5rem)] flex flex-col overflow-hidden bg-white rounded-2xl shadow-2xl"
+        style={{ maxHeight: 'calc(100dvh - 1.5rem)' }}
+      >
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-2xl z-10">
+        <div className="flex-none bg-white border-b border-gray-200 px-5 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-900">
             {submitStatus === 'success' ? 'Thank You!' : 'Get Your Free Estimate'}
           </h2>
@@ -133,13 +139,35 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
           </button>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="px-6 py-6">
-          {submitStatus !== 'success' ? (
-            <div className="space-y-4">
+        {submitStatus !== 'success' ? (
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col flex-1 min-h-0">
+            {/* Fields (scroll only if the screen is too short); phone, the one required field, first */}
+            <div className="flex-1 min-h-0 overflow-y-auto px-5 sm:px-6 pt-4 pb-3 space-y-3">
               <p className="text-gray-600 text-sm">
                 Fill out the form and we&apos;ll call you back within 15 minutes
               </p>
+
+              {/* Phone */}
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">
+                  Phone *
+                </label>
+                <Controller
+                  name="phone"
+                  control={control}
+                  render={({ field }) => (
+                    <UsPhoneInput
+                      {...field}
+                      id="phone"
+                      placeholder="+1 (555) 123-4567"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
+                    />
+                  )}
+                />
+                {errors.phone && (
+                  <p className="text-red-600 text-xs mt-1">{errors.phone.message}</p>
+                )}
+              </div>
 
               {/* Service */}
               <div>
@@ -180,27 +208,6 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                 )}
               </div>
 
-              {/* Phone */}
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-1">
-                  Phone *
-                </label>
-                <Controller
-                  name="phone"
-                  control={control}
-                  render={({ field }) => (
-                    <UsPhoneInput
-                      {...field}
-                      placeholder="+1 (555) 123-4567"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 bg-white"
-                    />
-                  )}
-                />
-                {errors.phone && (
-                  <p className="text-red-600 text-xs mt-1">{errors.phone.message}</p>
-                )}
-              </div>
-
               {/* Email (optional) */}
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
@@ -217,22 +224,31 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                   <p className="text-red-600 text-xs mt-1">{errors.email.message}</p>
                 )}
               </div>
+            </div>
 
-              {/* Consent notice directly above the button (see lib/consent.ts) */}
-              <SubmitConsentNotice />
+            {/* Pinned footer: submit button, the consent notice directly under it (see lib/consent.ts) */}
+            <div className="flex-none border-t border-gray-100 bg-white px-5 sm:px-6 pt-3 pb-4 space-y-2">
+              {submitStatus === 'error' && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded text-sm">
+                  Something went wrong. Please try again or call us directly at (206) 591-1096.
+                </div>
+              )}
 
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full text-white py-4 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full text-white py-3.5 rounded-lg transition font-semibold text-lg shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: '#F4B942' }}
               >
                 {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
               </button>
+
+              <SubmitConsentNotice />
             </div>
-          ) : (
-            /* Success State */
+          </form>
+        ) : (
+          /* Success State */
+          <div className="overflow-y-auto px-6 py-6">
             <div className="space-y-6 text-center py-4">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
                 <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,14 +270,8 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                 Close
               </button>
             </div>
-          )}
-
-          {submitStatus === 'error' && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mt-4">
-              Something went wrong. Please try again or call us directly at (206) 591-1096.
-            </div>
-          )}
-        </form>
+          </div>
+        )}
       </div>
     </div>
   );
