@@ -3,8 +3,8 @@
 // so an archived lead keeps the exact text that visitor saw.
 //
 // 2026-11-23: optional unchecked checkbox, owner's wording.
-// 2026-11-24: checkbox removed at the owner's request; the notice sits under the submit
-//   button and submitting the form is the signature. Automated/AI calls must stay named in
+// 2026-11-24: checkbox removed at the owner's request; the notice sits next to the submit
+//   button (directly above it from 2026-11-24.2) and clicking it is the signature. Automated/AI calls must stay named in
 //   the notice, and "not a condition of purchase" is backed by the phone number to call instead.
 // If the wording changes, add a new version and point CONSENT_VERSION at it.
 import { PHONE_DISPLAY } from '@/lib/utils';
@@ -19,14 +19,23 @@ export const CONSENT_TEXTS: Record<string, string> = {
     'provided about your project, including calls made with an automated system or AI voice assistant. ' +
     `Consent is not a condition of purchase: you can call us at ${PHONE_DISPLAY} instead. ` +
     'Message and data rates may apply. Reply STOP to opt out.',
+  // Same day: moved directly ABOVE the button (courts discounted fine print placed below
+  // Submit: Sullivan v. All Web Leads, Barrera v. Guaranteed Rate), names the button and the
+  // "artificial voice" term of 47 CFR 64.1200(f)(9).
+  '2026-11-24.2':
+    'By clicking "Get Free Estimate", you agree that TopVolk Construction LLC may call and text you at the ' +
+    'number provided about your project request, including calls made with an automated system or an ' +
+    `artificial (AI) voice. Consent is not a condition of purchase: to get a quote without it, call us at ${PHONE_DISPLAY}. ` +
+    'Message and data rates may apply. Reply STOP to opt out.',
 };
 
 export const CONSENT_METHODS: Record<string, string> = {
   '2026-11-23': 'checkbox',
   '2026-11-24': 'submit_notice',
+  '2026-11-24.2': 'submit_notice_above_button',
 };
 
-export const CONSENT_VERSION = '2026-11-24';
+export const CONSENT_VERSION = '2026-11-24.2';
 export const CONSENT_TEXT = CONSENT_TEXTS[CONSENT_VERSION];
 
 // Bundles cached before 2026-11-24 send no version: they still showed the checkbox.

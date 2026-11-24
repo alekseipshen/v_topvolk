@@ -218,6 +218,9 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
                 )}
               </div>
 
+              {/* Consent notice directly above the button (see lib/consent.ts) */}
+              <SubmitConsentNotice />
+
               {/* Submit */}
               <button
                 type="submit"
@@ -227,8 +230,6 @@ export default function LeadFormModal({ isOpen, onClose, defaultService = '' }: 
               >
                 {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}
               </button>
-
-              <SubmitConsentNotice />
             </div>
           ) : (
             /* Success State */
