@@ -13,6 +13,11 @@ export interface LocalGuide {
 
 export const costGuides: LocalGuide[] = [
   {
+    href: '/blog/garage-to-adu-conversion-eastside',
+    title: 'Garage to ADU Conversion',
+    blurb: 'Converting a garage into a legal ADU in Bellevue, Kirkland and Redmond: permits, parking, code work and costs.',
+  },
+  {
     href: '/blog/seattle-adu-electrical-service',
     title: 'ADU Electrical in Seattle',
     blurb: 'Separate meter or shared service, the Seattle City Light connection, the SDCI electrical permit and inspections.',
@@ -69,9 +74,10 @@ const GUIDES_BY_SERVICE: Record<string, string[]> = {
   'bathroom-remodel': ['/blog/bathroom-remodel-cost-seattle', '/blog/seattle-remodel-permits', '/blog/whole-house-renovation-cost-seattle', '/blog/main-floor-remodel-cost-seattle'],
   'basement-finishing': ['/blog/basement-finishing-cost-seattle', '/blog/seattle-remodel-permits', '/services/basement-finishing/kirkland', '/blog/whole-house-renovation-cost-seattle'],
   'deck-installation': ['/blog/deck-cost-seattle', '/services/deck-installation/duvall', '/services/deck-installation/sumner'],
-  'adu-construction': ['/blog/adu-dadu-rules-cost-eastside', '/blog/seattle-adu-electrical-service', '/services/adu-construction/kirkland', '/blog/whole-house-renovation-cost-seattle'],
+  'adu-construction': ['/blog/garage-to-adu-conversion-eastside', '/blog/adu-dadu-rules-cost-eastside', '/blog/seattle-adu-electrical-service', '/services/adu-construction/kirkland', '/blog/whole-house-renovation-cost-seattle'],
   'general-contracting': ['/blog/seattle-remodel-permits', '/blog/whole-house-renovation-cost-seattle', '/blog/main-floor-remodel-cost-seattle', '/blog/adu-dadu-rules-cost-eastside'],
   'home-additions': ['/blog/adu-dadu-rules-cost-eastside', '/blog/seattle-remodel-permits', '/blog/main-floor-remodel-cost-seattle', '/blog/whole-house-renovation-cost-seattle'],
+  'garage-construction': ['/blog/garage-to-adu-conversion-eastside', '/blog/adu-dadu-rules-cost-eastside'],
   'flooring-installation': ['/services/flooring-installation/bothell', '/blog/main-floor-remodel-cost-seattle', '/blog/whole-house-renovation-cost-seattle'],
   // Electrical is subcontracted, but the hub exists and was "Crawled - currently
   // not indexed" since 27.06; the ADU electrical guide is the one text we have for it.

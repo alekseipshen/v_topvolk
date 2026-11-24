@@ -33,6 +33,7 @@ export async function GET() {
     { loc: `${baseUrl}/blog/whole-house-renovation-cost-seattle`, lastmod: pageLastmod('/blog/whole-house-renovation-cost-seattle'), changefreq: 'monthly', priority: 0.85 },
     { loc: `${baseUrl}/blog/seattle-adu-electrical-service`, lastmod: pageLastmod('/blog/seattle-adu-electrical-service'), changefreq: 'monthly', priority: 0.85 },
     { loc: `${baseUrl}/blog/seattle-remodel-permits`, lastmod: pageLastmod('/blog/seattle-remodel-permits'), changefreq: 'monthly', priority: 0.85 },
+    { loc: `${baseUrl}/blog/garage-to-adu-conversion-eastside`, lastmod: pageLastmod('/blog/garage-to-adu-conversion-eastside'), changefreq: 'monthly', priority: 0.85 },
 
     // All service pages (29 services)
     ...services.map((service) => ({
